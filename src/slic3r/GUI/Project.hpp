@@ -82,7 +82,6 @@ private:
                                const std::string& design_id, const std::string& lookup_url);
 
     bool       m_web_init_completed = {false};
-    bool       m_reload_already = {false};
 
     wxWebView* m_browser = {nullptr};
     wxString   m_project_home_url;

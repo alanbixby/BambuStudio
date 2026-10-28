@@ -177,34 +177,18 @@ hr {
   margin-top: 8px;
 }
 
-/* Read-only rich text must occupy its real content height. Imported CKEditor
-   tables may carry a fixed figure height that is smaller than their rows. */
-#projectDescription,
-#profileDescript {
-  line-height: 1.45;
-}
+/* Relative heading leading prevents larger headings sharing the body 20px line box. */
 #projectDescription h1, #projectDescription h2, #projectDescription h3,
 #projectDescription h4, #projectDescription h5, #projectDescription h6,
 #profileDescript h1, #profileDescript h2, #profileDescript h3,
 #profileDescript h4, #profileDescript h5, #profileDescript h6 {
   line-height: 1.25;
 }
+
+/* Imported fixed figure heights must not make following text overlap table rows. */
 #projectDescription figure.table,
 #profileDescript figure.table {
   height: auto !important;
-  min-height: 0 !important;
-  max-width: 100%;
-  display: flow-root;
-}
-#projectDescription figure.table table,
-#profileDescript figure.table table {
-  width: 100%;
-  max-width: 100%;
-}
-#projectDescription img,
-#profileDescript img {
-  max-width: 100%;
-  height: auto;
 }
 
 /* Empty accessory captions otherwise retain three separate top margins. */

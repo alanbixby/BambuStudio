@@ -113,9 +113,9 @@ wxString ProgressDialog::FormatString(wxString title)
         m_msg->Layout();
         m_msg->Fit();
 
-        m_msg_scrolledWindow->SetSize(wxSize(FromDIP(m_msg->GetSize().x + 5), FromDIP(150)));
-        m_msg_scrolledWindow->SetMinSize(wxSize(FromDIP(m_msg->GetSize().x + 5), FromDIP(150)));
-        m_msg_scrolledWindow->SetMaxSize(wxSize(FromDIP(m_msg->GetSize().x + 5), FromDIP(150)));
+        m_msg_scrolledWindow->SetSize(wxSize(m_msg->GetSize().x + FromDIP(5), FromDIP(150)));
+        m_msg_scrolledWindow->SetMinSize(wxSize(m_msg->GetSize().x + FromDIP(5), FromDIP(150)));
+        m_msg_scrolledWindow->SetMaxSize(wxSize(m_msg->GetSize().x + FromDIP(5), FromDIP(150)));
        // m_msg_scrolledWindow->Layout();
         m_msg_scrolledWindow->Fit();
     }

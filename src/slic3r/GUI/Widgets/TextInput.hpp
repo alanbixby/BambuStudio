@@ -14,8 +14,6 @@ class TextInput : public wxNavigationEnabled<StaticBox>
     StateColor     label_color;
     StateColor     text_color;
     wxTextCtrl * text_ctrl = nullptr;
-    bool m_fit_content_width = true;
-    int m_preferred_width = -1;
     
     wxString       m_unit;
     wxString       m_prefix;
@@ -71,11 +69,7 @@ public:
 
     void SetTextColor(StateColor const &color);
 
-    // Preferred width is independent of the hard minimum used by wxBoxSizer.
-    void SetPreferredWidth(int width) { m_preferred_width = width; InvalidateBestSize(); }
-    void SetFitContentWidth(bool fit) { m_fit_content_width = fit; InvalidateBestSize(); }
     bool SetFont(const wxFont& font) override;
-    wxSize GetEffectiveMinSize() const override;
 
     virtual void Rescale();
 
@@ -91,8 +85,6 @@ public:
     bool CheckValid(bool pop_dlg = true) const;
 
 protected:
-    wxSize MeasureContent(const wxString& label) const;
-    wxSize DoGetBestSize() const override;
     virtual void OnEdit() {}
 
     virtual void DoSetSize(

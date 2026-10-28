@@ -2066,28 +2066,37 @@ void StatusBasePanel::fit_camera_to_feed()
     if (!control_sizer || !camera_item)
         return;
 
-    const int rows_min    = m_control_rows_sizer->CalcMin().x;
+    // The shown web AMS view, its size at zoom 1 and its current zoom.
+    wxWindow *ams    = nullptr;
+    int       base_w = 0;
+    int       base_h = 0;
+    double    current_zoom = 1;
+#if BBL_ENABLE_AMS_CONTROL_WEB
+    if (m_ams_control_web_panel && m_ams_control_web_panel->IsShown()) {
+        ams          = m_ams_control_web_panel;
+        base_w       = m_ams_control_web_panel->GetBaseWidth();
+        base_h       = m_ams_control_web_panel->GetBaseHeight();
+        current_zoom = m_ams_control_web_panel->GetFitZoom();
+    }
+#endif
 
     // Natural Control width with AMS unzoomed, and the width AMS may fill.
-    int rows_base  = rows_min;
+    int rows_base  = m_control_rows_sizer->CalcMin().x;
     int ams_border = 0;
-#if BBL_ENABLE_AMS_CONTROL_WEB
-    const bool web_ams = m_ams_control_web_panel && m_ams_control_web_panel->IsShown();
-    if (web_ams) {
+    if (ams) {
         rows_base = 0;
         for (wxSizerItem *item : m_control_rows_sizer->GetChildren()) {
             if (!item->IsShown())
                 continue;
             const int border = item->GetMinSizeWithBorder().x - item->GetMinSize().x;
             int width = item->GetMinSizeWithBorder().x;
-            if (item->GetWindow() == m_ams_control_web_panel) {
+            if (item->GetWindow() == ams) {
                 ams_border = border;
-                width = m_ams_control_web_panel->GetBaseWidth() + border;
+                width = base_w + border;
             }
             rows_base = std::max(rows_base, width);
         }
     }
-#endif
     // A maximum cannot be adjusted by subtracting a zoomed child's width:
     // that loses a wider header when AMS becomes the largest child. Measure
     // each top-level item with the unzoomed row width instead.
@@ -2119,9 +2128,6 @@ void StatusBasePanel::fit_camera_to_feed()
         // Feed height to reach, and the Control width its zoom needs.
         double feed_h    = camera_h;
         int    control_w = natural;
-#if BBL_ENABLE_AMS_CONTROL_WEB
-        const int base_w  = web_ams ? m_ams_control_web_panel->GetBaseWidth() : 0;
-        const int base_h  = web_ams ? m_ams_control_web_panel->GetBaseHeight() : 0;
         const int extra_w = natural - rows_base + ams_border;
         if (base_w > 0 && base_h > 0) {
             auto min_h = [camera_column](wxWindow *window) {
@@ -2130,7 +2136,7 @@ void StatusBasePanel::fit_camera_to_feed()
             };
             // Camera title and play bar, and the Control column without AMS.
             const int    chrome_h = min_h(m_panel_monitoring_title) + min_h(m_media_play_ctrl);
-            const int    extra_h  = control_sizer->CalcMin().y - m_ams_control_web_panel->GetMinSize().y;
+            const int    extra_h  = control_sizer->CalcMin().y - ams->GetMinSize().y;
             const double level    = (row_width - extra_w + aspect * (chrome_h - extra_h)) / (base_w + aspect * base_h);
             const double tallest  = double(chrome_h + camera_h - extra_h) / base_h;
             const double fit      = std::min(level, tallest);
@@ -2139,24 +2145,17 @@ void StatusBasePanel::fit_camera_to_feed()
             if (fit < 2)
                 feed_h = std::min<double>(camera_h, extra_h + zoom * base_h - chrome_h);
         }
-#endif
         const int feed_width = std::max(camera_column->CalcMin().x,
                                         std::min(int(std::ceil(feed_h * aspect)), row_width - control_w));
         if (row_width - feed_width > natural)
             target = row_width - feed_width;
 
-#if BBL_ENABLE_AMS_CONTROL_WEB
         // The camera's minimum width can leave less than the zoom needs.
         if (base_w > 0 && base_h > 0)
             zoom = std::min(zoom, zoom_step(double((target == wxDefaultCoord ? natural : target) - extra_w) / base_w));
-#endif
     }
 
-#if BBL_ENABLE_AMS_CONTROL_WEB
-    const bool zoom_changed = web_ams && std::abs(m_ams_control_web_panel->GetFitZoom() - zoom) > 0.001;
-#else
-    const bool zoom_changed = false;
-#endif
+    const bool zoom_changed = ams && std::abs(current_zoom - zoom) > 0.001;
 
     const bool width_changed = std::abs(m_machine_ctrl_panel->GetMinSize().x - target) > 1;
     if (!zoom_changed && !width_changed)

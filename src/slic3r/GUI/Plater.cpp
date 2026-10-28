@@ -861,9 +861,7 @@ struct Sidebar::priv
 void Sidebar::priv::layout_printer(bool isBBL, bool isDual)
 {
     isDual = isDual && isBBL;  // It indicates a multi-extruder layout.
-    // Printer - preset. Its name may ellipsize to make room for the measured
-    // plate selector; retain the requested minimum height.
-    combo_printer->SetMinSize(wxSize(-1, combo_printer->GetMinHeight()));
+    // Printer - preset
     if (auto sizer = static_cast<wxBoxSizer *>(panel_printer_preset->GetSizer());
             sizer == nullptr || isBBL != (sizer->GetOrientation() == wxVERTICAL)) {
         wxBoxSizer *hsizer_printer_btn = new wxBoxSizer(wxHORIZONTAL);
@@ -5094,7 +5092,7 @@ void Sidebar::pop_sync_nozzle_and_ams_dialog() {
         wxPoint                           big_btn_pt;
         wxSize                            big_btn_size;
         wxGetApp().plater()->sidebar().get_big_btn_sync_pos_size(big_btn_pt, big_btn_size);
-        temp_na_info.dialog_pos = big_btn_pt + wxPoint(big_btn_size.x, big_btn_size.y) + wxPoint(FromDIP(big_btn_size.x / 10.f - 5), FromDIP(big_btn_size.y / 10.f));
+        temp_na_info.dialog_pos = big_btn_pt + wxPoint(big_btn_size.x, big_btn_size.y) + wxPoint(big_btn_size.x / 10 - FromDIP(5), big_btn_size.y / 10);
 
         int same_dialog_pos_x     = get_sidebar_pos_right_x() + FromDIP(5);
         temp_na_info.dialog_pos.x = same_dialog_pos_x;

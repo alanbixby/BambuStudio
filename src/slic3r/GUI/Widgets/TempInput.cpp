@@ -583,7 +583,8 @@ void TempInput::messureMiniSize()
 {
     wxSize size = GetMinSize();
 
-    auto width  = FromDIP(24);
+    // Left/right insets and the target-to-unit gap.
+    auto width  = 2 * FromDIP(10) + FromDIP(4);
     auto height = 0;
 
     wxClientDC dc(this);
@@ -644,7 +645,8 @@ void TempInput::messureSize()
 {
     wxSize size = GetSize();
 
-    auto width  = FromDIP(24);
+    // Left/right insets and the target-to-unit gap.
+    auto width  = 2 * FromDIP(10) + FromDIP(4);
     auto height = 0;
 
     wxClientDC dc(this);

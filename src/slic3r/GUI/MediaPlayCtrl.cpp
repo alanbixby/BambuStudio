@@ -1112,7 +1112,8 @@ void MediaPlayCtrl::SetStatus(wxString const &msg2, bool hyperlink)
 
     wxGCDC dc;
     wxSize msg_size = dc.GetTextExtent(msg);
-    int blank_width = FromDIP(GetSize().GetWidth() - 120 - m_label_stat->GetSize().GetWidth() - m_button_play->GetSize().GetWidth());
+    // Window widths are already pixels; only the fixed spacing is in DIPs.
+    int blank_width = GetSize().GetWidth() - FromDIP(120) - m_label_stat->GetSize().GetWidth() - m_button_play->GetSize().GetWidth();
     int max_status_width = std::min(blank_width, FromDIP(600));
 
     wxString display_text = msg;

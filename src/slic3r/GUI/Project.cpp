@@ -923,7 +923,7 @@ void ProjectPanel::OnScriptMessage(wxWebViewEvent& evt)
 
 void ProjectPanel::update_model_data()
 {
-    Model model = wxGetApp().plater()->model();
+    const Model& model = wxGetApp().plater()->model();
     clear_model_info();
 
     //basics info

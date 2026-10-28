@@ -392,7 +392,7 @@ void MaterialItem::doRender(wxDC& dc)
     dc.DrawText(m_material_name, wxPoint((size.x - material_txt_size.x) / 2, (FromDIP(20) - material_txt_size.y) / 2));
 
     dc.SetPen(wxColour(0xAC, 0xAC, 0xAC));
-    dc.DrawLine(FromDIP(1), FromDIP(20), FromDIP(size.x), FromDIP(20));
+    dc.DrawLine(FromDIP(1), FromDIP(20), size.x, FromDIP(20));
     up += FromDIP(20);
     up += FromDIP(2); // spacing
 
@@ -539,7 +539,7 @@ void MaterialItem::doRender(wxDC& dc)
         wxPen dashed_pen(WXCOLOUR_GREY400, 1, wxPENSTYLE_SHORT_DASH);
         dc.SetPen(dashed_pen);
         up += FromDIP(4); // spacing
-        dc.DrawLine(FromDIP(1), up, FromDIP(size.x), up);
+        dc.DrawLine(FromDIP(1), up, size.x, up);
 
         int bitmap_y = up + (size.y - up - m_rack_nozzle_bitmap.GetBmpHeight()) / 2;
         int bitmap_l = wheel_left + (m_ams_wheel_mitem.GetBmpWidth() - m_rack_nozzle_bitmap.GetBmpWidth()) / 2 + FromDIP(2);
@@ -709,7 +709,7 @@ void MaterialSyncItem::doRender(wxDC &dc)
     }
 
     dc.SetPen(wxColour(0xAC, 0xAC, 0xAC));
-    dc.DrawLine(FromDIP(1), FromDIP(20), FromDIP(size.x), FromDIP(20));
+    dc.DrawLine(FromDIP(1), FromDIP(20), size.x, FromDIP(20));
     // bottom rectangle in wheel bitmap, size is MATERIAL_REC_WHEEL_SIZE(22)
     auto left  = (size.x / 2 - MATERIAL_REC_WHEEL_SIZE.x) / 2 + FromDIP(3);
     auto up    = (size.y * 0.4 + (size.y * 0.6 - MATERIAL_REC_WHEEL_SIZE.y) / 2);

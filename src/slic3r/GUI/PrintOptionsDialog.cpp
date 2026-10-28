@@ -362,15 +362,12 @@ void PrintOptionsDialog::layout_options()
     m_laying_out_options = true;
 
     Layout();
-    // FitInside may add/remove the vertical scrollbar, changing the client width.
-    // A second pass wraps at that final width, including the nested AI panel.
+    // Captions rewrap when laid out (LB_AUTO_WRAP), so their new heights need
+    // another pass; FitInside may also add/remove the vertical scrollbar,
+    // changing the client width. The nested AI panel has its own sizer.
     for (int pass = 0; pass < 2; ++pass) {
         m_scrollwindow->Layout();
         ai_refine_panel->Layout();
-        for (Label *label : m_wrapped_labels) {
-            if (label->IsShown() && label->GetSize().GetWidth() > 0)
-                label->Wrap(label->GetSize().GetWidth());
-        }
         m_scrollwindow->FitInside();
     }
 
@@ -956,11 +953,10 @@ void PrintOptionsDialog::UpdateOptionSnapshot(MachineObject *obj)
 
 wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
 {
-    auto make_wrapped_label = [this](wxWindow *parent, const wxString &text) {
-        auto label = new Label(parent, text);
+    auto make_wrapped_label = [](wxWindow *parent, const wxString &text) {
+        auto label = new Label(parent, Label::Body_12, text, LB_AUTO_WRAP);
         // The row supplies the width; its natural text height still sets the minimum.
         label->SetMinSize(wxSize(0, -1));
-        m_wrapped_labels.push_back(label);
         return label;
     };
 
@@ -990,7 +986,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
 
     line_sizer = new wxBoxSizer(wxHORIZONTAL);
     text_ai_detections_caption = make_wrapped_label(ai_refine_panel, _L("Printer will send assistant message or pause printing if any of the following problem is detected."));
-    text_ai_detections_caption->SetFont(Label::Body_12);
     text_ai_detections_caption->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(5), 0, 0, 0);
     line_sizer->Add(text_ai_detections_caption, 1,wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(2));
@@ -1040,7 +1035,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
 
     line_sizer = new wxBoxSizer(wxHORIZONTAL);
     text_spaghetti_detection_caption0 = make_wrapped_label(ai_refine_panel, _L("Detects spaghetti failure(scattered lose filament)."));
-    text_spaghetti_detection_caption0->SetFont(Label::Body_12);
     text_spaghetti_detection_caption0->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(30), 0, 0, 0);
     line_sizer->Add(text_spaghetti_detection_caption0, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
@@ -1084,7 +1078,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
 
     line_sizer                        = new wxBoxSizer(wxHORIZONTAL);
     text_purgechutepileup_detection_caption0 = make_wrapped_label(ai_refine_panel, _L("Monitors if the waste is piled up in the purge chute."));
-    text_purgechutepileup_detection_caption0->SetFont(Label::Body_12);
     text_purgechutepileup_detection_caption0->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(30), 0, 0, 0);
     line_sizer->Add(text_purgechutepileup_detection_caption0, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
@@ -1124,7 +1117,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
 
     line_sizer                               = new wxBoxSizer(wxHORIZONTAL);
     text_nozzleclumping_detection_caption0 = make_wrapped_label(ai_refine_panel, _L("Checks if the nozzle is clumping by filaments or other foreign objects."));
-    text_nozzleclumping_detection_caption0->SetFont(Label::Body_12);
     text_nozzleclumping_detection_caption0->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(30), 0, 0, 0);
     line_sizer->Add(text_nozzleclumping_detection_caption0, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
@@ -1165,7 +1157,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
 
     line_sizer                               = new wxBoxSizer(wxHORIZONTAL);
     text_airprinting_detection_caption0 = make_wrapped_label(ai_refine_panel, _L("Detects air printing caused by nozzle clogging or filament grinding."));
-    text_airprinting_detection_caption0->SetFont(Label::Body_12);
     text_airprinting_detection_caption0->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(30), 0, 0, 0);
     line_sizer->Add(text_airprinting_detection_caption0, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
@@ -1204,7 +1195,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
     line_sizer = new wxBoxSizer(wxHORIZONTAL);
     wxString fod_check_caption_text = _L("Checks for any objects on the build plate at the start of a print to avoid collisions.");
     text_fod_check_caption = make_wrapped_label(ai_refine_panel, fod_check_caption_text);
-    text_fod_check_caption->SetFont(Label::Body_12);
     text_fod_check_caption->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(30), 0, 0, 0);
     line_sizer->Add(text_fod_check_caption, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
@@ -1224,7 +1214,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
     line_sizer = new wxBoxSizer(wxHORIZONTAL);
     wxString displacement_detection_caption_text = _L("Monitors the printed part during printing and alerts immediately if it shifts or collapses.");
     text_displacement_detection_caption = make_wrapped_label(ai_refine_panel, displacement_detection_caption_text);
-    text_displacement_detection_caption->SetFont(Label::Body_12);
     text_displacement_detection_caption->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(30), 0, 0, 0);
     line_sizer->Add(text_displacement_detection_caption, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
@@ -1257,7 +1246,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
         "Pauses printing when build plate misalignment is detected."
     );
     text_plate_mark_caption = make_wrapped_label(parent, caption_text);
-    text_plate_mark_caption->SetFont(Label::Body_12);
     text_plate_mark_caption->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(38), 0, 0, 0);
     line_sizer->Add(text_plate_mark_caption, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(0));
@@ -1279,7 +1267,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
 
     line_sizer = new wxBoxSizer(wxHORIZONTAL);
     text_plate_build_caption = make_wrapped_label(parent, _L("Ensures the build plate type and placement are correct."));
-    text_plate_build_caption->SetFont(Label::Body_12);
     text_plate_build_caption->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(5), 0, 0, 0);
     line_sizer->Add(text_plate_build_caption, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
@@ -1297,7 +1284,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
 
     line_sizer = new wxBoxSizer(wxHORIZONTAL);
     text_plate_type_caption = make_wrapped_label(parent, _L("Pauses printing when the detected build plate type does not match the selected one."));
-    text_plate_type_caption->SetFont(Label::Body_12);
     text_plate_type_caption->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(38), 0, 0, 0);
     line_sizer->Add(text_plate_type_caption, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(0));
@@ -1315,7 +1301,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
 
     line_sizer = new wxBoxSizer(wxHORIZONTAL);
     text_plate_align_caption = make_wrapped_label(parent, _L("Pauses printing when build plate misalignment is detected."));
-    text_plate_align_caption->SetFont(Label::Body_12);
     text_plate_align_caption->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(38), 0, 0, 0);
     line_sizer->Add(text_plate_align_caption, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(0));
@@ -1350,7 +1335,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
     text_purify_air = new Label(parent, _L("Purify Air at Print End"));
     text_purify_air->SetFont(Label::Body_14);
     text_purify_air_context = make_wrapped_label(parent, wxEmptyString);
-    text_purify_air_context->SetFont(Label::Body_12);
     text_purify_air_context->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
 
     purify_air_switch_board = new SwitchBoard(parent, _L("Internal Circulation"), _L("Exhaust"), wxSize(FromDIP(300), FromDIP(26)));
@@ -1391,7 +1375,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
     line_sizer->Add(text_save_remote_print_file_to_storage, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
     text_save_remote_print_file_to_storage_explain = make_wrapped_label(parent, _L("Save the printing files initiated from Bambu Studio, Bambu Handy and MakerWorld on External Storage"));
     text_save_remote_print_file_to_storage_explain->SetForegroundColour(STATIC_TEXT_EXPLAIN_COL);
-    text_save_remote_print_file_to_storage_explain->SetFont(Label::Body_12);
 
     sizer->Add(line_sizer, 0, wxEXPAND | wxLEFT | wxRIGHT, FromDIP(18));
     sizer->Add(text_save_remote_print_file_to_storage_explain, 0, wxEXPAND | wxLEFT, FromDIP(58));
@@ -1448,7 +1431,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
     line_sizer = new wxBoxSizer(wxHORIZONTAL);
     wxString nozzle_blob_caption_text = _L("Checks if the nozzle is clumping by filament or other foreign objects.");
     text_nozzle_blob_caption = make_wrapped_label(parent, nozzle_blob_caption_text);
-    text_nozzle_blob_caption->SetFont(Label::Body_12);
     text_nozzle_blob_caption->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(30), 0, 0, 0);
     line_sizer->Add(text_nozzle_blob_caption, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(0));
@@ -1474,7 +1456,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
     line_sizer = new wxBoxSizer(wxHORIZONTAL);
     wxString smart_nozzle_blob_caption_text = _L("Checks if the nozzle is clumping by filament or other foreign objects.");
     text_smart_nozzle_blob_mode_desc = make_wrapped_label(parent, smart_nozzle_blob_caption_text);
-    text_smart_nozzle_blob_mode_desc->SetFont(Label::Body_12);
     text_smart_nozzle_blob_mode_desc->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     // Align caption with the section title above (both use a 5px leading spacer + 5px
     // label left padding under the same 18px outer margin), per figma N1-9 #10100-23113.
@@ -1511,7 +1492,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
     text_open_door = new Label(parent, _L("Open Door Detection"));
     text_open_door->SetFont(Label::Body_14);
     text_open_door_caption = make_wrapped_label(parent, _L("Choose the behavior when the door is opened during tasks."));
-    text_open_door_caption->SetFont(Label::Body_12);
     open_door_switch_board = new SwitchBoard(parent, _L("Notification"), _L("Pause printing"), wxSize(FromDIP(200), FromDIP(26)));
     open_door_switch_board->Disable();
     line_sizer->Add(FromDIP(5), 0, 0, 0);
@@ -1538,7 +1518,6 @@ wxBoxSizer* PrintOptionsDialog::create_settings_group(wxWindow* parent)
 
     line_sizer = new wxBoxSizer(wxHORIZONTAL);
     Label* text_snapshot_caption = make_wrapped_label(parent, _L("Automatically capture and upload print photos, showing defects during printing and the final result for remote viewing."));
-    text_snapshot_caption->SetFont(Label::Body_12);
     text_snapshot_caption->SetForegroundColour(STATIC_TEXT_CAPTION_COL);
     line_sizer->Add(FromDIP(38), 0, 0, 0);
     line_sizer->Add(text_snapshot_caption, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(0));

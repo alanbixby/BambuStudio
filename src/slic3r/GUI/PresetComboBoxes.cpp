@@ -117,12 +117,6 @@ PresetComboBox::PresetComboBox(wxWindow* parent, Preset::Type preset_type, const
     default: break;
     }
 
-    // Keep preset-name preferred width separate from content-fitting enum
-    // combos. Flexible parent layouts can clear the constructor's hard width
-    // without losing this desired-width hint; other callers retain their size.
-    SetPreferredWidth(size.x);
-    SetFitContentWidth(false);
-
     m_bitmapCompatible   = ScalableBitmap(this, "flag_green");
     m_bitmapIncompatible = ScalableBitmap(this, "flag_red");
 
@@ -871,7 +865,7 @@ PlaterPresetComboBox::PlaterPresetComboBox(wxWindow *parent, Preset::Type preset
     // BBS
     if (m_type == Preset::TYPE_FILAMENT) {
         int em = wxGetApp().em_unit();
-        clr_picker = new wxBitmapButton(parent, wxID_ANY, {}, wxDefaultPosition, get_extruder_color_icon_size(true), wxBU_EXACTFIT | wxBU_AUTODRAW | wxBORDER_NONE);
+        clr_picker = new wxBitmapButton(parent, wxID_ANY, {}, wxDefaultPosition, wxSize(FromDIP(20), FromDIP(20)), wxBU_EXACTFIT | wxBU_AUTODRAW | wxBORDER_NONE);
         clr_picker->SetBackgroundColour(StateColor::darkModeColorFor(*wxWHITE));
         clr_picker->SetToolTip(_L("Click to pick filament color"));
         clr_picker->Bind(wxEVT_BUTTON, [this](wxCommandEvent& e) {
@@ -1148,9 +1142,6 @@ void PlaterPresetComboBox::update()
         std::vector<wxBitmap *> bitmaps = get_extruder_color_icons(true);
         if (m_filament_idx < bitmaps.size()) {
             clr_picker->SetBitmap(*bitmaps[m_filament_idx]);
-            // Drop the old explicit 20-DIP request; native best size includes
-            // the bitmap's logical size and any GTK button chrome.
-            clr_picker->SetInitialSize(wxDefaultSize);
         } else {
             return;
         }
@@ -1467,7 +1458,7 @@ void PlaterPresetComboBox::msw_rescale()
     SetMinSize({-1, 30 * m_em_unit / 10});
 
     if (clr_picker)
-        clr_picker->SetMinSize(get_extruder_color_icon_size(true));
+        clr_picker->SetSize(20 * m_em_unit / 10, 20 * m_em_unit / 10);
     // BBS
     if (edit_btn != nullptr)
         edit_btn->msw_rescale();

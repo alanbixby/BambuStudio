@@ -2320,9 +2320,6 @@ void PresetSelectorPanel::rebuild_combo(PresetComboBox *&cb, wxBoxSizer *column,
 
     const int em = em_unit(this);
     cb           = new PresetComboBox(this, m_type, wxSize(em * 35, -1), bundle);
-    // Preserve 35 em as a desired width, while allowing both 1:1 columns to
-    // shrink fairly within the dialog instead of starving the right column.
-    cb->SetMinSize(wxSize(-1, -1));
 
     // Snapshot the raw pointer into a plain local for the lambda to capture by value: cb is a
     // reference to the member pointer, which is repointed at a fresh combo on the next rebuild

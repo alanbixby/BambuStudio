@@ -37,8 +37,6 @@ public:
     // auto-rescale on DPI change. Caller should recreate items after DPI change.
     void SetKeepDropArrow(bool keep) { m_keep_drop_arrow = keep; }
 
-    virtual bool SetFont(wxFont const & font) override;
-
 public:
     int Append(const wxString &item, const wxBitmap &bitmap = wxNullBitmap, int item_style = 0);
     int Append(const wxString &item, const wxBitmap &bitmap, void *clientData, int item_style = 0);
@@ -83,7 +81,6 @@ public:
     bool     is_drop_down(){return drop_down;}
     void     DeleteOneItem(unsigned int pos) { DoDeleteOneItem(pos); }
 protected:
-    wxSize DoGetBestSize() const override;
     virtual int  DoInsertItems(const wxArrayStringsAdapter &items,
                                unsigned int                 pos,
                                void **                      clientData,

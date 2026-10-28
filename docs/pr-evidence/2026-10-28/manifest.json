@@ -1,0 +1,325 @@
+{
+  "assembly_sidebar_toggle": {
+    "title": "Assembly sidebar toggle",
+    "limitations": [
+      "Recorded 144-DPI XWayland session only. This pair does not demonstrate the separate GLX fix."
+    ],
+    "images": [
+      {
+        "caption": "Before: Assembly Structure overlaps the sidebar toggle. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical source build before sidebar-clearance fix; exact baseline ELF not asserted.",
+        "original_sha256": "49535d062986f8d888db5c3cd01277feae190b77eeb25d71ef6cbab161c0b3ad",
+        "crop_box": [
+          0,
+          0,
+          590,
+          300
+        ],
+        "output_sha256": "0adbc66fc62e3fa1108fa7d56014589ed82a7a92369f88f3e2eb03f6734843b2",
+        "path": "docs/pr-evidence/2026-10-28/assembly-sidebar-before.png"
+      },
+      {
+        "caption": "After: Assembly Structure clears the sidebar toggle and return control. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical combined source build; assembly-sidebar.md records ELF c3b37c303ab0f716d87c021c4ffb544f7270530f8d64cba094d9bed5b740dc28; bundle f4235d4b569f.",
+        "original_sha256": "20531d97bda932d02ede7d3221b79b053b3312e038ee0debd4006c114b5e43b1",
+        "crop_box": [
+          0,
+          0,
+          590,
+          300
+        ],
+        "output_sha256": "1e6ae9f87eee27a96de1f87e1102bd9ff8be77878ec7125c150d4b5743cb90b1",
+        "path": "docs/pr-evidence/2026-10-28/assembly-sidebar-after.png"
+      }
+    ]
+  },
+  "glx_return": {
+    "title": "GLX Assembly return",
+    "limitations": [
+      "These are before/after navigation states of the fixed build, not unfixed/fixed crash screenshots.",
+      "A still image cannot prove process survival or GLX correctness. Runtime trace and round-trip evidence must be cited separately."
+    ],
+    "images": [
+      {
+        "caption": "Before clicking Return: Assembly view during the fifth normal-launch round trip in the fixed historical build. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical combined installed source build; assembly-glx-return.md records ELF 1cf263af189904d43ee5373f8fa4d74a753fa1e1e3e93ddcbaee1c3afe82af59; bundle 503473e74f939350e91288ab1ece67e5abd7b15e442cef548712659725d062fa.",
+        "original_sha256": "332f156cd47e018863210d08a788417b1a7e42394a595dc3a4da885e6344202c",
+        "crop_box": [
+          0,
+          42,
+          3840,
+          2060
+        ],
+        "output_sha256": "5a7460452bf77a40ef8ce3535fa3497e9c2bb3311b6960ab01d647743c69d67c",
+        "path": "docs/pr-evidence/2026-10-28/glx-return-assembly.png"
+      },
+      {
+        "caption": "After clicking Return: Prepare renders both plates and restores its sidebar during the same fifth normal-launch round trip. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical combined installed source build; assembly-glx-return.md records ELF 1cf263af189904d43ee5373f8fa4d74a753fa1e1e3e93ddcbaee1c3afe82af59; bundle 503473e74f939350e91288ab1ece67e5abd7b15e442cef548712659725d062fa.",
+        "original_sha256": "91b1d4d9bd2652ec3dd6c27d493fabd56c705596307d4080d04ecbe42287c26c",
+        "crop_box": [
+          0,
+          42,
+          3840,
+          2060
+        ],
+        "output_sha256": "0155de8464d432851401a6faff1b569bc710f9ba5d4b0f765c5894bc1201523f",
+        "path": "docs/pr-evidence/2026-10-28/glx-return-prepare.png"
+      }
+    ]
+  },
+  "project_metadata_initial_load": {
+    "title": "Project metadata initial load",
+    "limitations": [
+      "Different window sizes and project save names; this is contextual evidence, not a controlled same-file timed reproduction.",
+      "Still images do not establish initial-load timing. Native metadata publication and resource handshake cannot be isolated from this combined build.",
+      "Author line and account handles excluded by cropping. Description validation relies on the saved runtime checks."
+    ],
+    "images": [
+      {
+        "caption": "Before: Historical user capture shows Project headings with missing project images and description. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical user attachment; executable identity and complete patch set unverified.",
+        "original_sha256": "22a0745c6eb066d86ded772a080eb3a6674c7647f3b3c13abeba43bebe466601",
+        "crop_box": [
+          570,
+          120,
+          1440,
+          520
+        ],
+        "output_sha256": "419b69dffafef1e3903422f5b64f6f941e9ecad6d9a896ed7a3f191f26703ecb",
+        "path": "docs/pr-evidence/2026-10-28/project-metadata-before.png"
+      },
+      {
+        "caption": "After: Historical combined source candidate shows loaded project gallery and title; retained runtime notes record direct load without Edit/back. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical combined source candidate, v02.08.04.57; source-first-runtime.json associates first-source captures with candidate ELF d6a6a6e89d850fc8c69a7b069ea423f2819e77d0e0d8096394fd8ce8d0ef275b.",
+        "original_sha256": "1327270276f3d114a625c2436d6f2e0e3694318448df964f6fd9636257fd0a16",
+        "crop_box": [
+          680,
+          200,
+          2230,
+          980
+        ],
+        "output_sha256": "b62a518e420f30de3c8b1a5ae40a309f6fa3748dc2756ec279befce88b363ae9",
+        "path": "docs/pr-evidence/2026-10-28/project-metadata-after.png"
+      }
+    ]
+  },
+  "project_dark_text_table": {
+    "title": "Project dark text and table layout",
+    "limitations": [
+      "The corrected table bottom and following heading are below the saved screenshot; full table-flow visual proof is unavailable here.",
+      "Use project-live.txt and source-final-project.txt for the recorded table/figure/following-content geometry.",
+      "This resource capture predates the cleaned source PR; it cannot establish isolated PR acceptance."
+    ],
+    "images": [
+      {
+        "caption": "Before: Historical user capture shows low-contrast dark text/links and following headings overlapping the imported table. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical user attachment; executable identity and complete patch set unverified.",
+        "original_sha256": "764b59039d56c53c2882f5f2154c98d117189ff0907e091a2279c12313fbb0dd",
+        "crop_box": [
+          0,
+          200,
+          1270,
+          1380
+        ],
+        "output_sha256": "681953566972bc2ff1c427b3e4117540fd17ee99c35a4599952a88b692fb8831",
+        "path": "docs/pr-evidence/2026-10-28/project-dark-table-before.png"
+      },
+      {
+        "caption": "After: Historical corrected Project resource capture shows lighter dark-mode body text and links with the visible upper table rows. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical corrected Project resource/legacy configuration; project-live-fixed.png has no embedded executable identity.",
+        "original_sha256": "65aafc2dc7936487e9439a0be17a7ef67f931379cdb0ca179fe9829c91a0e216",
+        "crop_box": [
+          1440,
+          1260,
+          2710,
+          2060
+        ],
+        "output_sha256": "49141ca5436fc9699a706cce36ba661981c11c35d64a5711bcfcecd6d1026b4e",
+        "path": "docs/pr-evidence/2026-10-28/project-dark-table-after.png"
+      }
+    ]
+  },
+  "print_options_responsive_wrapping": {
+    "title": "Print Options responsive wrapping",
+    "limitations": [
+      "Captures use different dialog allocations; this shows the resulting responsive layout, not equal-width comparison.",
+      "Lower options require scrolling; bottom-scroll capture is provided separately. No option values were changed during the retained checks."
+    ],
+    "images": [
+      {
+        "caption": "Before: Historical Print Options capture shows ellipsized Medium selections and clipped long help text. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical pre-source layout checkpoint v02.08.04.57; exact ELF not attested by the image.",
+        "original_sha256": "c1a5d5fb5d1dd193c3d5e86d4b5265406d5b174e1fa1989fcafd25069cd76abd",
+        "crop_box": [
+          0,
+          0,
+          480,
+          478
+        ],
+        "output_sha256": "24354d5d23969b33f87c3201900415b587780add07935f67faf64fa25333d65b",
+        "path": "docs/pr-evidence/2026-10-28/print-options-before.png"
+      },
+      {
+        "caption": "After: Historical combined installed source build shows full Medium selections and wrapped introductory text at the recorded 144 DPI. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical combined installed source build v02.08.04.57; source-runtime.md records initial installed ELF 6028006e21ff1a120958beb9817b5e8052a1f45402a57b8ed851c9298f3aba9f, bundle 89db7f47cb9082bd6eafcd4fe6550947cadc363361ae231d56209b32d5dc1e92.",
+        "original_sha256": "b2990acf682ac020940202235b77039671a3a24a2d290feb20da5dc5590f2e46",
+        "crop_box": [
+          0,
+          0,
+          720,
+          738
+        ],
+        "output_sha256": "971615efb14ec70e43261657b222d7236c370d9c0d065f3d959dc4c7f5d36c0b",
+        "path": "docs/pr-evidence/2026-10-28/print-options-after.png"
+      },
+      {
+        "caption": "Supplemental: Historical first source candidate scrolled to the last Print Status Snapshot option. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical combined source candidate, v02.08.04.57; source-first-runtime.json associates first-source captures with candidate ELF d6a6a6e89d850fc8c69a7b069ea423f2819e77d0e0d8096394fd8ce8d0ef275b.",
+        "original_sha256": "858a108d7f979b839741e26176fdb5eacf99acc3f425ddf130a5fbff04b7ccd7",
+        "crop_box": [
+          0,
+          0,
+          720,
+          738
+        ],
+        "output_sha256": "d1cc6a407d6684d1223c72d2b7bd9ef09e1e0cc33aed3f0edfd91d867c4a1bd2",
+        "path": "docs/pr-evidence/2026-10-28/print-options-bottom.png"
+      }
+    ]
+  },
+  "settings_field_width": {
+    "title": "Settings field width",
+    "limitations": [
+      "Recorded English 144-DPI XWayland layout only; not every settings row/locale.",
+      "Retained native measurements: field 216 to 262 pixels at group width 736; configuration/values were unchanged by the visual checks."
+    ],
+    "images": [
+      {
+        "caption": "Before: Historical settings fields leave spare panel width and truncate None(allow paint). Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical pre-field-width source checkpoint v02.08.04.57; exact ELF not asserted.",
+        "original_sha256": "33dda88fd84a398bfc7564c082f3a17348324fd2e0382bee673f90fd6a9017e7",
+        "crop_box": [
+          0,
+          0,
+          757,
+          505
+        ],
+        "output_sha256": "a115c8a790305bd8c350f36888dbd20cfc3889849d0572ef1e8fc5ae83801e6d",
+        "path": "docs/pr-evidence/2026-10-28/settings-field-width-before.png"
+      },
+      {
+        "caption": "After: Historical combined build widens eligible fields and displays None(allow paint) in full. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical combined source build; settings-field-width.md records ELF e78f1b259a4b236ad0cfce0cd115ca20f3ffe7aca20e1a90941d77f17127d0e1; bundle 12e7aeba9a8a.",
+        "original_sha256": "2456e6dfcc72ec4f81030a4d416bf64ce79ac0e5c1ae973a54121edd61c40fd9",
+        "crop_box": [
+          0,
+          0,
+          757,
+          505
+        ],
+        "output_sha256": "aa3c9c0b126170bd6312d015a69cb9b3703872ec5bb6b397fb5af766333413c2",
+        "path": "docs/pr-evidence/2026-10-28/settings-field-width-after.png"
+      }
+    ]
+  },
+  "camera_ams_fit": {
+    "title": "Camera and AMS fit",
+    "limitations": [
+      "Primary images show the Control/AMS column only. Full camera frames were not retained in public crops because a physical label/barcode is visible.",
+      "Supplemental crops show upper camera/Control column widths only; neither demonstrates the full camera aspect ratio.",
+      "source-runtime.md separately records 14:9 feed, equal 1311px camera/Control height, and matching AMS viewport/document sizes.",
+      "Source checkpoint baseline already includes earlier legacy label/AMS fixes; this is not an untouched upstream baseline."
+    ],
+    "images": [
+      {
+        "caption": "Before: Historical pre-source Device layout gives Control/AMS a narrow column while the camera consumes most of the page. Camera image excluded for privacy. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical pre-source layout checkpoint v02.08.04.57; exact ELF not attested.",
+        "original_sha256": "6327225573353f751716668145e07f2c0826432292b89cf7858e58542216a9b7",
+        "crop_box": [
+          3140,
+          100,
+          3840,
+          800
+        ],
+        "output_sha256": "8255ddd9f1f154701b7da74bf92756a73ce05764777c5d1315a8e7bbdc9a63b3",
+        "path": "docs/pr-evidence/2026-10-28/camera-ams-before.png"
+      },
+      {
+        "caption": "After: Historical combined source build gives Control/AMS usable width and displays the complete AMS diagram. Camera image excluded for privacy. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical combined installed source build v02.08.04.57; source-runtime.md records initial installed ELF 6028006e21ff1a120958beb9817b5e8052a1f45402a57b8ed851c9298f3aba9f, bundle 89db7f47cb9082bd6eafcd4fe6550947cadc363361ae231d56209b32d5dc1e92.",
+        "original_sha256": "7f2e195a7f8379587d74d445e3c0732467e3bec9bd5af423e78d7ff92ca39eaa",
+        "crop_box": [
+          2280,
+          100,
+          3840,
+          1435
+        ],
+        "output_sha256": "00a7773254919bb28c91545d6437005b658239506a49c9082e2ee8090f005c78",
+        "path": "docs/pr-evidence/2026-10-28/camera-ams-after.png"
+      },
+      {
+        "caption": "Supplemental before: Historical upper camera and Control columns show the original width allocation; lower camera is omitted. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical pre-source layout checkpoint.",
+        "original_sha256": "6327225573353f751716668145e07f2c0826432292b89cf7858e58542216a9b7",
+        "crop_box": [
+          400,
+          100,
+          3840,
+          620
+        ],
+        "output_sha256": "5ecda27bf9fb030e2a29fb9fe7656e6e103bc98deb199e45d58c30f815ebeaae",
+        "path": "docs/pr-evidence/2026-10-28/camera-columns-before.png"
+      },
+      {
+        "caption": "Supplemental after: Historical upper camera and Control columns show the balanced width allocation; lower camera is omitted. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical combined installed source build v02.08.04.57; source-runtime.md records initial installed ELF 6028006e21ff1a120958beb9817b5e8052a1f45402a57b8ed851c9298f3aba9f, bundle 89db7f47cb9082bd6eafcd4fe6550947cadc363361ae231d56209b32d5dc1e92.",
+        "original_sha256": "7f2e195a7f8379587d74d445e3c0732467e3bec9bd5af423e78d7ff92ca39eaa",
+        "crop_box": [
+          400,
+          100,
+          3840,
+          620
+        ],
+        "output_sha256": "6336edd2457967a6e84c100cafdb4017f55baa226bdaee01277a13de24543a49",
+        "path": "docs/pr-evidence/2026-10-28/camera-columns-after.png"
+      }
+    ]
+  },
+  "native_dpi_label_headings": {
+    "title": "Native DPI and label headings",
+    "limitations": [
+      "This pair demonstrates the historical label fix, not the later native wxGTK DPI conversion.",
+      "Do not caption this pair as proof of wx FromDIP behavior or cleaned native source PR acceptance.",
+      "source-runtime.md records later source-build heading/font geometry separately; fresh cleaned native calibration screenshots are still required."
+    ],
+    "images": [
+      {
+        "caption": "Before: Historical calibration heading wraps/clips and Wiki is truncated. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical initial v02.08.04.57 configuration; baseline.txt documents failed text/allocation measurements.",
+        "original_sha256": "7d9e8dfc56e64eafc1010d9a79dd0c775f1bbb4795094441ba3ca7db3100dc43",
+        "crop_box": [
+          0,
+          0,
+          1180,
+          105
+        ],
+        "output_sha256": "7d9e8dfc56e64eafc1010d9a79dd0c775f1bbb4795094441ba3ca7db3100dc43",
+        "path": "docs/pr-evidence/2026-10-28/native-label-heading-before.png"
+      },
+      {
+        "caption": "After: Historical legacy GTK label workaround displays Flow Dynamics Calibration and Wiki fully. Historical combined build evidence; not acceptance evidence for an independently rebuilt PR. Cleaned native-build captures are pending.",
+        "build": "Historical legacy label/shim configuration; README and native-final-calibration.txt document it; exact screenshot ELF identity unverified.",
+        "original_sha256": "893e583da92a50ba49685b114b8ff0c2d783c6313d19152686b6e1bbc2b6a2bb",
+        "crop_box": [
+          0,
+          0,
+          1180,
+          105
+        ],
+        "output_sha256": "893e583da92a50ba49685b114b8ff0c2d783c6313d19152686b6e1bbc2b6a2bb",
+        "path": "docs/pr-evidence/2026-10-28/native-label-heading-after.png"
+      }
+    ]
+  }
+}

@@ -56,6 +56,8 @@ public:
     // body must contain: module, submod, action, payload.
     void DispatchCommand(const nlohmann::json& body);
     void SetContentSizeChangedHandler(ContentSizeChangedHandler handler) { m_content_size_changed_handler = std::move(handler); }
+    // Scales the embedded AmsControlWeb page and its host size together.
+    void SetAmsControlWebFitZoom(double zoom);
 
 
     void on_sys_color_changed();
@@ -109,6 +111,9 @@ private:
     // Last web-reported size in DPI-independent CSS pixels (before FromDIP()).
     // Used to rebuild the physical min size at the current DPI on show.
     wxSize                            m_last_logical_content_size{ wxDefaultSize };
+    double                            m_ams_fit_zoom{ 1.0 };
+    // Zoom WebKit used before any fit zoom, read from the first live view.
+    double                            m_ams_base_zoom{ 0.0 };
     std::deque<std::int64_t>          m_renderer_recoveries;
     std::deque<std::int64_t>          m_browser_recoveries;
     std::deque<std::int64_t>          m_ready_recoveries;

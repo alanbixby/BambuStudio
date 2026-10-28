@@ -861,7 +861,9 @@ struct Sidebar::priv
 void Sidebar::priv::layout_printer(bool isBBL, bool isDual)
 {
     isDual = isDual && isBBL;  // It indicates a multi-extruder layout.
-    // Printer - preset
+    // Printer - preset. Its name may ellipsize to make room for the measured
+    // plate selector; retain the requested minimum height.
+    combo_printer->SetMinSize(wxSize(-1, combo_printer->GetMinHeight()));
     if (auto sizer = static_cast<wxBoxSizer *>(panel_printer_preset->GetSizer());
             sizer == nullptr || isBBL != (sizer->GetOrientation() == wxVERTICAL)) {
         wxBoxSizer *hsizer_printer_btn = new wxBoxSizer(wxHORIZONTAL);
@@ -893,7 +895,7 @@ void Sidebar::priv::layout_printer(bool isBBL, bool isDual)
     if (vsizer_printer->GetItemCount() == 0) {
         wxBoxSizer *hsizer_printer = new wxBoxSizer(wxHORIZONTAL);
         hsizer_printer->Add(panel_printer_preset, 1, wxEXPAND, 0);
-        hsizer_printer->Add(panel_printer_bed, 0, wxLEFT | wxEXPAND, FromDIP(4));
+        hsizer_printer->Add(panel_printer_bed, 1, wxLEFT | wxEXPAND, FromDIP(4));
         hsizer_printer->Add(btn_sync_printer, 0, wxLEFT | wxEXPAND, FromDIP(4));
         vsizer_printer->Add(hsizer_printer, 0, wxEXPAND | wxLEFT | wxRIGHT | wxTOP, FromDIP(4));
         vsizer_printer->AddSpacer(FromDIP(4));
@@ -978,15 +980,18 @@ void Sidebar::priv::adjust_filament_title_layout()
         return;
     }
 
+    // Ideal width = text + the FromDIP(6) horizontal padding set on both buttons,
+    // so the label is not squeezed against the rounded border.
+    const int text_padding = 2 * FromDIP(6);
     int purge_ideal_width = 0, flush_ideal_width = 0;
     if (m_purge_mode_btn->IsShown()) {
-        purge_ideal_width = m_purge_mode_btn->GetTextRect().width + 10;
+        purge_ideal_width = m_purge_mode_btn->GetTextRect().width + text_padding;
     }
     if (m_flushing_volume_btn->IsShown()) {
-        flush_ideal_width = m_flushing_volume_btn->GetTextRect().width + 10;
+        flush_ideal_width = m_flushing_volume_btn->GetTextRect().width + text_padding;
     }
 
-    int button_spacing    = FromDIP(4);
+    int button_spacing    = FromDIP(12);
     int total_spacing     = button_spacing * (button_count - 1);
     int ideal_total_width = purge_ideal_width + flush_ideal_width + total_spacing;
 
@@ -2714,12 +2719,19 @@ Sidebar::Sidebar(Plater *parent)
         wxBoxSizer *bed_type_hsizer = new wxBoxSizer(wxHORIZONTAL);
             bed_type_hsizer->AddStretchSpacer(1);
             bed_type_hsizer->Add(p->image_printer_bed, 1, wxEXPAND | wxTOP, FromDIP(8));
-            bed_type_hsizer->Add(wiki_bed, 1, wxTOP, FromDIP(2));
+            bed_type_hsizer->AddStretchSpacer(1);
         bed_type_vsizer->Add(bed_type_hsizer, 0, wxEXPAND | wxLEFT | wxRIGHT, FromDIP(8));
         bed_type_vsizer->Add(p->combo_printer_bed, 0, wxEXPAND | wxALL, FromDIP(2));
         bed_type_vsizer->AddStretchSpacer(1);
 
         p->panel_printer_bed->SetSizer(bed_type_vsizer);
+        // Pin the wiki icon to the printer card's edit-icon corner (4 DIP down,
+        // 14 DIP in, clear of the badge) rather than floating with the
+        // vertically centred thumbnail row.
+        p->panel_printer_bed->Bind(wxEVT_SIZE, [this, wiki_bed](wxSizeEvent &e) {
+            e.Skip();
+            wiki_bed->Move(p->panel_printer_bed->GetClientSize().x - FromDIP(14) - wiki_bed->GetSize().x, FromDIP(4));
+        });
 
         AppConfig *app_config = wxGetApp().app_config;
         std::string str_bed_type = app_config->get("curr_bed_type");
@@ -2905,7 +2917,6 @@ Sidebar::Sidebar(Plater *parent)
 
     bSizer39->Add(p->m_purge_mode_btn, 0, wxALIGN_CENTER_VERTICAL, FromDIP(4));
     //bSizer39->Hide(p->m_purge_mode_btn);
-    bSizer39->Add(FromDIP(12), 0, 0, 0, 0);
 
     // BBS
     // add wiping dialog
@@ -2942,9 +2953,10 @@ Sidebar::Sidebar(Plater *parent)
             p->plater->update();
         }));
 
-    bSizer39->Add(p->m_flushing_volume_btn, 0, wxALIGN_CENTER_VERTICAL, FromDIP(4));
+    // The gap between the two buttons is the flush button's left border, so it collapses
+    // when that button is hidden; the trailing inset matches the Filament subtitle row's settings gear.
+    bSizer39->Add(p->m_flushing_volume_btn, 0, wxALIGN_CENTER_VERTICAL | wxLEFT, FromDIP(12));
     bSizer39->Hide(p->m_flushing_volume_btn);
-    bSizer39->Add(FromDIP(12), 0, 0, 0, 0 );
 
     bSizer39->Add(FromDIP(16), 0, 0, 0, 0);
 

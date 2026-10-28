@@ -7,6 +7,7 @@
 #include <wx/string.h>
 #include <wx/sizer.h>
 #include <wx/dialog.h>
+#include <vector>
 
 #include "GUI_Utils.hpp"
 #include "wxExtensions.hpp"
@@ -227,6 +228,10 @@ public:
     void update_smart_nozzle_blob_mode_desc(int selection);
 
 private:
+    std::vector<Label *> m_wrapped_labels;
+    bool m_laying_out_options{false};
+    void layout_options();
+
     void UpdateOptionSavePrintFileToStorage(MachineObject *obj);
     void UpdateOptionOpenDoorCheck(MachineObject *obj);
     void UpdateOptionSnapshot(MachineObject *obj);

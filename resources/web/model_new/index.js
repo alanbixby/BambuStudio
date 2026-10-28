@@ -1,13 +1,61 @@
 var m_ModelID=null;
 
+// Per-document state: native pushes can arrive while scripts in <head> load,
+// before the destination elements exist. The Linux wx bridge is installed
+// asynchronously, so a single DOM-ready request is not a reliable handshake.
+var projectDOMReady = false;
+var pendingProjectMessage = null;
+var projectInfoReceived = false;
+var projectInfoTimer = null;
+var projectInfoAttempt = 0;
+var projectInfoRetryDelays = [100, 250, 500, 1000, 2000, 4000, 8000];
+window.bambuProjectPageState = {
+  domReady: false, queuedMessages: 0, requestAttempts: 0,
+  requestsSent: 0, payloadsReceived: 0, lastCommand: null
+};
+
+function RetryProjectInfo() {
+  if (projectInfoReceived) return;
+  window.bambuProjectPageState.requestAttempts++;
+  // Do not call globalapi's asynchronous sender until the bridge exists.
+  if (window.wx && typeof window.wx.postMessage === 'function') {
+    window.bambuProjectPageState.requestsSent++;
+    RequestProjectInfo();
+  }
+  if (!projectInfoReceived && projectInfoAttempt < projectInfoRetryDelays.length) {
+    projectInfoTimer = setTimeout(RetryProjectInfo, projectInfoRetryDelays[projectInfoAttempt++]);
+  }
+}
+
 $(function () {
-  // 向宿主请求数据（握手）
+  projectDOMReady = true;
+  window.bambuProjectPageState.domReady = true;
   TranslatePage();
-  RequestProjectInfo();
+  if (pendingProjectMessage) {
+    const pending = pendingProjectMessage;
+    pendingProjectMessage = null;
+    HandleStudio(pending);
+  }
+  if (!projectInfoReceived) RetryProjectInfo();
 });
 
 function HandleStudio(pVal)
 {
+  if (!pVal || typeof pVal !== 'object') return;
+  const incomingCommand = pVal.command;
+  if (incomingCommand === 'show_3mf_info' || incomingCommand === 'clear_3mf_info') {
+    window.bambuProjectPageState.lastCommand = incomingCommand;
+    if (!projectDOMReady) {
+      pendingProjectMessage = pVal;
+      window.bambuProjectPageState.queuedMessages++;
+      return;
+    }
+  }
+  if (incomingCommand === 'show_3mf_info') {
+    projectInfoReceived = true;
+    window.bambuProjectPageState.payloadsReceived++;
+    clearTimeout(projectInfoTimer);
+  }
 	let strCmd=pVal['command'];
 	
 	if(strCmd=='show_3mf_info')

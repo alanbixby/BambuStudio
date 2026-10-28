@@ -198,10 +198,21 @@ wxString ComboBox::GetTextLabel() const
 
 bool ComboBox::SetFont(wxFont const& font)
 {
-    if (GetTextCtrl() && GetTextCtrl()->IsShown())
-        return GetTextCtrl()->SetFont(font);
-    else
-        return TextInput::SetFont(font);
+    // Refresh both the entry font and the custom label's cached metrics.
+    return TextInput::SetFont(font);
+}
+
+wxSize ComboBox::DoGetBestSize() const
+{
+    wxSize size = TextInput::DoGetBestSize();
+    if (GetTextCtrl() && !GetTextCtrl()->IsShown()) {
+        for (const Item& item : items) {
+            const wxSize item_size = MeasureContent(item.text);
+            size.x = std::max(size.x, item_size.x);
+            size.y = std::max(size.y, item_size.y);
+        }
+    }
+    return size;
 }
 
 int ComboBox::Append(const wxString &item, const wxBitmap &bitmap, int style)
@@ -229,6 +240,7 @@ int ComboBox::Append(const wxString &text, const wxBitmap &bitmap, const wxStrin
     Item item{text, wxEmptyString, valid_bit_map, valid_bit_map, clientData, group};
     item.style = style;
     items.push_back(item);
+    InvalidateBestSize();
     SetClientDataType(wxClientData_Void);
     drop.Invalidate();
     return items.size() - 1;
@@ -237,6 +249,7 @@ int ComboBox::Append(const wxString &text, const wxBitmap &bitmap, const wxStrin
 int ComboBox::SetItems(const std::vector<DropDown::Item>& the_items)
 {
     items = the_items;
+    InvalidateBestSize();
     drop.Invalidate();
     return items.size() - 1;
 }
@@ -245,6 +258,7 @@ void ComboBox::DoClear()
 {
     SetIcon("drop_down");
     items.clear();
+    InvalidateBestSize();
     drop.Invalidate(true);
 }
 
@@ -252,6 +266,7 @@ void ComboBox::DoDeleteOneItem(unsigned int pos)
 {
     if (pos >= items.size()) return;
     items.erase(items.begin() + pos);
+    InvalidateBestSize();
     drop.Invalidate(true);
 }
 
@@ -271,6 +286,7 @@ void ComboBox::SetString(unsigned int n, wxString const &value)
 {
     if (n >= items.size()) return;
     items[n].text = value;
+    InvalidateBestSize();
     drop.Invalidate();
     if (n == drop.GetSelection()) SetLabel(value);
 }
@@ -293,6 +309,7 @@ void ComboBox::SetItemBitmap(unsigned int n, wxBitmap const &bitmap)
 {
     if (n >= items.size()) return;
     items[n].icon = (&bitmap && bitmap.IsOk()) ? bitmap : wxNullBitmap;
+    InvalidateBestSize();
     drop.Invalidate();
 }
 
@@ -305,6 +322,7 @@ int ComboBox::DoInsertItems(const wxArrayStringsAdapter &items,
     for (int i = 0; i < items.GetCount(); ++i) {
         Item item { items[i], wxEmptyString, wxNullBitmap, wxNullBitmap, clientData ? clientData[i] : NULL };
         this->items.insert(this->items.begin() + pos, item);
+        InvalidateBestSize();
         ++pos;
     }
     drop.Invalidate(true);

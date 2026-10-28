@@ -30,6 +30,8 @@
 #include <vector>
 #include <memory>
 #include <functional>
+#include <cstdint>
+#include <mutex>
 #include "Event.hpp"
 #include "libslic3r/ProjectTask.hpp"
 #include "wxExtensions.hpp"
@@ -60,6 +62,25 @@ struct project_file{
 class ProjectPanel : public wxPanel
 {
 private:
+    // Only the UI thread accesses panel fields. Workers share this small gate;
+    // posting under its mutex cannot race panel/app teardown.
+    struct ReloadState {
+        std::mutex mutex;
+        std::uint64_t generation = 0;
+        bool alive = true;
+    };
+    std::shared_ptr<ReloadState> m_reload_state = std::make_shared<ReloadState>();
+    std::uint64_t next_reload_generation();
+    static bool reload_is_current(const std::shared_ptr<ReloadState>& state, std::uint64_t generation);
+    static void post_reload_result(wxEvtHandler* dispatcher, const std::shared_ptr<ReloadState>& state,
+                                   std::uint64_t generation, std::function<void()> callback);
+    static std::string fetch_model_id(const std::string& url, const std::shared_ptr<ReloadState>& state,
+                                      std::uint64_t generation);
+    bool matches_project(const std::string& auxiliary_path, const std::string& design_id) const;
+    void dispatch_project_payload();
+    void start_model_id_lookup(std::uint64_t generation, const std::string& auxiliary_path,
+                               const std::string& design_id, const std::string& lookup_url);
+
     bool       m_web_init_completed = {false};
     bool       m_reload_already = {false};
 
@@ -95,10 +116,9 @@ public:
     void RunScript(std::string content);
     bool is_editing_page() const;
 
-    std::map<std::string, std::vector<json>> Reload(wxString aux_path);
-    std::string formatBytes(unsigned long bytes);
-    std::string get_model_id(std::string desgin_id);
-    wxString to_base64(std::string path);
+    static std::map<std::string, std::vector<json>> Reload(wxString aux_path);
+    static std::string formatBytes(unsigned long bytes);
+    static wxString to_base64(std::string path);
     void save_project(std::function<void()> on_saved = nullptr);
     void query_unsaved_changes(std::function<void(bool)> on_result);
 };

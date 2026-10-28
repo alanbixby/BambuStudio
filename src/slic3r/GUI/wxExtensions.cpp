@@ -592,6 +592,12 @@ wxBitmap* get_default_extruder_color_icon(bool thin_icon/* = false*/)
     return bitmap;
 }
 
+wxSize get_extruder_color_icon_size(bool thin_icon)
+{
+    const double em = Slic3r::GUI::wxGetApp().em_unit();
+    return wxSize(lround((thin_icon ? 2 : 4.4) * em), lround(2 * em));
+}
+
 std::vector<wxBitmap*> get_extruder_color_icons(bool thin_icon/* = false*/)
 {
     // Create the bitmap with color bars.
@@ -607,9 +613,9 @@ std::vector<wxBitmap*> get_extruder_color_icons(bool thin_icon/* = false*/)
          * So set sizes for solid_colored icons used for filament preset
          * and scale them in respect to em_unit value
          */
-        const double em          = Slic3r::GUI::wxGetApp().em_unit();
-        const int    icon_width  = lround((thin_icon ? 2 : 4.4) * em);
-        const int    icon_height = lround(2 * em);
+        const wxSize icon_size = get_extruder_color_icon_size(thin_icon);
+        const int icon_width = icon_size.x;
+        const int icon_height = icon_size.y;
 
         int index = 0;
         for (const auto &colors : readable_color_info) {
@@ -625,9 +631,9 @@ std::vector<wxBitmap*> get_extruder_color_icons(bool thin_icon/* = false*/)
         std::vector<std::string> colors = Slic3r::GUI::wxGetApp().plater()->get_extruder_colors_from_plater_config();
         if (colors.empty()) return bmps;
 
-        const double em          = Slic3r::GUI::wxGetApp().em_unit();
-        const int    icon_width  = lround((thin_icon ? 2 : 4.4) * em);
-        const int    icon_height = lround(2 * em);
+        const wxSize icon_size = get_extruder_color_icon_size(thin_icon);
+        const int icon_width = icon_size.x;
+        const int icon_height = icon_size.y;
         int index = 0;
         for (const auto &color : colors) {
             auto label = std::to_string(++index);
@@ -731,7 +737,9 @@ wxBitmap *get_extruder_color_icon(std::vector<std::string> colors, bool is_gradi
             dc.SetPen(*wxTRANSPARENT_PEN);
 
             dc.SetFont(::Label::Body_12);
-            Slic3r::GUI::WxFontUtils::get_suitable_font_size(icon_height - 2, dc);
+            Slic3r::GUI::WxFontUtils::get_suitable_font_size(icon_height - 2, icon_width - 2,
+                                                               wxString(label), dc, 1,
+                                                               std::max(1, icon_height));
 
             auto size = dc.GetTextExtent(wxString(label));
 
@@ -784,7 +792,9 @@ wxBitmap *get_extruder_color_icon(std::string color, std::string label, int icon
             dc.SelectObject(base_bitmap);
 #endif
             dc.SetFont(::Label::Body_12);
-            Slic3r::GUI::WxFontUtils::get_suitable_font_size(icon_height - 2, dc);
+            Slic3r::GUI::WxFontUtils::get_suitable_font_size(icon_height - 2, icon_width - 2,
+                                                               wxString(label), dc, 1,
+                                                               std::max(1, icon_height));
             dc.SetBackgroundMode(wxTRANSPARENT);
 
             auto size   = dc.GetTextExtent(wxString(label));

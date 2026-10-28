@@ -2506,7 +2506,9 @@ void GLCanvas3D::_exit_assembly_to_3d_view()
     const_cast<GLGizmosManager *>(&m_gizmos)->reset_all_states();
     wxGetApp().plater()->get_view3D_canvas3D()->get_gizmos_manager().reset_all_states();
     GLVolume::explosion_ratio  = 1.0;
-    wxGetApp().plater()->get_view3D_canvas3D()->reload_scene(true);
+    // The posted view-switch event reloads Prepare after leave_assemble_stack().
+    // Reloading here would rebind the shared GL context to Prepare while this
+    // Assembly frame still needs to render its overlays and swap its own window.
     {
         GLCanvas3D *                          view_3d       = wxGetApp().plater()->get_view3D_canvas3D();
         const auto& p_main_toolbar = view_3d->get_main_toolbar();
@@ -10308,6 +10310,9 @@ void GLCanvas3D::_render_assembly_steps_view()
         }
         m_assembly_steps->set_gizmo_toolbar_rect(tb_x0, tb_y0, tb_x1, tb_y1);
     }
+    // The sidebar collapse toggle is drawn at the canvas' top-left corner whenever the
+    // sidebar is docked (see _render_collapse_toolbar); its height is in canvas px.
+    m_assembly_steps->set_collapse_toolbar_bottom_y(get_collapse_toolbar_height());
     m_assembly_steps->render_main(static_cast<float>(cnv_sz.get_width()), static_cast<float>(cnv_sz.get_height()));
 }
 
@@ -10337,7 +10342,7 @@ void GLCanvas3D::_render_return_toolbar()
         const float anchor_x = m_assembly_steps->get_assembly_structure_right_x();
         if (anchor_x > 0.f) {
             window_pos_x = anchor_x + 8.0f * get_scale();
-            window_pos_y = 20.f;
+            window_pos_y = m_assembly_steps->get_assembly_structure_top_y() + 3.0f * get_scale();
         }
     }
     {//solve ui overlap issue

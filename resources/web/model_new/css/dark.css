@@ -154,3 +154,13 @@ input {
     color: hsl(0, 0%, 91%);
     border-color: hsl(0, 0%, 77%);
 }
+
+/* .text and .comment set their own light-theme colors in index.css, so they
+   do not inherit body color. Scope the read-only link rule to description IDs. */
+.text, .comment {
+  color: var(--dark-color-base-text);
+}
+#projectDescription a,
+#profileDescript a {
+  color: #81c7ff;
+}

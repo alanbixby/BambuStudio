@@ -108,6 +108,17 @@ void TextInput::Create(wxWindow *     parent,
     messureSize();
 }
 
+bool TextInput::SetFont(const wxFont& font)
+{
+    const bool changed = StaticBox::SetFont(font);
+    if (text_ctrl) {
+        text_ctrl->SetFont(font);
+        messureSize();
+        Refresh();
+    }
+    return changed;
+}
+
 void TextInput::SetCornerRadius(double radius)
 {
     this->radius = radius;
@@ -208,14 +219,9 @@ bool TextInput::Enable(bool enable)
 
 void TextInput::SetMinSize(const wxSize& size)
 {
-    wxSize size2 = size;
-    if (size2.y < 0) {
-#ifdef __WXMAC__
-        if (GetPeer()) // peer is not ready in Create on mac
-#endif
-        size2.y = GetSize().y;
-    }
-    wxWindow::SetMinSize(size2);
+    // An unspecified height remains unspecified; do not freeze an early GTK
+    // allocation as the minimum before the final font has been applied.
+    wxWindow::SetMinSize(size);
 }
 
 void TextInput::DoSetSize(int x, int y, int width, int height, int sizeFlags)
@@ -392,34 +398,111 @@ void TextInput::render(wxDC& dc)
     }
 }
 
+wxSize TextInput::MeasureContent(const wxString& label) const
+{
+    if (!text_ctrl) return wxSize(0, 0);
+    wxClientDC dc(const_cast<TextInput*>(this));
+    dc.SetFont(GetFont());
+    wxSize label_size = dc.GetTextExtent(label);
+    wxSize tips_size(0, 0);
+    if (!static_tips.empty()) {
+        wxFont tips_font = GetFont();
+        tips_font.SetPointSize(std::max(1, tips_font.GetPointSize() - 1));
+        dc.SetFont(tips_font);
+        tips_size = dc.GetTextExtent(static_tips);
+        dc.SetFont(GetFont());
+    }
+
+    // Match render(): the first icon has a 20% trailing gap; the secondary
+    // icon has a quarter-width leading gap. These are logical bitmap sizes.
+    int width = 5;
+    int height = 0;
+    if (icon.bmp().IsOk()) {
+        const wxSize sz = icon.GetBmpSize();
+        width += int(sz.x + sz.x * 0.2);
+        height = std::max(height, sz.y);
+    }
+    if (icon_1.bmp().IsOk()) {
+        const wxSize sz = icon_1.GetBmpSize();
+        width += int(sz.x / 4.f) + sz.x;
+        height = std::max(height, sz.y);
+    }
+    width += std::max(label_size.x, tips_size.x) + 5;
+    height = std::max(height, label_size.y + (static_tips.empty() ? 0 : tips_size.y + 8));
+    if (text_ctrl->IsShown()) {
+        const wxSize entry_size = text_ctrl->GetBestSize();
+        width += entry_size.x;
+        height = std::max(height, entry_size.y);
+        if (!m_prefix.empty()) width += dc.GetTextExtent(m_prefix).x + 8;
+        if (!m_unit.empty()) width += dc.GetTextExtent(m_unit).x + 5;
+    } else {
+        // Read-only combos hide the entry but still need the text line height.
+        height = std::max(height, dc.GetFontMetrics().height);
+    }
+    return wxSize(std::max(width, m_preferred_width), height + 8);
+}
+
+wxSize TextInput::DoGetBestSize() const
+{
+    return MeasureContent(wxWindow::GetLabel());
+}
+
+wxSize TextInput::GetEffectiveMinSize() const
+{
+    wxSize size = wxWindow::GetEffectiveMinSize();
+    if (!text_ctrl) return size;
+    const wxSize best = GetBestSize();
+    size.y = std::max(size.y, best.y);
+    if (!text_ctrl->IsShown()) {
+        if (m_fit_content_width) {
+            // Compact enum combos and the bed selector reserve their text,
+            // rather than trusting the hidden entry's old width.
+            size.x = std::max(size.x, best.x);
+        } else {
+            // A preset name is a preferred width, not a hard constraint. Let
+            // proportional parents divide scarce space fairly and ellipsize.
+            wxClientDC dc(const_cast<TextInput*>(this));
+            dc.SetFont(GetFont());
+            // Measure only actual icon/ellipsis chrome, excluding the
+            // preferred-width hint from the shrinkable minimum.
+            int icons = 10;
+            if (icon.bmp().IsOk()) {
+                const wxSize sz = icon.GetBmpSize();
+                icons += int(sz.x + sz.x * 0.2);
+            }
+            if (icon_1.bmp().IsOk()) {
+                const wxSize sz = icon_1.GetBmpSize();
+                icons += int(sz.x / 4.f) + sz.x;
+            }
+            size.x = std::max(GetMinWidth(), icons + dc.GetTextExtent(wxString::FromUTF8("…")).x);
+        }
+    }
+    return size;
+}
+
 void TextInput::messureSize()
 {
-    wxSize size = GetSize();
+    if (!text_ctrl) return;
     wxClientDC dc(this);
+    dc.SetFont(GetFont());
     labelSize = dc.GetTextExtent(wxWindow::GetLabel());
-    wxSize textSize = text_ctrl->GetSize();
-
     if (!static_tips.empty()) {
+        wxFont font = GetFont();
+        font.SetPointSize(std::max(1, font.GetPointSize() - 1));
+        dc.SetFont(font);
         static_tips_size = dc.GetTextExtent(static_tips);
-        textSize.x = std::max(labelSize.GetWidth(), static_tips_size.GetWidth());
-        textSize.y += static_tips_size.y;
-        textSize.y += 8;
+    } else {
+        static_tips_size = wxSize(0, 0);
     }
-
-    int h = textSize.y + 8;
-    if (size.y < h) {
-        size.y = h;
-    }
-
-    wxSize minSize = size;
-    minSize.x = GetMinWidth();
-    /*if (!m_unit.IsEmpty()) {
-        wxClientDC dc(this);
-        wxSize     unitSize = dc.GetTextExtent(m_unit);
-        minSize.x += unitSize.x + 20;
-    }*/
-    SetMinSize(minSize);
-    SetSize(size);
+    InvalidateBestSize();
+    // Sizers obtain the measured height through GetEffectiveMinSize(). Retain
+    // an adequate height for controls positioned directly, without ratcheting
+    // the previous allocation into an ever-growing explicit minimum.
+    wxSize size = GetSize();
+    const wxSize best = GetBestSize();
+    if (size.x <= 0) size.x = best.x;
+    if (size.y < best.y) size.y = best.y;
+    if (size != GetSize()) SetSize(size);
 }
 
 bool TextInput::CheckValid(bool pop_dlg) const

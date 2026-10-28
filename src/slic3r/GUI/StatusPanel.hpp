@@ -586,6 +586,10 @@ protected:
 
     wxPanel *       m_machine_ctrl_panel;
     wxPanel *       m_scale_panel;
+    wxBoxSizer *    m_control_rows_sizer{nullptr};
+    bool            m_fitting_camera{false};
+
+    void fit_camera_to_feed();
     wxStaticBitmap* m_img_filament_loading;
     PrintingTaskPanel *       m_project_task_panel;
 

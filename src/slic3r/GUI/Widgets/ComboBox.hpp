@@ -83,6 +83,7 @@ public:
     bool     is_drop_down(){return drop_down;}
     void     DeleteOneItem(unsigned int pos) { DoDeleteOneItem(pos); }
 protected:
+    wxSize DoGetBestSize() const override;
     virtual int  DoInsertItems(const wxArrayStringsAdapter &items,
                                unsigned int                 pos,
                                void **                      clientData,

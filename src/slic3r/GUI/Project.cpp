@@ -33,6 +33,7 @@
 #include "MainFrame.hpp"
 #include "GUI_Utils.hpp"
 #include <slic3r/GUI/Widgets/WebView.hpp>
+#include "slic3r/Utils/Http.hpp"
 
 #include <boost/algorithm/string/predicate.hpp>
 #include <regex>
@@ -81,7 +82,58 @@ ProjectPanel::ProjectPanel(wxWindow *parent, wxWindowID id, const wxPoint &pos, 
     Fit();
 }
 
-ProjectPanel::~ProjectPanel() {}
+ProjectPanel::~ProjectPanel()
+{
+    std::lock_guard<std::mutex> lock(m_reload_state->mutex);
+    m_reload_state->alive = false;
+    ++m_reload_state->generation;
+}
+
+std::uint64_t ProjectPanel::next_reload_generation()
+{
+    std::lock_guard<std::mutex> lock(m_reload_state->mutex);
+    return ++m_reload_state->generation;
+}
+
+bool ProjectPanel::reload_is_current(const std::shared_ptr<ReloadState>& state, std::uint64_t generation)
+{
+    std::lock_guard<std::mutex> lock(state->mutex);
+    return state->alive && state->generation == generation;
+}
+
+void ProjectPanel::post_reload_result(wxEvtHandler* dispatcher, const std::shared_ptr<ReloadState>& state,
+                                     std::uint64_t generation, std::function<void()> callback)
+{
+    std::lock_guard<std::mutex> lock(state->mutex);
+    if (!state->alive || state->generation != generation)
+        return;
+    dispatcher->CallAfter([state, generation, callback = std::move(callback)] {
+        // This callback runs on the UI thread, as does panel destruction. Do not
+        // retain the mutex while invoking wx code, which may pump nested events.
+        if (reload_is_current(state, generation))
+            callback();
+    });
+}
+
+bool ProjectPanel::matches_project(const std::string& auxiliary_path, const std::string& design_id) const
+{
+    Model& model = wxGetApp().plater()->model();
+    return auxiliary_path == encode_path(model.get_auxiliary_file_temp_path().c_str()) &&
+           design_id == (model.design_info ? model.design_info->DesignerId : std::string());
+}
+
+void ProjectPanel::dispatch_project_payload()
+{
+    if (m_last_payload.empty())
+        return;
+#ifndef __APPLE__
+    if (!m_web_init_completed)
+        return;
+#endif
+    wxString script = wxString::Format("HandleStudio(%s)",
+        m_last_payload.dump(-1, ' ', false, json::error_handler_t::ignore));
+    RunScript(script.ToStdString());
+}
 
 std::string trim(const std::string &str, const std::string &charsToTrim)
 {
@@ -134,153 +186,182 @@ void ProjectPanel::onWebNavigating(wxWebViewEvent& evt)
 
 void ProjectPanel::on_reload(wxCommandEvent& evt)
 {
-    boost::thread reload = boost::thread([this] {
-        std::string update_type;
-        std::string license;
-        std::string model_name;
-        std::string model_author;
-        std::string cover_file;
-        std::string description;
-        std::map<std::string, std::vector<json>> files;
+    // Snapshot the model and all app configuration on the UI thread. File work
+    // below owns its strings/JSON and never reads the Model or panel fields.
+    Model& model = wxGetApp().plater()->model();
+    if (!model.model_info)
+        return;
+    const auto state = m_reload_state;
+    const auto generation = next_reload_generation();
+    auto* dispatcher = &wxGetApp();
+    const std::string design_id = model.design_info ? model.design_info->DesignerId : std::string();
+    const std::string auxiliary_path = encode_path(model.get_auxiliary_file_temp_path().c_str());
+    if (auxiliary_path.empty()) {
+        clear_model_info();
+        return;
+    }
 
-        std::string p_name;
-        std::string p_author;
-        std::string p_description;
-        std::string p_cover_file;
-        std::string model_id;
-
-        Model model = wxGetApp().plater()->model();
-
-        license = model.model_info->license;
-        model_name = model.model_info->model_name;
-        cover_file = model.model_info->cover_file;
-        description = model.model_info->description;
-        update_type = model.model_info->origin;
-
-        if (model.design_info && !model.design_info->DesignerId.empty()) {
-
-            if (m_model_id_map.count(model.design_info->DesignerId) > 0) {
-                model_id = m_model_id_map[model.design_info->DesignerId];
-            }
-            else {
-                model_id = get_model_id(model.design_info->DesignerId);
-                m_model_id_map[model.design_info->DesignerId] = model_id;
-            }
-        }
-
+    // Keep auxiliary-root ownership on the UI thread; Reload is now a static
+    // file reader and cannot race another reload through m_root_dir.
+    const fs::path new_root(wxString(auxiliary_path).ToStdWstring());
+    const fs::path old_root(m_root_dir.ToStdWstring());
+    if (!m_root_dir.empty() && old_root.lexically_normal() != new_root.lexically_normal()) {
         try {
-            if (!model.model_info->copyright.empty()) {
-                json copy_right = json::parse(model.model_info->copyright);
+            fs::remove_all(old_root);
+        } catch (const std::exception& e) {
+            BOOST_LOG_TRIVIAL(error) << "Failed removing auxiliary directory: " << e.what();
+        }
+    }
+    m_root_dir = wxString(auxiliary_path);
 
-                if (copy_right.is_array()) {
-                    for (auto it = copy_right.begin(); it != copy_right.end(); it++) {
-                        if ((*it).contains("author")) {
-                            model_author = (*it)["author"].get<std::string>();
-                        }
-                    }
+    std::string author;
+    try {
+        if (!model.model_info->copyright.empty()) {
+            const json copyright = json::parse(model.model_info->copyright);
+            if (copyright.is_array()) {
+                for (const auto& entry : copyright) {
+                    if (entry.contains("author"))
+                        author = entry["author"].get<std::string>();
                 }
             }
         }
-        catch (...) {
-            ;
-        }
+    } catch (const std::exception&) {
+        // Preserve the design-info fallback for malformed copyright metadata.
+    }
+    if (author.empty() && model.design_info)
+        author = model.design_info->Designer;
 
-        if (model_author.empty() && model.design_info != nullptr)
-            model_author = model.design_info->Designer;
+    const auto cached = m_model_id_map.find(design_id);
+    const std::string model_id = cached == m_model_id_map.end() ? std::string() : cached->second;
+    const std::string lookup_url = design_id.empty() || !model_id.empty() ? std::string() :
+        wxGetApp().get_http_url(wxGetApp().app_config->get_country_code(), "v1/design-service/model/" + design_id);
 
-        if (model.profile_info != nullptr) {
-            p_name = model.profile_info->ProfileTile;
-            p_description = model.profile_info->ProfileDescription;
-            p_cover_file = model.profile_info->ProfileCover;
-            p_author = model.profile_info->ProfileUserName;
-        }
+    json data;
+    data["model"] = {
+        {"license", model.model_info->license},
+        {"name", Http::url_encode(model.model_info->model_name)},
+        {"author", Http::url_encode(author)},
+        {"cover_img", Http::url_encode(model.model_info->cover_file)},
+        {"description", Http::url_encode(model.model_info->description)},
+        {"upload_type", model.model_info->origin},
+        {"model_id", model_id}
+    };
+    data["profile"] = {
+        {"name", Http::url_encode(model.profile_info ? model.profile_info->ProfileTile : std::string())},
+        {"author", Http::url_encode(model.profile_info ? model.profile_info->ProfileUserName : std::string())},
+        {"description", Http::url_encode(model.profile_info ? model.profile_info->ProfileDescription : std::string())},
+        {"cover_img", Http::url_encode(model.profile_info ? model.profile_info->ProfileCover : std::string())}
+    };
 
-        //file info
-        std::string file_path = encode_path(wxGetApp().plater()->model().get_auxiliary_file_temp_path().c_str());
-        if (!file_path.empty()) {
-            // A malformed auxiliary directory must not take the whole process down: this runs on a
-            // worker thread, where an escaping exception ends up in std::terminate.
+    boost::thread reload([this, dispatcher, state, generation, auxiliary_path, design_id, lookup_url,
+                          data = std::move(data)]() mutable {
+        try {
+            if (!reload_is_current(state, generation))
+                return;
+            std::map<std::string, std::vector<json>> files;
             try {
-                files = Reload(file_path);
+                files = ProjectPanel::Reload(wxString(auxiliary_path));
+            } catch (const std::exception& e) {
+                BOOST_LOG_TRIVIAL(error) << "Failed reloading auxiliary files: " << e.what();
             }
-            catch (const std::exception& e) {
-                BOOST_LOG_TRIVIAL(error) << "Failed reloading the auxiliary files: " << e.what();
-                files.clear();
-            }
+            data["model"]["preview_img"] = files["Model Pictures"];
+            data["profile"]["preview_img"] = files["Profile Pictures"];
+            data["file"] = {{"BOM", files["Bill of Materials"]},
+                            {"Assembly", files["Assembly Guide"]}, {"Other", files["Others"]}};
+            post_reload_result(dispatcher, state, generation,
+                [this, dispatcher, state, generation, auxiliary_path, design_id, lookup_url,
+                 data = std::move(data)]() mutable {
+                    if (!matches_project(auxiliary_path, design_id))
+                        return;
+                    // Publish local data before scheduling optional HTTP work.
+                    // This cache and its sequence counter are UI-thread-only.
+                    m_last_payload = {{"command", "show_3mf_info"},
+                                      {"sequence_id", std::to_string(m_sequence_id++)},
+                                      {"model", std::move(data)}};
+                    if (!lookup_url.empty()) {
+                        post_reload_result(dispatcher, state, generation,
+                            [this, generation, auxiliary_path, design_id, lookup_url] {
+                                start_model_id_lookup(generation, auxiliary_path, design_id, lookup_url);
+                            });
+                    }
+                    // Last panel access: wx execution may dispatch nested events.
+                    dispatch_project_payload();
+                });
+        } catch (const std::exception& e) {
+            BOOST_LOG_TRIVIAL(error) << "Failed preparing project information: " << e.what();
         }
-        else {
-            clear_model_info();
-            return;
-        }
-
-        json j;
-        j["model"]["license"] = license;
-        j["model"]["name"] = wxGetApp().url_encode(model_name);
-        j["model"]["author"] = wxGetApp().url_encode(model_author);;
-        j["model"]["cover_img"] = wxGetApp().url_encode(cover_file);
-        j["model"]["description"] = wxGetApp().url_encode(description);
-        j["model"]["preview_img"] = files["Model Pictures"];
-        j["model"]["upload_type"] = update_type;
-        j["model"]["model_id"] = model_id;
-
-        j["file"]["BOM"] = files["Bill of Materials"];
-        j["file"]["Assembly"] = files["Assembly Guide"];
-        j["file"]["Other"] = files["Others"];
-
-        j["profile"]["name"] = wxGetApp().url_encode(p_name);
-        j["profile"]["author"] = wxGetApp().url_encode(p_author);
-        j["profile"]["description"] = wxGetApp().url_encode(p_description);
-        j["profile"]["cover_img"] = wxGetApp().url_encode(p_cover_file);
-        j["profile"]["preview_img"] = files["Profile Pictures"];
-
-        json payload = json::object();
-        payload["command"] = "show_3mf_info";
-        payload["sequence_id"] = std::to_string(ProjectPanel::m_sequence_id++);
-        payload["model"] = j;
-
-        m_last_payload = payload;
-
-        auto dispatch_payload = [this](const json& data) {
-            wxString strJS = wxString::Format("HandleStudio(%s)", data.dump(-1, ' ', false, json::error_handler_t::ignore));
-#ifdef __APPLE__
-            wxGetApp().CallAfter([this, strJS] { RunScript(strJS.ToStdString()); });
-#else
-            if (m_web_init_completed) {
-                wxGetApp().CallAfter([this, strJS] { RunScript(strJS.ToStdString()); });
-            }
-#endif
-        };
-
-        dispatch_payload(m_last_payload);
-
     });
+    reload.detach();
 }
 
-std::string ProjectPanel::get_model_id(std::string desgin_id)
+void ProjectPanel::start_model_id_lookup(std::uint64_t generation, const std::string& auxiliary_path,
+                                          const std::string& design_id, const std::string& lookup_url)
 {
-    std::string model_id;
-    auto host = wxGetApp().get_http_url(wxGetApp().app_config->get_country_code(), "v1/design-service/model/" + desgin_id);
-    Http http = Http::get(host);
-    http.header("accept", "application/json")
-        //.header("Authorization")
-        .on_complete([this, &model_id](std::string body, unsigned status) {
-        try {
-            json j = json::parse(body);
-            if (j.contains("id")) {
-                int mid = j["id"].get<int>();
-                if (mid > 0) {
-                    model_id = std::to_string(mid);
-                }
+    if (!matches_project(auxiliary_path, design_id))
+        return;
+    const auto state = m_reload_state;
+    auto* dispatcher = &wxGetApp();
+    try {
+        boost::thread lookup([this, dispatcher, state, generation, auxiliary_path, design_id, lookup_url] {
+            try {
+                const auto id = fetch_model_id(lookup_url, state, generation);
+                if (id.empty())
+                    return;
+                post_reload_result(dispatcher, state, generation, [this, auxiliary_path, design_id, id] {
+                    if (!matches_project(auxiliary_path, design_id) || m_last_payload.empty())
+                        return;
+                    m_model_id_map[design_id] = id;
+                    m_last_payload["model"]["model"]["model_id"] = id;
+                    // A full replay could overwrite an editor's unsaved changes.
+                    // The reader's legacy model-id command is a no-op, so update
+                    // only its link; the cached payload serves later navigation.
+                    if (!is_editing_page()) {
+                        const std::string script = "(function(){"
+                            "if(typeof m_ModelID==='undefined')return;"
+                            "m_ModelID=" + json(id).dump() + ";"
+                            "var title=document.getElementById('projectName');"
+                            "if(title)title.classList.toggle('link',!!m_ModelID);"
+                            "})();";
+                        RunScript(script);
+                    }
+                });
+            } catch (const std::exception& e) {
+                BOOST_LOG_TRIVIAL(error) << "Optional project model lookup failed: " << e.what();
             }
-        }
-        catch (...) {
-            ;
-        }
-            })
-        .on_error([this](std::string body, std::string error, unsigned status) {
-            })
-        .perform_sync();
+        });
+        lookup.detach();
+    } catch (const std::exception& e) {
+        BOOST_LOG_TRIVIAL(error) << "Cannot start optional project model lookup: " << e.what();
+    }
+}
 
+std::string ProjectPanel::fetch_model_id(const std::string& url, const std::shared_ptr<ReloadState>& state,
+                                        std::uint64_t generation)
+{
+    if (!reload_is_current(state, generation))
+        return std::string();
+    std::string model_id;
+    Http http = Http::get(url);
+    http.timeout_connect(3).timeout_max(8)
+        .header("accept", "application/json")
+        .on_progress([state, generation](Http::Progress, bool& cancel) {
+            cancel = !reload_is_current(state, generation);
+        })
+        .on_complete([&model_id](std::string body, unsigned status) {
+            if (status < 200 || status >= 300)
+                return;
+            try {
+                const json result = json::parse(body);
+                if (result.contains("id")) {
+                    const int id = result["id"].get<int>();
+                    if (id > 0)
+                        model_id = std::to_string(id);
+                }
+            } catch (const std::exception&) {
+                // An absent/invalid optional link must not affect local metadata.
+            }
+        })
+        .perform_sync();
     return model_id;
 }
 
@@ -390,14 +471,16 @@ void ProjectPanel::OnScriptMessage(wxWebViewEvent& evt)
         }
         else if (strCmd == "request_3mf_info") {
             m_web_init_completed = true;
-            if (!m_last_payload.empty()) {
-                auto payload_copy = m_last_payload;
-                payload_copy["sequence_id"] = std::to_string(ProjectPanel::m_sequence_id++);
-                wxString strJS = wxString::Format("HandleStudio(%s)", payload_copy.dump(-1, ' ', false, json::error_handler_t::ignore));
-                wxGetApp().CallAfter([this, strJS] {
-                    RunScript(strJS.ToStdString());
-                });
-            }
+            const auto generation = [&] {
+                std::lock_guard<std::mutex> lock(m_reload_state->mutex);
+                return m_reload_state->generation;
+            }();
+            post_reload_result(&wxGetApp(), m_reload_state, generation, [this] {
+                if (!m_last_payload.empty()) {
+                    m_last_payload["sequence_id"] = std::to_string(m_sequence_id++);
+                    dispatch_project_payload();
+                }
+            });
         }
         else if (strCmd == "request_confirm_save_project") {
             std::string sequence_id;
@@ -853,7 +936,12 @@ void ProjectPanel::update_model_data()
 
         wxString js = wxString::Format("HandleStudio(%s)",
                                     payload.dump(-1, ' ', false, json::error_handler_t::ignore));
-        wxGetApp().CallAfter([this, js]{ RunScript(js.ToStdString()); });
+        const auto generation = [&] {
+            std::lock_guard<std::mutex> lock(m_reload_state->mutex);
+            return m_reload_state->generation;
+        }();
+        post_reload_result(&wxGetApp(), m_reload_state, generation,
+                           [this, js] { RunScript(js.ToStdString()); });
         return;
     }
 
@@ -864,6 +952,7 @@ void ProjectPanel::update_model_data()
 
 void ProjectPanel::clear_model_info()
 {
+    const auto generation = next_reload_generation();
     m_last_payload = json::object();
 
     json m_Res = json::object();
@@ -872,7 +961,7 @@ void ProjectPanel::clear_model_info()
 
     wxString strJS = wxString::Format("HandleStudio(%s)", m_Res.dump(-1, ' ', false, json::error_handler_t::ignore));
 
-    wxGetApp().CallAfter([this, strJS] {
+    post_reload_result(&wxGetApp(), m_reload_state, generation, [this, strJS] {
         RunScript(strJS.ToStdString());
     });
 }
@@ -897,19 +986,6 @@ std::map<std::string, std::vector<json>> ProjectPanel::Reload(wxString aux_path)
 
 
     fs::path new_aux_path(aux_path.ToStdWstring());
-    fs::path old_aux_path(m_root_dir.ToStdWstring());
-
-    // Only clear the previous auxiliary root when switching to a different project path.
-    if (!m_root_dir.empty() && old_aux_path.lexically_normal() != new_aux_path.lexically_normal()) {
-        try {
-            fs::remove_all(old_aux_path);
-        }
-        catch (...) {
-            BOOST_LOG_TRIVIAL(error) << "Failed  removing the auxiliary directory" << m_root_dir.c_str();
-        }
-    }
-
-    m_root_dir = aux_path;
     // Check new path. If not exist, create a new one.
     if (!fs::exists(new_aux_path)) {
         fs::create_directory(new_aux_path);
@@ -956,7 +1032,7 @@ std::map<std::string, std::vector<json>> ProjectPanel::Reload(wxString aux_path)
                     wxStat(file_name, &strucStat);
                     wxFileOffset filelen = strucStat.st_size;
 
-                    pfile_obj["filename"] = wxGetApp().url_encode(file_path_obj.filename().string().c_str());
+                    pfile_obj["filename"] = Http::url_encode(file_path_obj.filename().string().c_str());
                     pfile_obj["size"] = formatBytes((unsigned long)filelen);
 
                     std::string file_extension = file_path_obj.extension().string();
@@ -979,7 +1055,7 @@ std::map<std::string, std::vector<json>> ProjectPanel::Reload(wxString aux_path)
                         break;
                     }
                     else {
-                        pfile_obj["filepath"] = wxGetApp().url_encode(file_path);
+                        pfile_obj["filepath"] = Http::url_encode(file_path);
                         m_paths_list[folder.ToStdString()].push_back(pfile_obj);
                         break;
                     }

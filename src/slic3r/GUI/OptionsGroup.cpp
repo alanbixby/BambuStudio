@@ -544,8 +544,11 @@ bool OptionsGroup::activate(std::function<void()> throw_if_canceled/* = [](){}*/
 		}
 
         ctrl_horiz_alignment = horiz_alignment;
-        if (custom_ctrl)
+        if (custom_ctrl) {
             custom_ctrl->init_max_win_width();
+            // Covers re-activation into an already sized control (no size event follows).
+            custom_ctrl->update_fields_width();
+        }
 	} catch (UIBuildCanceled&) {
 		auto p = sizer;
 		this->clear();

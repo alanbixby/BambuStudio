@@ -55,6 +55,7 @@ class OG_CustomCtrl :public wxPanel
         ~CtrlLine() { ctrl = nullptr; }
 
         int     get_max_win_width();
+        bool    fit_field_width();
         void    correct_items_positions();
         void    msw_rescale();
         void    update_visibility(ConfigOptionMode mode);
@@ -98,6 +99,7 @@ public:
     void    init_max_win_width();
     void    set_max_win_width(int max_win_width);
     int     get_max_win_width() { return m_max_win_width; }
+    void    update_fields_width();
 
     //BBS
     int    get_title_width();

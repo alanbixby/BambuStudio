@@ -13,7 +13,7 @@ class TextInput : public wxNavigationEnabled<StaticBox>
     ScalableBitmap icon_1;
     StateColor     label_color;
     StateColor     text_color;
-    wxTextCtrl * text_ctrl = nullptr;
+    wxTextCtrl * text_ctrl;
     
     wxString       m_unit;
     wxString       m_prefix;
@@ -90,12 +90,12 @@ protected:
 
     void DoSetToolTipText(wxString const &tip) override;
 
-    void messureSize();
-
 private:
     void paintEvent(wxPaintEvent& evt);
 
     void render(wxDC& dc);
+
+    void messureSize();
 
     DECLARE_EVENT_TABLE()
 };

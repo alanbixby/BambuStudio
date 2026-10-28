@@ -37,6 +37,8 @@ public:
     // auto-rescale on DPI change. Caller should recreate items after DPI change.
     void SetKeepDropArrow(bool keep) { m_keep_drop_arrow = keep; }
 
+    virtual bool SetFont(wxFont const & font) override;
+
 public:
     int Append(const wxString &item, const wxBitmap &bitmap = wxNullBitmap, int item_style = 0);
     int Append(const wxString &item, const wxBitmap &bitmap, void *clientData, int item_style = 0);
@@ -66,8 +68,6 @@ public:
 
     void SetTextLabel(const wxString &label);
     wxString GetTextLabel() const;
-
-    bool SetFont(const wxFont& font) override;
 
     wxString GetString(unsigned int n) const override;
     void     SetString(unsigned int n, wxString const &value) override;

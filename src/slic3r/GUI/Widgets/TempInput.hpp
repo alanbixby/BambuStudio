@@ -22,6 +22,8 @@ class TempInput : public wxNavigationEnabled<StaticBox>
 
     bool           m_read_only{false};
     bool           m_on_changing {false};
+    bool           m_editing{false};
+    int            m_slash_x{0};
     wxSize         labelSize;
     ScalableBitmap normal_icon;
     ScalableBitmap actice_icon;
@@ -141,6 +143,7 @@ private:
 
 	void messureMiniSize();
     void messureSize();
+    void layoutTarget();
 
     // some useful events
     void mouseMoved(wxMouseEvent &event);

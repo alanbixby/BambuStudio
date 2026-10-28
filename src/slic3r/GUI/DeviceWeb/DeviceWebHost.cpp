@@ -596,7 +596,8 @@ void DeviceWebHost::NotifyAmsControlWebChanged()
 // Locked host width (DIP) of the StatusPanel-embedded AmsControlWeb panel. The
 // page is laid out width:100%, so its reported width only echoes the container.
 static constexpr int kAmsControlWebWidthDip = 586;
-// Match the panel minimum until the page reports its content height.
+// Keep this equal to kMinHeightDip in wgtAmsControlWebPanel.cpp until the page
+// reports its content height.
 static constexpr int kAmsControlWebInitialHeightDip = 340;
 
 void DeviceWebHost::ApplyAmsControlWebHostSize(int height_dip)

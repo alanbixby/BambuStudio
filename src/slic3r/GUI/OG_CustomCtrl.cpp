@@ -663,7 +663,7 @@ void OG_CustomCtrl::msw_rescale()
     // BBS: new layout
     this->SetMinSize(wxSize(h_pos, v_pos));
 
-    // Fields were reset to their default width by Field::msw_rescale().
+    // Field subclasses reset their widths in their msw_rescale() overrides.
     update_fields_width();
 
     GetParent()->Layout();
@@ -770,11 +770,7 @@ int OG_CustomCtrl::CtrlLine::get_max_win_width()
     return max_win_width;
 }
 
-// Fields are positioned manually, so without this they keep the fixed Field default width
-// whatever the panel width is, and long values get ellipsized next to unused space.
-// Grow a lone dropdown / text / spin field towards the right edge, keeping room for its
-// undo button, never shrinking below the default and capped so wide panels stay tidy.
-// Every eligible line starts at the same x, so the widened fields keep a common right edge.
+// These fields are positioned manually; their default widths do not use spare panel space.
 bool OG_CustomCtrl::CtrlLine::fit_field_width()
 {
     if (draw_just_act_buttons || is_separator() || og_line.widget || ctrl->m_max_win_width > 0)
@@ -800,15 +796,15 @@ bool OG_CustomCtrl::CtrlLine::fit_field_width()
     const int em         = ctrl->m_em_unit;
     const int base_width = (opt.opt.width >= 0 ? opt.opt.width : Field::def_width_wider()) * em;
     const int undo_width = field->undo_bitmap() ? get_bitmap_size(field->undo_bitmap()->bmp()).GetWidth() : ctrl->m_bmp_blinking_sz.GetWidth();
-    // Gap before the undo button, the button, and one em of right margin (clear of overlay scrollbars).
-    const int reserve    = ctrl->m_h_gap + undo_width + em;
+    // Combined-unit rows draw two gaps before reset; reserve both for all fields to keep their edges aligned.
+    const int reserve    = 2 * ctrl->m_h_gap + undo_width + em;
     const int available  = ctrl->GetSize().GetWidth() - ctrl->get_pos(og_line, field).x - reserve;
     const int width      = std::clamp(available, base_width, base_width + Field::def_width() * em);
 
     if (win->GetSize().GetWidth() == width)
         return false;
     win->SetSize(wxSize(width, win->GetSize().GetHeight()));
-    // SpinInput lays out its text and buttons only on Rescale().
+    // SpinInput does not relayout its children on SetSize().
     if (auto spin = dynamic_cast<::SpinInput*>(win))
         spin->Rescale();
     return true;

@@ -2054,9 +2054,9 @@ wxBoxSizer* MainFrame::create_side_tools()
     auto print_panel = new wxPanel(this,wxID_ANY,wxDefaultPosition,wxDefaultSize,wxTRANSPARENT_WINDOW);
 
     m_slice_btn = new SideButton(slice_panel, _L("Slice plate"), "");
-    m_slice_option_btn = new SideButton(slice_panel, "", "sidebutton_dropdown", 0, FromDIP(14));
+    m_slice_option_btn = new SideButton(slice_panel, "", "sidebutton_dropdown", 0, 14);
     m_print_btn = new SideButton(print_panel, _L("Print plate"), "");
-    m_print_option_btn = new SideButton(print_panel, "", "sidebutton_dropdown", 0, FromDIP(14));
+    m_print_option_btn = new SideButton(print_panel, "", "sidebutton_dropdown", 0, 14);
 
     auto slice_sizer = new wxBoxSizer(wxHORIZONTAL);
     slice_sizer->Add(m_slice_option_btn, 0, wxRIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(1));

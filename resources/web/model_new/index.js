@@ -1,7 +1,7 @@
 var m_ModelID=null;
 
 // Per-document state: native pushes can arrive while scripts in <head> load,
-// before the destination elements exist. The Linux wx bridge is installed
+// before the destination elements exist. The native wx bridge may be installed
 // asynchronously, so a single DOM-ready request is not a reliable handshake.
 var projectDOMReady = false;
 var pendingProjectMessage = null;

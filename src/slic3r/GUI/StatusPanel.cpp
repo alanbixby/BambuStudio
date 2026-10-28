@@ -947,7 +947,7 @@ PrintingTaskPanel::PrintingTaskPanel(wxWindow *parent, PrintingTaskType type) : 
     m_question_button = nullptr;
     create_panel(this);
     SetBackgroundColour(*wxWHITE);
-    m_bitmap_background = ScalableBitmap(this, "thumbnail_grid", m_bitmap_thumbnail->GetSize().y);
+    m_bitmap_background = ScalableBitmap(this, "thumbnail_grid", ToDIP(m_bitmap_thumbnail->GetSize()).y);
 
     m_bitmap_thumbnail->Bind(wxEVT_PAINT, &PrintingTaskPanel::paint, this);
 }
@@ -2041,7 +2041,8 @@ StatusBasePanel::StatusBasePanel(wxWindow *parent, wxWindowID id, const wxPoint 
 // beside a height-limited feed, and leaves the Control column ending far
 // above it. Split the row so the camera panel (title, feed and play bar, not
 // the progress below) ends level with the Control column, and give the width
-// the camera does not need to the web AMS view, which zooms to use it.
+// the camera does not need to the web AMS view, which zooms to use it on
+// backends supporting layout zoom. macOS keeps AMS at its natural size.
 //
 // With W the row width, a the feed aspect, T the camera chrome height, the
 // AMS view bw x B at zoom 1, and the Control column D + z * bw wide and
@@ -2052,12 +2053,12 @@ StatusBasePanel::StatusBasePanel(wxWindow *parent, wxWindowID id, const wxPoint 
 // 5% steps, and the camera gets the width of a feed reaching the same bottom.
 // At the zoom cap the camera takes the rest rather than leave it empty.
 //
-// Every input is independent of the current split and zoom: the row width,
-// the column height, the camera chrome, and the Control column's natural size
-// with AMS at zoom 1. A second pass therefore reproduces the same result.
+// Row width, camera chrome and the Control column's natural size with AMS
+// at zoom 1 do not depend on the current split. The column height can still
+// reflect the current AMS zoom, so shrinking height can need further passes.
 void StatusBasePanel::fit_camera_to_feed()
 {
-    if (m_fitting_camera || is_camera_fullscreen() || !m_media_ctrl || !m_machine_ctrl_panel || !m_control_rows_sizer || !m_camera_media_sizer)
+    if (is_camera_fullscreen() || !m_media_ctrl || !m_machine_ctrl_panel || !m_control_rows_sizer || !m_camera_media_sizer)
         return;
 
     wxSizer *control_sizer = m_machine_ctrl_panel->GetSizer();
@@ -2071,7 +2072,9 @@ void StatusBasePanel::fit_camera_to_feed()
     int       base_w = 0;
     int       base_h = 0;
     double    current_zoom = 1;
-#if BBL_ENABLE_AMS_CONTROL_WEB
+#if BBL_ENABLE_AMS_CONTROL_WEB && !defined(__WXOSX__)
+    // wx's macOS backend magnifies the view without changing its CSS layout.
+    // Keep AMS unzoomed there; the camera aspect fit below still applies.
     if (m_ams_control_web_panel && m_ams_control_web_panel->IsShown()) {
         ams          = m_ams_control_web_panel;
         base_w       = m_ams_control_web_panel->GetBaseWidth();
@@ -2161,15 +2164,13 @@ void StatusBasePanel::fit_camera_to_feed()
     if (!zoom_changed && !width_changed)
         return;
 
-    m_fitting_camera = true;
-#if BBL_ENABLE_AMS_CONTROL_WEB
+#if BBL_ENABLE_AMS_CONTROL_WEB && !defined(__WXOSX__)
     if (zoom_changed)
         m_ams_control_web_panel->SetFitZoom(zoom);
 #endif
     if (width_changed)
         m_machine_ctrl_panel->SetMinSize(wxSize(target, wxDefaultCoord));
     Layout();
-    m_fitting_camera = false;
 }
 
 StatusBasePanel::~StatusBasePanel()
@@ -2234,6 +2235,7 @@ void StatusBasePanel::close_camera_fullscreen()
 
     frame->exit_camera_view();
     frame->Destroy();
+    CallAfter([this] { fit_camera_to_feed(); });
 }
 
 void StatusBasePanel::on_camera_fullscreen(wxMouseEvent &event)
@@ -2745,7 +2747,7 @@ wxPanel *StatusBasePanel::create_bed_control(wxWindow *parent)
     StateColor z_1_ctrl_bg(std::pair<wxColour, int>(BUTTON_PRESS_COL, StateColor::Pressed), std::pair<wxColour, int>(BUTTON_NORMAL2_COL, StateColor::Normal));
     StateColor z_1_ctrl_bd(std::pair<wxColour, int>(BUTTON_HOVER_COL, StateColor::Hovered), std::pair<wxColour, int>(BUTTON_NORMAL2_COL, StateColor::Normal));
 
-    m_bpButton_z_10 = new Button(panel, wxString("10"), "monitor_bed_up", 0, FromDIP(15));
+    m_bpButton_z_10 = new Button(panel, wxString("10"), "monitor_bed_up", 0, 15);
     m_bpButton_z_10->SetFont(::Label::Body_12);
     m_bpButton_z_10->SetBorderWidth(0);
     m_bpButton_z_10->SetBackgroundColor(z_10_ctrl_bg);
@@ -2754,7 +2756,7 @@ wxPanel *StatusBasePanel::create_bed_control(wxWindow *parent)
     m_bpButton_z_10->SetMinSize(Z_BUTTON_SIZE);
     m_bpButton_z_10->SetSize(Z_BUTTON_SIZE);
     m_bpButton_z_10->SetCornerRadius(0);
-    m_bpButton_z_1 = new Button(panel, wxString(" 1"), "monitor_bed_up", 0, FromDIP(15));
+    m_bpButton_z_1 = new Button(panel, wxString(" 1"), "monitor_bed_up", 0, 15);
     m_bpButton_z_1->SetFont(::Label::Body_12);
     m_bpButton_z_1->SetBorderWidth(0);
     m_bpButton_z_1->SetBackgroundColor(z_1_ctrl_bg);
@@ -2770,7 +2772,7 @@ wxPanel *StatusBasePanel::create_bed_control(wxWindow *parent)
     if (wxGetApp().app_config->get("language") == "de_DE") m_staticText_z_tip->SetFont(::Label::Body_11);
     m_staticText_z_tip->Wrap(-1);
     m_staticText_z_tip->SetForegroundColour(TEXT_LIGHT_FONT_COL);
-    m_bpButton_z_down_1 = new Button(panel, wxString(" 1"), "monitor_bed_down", 0, FromDIP(15));
+    m_bpButton_z_down_1 = new Button(panel, wxString(" 1"), "monitor_bed_down", 0, 15);
     m_bpButton_z_down_1->SetFont(::Label::Body_12);
     m_bpButton_z_down_1->SetBorderWidth(0);
     m_bpButton_z_down_1->SetBackgroundColor(z_1_ctrl_bg);
@@ -2779,7 +2781,7 @@ wxPanel *StatusBasePanel::create_bed_control(wxWindow *parent)
     m_bpButton_z_down_1->SetSize(Z_BUTTON_SIZE);
     m_bpButton_z_down_1->SetTextColor(StateColor(std::make_pair(DISCONNECT_TEXT_COL, (int) StateColor::Disabled), std::make_pair(NORMAL_TEXT_COL, (int) StateColor::Normal)));
 
-    m_bpButton_z_down_10 = new Button(panel, wxString("10"), "monitor_bed_down", 0, FromDIP(15));
+    m_bpButton_z_down_10 = new Button(panel, wxString("10"), "monitor_bed_down", 0, 15);
     m_bpButton_z_down_10->SetFont(::Label::Body_12);
     m_bpButton_z_down_10->SetBorderWidth(0);
     m_bpButton_z_down_10->SetBackgroundColor(z_10_ctrl_bg);
@@ -2818,7 +2820,7 @@ wxBoxSizer *StatusBasePanel::create_extruder_control(wxWindow *parent)
     m_nozzle_btn_panel = new SwitchBoard(panel, _L("Left"), _L("Right"), wxSize(FromDIP(126), FromDIP(26)));
     m_nozzle_btn_panel->SetAutoDisableWhenSwitch();
 
-    m_bpButton_e_10 = new Button(panel, "", "monitor_extruder_up", 0, FromDIP(22));
+    m_bpButton_e_10 = new Button(panel, "", "monitor_extruder_up", 0, 22);
     m_bpButton_e_10->SetBorderWidth(2);
     m_bpButton_e_10->SetBackgroundColor(e_ctrl_bg);
     m_bpButton_e_10->SetBorderColor(e_ctrl_bd);
@@ -2834,7 +2836,7 @@ wxBoxSizer *StatusBasePanel::create_extruder_control(wxWindow *parent)
     }
     m_extruder_book->SetSelection(0);
 
-    m_bpButton_e_down_10 = new Button(panel, "", "monitor_extruder_down", 0, FromDIP(22));
+    m_bpButton_e_down_10 = new Button(panel, "", "monitor_extruder_down", 0, 22);
     m_bpButton_e_down_10->SetBorderWidth(2);
     m_bpButton_e_down_10->SetBackgroundColor(e_ctrl_bg);
     m_bpButton_e_down_10->SetBorderColor(e_ctrl_bd);

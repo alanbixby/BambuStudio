@@ -728,6 +728,7 @@ struct ExtruderGroup : StaticGroup
 
 struct Sidebar::priv
 {
+    static constexpr int filament_header_action_gap_dip = 12;
     Plater *plater;
 
     wxPanel *scrolled = nullptr;
@@ -989,7 +990,7 @@ void Sidebar::priv::adjust_filament_title_layout()
         flush_ideal_width = m_flushing_volume_btn->GetTextRect().width + text_padding;
     }
 
-    int button_spacing    = FromDIP(12);
+    int button_spacing    = FromDIP(filament_header_action_gap_dip);
     int total_spacing     = button_spacing * (button_count - 1);
     int ideal_total_width = purge_ideal_width + flush_ideal_width + total_spacing;
 
@@ -2668,6 +2669,7 @@ Sidebar::Sidebar(Plater *parent)
         });
 
         ScalableButton *wiki_bed = new ScalableButton(p->panel_printer_bed, wxID_ANY, "help");
+        wiki_bed->SetSize(wiki_bed->GetBestSize());
         wiki_bed->SetToolTip(_L("Click to view the wiki of the current plate type"));
         wiki_bed->Bind(wxEVT_BUTTON, [this](wxCommandEvent) {
             bool is_zh  = wxGetApp().app_config->get("language") == "zh_CN";
@@ -2728,6 +2730,7 @@ Sidebar::Sidebar(Plater *parent)
         // vertically centred thumbnail row.
         p->panel_printer_bed->Bind(wxEVT_SIZE, [this, wiki_bed](wxSizeEvent &e) {
             e.Skip();
+            wiki_bed->SetSize(wiki_bed->GetBestSize());
             wiki_bed->Move(p->panel_printer_bed->GetClientSize().x - FromDIP(14) - wiki_bed->GetSize().x, FromDIP(4));
         });
 
@@ -2953,7 +2956,7 @@ Sidebar::Sidebar(Plater *parent)
 
     // The gap between the two buttons is the flush button's left border, so it collapses
     // when that button is hidden; the trailing inset matches the Filament subtitle row's settings gear.
-    bSizer39->Add(p->m_flushing_volume_btn, 0, wxALIGN_CENTER_VERTICAL | wxLEFT, FromDIP(12));
+    bSizer39->Add(p->m_flushing_volume_btn, 0, wxALIGN_CENTER_VERTICAL | wxLEFT, FromDIP(priv::filament_header_action_gap_dip));
     bSizer39->Hide(p->m_flushing_volume_btn);
 
     bSizer39->Add(FromDIP(16), 0, 0, 0, 0);

@@ -69,8 +69,6 @@ public:
 
     void SetTextColor(StateColor const &color);
 
-    bool SetFont(const wxFont& font) override;
-
     virtual void Rescale();
 
     virtual bool Enable(bool enable = true) override;
@@ -92,12 +90,12 @@ protected:
 
     void DoSetToolTipText(wxString const &tip) override;
 
+    void messureSize();
+
 private:
     void paintEvent(wxPaintEvent& evt);
 
     void render(wxDC& dc);
-
-    void messureSize();
 
     DECLARE_EVENT_TABLE()
 };

@@ -391,9 +391,26 @@ void TempInput::DoSetSize(int x, int y, int width, int height, int sizeFlags)
     layoutTarget();
 }
 
+wxSize TempInput::targetSize(bool editing) const
+{
+    const auto value = text_ctrl->GetValue();
+    auto size = text_ctrl->GetTextExtent(editing ? wxString("000") : (value.IsEmpty() ? wxString("0") : value));
+    size.x = wxMax(size.x, text_ctrl->GetTextExtent(wxString("0")).x);
+#ifdef __WXGTK3__
+    // Borderless GTK3 has zero CSS padding; retain its compact idle size.
+    if (!editing) return size;
+#endif
+    size = text_ctrl->GetSizeFromTextSize(size);
+#ifdef __WXMSW__
+    // wx adds only the left margin; this control uses equal default font margins.
+    size.x += wxMax(0, text_ctrl->GetMargins().x);
+#endif
+    return size;
+}
+
 // Icons and nozzle markers stay on the left. "current / target C" is a compact
 // group anchored to the right edge: the unit keeps a fixed column, the target
-// entry is as wide as its digits (three while editing), and render() draws the
+// entry includes native padding (and three digits while editing); render() draws the
 // slash and current value relative to the entry.
 void TempInput::layoutTarget()
 {
@@ -426,12 +443,7 @@ void TempInput::layoutTarget()
     left += sepSize.x + gap;
 
     // target entry
-    auto textSize = text_ctrl->GetTextExtent(wxString("000"));
-    if (!m_editing) {
-        const auto value = text_ctrl->GetValue();
-        textSize.x = wxMax(text_ctrl->GetTextExtent(value.IsEmpty() ? wxString("0") : value).x,
-                           text_ctrl->GetTextExtent(wxString("0")).x);
-    }
+    const auto textSize = targetSize(m_editing);
     const int unit_width = degree_icon.bmp().IsOk() ? degree_icon.GetBmpWidth() : 0;
     const int target_x = wxMax(left, GetSize().x - FromDIP(10) - unit_width - gap - textSize.x);
     text_ctrl->SetSize(textSize);
@@ -619,7 +631,7 @@ void TempInput::messureMiniSize()
     height = sepSize.y > height ? sepSize.y : height;
 
     // text text
-    auto textSize = text_ctrl->GetTextExtent(wxString("000"));
+    const auto textSize = targetSize(true);
     width += textSize.x;
     height = textSize.y > height ? textSize.y : height;
 
@@ -681,7 +693,7 @@ void TempInput::messureSize()
     height = sepSize.y > height ? sepSize.y : height;
 
     // text text
-    auto textSize = text_ctrl->GetTextExtent(wxString("000"));
+    const auto textSize = targetSize(true);
     width += textSize.x;
     height = textSize.y > height ? textSize.y : height;
 

@@ -46,7 +46,7 @@ const int LEFT_OFFSET = 2;
  MaterialItem::MaterialItem(wxWindow *parent, wxColour mcolour, wxString mname, std::string filament_id)
     : wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize)
  {
-    m_arraw_bitmap_gray  = ScalableBitmap(this, "drop_down2", FromDIP(8));
+    m_arraw_bitmap_gray  = ScalableBitmap(this, "drop_down2", 8);
     m_arraw_bitmap_white =  ScalableBitmap(this, "topbar_dropdown", 12);
     m_transparent_mitem          = ScalableBitmap(this, "transparent_material_up", 20);
     m_filament_wheel_transparent = ScalableBitmap(this,   "filament_transparent", 25);//wxGetApp().dark_mode() ? "filament_dark_transparent"
@@ -1305,8 +1305,8 @@ void AmsMapingPopup::update_flush_waste(MachineObject* obj)
     SetDoubleBuffered(true);
 #endif //__WINDOWS__
 
-    m_transparent_mapping_item = ScalableBitmap(this, "transparent_mapping_item", FromDIP(60));
-    mapping_item_checked = ScalableBitmap(this, "mapping_item_checked", FromDIP(20));
+    m_transparent_mapping_item = ScalableBitmap(this, "transparent_mapping_item", 60);
+    mapping_item_checked = ScalableBitmap(this, "mapping_item_checked", 20);
     SetBackgroundColour(StateColor::darkModeColorFor(*wxWHITE));
     Bind(wxEVT_PAINT, &MappingItem::paintEvent, this);
 }
@@ -1924,8 +1924,8 @@ AmsIntroducePopup::AmsIntroducePopup(wxWindow* parent)
     wxBoxSizer* bSizer5;
     bSizer5 = new wxBoxSizer(wxHORIZONTAL);
 
-    m_img_enable_ams = new wxStaticBitmap(this, wxID_ANY, create_scaled_bitmap("monitor_upgrade_ams", this, FromDIP(140)), wxDefaultPosition, wxDefaultSize, 0);
-    m_img_disable_ams = new wxStaticBitmap(this, wxID_ANY, create_scaled_bitmap("disable_ams_demo_icon", this, FromDIP(110)), wxDefaultPosition, wxDefaultSize, 0);
+    m_img_enable_ams = new wxStaticBitmap(this, wxID_ANY, create_scaled_bitmap("monitor_upgrade_ams", this, 140), wxDefaultPosition, wxDefaultSize, 0);
+    m_img_disable_ams = new wxStaticBitmap(this, wxID_ANY, create_scaled_bitmap("disable_ams_demo_icon", this, 110), wxDefaultPosition, wxDefaultSize, 0);
 
     m_img_enable_ams->SetMinSize(wxSize(FromDIP(96), FromDIP(110)));
     m_img_disable_ams->SetMinSize(wxSize(FromDIP(96), FromDIP(110)));

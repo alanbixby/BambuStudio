@@ -143,6 +143,7 @@ private:
 
 	void messureMiniSize();
     void messureSize();
+    wxSize targetSize(bool editing) const;
     void layoutTarget();
 
     // some useful events

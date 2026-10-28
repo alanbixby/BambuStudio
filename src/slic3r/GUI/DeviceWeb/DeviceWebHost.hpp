@@ -112,7 +112,7 @@ private:
     // Used to rebuild the physical min size at the current DPI on show.
     wxSize                            m_last_logical_content_size{ wxDefaultSize };
     double                            m_ams_fit_zoom{ 1.0 };
-    // Zoom WebKit used before any fit zoom, read from the first live view.
+    // Original web-view zoom, read from the first live view.
     double                            m_ams_base_zoom{ 0.0 };
     std::deque<std::int64_t>          m_renderer_recoveries;
     std::deque<std::int64_t>          m_browser_recoveries;

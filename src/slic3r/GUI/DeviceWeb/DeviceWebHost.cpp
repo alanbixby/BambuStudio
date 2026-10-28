@@ -17,6 +17,7 @@
 #include <wx/timer.h>
 #include <boost/log/trivial.hpp>
 #include <algorithm>
+#include <cmath>
 #include <chrono>
 
 namespace Slic3r { namespace GUI {
@@ -603,7 +604,22 @@ void DeviceWebHost::ApplyAmsControlWebHostSize(int height_dip)
     height_dip = std::clamp(height_dip, kMinHeightDip, kMaxHeightDip);
 
     m_last_logical_content_size = wxSize(kAmsControlWebWidthDip, height_dip);
-    wxSize content_size(FromDIP(kAmsControlWebWidthDip), FromDIP(height_dip));
+    wxSize content_size(int(std::lround(FromDIP(kAmsControlWebWidthDip) * m_ams_fit_zoom)),
+                        int(std::lround(FromDIP(height_dip) * m_ams_fit_zoom)));
+
+#ifndef __WXOSX__
+    // wx's macOS zoom is magnification, not layout zoom. StatusPanel keeps
+    // the AMS fit at 1 there until a layout-zoom backend is available.
+    // Edge creates its native backend asynchronously; a later content-size
+    // report retries the pending zoom once the backend exists.
+    if (wxWebView* view = GetWebView(); view && view->GetNativeBackend()) {
+        if (m_ams_base_zoom <= 0)
+            m_ams_base_zoom = view->GetZoomFactor();
+        const float zoom = float(m_ams_base_zoom * m_ams_fit_zoom);
+        if (std::abs(view->GetZoomFactor() - zoom) > 0.001f)
+            view->SetZoomFactor(zoom);
+    }
+#endif
 
     if (m_last_reported_content_size != wxDefaultSize) {
         const int jitter = FromDIP(8);
@@ -633,6 +649,19 @@ void DeviceWebHost::ApplyAmsControlWebHostSize(int height_dip)
     }
 }
 
+void DeviceWebHost::SetAmsControlWebFitZoom(double zoom)
+{
+    if (m_mode != DeviceWebHostMode::DevicePageAmsControlWeb || std::abs(zoom - m_ams_fit_zoom) < 0.001)
+        return;
+
+    m_ams_fit_zoom = zoom;
+    if (m_last_logical_content_size.GetHeight() <= 0)
+        return;
+    // Bypass the height jitter filter: the whole size changes.
+    m_last_reported_content_size = wxDefaultSize;
+    ApplyAmsControlWebHostSize(m_last_logical_content_size.GetHeight());
+}
+
 void DeviceWebHost::OnWebContentSizeChanged(int width, int height)
 {
     // StatusPanel-embedded AmsControlWeb: width is locked because the page is
@@ -656,8 +685,8 @@ void DeviceWebHost::OnWebContentSizeChanged(int width, int height)
     // the current DPI on show.
     m_last_logical_content_size = wxSize(width, height);
 
-    // The web page reports its size in DIP/CSS pixels, so FromDIP() is the
-    // correct conversion to the physical pixels wxWindow::SetMinSize() expects.
+    // Convert reported CSS pixels to wx window coordinates; GTK applies its
+    // integer content scale when rendering.
     wxSize content_size(FromDIP(width), FromDIP(height));
     if (content_size == m_last_reported_content_size) {
         return;

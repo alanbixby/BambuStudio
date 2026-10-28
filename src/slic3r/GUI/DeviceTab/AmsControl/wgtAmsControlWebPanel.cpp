@@ -4,6 +4,8 @@
 
 #include <wx/sizer.h>
 
+#include <cmath>
+
 namespace Slic3r::GUI {
 
 namespace {
@@ -64,6 +66,24 @@ void wgtAmsControlWebPanel::HideAndSuspend()
     if (m_device_web) {
         m_device_web->Suspend();
     }
+}
+
+void wgtAmsControlWebPanel::SetFitZoom(double zoom)
+{
+    m_fit_zoom = zoom;
+    if (m_device_web) {
+        m_device_web->SetAmsControlWebFitZoom(zoom);
+    }
+}
+
+int wgtAmsControlWebPanel::GetBaseWidth() const
+{
+    return FromDIP(kMinWidthDip);
+}
+
+int wgtAmsControlWebPanel::GetBaseHeight() const
+{
+    return int(std::lround(GetMinSize().y / m_fit_zoom));
 }
 
 void wgtAmsControlWebPanel::UpdateByMachine(Slic3r::MachineObject* /*obj*/)

@@ -4,4 +4,4 @@ These frozen C++ units contain actual extracted host/panel methods and the conte
 
 Baseline methods match PR10 ancestor `6e81cd8f92313dfa8c693baab022a18945f74add`; corrected methods match `df28193c8e4aa5f2439f81eed83caa842a01c5ea`. The result JSON records local combined refs used for extraction; source-method equality was checked against the focused commits. Compile with C++17, warnings as errors and UBSan. Run the baseline non-macOS executable expecting exit 1 and the exact pending-height message; corrected non-macOS and both macOS-branch executables must exit 0. Define `__WXOSX__` only to select the extracted branch in this model, not to simulate native Cocoa.
 
-Fable's final recheck did not complete because its API rate limit was reached; partial draft notes are retained separately. This parent-authored test does not replace that missing independent review.
+Fable's final recheck resumed after its initial API rate limit and completed with no blockers. Its separate host/solver model covers 168 cases; see [the completed review](../camera-review/REPORT.md). Neither model establishes native Windows/macOS rendering behavior.

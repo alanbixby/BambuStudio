@@ -1,0 +1,271 @@
+{
+  "verified_at_utc": "2026-10-28T08:32:58.924071+00:00",
+  "revisions": {
+    "head": "df28193c8e4aa5f2439f81eed83caa842a01c5ea",
+    "review_combined": "e79eb4721427ac7f136d6d5c5fa0acd962f57f30",
+    "final_combined": "47a28ade55ec26d12096151f8ad7d93ebde174bc",
+    "round2": "6e81cd8f92313dfa8c693baab022a18945f74add",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "checkout": "47a28ade55ec26d12096151f8ad7d93ebde174bc"
+  },
+  "upstream_status": "## cleanup/combined\n",
+  "reported_findings": {
+    "open_blocking_count": 0,
+    "observations": [
+      "CF-10",
+      "CF-11"
+    ]
+  },
+  "camera_file_blobs": {
+    "src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.cpp": {
+      "head": "f6eb53811e4fd4fd1a137bf43ac49b258be743e5",
+      "review_combined": "f6eb53811e4fd4fd1a137bf43ac49b258be743e5",
+      "final_combined": "f6eb53811e4fd4fd1a137bf43ac49b258be743e5"
+    },
+    "src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.h": {
+      "head": "ef52a438e04e02fc1b405810e18ba22486c1e279",
+      "review_combined": "ef52a438e04e02fc1b405810e18ba22486c1e279",
+      "final_combined": "ef52a438e04e02fc1b405810e18ba22486c1e279"
+    },
+    "src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp": {
+      "head": "0db7cf8f5d4079ec0bde3d7cba4fc708bb0ca6dc",
+      "review_combined": "0db7cf8f5d4079ec0bde3d7cba4fc708bb0ca6dc",
+      "final_combined": "0db7cf8f5d4079ec0bde3d7cba4fc708bb0ca6dc"
+    },
+    "src/slic3r/GUI/DeviceWeb/DeviceWebHost.hpp": {
+      "head": "b7494e65f48d9dad96646dc4f4c292b755603cce",
+      "review_combined": "b7494e65f48d9dad96646dc4f4c292b755603cce",
+      "final_combined": "b7494e65f48d9dad96646dc4f4c292b755603cce"
+    },
+    "src/slic3r/GUI/StatusPanel.cpp": {
+      "head": "2fda31e17d8680cb9d396d5f2ac2f27e11aeb076",
+      "review_combined": "78a5ae649980a784fc11aa0a8335d58e5a050e23",
+      "final_combined": "78a5ae649980a784fc11aa0a8335d58e5a050e23"
+    },
+    "src/slic3r/GUI/StatusPanel.hpp": {
+      "head": "c3bec15d2877c737b0721dbe6daaaefc960e78fd",
+      "review_combined": "c3bec15d2877c737b0721dbe6daaaefc960e78fd",
+      "final_combined": "c3bec15d2877c737b0721dbe6daaaefc960e78fd"
+    }
+  },
+  "solver": {
+    "round2": {
+      "bytes": 5402,
+      "sha256": "41a71da22f4ed091f5556a3f747b4638b4555c43f3d975a7918b7eb62f610b8d"
+    },
+    "head": {
+      "bytes": 5402,
+      "sha256": "41a71da22f4ed091f5556a3f747b4638b4555c43f3d975a7918b7eb62f610b8d"
+    },
+    "review_combined": {
+      "bytes": 5402,
+      "sha256": "41a71da22f4ed091f5556a3f747b4638b4555c43f3d975a7918b7eb62f610b8d"
+    },
+    "final_combined": {
+      "bytes": 5402,
+      "sha256": "41a71da22f4ed091f5556a3f747b4638b4555c43f3d975a7918b7eb62f610b8d"
+    }
+  },
+  "review_to_final_diff": " src/slic3r/GUI/Widgets/ComboBox.cpp  | 19 +++++--------------\n src/slic3r/GUI/Widgets/ComboBox.hpp  |  4 ++--\n src/slic3r/GUI/Widgets/TextInput.hpp |  6 +++---\n 3 files changed, 10 insertions(+), 19 deletions(-)\n",
+  "delta": {
+    "numstat": "5\t3\tsrc/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp\n",
+    "sha256": "87afc9ffa5c3ba2c12159fc6cd8815f2dbb9743fda12105c375935a1debb0a5f",
+    "matches_camera_delta_patch": true
+  },
+  "exported_patch": {
+    "bytes": 16064,
+    "sha256": "f97440c5e41c652da263553ae392f64ff7586587ac30d0ab59a89ecae2c90129",
+    "matches": true
+  },
+  "evidence_copies": {
+    "REPORT.md": {
+      "raw_bytes": 3815,
+      "raw_sha256": "c012df81cad2fde50c6f7f6456455941ac2257c61ea200738b175cf0c495dad9",
+      "tracking_worktree_exists": true,
+      "tracked_at_HEAD": true,
+      "tracking_worktree_sha256": "c012df81cad2fde50c6f7f6456455941ac2257c61ea200738b175cf0c495dad9",
+      "worktree_matches_raw": true,
+      "committed_sha256": "c012df81cad2fde50c6f7f6456455941ac2257c61ea200738b175cf0c495dad9",
+      "committed_matches_raw": true
+    },
+    "findings.json": {
+      "raw_bytes": 7420,
+      "raw_sha256": "d74bf5b33c1fd972c7c4fdc1fc84f28de9ec9848d346d5e1f80e643e85f242ac",
+      "tracking_worktree_exists": true,
+      "tracked_at_HEAD": true,
+      "tracking_worktree_sha256": "d74bf5b33c1fd972c7c4fdc1fc84f28de9ec9848d346d5e1f80e643e85f242ac",
+      "worktree_matches_raw": true,
+      "committed_sha256": "d74bf5b33c1fd972c7c4fdc1fc84f28de9ec9848d346d5e1f80e643e85f242ac",
+      "committed_matches_raw": true
+    },
+    "pending_zoom_model_r3.py": {
+      "raw_bytes": 8202,
+      "raw_sha256": "55152203e931a5546a0e687252faa1ff27c59441fcbb522b851db755bbbc7e38",
+      "tracking_worktree_exists": true,
+      "tracked_at_HEAD": false,
+      "tracking_worktree_sha256": "55152203e931a5546a0e687252faa1ff27c59441fcbb522b851db755bbbc7e38",
+      "worktree_matches_raw": true
+    }
+  },
+  "tracking_status_at_snapshot": " M evidence/peer-review-20261028/round3/camera_fable/STATUS.md\n?? evidence/peer-review-20261028/round3/camera_fable/pending_zoom_model_r3.py\n?? evidence/peer-review-20261028/round3/camera_fable/recovered-status.json\n",
+  "model_audit": {
+    "cases": 168,
+    "pre_distinct_max": 1,
+    "delayed_backend_cases": 84,
+    "unready_api_calls_total": 0,
+    "reference_mismatch_count": 6,
+    "reference_mismatches": [
+      {
+        "scale": 1.0,
+        "window": "wide",
+        "page_height": 344,
+        "ready_after": 0,
+        "pre": [
+          1.6,
+          1.6
+        ],
+        "pre_distinct": 1,
+        "unready_api": 3,
+        "post": [
+          1.6
+        ],
+        "final": 1.6,
+        "ref": 1.55,
+        "set_zooms": [
+          1.6
+        ],
+        "min_pre": [
+          938,
+          544
+        ]
+      },
+      {
+        "scale": 1.0,
+        "window": "wide",
+        "page_height": 344,
+        "ready_after": 3,
+        "pre": [
+          1.6,
+          1.6
+        ],
+        "pre_distinct": 1,
+        "unready_api": 0,
+        "post": [
+          1.6
+        ],
+        "final": 1.6,
+        "ref": 1.55,
+        "set_zooms": [
+          1.6
+        ],
+        "min_pre": [
+          938,
+          544
+        ]
+      },
+      {
+        "scale": 1.5,
+        "window": "wide",
+        "page_height": 344,
+        "ready_after": 0,
+        "pre": [
+          1.6,
+          1.6
+        ],
+        "pre_distinct": 1,
+        "unready_api": 3,
+        "post": [
+          1.6
+        ],
+        "final": 1.6,
+        "ref": 1.55,
+        "set_zooms": [
+          1.6
+        ],
+        "min_pre": [
+          1406,
+          816
+        ]
+      },
+      {
+        "scale": 1.5,
+        "window": "wide",
+        "page_height": 344,
+        "ready_after": 3,
+        "pre": [
+          1.6,
+          1.6
+        ],
+        "pre_distinct": 1,
+        "unready_api": 0,
+        "post": [
+          1.6
+        ],
+        "final": 1.6,
+        "ref": 1.55,
+        "set_zooms": [
+          1.6
+        ],
+        "min_pre": [
+          1406,
+          816
+        ]
+      },
+      {
+        "scale": 2.0,
+        "window": "wide",
+        "page_height": 344,
+        "ready_after": 0,
+        "pre": [
+          1.6,
+          1.6
+        ],
+        "pre_distinct": 1,
+        "unready_api": 3,
+        "post": [
+          1.6
+        ],
+        "final": 1.6,
+        "ref": 1.55,
+        "set_zooms": [
+          1.6
+        ],
+        "min_pre": [
+          1875,
+          1088
+        ]
+      },
+      {
+        "scale": 2.0,
+        "window": "wide",
+        "page_height": 344,
+        "ready_after": 3,
+        "pre": [
+          1.6,
+          1.6
+        ],
+        "pre_distinct": 1,
+        "unready_api": 0,
+        "post": [
+          1.6
+        ],
+        "final": 1.6,
+        "ref": 1.55,
+        "set_zooms": [
+          1.6
+        ],
+        "min_pre": [
+          1875,
+          1088
+        ]
+      }
+    ],
+    "post_distinct_max": 1,
+    "round_trip_checks": 105,
+    "round_trip_failures": 0,
+    "delayed_pre_pass_counts": [
+      1,
+      2
+    ]
+  }
+}

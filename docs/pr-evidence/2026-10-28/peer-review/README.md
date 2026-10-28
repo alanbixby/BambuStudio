@@ -11,3 +11,7 @@ Windows/macOS source paths were reviewed, but native builds/rendering on those p
 ## Review availability
 
 Twenty-four delegated reviews completed. The final Fable camera and cleanliness rechecks could not run because its API rate limit was reached. Earlier Fable rounds completed; the final Print Options reduction passed its Codex review. The startup sizing fix has a parent-authored extracted-method regression check in [startup-zoom-model](startup-zoom-model/README.md), not a replacement independent review. The installed application was not changed.
+
+## Linux integration build
+
+The exact alpha/pinned-wx integration bundle for the final source passed build, freshness, 6,887 file hashes and 28 dependency checks. [Build record](linux-build.json) and [independent bundle check](bundle-parent-check.json) record fingerprint `2170f1da3c1c` and its exact ELF identity. The bundle was neither installed nor launched; this is not Studio runtime acceptance or a Windows/macOS build.

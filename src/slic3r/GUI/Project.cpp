@@ -117,8 +117,8 @@ void ProjectPanel::post_reload_result(wxEvtHandler* dispatcher, const std::share
 
 bool ProjectPanel::matches_project(const std::string& auxiliary_path, const std::string& design_id) const
 {
-    Model& model = wxGetApp().plater()->model();
-    return auxiliary_path == encode_path(model.get_auxiliary_file_temp_path().c_str()) &&
+    const Model& model = wxGetApp().plater()->model();
+    return auxiliary_path == encode_path(model.get_auxiliary_file_temp_path_if_initialized().c_str()) &&
            design_id == (model.design_info ? model.design_info->DesignerId : std::string());
 }
 
@@ -201,17 +201,7 @@ void ProjectPanel::on_reload(wxCommandEvent& evt)
         return;
     }
 
-    // Keep auxiliary-root ownership on the UI thread; Reload is now a static
-    // file reader and cannot race another reload through m_root_dir.
-    const fs::path new_root(wxString(auxiliary_path).ToStdWstring());
-    const fs::path old_root(m_root_dir.ToStdWstring());
-    if (!m_root_dir.empty() && old_root.lexically_normal() != new_root.lexically_normal()) {
-        try {
-            fs::remove_all(old_root);
-        } catch (const std::exception& e) {
-            BOOST_LOG_TRIVIAL(error) << "Failed removing auxiliary directory: " << e.what();
-        }
-    }
+    // Model owns the entire backup tree, including retired auxiliary roots.
     m_root_dir = wxString(auxiliary_path);
 
     std::string author;
@@ -273,18 +263,17 @@ void ProjectPanel::on_reload(wxCommandEvent& evt)
                  data = std::move(data)]() mutable {
                     if (!matches_project(auxiliary_path, design_id))
                         return;
-                    // Publish local data before scheduling optional HTTP work.
-                    // This cache and its sequence counter are UI-thread-only.
+                    // Keep the payload cache and sequence counter on the UI thread.
                     m_last_payload = {{"command", "show_3mf_info"},
                                       {"sequence_id", std::to_string(m_sequence_id++)},
                                       {"model", std::move(data)}};
+                    // Start HTTP in a later UI callback, after dispatching the local payload below.
                     if (!lookup_url.empty()) {
                         post_reload_result(dispatcher, state, generation,
                             [this, generation, auxiliary_path, design_id, lookup_url] {
                                 start_model_id_lookup(generation, auxiliary_path, design_id, lookup_url);
                             });
                     }
-                    // Last panel access: wx execution may dispatch nested events.
                     dispatch_project_payload();
                 });
         } catch (const std::exception& e) {
@@ -347,9 +336,7 @@ std::string ProjectPanel::fetch_model_id(const std::string& url, const std::shar
         .on_progress([state, generation](Http::Progress, bool& cancel) {
             cancel = !reload_is_current(state, generation);
         })
-        .on_complete([&model_id](std::string body, unsigned status) {
-            if (status < 200 || status >= 300)
-                return;
+        .on_complete([&model_id](std::string body, unsigned) {
             try {
                 const json result = json::parse(body);
                 if (result.contains("id")) {

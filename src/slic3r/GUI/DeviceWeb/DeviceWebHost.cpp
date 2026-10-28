@@ -596,6 +596,8 @@ void DeviceWebHost::NotifyAmsControlWebChanged()
 // Locked host width (DIP) of the StatusPanel-embedded AmsControlWeb panel. The
 // page is laid out width:100%, so its reported width only echoes the container.
 static constexpr int kAmsControlWebWidthDip = 586;
+// Match the panel minimum until the page reports its content height.
+static constexpr int kAmsControlWebInitialHeightDip = 340;
 
 void DeviceWebHost::ApplyAmsControlWebHostSize(int height_dip)
 {
@@ -655,11 +657,11 @@ void DeviceWebHost::SetAmsControlWebFitZoom(double zoom)
         return;
 
     m_ams_fit_zoom = zoom;
-    if (m_last_logical_content_size.GetHeight() <= 0)
-        return;
     // Bypass the height jitter filter: the whole size changes.
     m_last_reported_content_size = wxDefaultSize;
-    ApplyAmsControlWebHostSize(m_last_logical_content_size.GetHeight());
+    const int height_dip = m_last_logical_content_size.GetHeight() > 0 ?
+        m_last_logical_content_size.GetHeight() : kAmsControlWebInitialHeightDip;
+    ApplyAmsControlWebHostSize(height_dip);
 }
 
 void DeviceWebHost::OnWebContentSizeChanged(int width, int height)

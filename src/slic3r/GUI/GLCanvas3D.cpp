@@ -10310,8 +10310,6 @@ void GLCanvas3D::_render_assembly_steps_view()
         }
         m_assembly_steps->set_gizmo_toolbar_rect(tb_x0, tb_y0, tb_x1, tb_y1);
     }
-    // The sidebar collapse toggle is drawn at the canvas' top-left corner whenever the
-    // sidebar is docked (see _render_collapse_toolbar); its height is in canvas px.
     m_assembly_steps->set_collapse_toolbar_bottom_y(get_collapse_toolbar_height());
     m_assembly_steps->render_main(static_cast<float>(cnv_sz.get_width()), static_cast<float>(cnv_sz.get_height()));
 }

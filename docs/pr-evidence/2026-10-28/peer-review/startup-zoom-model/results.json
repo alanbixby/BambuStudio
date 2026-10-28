@@ -1,0 +1,37 @@
+{
+  "results": [
+    {
+      "ref": "24d91027fb6d07bbffac558afbeba699292e653a",
+      "case": "before-layout-backend",
+      "exit_code": 1,
+      "expected": 1,
+      "output": "FAIL: pending zoom changed the unzoomed initial base height\n",
+      "source_sha256": "b299c6b9d03c30d905172ed870051779f8eb2b8a62b6407ad772bd07cd168d6a"
+    },
+    {
+      "ref": "24d91027fb6d07bbffac558afbeba699292e653a",
+      "case": "before-macos-branch",
+      "exit_code": 0,
+      "expected": 0,
+      "output": "PASS: 40 extracted-method min-height/zoom checks\n",
+      "source_sha256": "b299c6b9d03c30d905172ed870051779f8eb2b8a62b6407ad772bd07cd168d6a"
+    },
+    {
+      "ref": "47a28ade55ec26d12096151f8ad7d93ebde174bc",
+      "case": "after-layout-backend",
+      "exit_code": 0,
+      "expected": 0,
+      "output": "PASS: 840 extracted-method min-height/zoom checks\n",
+      "source_sha256": "336599cbb038005b86a492a4fc3164826467fcbfda1739fdd2a11e2bed1d17e5"
+    },
+    {
+      "ref": "47a28ade55ec26d12096151f8ad7d93ebde174bc",
+      "case": "after-macos-branch",
+      "exit_code": 0,
+      "expected": 0,
+      "output": "PASS: 40 extracted-method min-height/zoom checks\n",
+      "source_sha256": "336599cbb038005b86a492a4fc3164826467fcbfda1739fdd2a11e2bed1d17e5"
+    }
+  ],
+  "limits": "Actual extracted methods and content handler; wx/window/backend are doubles. No native OS compilation, paint timing or GUI race proof."
+}

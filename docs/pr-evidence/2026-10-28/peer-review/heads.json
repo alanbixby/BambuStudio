@@ -1,7 +1,7 @@
 {
   "app_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
   "wx_base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
-  "reviewed_app_commit": "24d91027fb6d07bbffac558afbeba699292e653a",
+  "reviewed_app_commit": "47a28ade55ec26d12096151f8ad7d93ebde174bc",
   "reviewed_wx_commit": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
   "patches": [
     {
@@ -97,15 +97,12 @@
     {
       "repository": "alanbixby/BambuStudio",
       "branch": "fix/print-options-reflow",
-      "head": "8a700863e05d6aac3e7ae17ee92cbf697703fef1",
+      "head": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
       "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
       "patch": "bambu-06-print-options-reflow.patch",
       "paths": [
         "src/slic3r/GUI/PrintOptionsDialog.cpp",
-        "src/slic3r/GUI/PrintOptionsDialog.hpp",
-        "src/slic3r/GUI/Widgets/ComboBox.cpp",
-        "src/slic3r/GUI/Widgets/ComboBox.hpp",
-        "src/slic3r/GUI/Widgets/TextInput.hpp"
+        "src/slic3r/GUI/PrintOptionsDialog.hpp"
       ],
       "draft_url": "https://github.com/alanbixby/BambuStudio/pull/6",
       "base_branch": "master",
@@ -156,7 +153,7 @@
     {
       "repository": "alanbixby/BambuStudio",
       "branch": "fix/camera-ams-balance",
-      "head": "6e81cd8f92313dfa8c693baab022a18945f74add",
+      "head": "df28193c8e4aa5f2439f81eed83caa842a01c5ea",
       "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
       "patch": "bambu-10-camera-ams-balance.patch",
       "paths": [
@@ -202,8 +199,8 @@
   ],
   "composition": {
     "app": {
-      "combined_commit": "24d91027fb6d07bbffac558afbeba699292e653a",
-      "tree": "f801fc5599c496cfd168a6ceab3aa238f1c6de93",
+      "combined_commit": "47a28ade55ec26d12096151f8ad7d93ebde174bc",
+      "tree": "14e1b9585e9f54a1201a3d7b1aa3bfd408523fcf",
       "matches": true
     },
     "wx": {

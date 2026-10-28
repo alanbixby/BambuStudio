@@ -7,3 +7,7 @@ The draft source heads in [heads.json](heads.json) reproduce the recorded combin
 [Native scroller follow-up](progress-native/REPORT.md) passes 348 scoped initial/update checks, preserving 24 known unbreakable-name failures. It uses extracted production statements in a private dialog shell, not a full Studio run. [WebKitGTK CSS measurements](webkit-css/REPORT.md) reject an extra DPI-zoom compensation on the tested runtime.
 
 Windows/macOS source paths were reviewed, but native builds/rendering on those platforms remain unverified. Existing screenshots predate these source follow-ups. No application installation or printer interaction was performed during peer review.
+
+## Review availability
+
+Twenty-four delegated reviews completed. The final Fable camera and cleanliness rechecks could not run because its API rate limit was reached. Earlier Fable rounds completed; the final Print Options reduction passed its Codex review. The startup sizing fix has a parent-authored extracted-method regression check in [startup-zoom-model](startup-zoom-model/README.md), not a replacement independent review. The installed application was not changed.

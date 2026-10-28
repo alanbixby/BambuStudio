@@ -6,8 +6,7 @@
     "purpose": "declared-base",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "a230991dd3e226d31c9831217009ad144a059c6a",
-    "stderr": ""
+    "result": "a230991dd3e226d31c9831217009ad144a059c6a"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -16,8 +15,7 @@
     "purpose": "latest-upstream",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "a230991dd3e226d31c9831217009ad144a059c6a",
-    "stderr": ""
+    "result": "a230991dd3e226d31c9831217009ad144a059c6a"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -26,8 +24,7 @@
     "purpose": "declared-base",
     "base": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
     "exit_code": 0,
-    "result": "c7341562a6046e1c3823d58d75e870533053e8fe",
-    "stderr": ""
+    "result": "c7341562a6046e1c3823d58d75e870533053e8fe"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -36,8 +33,7 @@
     "purpose": "latest-upstream",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "c7341562a6046e1c3823d58d75e870533053e8fe",
-    "stderr": ""
+    "result": "c7341562a6046e1c3823d58d75e870533053e8fe"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -46,8 +42,7 @@
     "purpose": "declared-base",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "2442b25e89f0c5edecb029ba7cb7301a7c63cd77",
-    "stderr": ""
+    "result": "2442b25e89f0c5edecb029ba7cb7301a7c63cd77"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -56,8 +51,7 @@
     "purpose": "latest-upstream",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "2442b25e89f0c5edecb029ba7cb7301a7c63cd77",
-    "stderr": ""
+    "result": "2442b25e89f0c5edecb029ba7cb7301a7c63cd77"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -66,8 +60,7 @@
     "purpose": "declared-base",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "b9b2e68c53152f255720ba11695cf4794ab4883e",
-    "stderr": ""
+    "result": "b9b2e68c53152f255720ba11695cf4794ab4883e"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -76,8 +69,7 @@
     "purpose": "latest-upstream",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "b9b2e68c53152f255720ba11695cf4794ab4883e",
-    "stderr": ""
+    "result": "b9b2e68c53152f255720ba11695cf4794ab4883e"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -86,8 +78,7 @@
     "purpose": "declared-base",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "d714d9dedd6bfca70f9f58f1bd98a3864421c9d4",
-    "stderr": ""
+    "result": "d714d9dedd6bfca70f9f58f1bd98a3864421c9d4"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -96,28 +87,25 @@
     "purpose": "latest-upstream",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "d714d9dedd6bfca70f9f58f1bd98a3864421c9d4",
-    "stderr": ""
+    "result": "d714d9dedd6bfca70f9f58f1bd98a3864421c9d4"
   },
   {
     "repository": "alanbixby/BambuStudio",
     "branch": "fix/print-options-reflow",
-    "head": "8a700863e05d6aac3e7ae17ee92cbf697703fef1",
+    "head": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
     "purpose": "declared-base",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "cc96d7115a326706bebbc6d4422518e806011ce7",
-    "stderr": ""
+    "result": "6dfb68f0a215d68492eab47d8e022acfe7619253"
   },
   {
     "repository": "alanbixby/BambuStudio",
     "branch": "fix/print-options-reflow",
-    "head": "8a700863e05d6aac3e7ae17ee92cbf697703fef1",
+    "head": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
     "purpose": "latest-upstream",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "cc96d7115a326706bebbc6d4422518e806011ce7",
-    "stderr": ""
+    "result": "6dfb68f0a215d68492eab47d8e022acfe7619253"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -126,8 +114,7 @@
     "purpose": "declared-base",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "4ac31392e530280280762d2f60c2543779b67e95",
-    "stderr": ""
+    "result": "4ac31392e530280280762d2f60c2543779b67e95"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -136,8 +123,7 @@
     "purpose": "latest-upstream",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "4ac31392e530280280762d2f60c2543779b67e95",
-    "stderr": ""
+    "result": "4ac31392e530280280762d2f60c2543779b67e95"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -146,8 +132,7 @@
     "purpose": "declared-base",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "c663a6cb83ea179334c4d26f8d84718d1ecb1bc0",
-    "stderr": ""
+    "result": "c663a6cb83ea179334c4d26f8d84718d1ecb1bc0"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -156,8 +141,7 @@
     "purpose": "latest-upstream",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "c663a6cb83ea179334c4d26f8d84718d1ecb1bc0",
-    "stderr": ""
+    "result": "c663a6cb83ea179334c4d26f8d84718d1ecb1bc0"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -166,8 +150,7 @@
     "purpose": "declared-base",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "ba7939dbe93460d637a884528320d899d060766f",
-    "stderr": ""
+    "result": "ba7939dbe93460d637a884528320d899d060766f"
   },
   {
     "repository": "alanbixby/BambuStudio",
@@ -176,28 +159,25 @@
     "purpose": "latest-upstream",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "ba7939dbe93460d637a884528320d899d060766f",
-    "stderr": ""
+    "result": "ba7939dbe93460d637a884528320d899d060766f"
   },
   {
     "repository": "alanbixby/BambuStudio",
     "branch": "fix/camera-ams-balance",
-    "head": "6e81cd8f92313dfa8c693baab022a18945f74add",
+    "head": "df28193c8e4aa5f2439f81eed83caa842a01c5ea",
     "purpose": "declared-base",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "9fb23b4e79a27f6c25d1813866ab3a264f6b9962",
-    "stderr": ""
+    "result": "1109deb60abe9c77febee0b44cfbd73673f3054b"
   },
   {
     "repository": "alanbixby/BambuStudio",
     "branch": "fix/camera-ams-balance",
-    "head": "6e81cd8f92313dfa8c693baab022a18945f74add",
+    "head": "df28193c8e4aa5f2439f81eed83caa842a01c5ea",
     "purpose": "latest-upstream",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "exit_code": 0,
-    "result": "9fb23b4e79a27f6c25d1813866ab3a264f6b9962",
-    "stderr": ""
+    "result": "1109deb60abe9c77febee0b44cfbd73673f3054b"
   },
   {
     "repository": "alanbixby/wxWidgets",
@@ -206,8 +186,7 @@
     "purpose": "declared-base",
     "base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
     "exit_code": 0,
-    "result": "6c1dfc3dc39e7c370b5cd40c6f36913ff52ab71c",
-    "stderr": ""
+    "result": "6c1dfc3dc39e7c370b5cd40c6f36913ff52ab71c"
   },
   {
     "repository": "alanbixby/wxWidgets",
@@ -216,8 +195,7 @@
     "purpose": "latest-upstream",
     "base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
     "exit_code": 0,
-    "result": "6c1dfc3dc39e7c370b5cd40c6f36913ff52ab71c",
-    "stderr": ""
+    "result": "6c1dfc3dc39e7c370b5cd40c6f36913ff52ab71c"
   },
   {
     "repository": "alanbixby/wxWidgets",
@@ -226,8 +204,7 @@
     "purpose": "declared-base",
     "base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
     "exit_code": 0,
-    "result": "4637851256e12ca34a37fcb3da30cd9489b60b53",
-    "stderr": ""
+    "result": "4637851256e12ca34a37fcb3da30cd9489b60b53"
   },
   {
     "repository": "alanbixby/wxWidgets",
@@ -236,7 +213,6 @@
     "purpose": "latest-upstream",
     "base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
     "exit_code": 0,
-    "result": "4637851256e12ca34a37fcb3da30cd9489b60b53",
-    "stderr": ""
+    "result": "4637851256e12ca34a37fcb3da30cd9489b60b53"
   }
 ]

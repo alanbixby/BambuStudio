@@ -1,0 +1,6 @@
+{
+  "src/slic3r/GUI/Widgets/TextInput.cpp": "b95ef3cbed2120f000684354026e5032a96d2b074b920ddcd79b9368bb929947",
+  "src/slic3r/GUI/Widgets/TextInput.hpp": "35ab14b56fd1a5e0eb43595e632f403b11cb269cf78e87702c6f0ec279402d94",
+  "src/slic3r/GUI/Widgets/ComboBox.cpp": "d510c99db8c9f23607849c8b67f982222ac59e5459c68f10eea568353fb087f3",
+  "src/slic3r/GUI/Widgets/ComboBox.hpp": "afad5f4bf84ca0b5d64031df09c8bcf17ce7940afec0898e1edbba8de18df790"
+}

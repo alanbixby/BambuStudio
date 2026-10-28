@@ -1,0 +1,78 @@
+{
+  "round": 3,
+  "scope": "print_font_sol",
+  "reviewed_pr": "alanbixby/BambuStudio#6",
+  "head_sha": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+  "base_sha": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+  "app_combined_sha": "47a28ade55ec26d12096151f8ad7d93ebde174bc",
+  "wx_base_sha": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+  "wx_combined_sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+  "open_blocking_count": 0,
+  "blocking_findings": 0,
+  "findings": [
+    {
+      "id": "R3-PRINT-FONT-001",
+      "affected_prs": [
+        "alanbixby/BambuStudio#6"
+      ],
+      "severity": "non-blocking",
+      "title": "Candidate body still describes removed native font propagation",
+      "location": {
+        "file": "/tmp/bambu-peer-review-20261028/round2/bodies/bambu-pr-6.md",
+        "line": 3,
+        "additional_line": 5,
+        "relevant_head_sha": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+        "content_sha256": "ca9e99173cf3e1a51e7c3237e7c9508a874708fceb7135349988528d2f47131f"
+      },
+      "evidence": [
+        "Body line 3 says the native entry receives the selected font and native line height, including when hidden; line 5 describes validation of a narrowed override and constructor guard.",
+        "The final PR6 diff changes only PrintOptionsDialog.cpp/.hpp. Widgets/TextInput.cpp/.hpp and ComboBox.cpp/.hpp have exactly the baseline blobs in both the isolated PR and final combined commit.",
+        "cbde5d139ced56b5e3d7def490446f06ccd2e791:src/slic3r/GUI/Widgets/ComboBox.cpp:199-204 retains the baseline branch: a hidden readonly entry causes SetFont to update the outer TextInput, without forwarding the font or refreshing native height."
+      ],
+      "trigger": "Publish the currently supplied candidate body with the final PR6 head.",
+      "failure_scenario": "Reviewers on every platform receive an inaccurate account of the code and validation, suggesting a generic native-entry sizing change that this head deliberately removes. This is a documentation mismatch, not a code blocker.",
+      "smallest_sustainable_correction": "Replace the native-propagation paragraph with a statement that the five readonly selectors use the existing outer-font rendering and widget files remain baseline. Update the validation sentence to describe final source checks; do not attribute removed override/guard validation to the final implementation.",
+      "verification": "Compare the revised body with git diff --name-only BASE HEAD and ComboBox.cpp:199-204 at the final head. Keep historical screenshots and syntax checks explicitly historical."
+    }
+  ],
+  "prior_findings": [
+    {
+      "id": "CF-01",
+      "origin_scope": "cleanliness_fable",
+      "prior_severity": "blocking",
+      "status": "resolved by removing widget changes",
+      "evidence": [
+        "All four TextInput/ComboBox files are byte-for-byte baseline at both final PR6 and final combined commits; ordinary TextInput and editable ComboBox behavior therefore remain baseline."
+      ]
+    },
+    {
+      "id": "R1-PRINT-FONT-001",
+      "prior_severity": "non-blocking",
+      "status": "resolved by removal of introduced exposure; no generic height fix claimed",
+      "evidence": [
+        "No new native-entry SetFont/height propagation remains. All five added font calls target readonly ComboBoxes; native children are hidden by ComboBox.cpp:51-53. The selected value is painted using the outer GetFont at TextInput.cpp:330-332.",
+        "Baseline native/outer nonshrinking size policy remains at TextInput.cpp:395-423. Native height plumbing cannot reduce this already allocated control height and is unnecessary for the five smaller-font readonly selected values."
+      ]
+    }
+  ],
+  "validation": {
+    "fresh_checks": [
+      "29/29 final static checks pass; source_checks.py and source-checks.json",
+      "git diff --check BASE HEAD: exit 0",
+      "Read-only immutable-source tracing of constructor dispatch, readonly selection/font rendering, unchanged editable branch and wrapping/reflow paths"
+    ],
+    "not_run": [
+      "compilers or syntax compilation",
+      "builds",
+      "native runtime/GUI probes",
+      "printer actions",
+      "GitHub operations or remote mergeability refresh"
+    ],
+    "limits": [
+      "Windows/macOS compilation and rendering remain untested; source portability tracing is not native compilation.",
+      "No fresh translation, popup, focus/selection, scrollbar-settling or monitor-DPI transition tests.",
+      "Historical combined screenshots and prior syntax/runtime tests are not fresh validation of this head.",
+      "Existing editable ComboBox font/height policy is unchanged and not claimed repaired."
+    ]
+  }
+}

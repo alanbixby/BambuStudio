@@ -1,0 +1,24 @@
+{
+  "native-temperature-detail": {
+    "source_sha256": "2dd3c14489a7b53884d4b6445c2575f50674452c4857ab7648189334e917a8e7",
+    "crop_box": [
+      329,
+      79,
+      566,
+      397
+    ],
+    "output_sha256": "faf6c51f47c9ca05067663872abc149076f6f580f5136dc5ecf4e6c499afee20",
+    "caption": "After: Compact temperature values, fixed unit gaps and left-aligned icons in cleaned combined native build88df689c; not an isolated PR build."
+  },
+  "printing-progress-user-before": {
+    "source_sha256": "f844ffc636d819699937e43de0315cc0ed9a985a28e1a025f06c9686d2d4c238",
+    "crop_box": [
+      140,
+      125,
+      260,
+      183
+    ],
+    "output_sha256": "9e1b7a052da5907387bed00fa39a9ed4ed9e70e1d7c1e18ef4efe1fcae921c1a",
+    "caption": "Before: Original user capture shows clipped printing-percent digits. Exact executable identity is not independently attested."
+  }
+}

@@ -35,18 +35,17 @@ $(function () {
 function HandleStudio(pVal)
 {
   if (!pVal || typeof pVal !== 'object') return;
-  const incomingCommand = pVal.command;
-  if (incomingCommand === 'show_3mf_info' || incomingCommand === 'clear_3mf_info') {
+  const strCmd = pVal.command;
+  if (strCmd === 'show_3mf_info' || strCmd === 'clear_3mf_info') {
     if (!projectDOMReady) {
       pendingProjectMessage = pVal;
       return;
     }
   }
-  if (incomingCommand === 'show_3mf_info') {
+  if (strCmd === 'show_3mf_info') {
     projectInfoReceived = true;
     clearTimeout(projectInfoTimer);
   }
-	let strCmd=pVal['command'];
 	
 	if(strCmd=='show_3mf_info')
 	{

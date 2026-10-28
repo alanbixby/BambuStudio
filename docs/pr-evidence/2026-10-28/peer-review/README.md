@@ -10,10 +10,12 @@ Windows/macOS source paths were reviewed, but native builds/rendering on those p
 
 ## Review availability
 
-Twenty-five delegated reviews completed. The final Fable camera recheck resumed automatically after its initial API rate limit and completed with zero blockers. The final Fable cleanliness recheck remains unavailable. The final Print Options reduction passed its Codex review. The startup sizing fix has both a [completed independent camera review](camera-review/REPORT.md) and a parent-authored extracted-method regression check in [startup-zoom-model](startup-zoom-model/README.md). The installed application was not changed.
+All twenty-six delegated reviews completed. Both final Fable rechecks resumed automatically after their initial API rate limits and completed with zero blockers. [Completed cleanliness review](cleanliness-review/REPORT.md) and [parent responses](cleanliness-review/RESPONSES.md) record the final comment/description follow-ups. The final Print Options reduction passed its Codex review. The startup sizing fix has both a [completed independent camera review](camera-review/REPORT.md) and a parent-authored extracted-method regression check in [startup-zoom-model](startup-zoom-model/README.md). The installed application was not changed.
 
 ## Linux integration build
 
 The exact alpha/pinned-wx integration bundle for the final source passed build, freshness, 6,887 file hashes and 28 dependency checks. [Build record](linux-build.json) and [independent bundle check](bundle-parent-check.json) record fingerprint `2170f1da3c1c` and its exact ELF identity. The bundle was neither installed nor launched; this is not Studio runtime acceptance or a Windows/macOS build.
 
 The [original partial-review record](partial-camera-review/STATUS.md) is superseded by the completed camera review. Its 168 host/solver model cases confirm the startup correction. Existing small-height jitter filtering and possible first-layout WebView2 reflow remain accepted nonblocking limits; neither native Windows nor macOS rendering was tested.
+
+The final combined source `1f880d3` and PR10 `fab83eef` add only a constant-reference comment after reviewed/built `47a28ade` / `df28193c`. [Exact delta](cleanliness-review/comment-only.json) and [independent composition check](cleanliness-review/parent-verification.json) preserve that distinction. No rebuild was needed for the comment; the bundle record remains unchanged.

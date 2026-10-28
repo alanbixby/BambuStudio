@@ -1,0 +1,11 @@
+{
+  "scope": "CF-08 comment clarification",
+  "old_combined": "47a28ade55ec26d12096151f8ad7d93ebde174bc",
+  "new_combined": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+  "old_pr_head": "df28193c8e4aa5f2439f81eed83caa842a01c5ea",
+  "new_pr_head": "fab83eef842e6967fa06d0bb05410940b4787d28",
+  "path": "src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp",
+  "new_blob": "d403327551cccef73fe28bcc3d2b7993b1faccc3",
+  "only_difference": "One comment replaced by a two-line cross-reference; all non-comment bytes unchanged.",
+  "build": "Not rebuilt for this comment-only change. Verified bundle 2170f1da3c1c remains from old_combined; all executable source tokens are unchanged."
+}

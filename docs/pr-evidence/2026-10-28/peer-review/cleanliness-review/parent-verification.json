@@ -1,0 +1,333 @@
+{
+  "status": "PASS",
+  "generated_at_utc": "2026-10-28T11:52:33.351681+00:00",
+  "kind": "post-review evidence verification",
+  "peer_review_count_increment": 0,
+  "peer_review_count_context": 26,
+  "inputs": {
+    "manifest": "/home/bxb/.t3-nightly/projects/bambu-studio-linux-fixes/source-patches/review/manifest.json",
+    "manifest_sha256": "63724fabcc1363f1d2d49c5708d86f8ca2f4a4fd5017038cbcee00b282941fe2",
+    "manifest_observed_app_combined": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+    "manifest_observed_pr10": "fab83eef842e6967fa06d0bb05410940b4787d28",
+    "review_findings": "/tmp/bambu-peer-review-20261028/round3/cleanliness_fable/findings.json",
+    "findings_sha256": "25ee39117e4b850d0ca6c853e05aace2738d131edc5b7c1e09589e11ea01ac41",
+    "review_report": "/tmp/bambu-peer-review-20261028/round3/cleanliness_fable/REPORT.md",
+    "report_sha256": "e1022d915c693c992c3cecd8e59286c5dca13113c1b41395c9ce57add1dc001d"
+  },
+  "source_identities": {
+    "app": {
+      "repository": "/home/bxb/.t3-nightly/projects/bambu-studio-upstream",
+      "commits": [
+        {
+          "commit": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+          "tree": "5a8b4e55f434a562fdef88f62d5e2500d1bdeb95",
+          "parents": []
+        },
+        {
+          "commit": "df28193c8e4aa5f2439f81eed83caa842a01c5ea",
+          "tree": "1109deb60abe9c77febee0b44cfbd73673f3054b",
+          "parents": [
+            "6e81cd8f92313dfa8c693baab022a18945f74add"
+          ]
+        },
+        {
+          "commit": "fab83eef842e6967fa06d0bb05410940b4787d28",
+          "tree": "b0b107c990b075e7b1454354ff880dde0aaa57c0",
+          "parents": [
+            "df28193c8e4aa5f2439f81eed83caa842a01c5ea"
+          ]
+        },
+        {
+          "commit": "47a28ade55ec26d12096151f8ad7d93ebde174bc",
+          "tree": "14e1b9585e9f54a1201a3d7b1aa3bfd408523fcf",
+          "parents": [
+            "e79eb4721427ac7f136d6d5c5fa0acd962f57f30"
+          ]
+        },
+        {
+          "commit": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+          "tree": "4cb02f6dd2789c00d9ab4db590f8b23ae3a3f85b",
+          "parents": [
+            "47a28ade55ec26d12096151f8ad7d93ebde174bc"
+          ]
+        }
+      ]
+    },
+    "wx": {
+      "repository": "/home/bxb/.t3-nightly/projects/bambu-wx-upstream",
+      "commits": [
+        {
+          "commit": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+          "tree": "55e7179611180c778caf662f01d2f6e397216f87",
+          "parents": []
+        },
+        {
+          "commit": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+          "tree": "0830198d9a071d11c3a7067b308e9fc0205f1cbf",
+          "parents": [
+            "292aae41bef6544ebd7c43096c8f7ce683c4f3fb"
+          ]
+        }
+      ]
+    }
+  },
+  "checks": {
+    "reviewed_heads_match_prior_manifest": {
+      "pass": true,
+      "count": 12,
+      "heads": [
+        {
+          "id": "bambu-1",
+          "branch": "fix/assembly-return-context",
+          "prior_manifest_head": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+          "reviewed_head": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+          "matches": true
+        },
+        {
+          "id": "bambu-2",
+          "branch": "fix/assembly-sidebar-clearance",
+          "prior_manifest_head": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+          "reviewed_head": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+          "matches": true
+        },
+        {
+          "id": "bambu-3",
+          "branch": "fix/project-metadata",
+          "prior_manifest_head": "0826d59e1e1b36bf80b82904859c64f339749820",
+          "reviewed_head": "0826d59e1e1b36bf80b82904859c64f339749820",
+          "matches": true
+        },
+        {
+          "id": "bambu-4",
+          "branch": "fix/project-reader-styles",
+          "prior_manifest_head": "b3dacfa61b17385703e700779207e83e0c1041af",
+          "reviewed_head": "b3dacfa61b17385703e700779207e83e0c1041af",
+          "matches": true
+        },
+        {
+          "id": "bambu-5",
+          "branch": "fix/native-dip-geometry",
+          "prior_manifest_head": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+          "reviewed_head": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+          "matches": true
+        },
+        {
+          "id": "bambu-6",
+          "branch": "fix/print-options-reflow",
+          "prior_manifest_head": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+          "reviewed_head": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+          "matches": true
+        },
+        {
+          "id": "bambu-7",
+          "branch": "fix/settings-field-width",
+          "prior_manifest_head": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+          "reviewed_head": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+          "matches": true
+        },
+        {
+          "id": "bambu-8",
+          "branch": "fix/sidebar-card-spacing",
+          "prior_manifest_head": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+          "reviewed_head": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+          "matches": true
+        },
+        {
+          "id": "bambu-9",
+          "branch": "fix/temperature-value-alignment",
+          "prior_manifest_head": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+          "reviewed_head": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+          "matches": true
+        },
+        {
+          "id": "bambu-10",
+          "branch": "fix/camera-ams-balance",
+          "prior_manifest_head": "df28193c8e4aa5f2439f81eed83caa842a01c5ea",
+          "reviewed_head": "df28193c8e4aa5f2439f81eed83caa842a01c5ea",
+          "matches": true
+        },
+        {
+          "id": "wx-1",
+          "branch": "fix/gtk-label-font-measurement",
+          "prior_manifest_head": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+          "reviewed_head": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+          "matches": true
+        },
+        {
+          "id": "wx-2",
+          "branch": "fix/gtk-font-dpi-conversion",
+          "prior_manifest_head": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4",
+          "reviewed_head": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4",
+          "matches": true
+        }
+      ]
+    },
+    "review_combined_and_bases_match_prior_mapping": {
+      "pass": true,
+      "open_blocking": 0
+    },
+    "focused_comment_only": {
+      "pass": true,
+      "old": "df28193c8e4aa5f2439f81eed83caa842a01c5ea",
+      "new": "fab83eef842e6967fa06d0bb05410940b4787d28",
+      "path": "src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp",
+      "exact_comment_replacement": true,
+      "all_other_file_bytes_and_modes_unchanged": true,
+      "delta_sha256": "4e967c49dc590b7c602911a98da25dbd16e1517e04e95221c20fd051aceae623"
+    },
+    "combined_comment_only": {
+      "pass": true,
+      "old": "47a28ade55ec26d12096151f8ad7d93ebde174bc",
+      "new": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+      "path": "src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp",
+      "exact_comment_replacement": true,
+      "all_other_file_bytes_and_modes_unchanged": true,
+      "delta_sha256": "4e967c49dc590b7c602911a98da25dbd16e1517e04e95221c20fd051aceae623"
+    },
+    "focused_and_combined_deltas_identical": {
+      "pass": true,
+      "byte_identical": true
+    },
+    "comment_cross_reference": {
+      "pass": true,
+      "panel_constant": "kMinHeightDip = 340",
+      "host_constant": "kAmsControlWebInitialHeightDip = 340"
+    },
+    "composition": {
+      "app": {
+        "pass": true,
+        "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+        "combined": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+        "recomposed_tree": "4cb02f6dd2789c00d9ab4db590f8b23ae3a3f85b",
+        "expected_tree": "4cb02f6dd2789c00d9ab4db590f8b23ae3a3f85b",
+        "exact_tree_match": true,
+        "steps": [
+          {
+            "branch": "fix/assembly-return-context",
+            "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+            "head": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+            "patch": "/tmp/bambu-cleanliness-final-composition-check/bambu-01-assembly-return-context.patch",
+            "patch_sha256": "174791d68de9b1849aa2fc37182fa4c439a5752a31baaffd7e06ba2b23c2f8c9",
+            "apply_exit_code": 0
+          },
+          {
+            "branch": "fix/assembly-sidebar-clearance",
+            "parent": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+            "head": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+            "patch": "/tmp/bambu-cleanliness-final-composition-check/bambu-02-assembly-sidebar-clearance.patch",
+            "patch_sha256": "90b29108522ca2ec9ba72c7ec5f9fc9e421c4286c707d5d2148d4d25f9cade3c",
+            "apply_exit_code": 0
+          },
+          {
+            "branch": "fix/project-metadata",
+            "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+            "head": "0826d59e1e1b36bf80b82904859c64f339749820",
+            "patch": "/tmp/bambu-cleanliness-final-composition-check/bambu-03-project-metadata.patch",
+            "patch_sha256": "1a41d27ea6135d9ed51b18d3331b3c14dbfbd5b5b87300ccc709653caa981439",
+            "apply_exit_code": 0
+          },
+          {
+            "branch": "fix/project-reader-styles",
+            "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+            "head": "b3dacfa61b17385703e700779207e83e0c1041af",
+            "patch": "/tmp/bambu-cleanliness-final-composition-check/bambu-04-project-reader-styles.patch",
+            "patch_sha256": "9b1509b6aab6d69ef6800f197971d116f74817f8a8d1b6e1ec85d7e4dab543da",
+            "apply_exit_code": 0
+          },
+          {
+            "branch": "fix/native-dip-geometry",
+            "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+            "head": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+            "patch": "/tmp/bambu-cleanliness-final-composition-check/bambu-05-native-dip-geometry.patch",
+            "patch_sha256": "b0a52c90b439c7ab9da9da16901d4e19e86fb998c61454f4b02c7e46918ae026",
+            "apply_exit_code": 0
+          },
+          {
+            "branch": "fix/print-options-reflow",
+            "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+            "head": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+            "patch": "/tmp/bambu-cleanliness-final-composition-check/bambu-06-print-options-reflow.patch",
+            "patch_sha256": "a09b3e2f80a51cb38adb44b51a348a7c20299ada3c1a6486b199813b0c030ece",
+            "apply_exit_code": 0
+          },
+          {
+            "branch": "fix/settings-field-width",
+            "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+            "head": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+            "patch": "/tmp/bambu-cleanliness-final-composition-check/bambu-07-settings-field-width.patch",
+            "patch_sha256": "20d0c4f8a77d6f76622a829790b6171e594fdc39fca8ebdf055f1d2558034436",
+            "apply_exit_code": 0
+          },
+          {
+            "branch": "fix/sidebar-card-spacing",
+            "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+            "head": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+            "patch": "/tmp/bambu-cleanliness-final-composition-check/bambu-08-sidebar-card-spacing.patch",
+            "patch_sha256": "7897bc78dd3acf4c8da10b28fa83979aed6d08fec5793dc323d54521db373939",
+            "apply_exit_code": 0
+          },
+          {
+            "branch": "fix/temperature-value-alignment",
+            "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+            "head": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+            "patch": "/tmp/bambu-cleanliness-final-composition-check/bambu-09-temperature-value-alignment.patch",
+            "patch_sha256": "c96229390f847c0375755752595013a754f0580698b9bedc4fb4f35a4797a5d8",
+            "apply_exit_code": 0
+          },
+          {
+            "branch": "fix/camera-ams-balance",
+            "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+            "head": "fab83eef842e6967fa06d0bb05410940b4787d28",
+            "patch": "/tmp/bambu-cleanliness-final-composition-check/bambu-10-camera-ams-balance.patch",
+            "patch_sha256": "c6db8fd7a603fd0b0489ef7482bf04040d5d1672ac7bba913bd44152df5518dd",
+            "apply_exit_code": 0
+          }
+        ]
+      },
+      "wx": {
+        "pass": true,
+        "base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+        "combined": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+        "recomposed_tree": "0830198d9a071d11c3a7067b308e9fc0205f1cbf",
+        "expected_tree": "0830198d9a071d11c3a7067b308e9fc0205f1cbf",
+        "exact_tree_match": true,
+        "steps": [
+          {
+            "branch": "fix/gtk-label-font-measurement",
+            "parent": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+            "head": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+            "patch": "/tmp/bambu-cleanliness-final-composition-check/wx-01-gtk-label-font-measurement.patch",
+            "patch_sha256": "dd91179e8b88fd0bcd4b1e7cca22842763619f91f948f476f82b854967324f48",
+            "apply_exit_code": 0
+          },
+          {
+            "branch": "fix/gtk-font-dpi-conversion",
+            "parent": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+            "head": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4",
+            "patch": "/tmp/bambu-cleanliness-final-composition-check/wx-02-gtk-font-dpi-conversion.patch",
+            "patch_sha256": "958f01a1789eab2261359a7a426f4fe8b841fa8800402668f232b43b8e3231a9",
+            "apply_exit_code": 0
+          }
+        ]
+      }
+    },
+    "pr10_merge_against_pinned_master": {
+      "pass": true,
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "fab83eef842e6967fa06d0bb05410940b4787d28",
+      "exit_code": 0,
+      "result_tree": "b0b107c990b075e7b1454354ff880dde0aaa57c0",
+      "focused_tree": "b0b107c990b075e7b1454354ff880dde0aaa57c0",
+      "matches_focused_tree": true
+    }
+  },
+  "discrepancies": [],
+  "test_limits": [
+    "Evidence verification only; not a new peer-review round and adds zero to the 26-review count.",
+    "No build, compiler, GUI, installation, printer, GitHub, or network operations.",
+    "No Windows/macOS build or runtime compatibility claim; comment-only source delta verified byte-for-byte.",
+    "Mergeability applies only to pinned master 79df7ae309be398ed30c9f397c13c9911c2edc57; no remote freshness verification.",
+    "Parent is independently updating records and PR bodies; those edits and publication were not verified.",
+    "Git reads source objects; all generated Git objects, private indices, patches, and reports are confined to the owned output directory. No source, source index, or refs modified."
+  ]
+}

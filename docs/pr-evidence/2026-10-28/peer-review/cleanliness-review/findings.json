@@ -1,0 +1,224 @@
+{
+  "scope": "cleanliness_fable",
+  "round": 3,
+  "reviewed_heads": {
+    "bambu-1": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+    "bambu-2": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+    "bambu-3": "0826d59e1e1b36bf80b82904859c64f339749820",
+    "bambu-4": "b3dacfa61b17385703e700779207e83e0c1041af",
+    "bambu-5": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+    "bambu-6": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+    "bambu-7": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+    "bambu-8": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+    "bambu-9": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+    "bambu-10": "df28193c8e4aa5f2439f81eed83caa842a01c5ea",
+    "wx-1": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+    "wx-2": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4"
+  },
+  "combined": {
+    "app": "47a28ade55ec26d12096151f8ad7d93ebde174bc",
+    "wx": "3fea0af433d9630f79eaf8fbfc062364ba456be3"
+  },
+  "bases": {
+    "app": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "wx": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8"
+  },
+  "evidence_commits": {
+    "harness_payload": "089bbf9686e9aff33fa3822e705303f582e02e4d",
+    "linked_from_bodies": "4505000a5ad571dbe0186e6772765bac618930a0",
+    "branch_tip": "0c2cd4e4686abe48cd815b57070d139a3a497719",
+    "branch": "review/screenshots (bambu-studio-upstream; remote-tracking origin/review/screenshots contains tip; GitHub reachability not verified)"
+  },
+  "open_blocking": 0,
+  "verified_unchanged": [
+    "git diff 24d91027 47a28ade touches only Widgets/ComboBox.cpp, Widgets/ComboBox.hpp, Widgets/TextInput.hpp (reverted to base) and DeviceWeb/DeviceWebHost.cpp (PR10 fallback)",
+    "Single-owner path blobs equal at PR head and combined; shared Plater.cpp/StatusPanel.cpp/GLCanvas3D.cpp reproduce combined bytes from base + both patches",
+    "Exported bambu-06 and bambu-10 patches equal git diff BASE HEAD (index lines excluded)",
+    "mergeability.json: 24/24 exit 0; upstream master still 79df7ae3"
+  ],
+  "findings": [
+    {
+      "id": "CF-01",
+      "prs": ["bambu-6"],
+      "severity": "non-blocking",
+      "status": "resolved; conceded",
+      "category": "scope-contamination",
+      "title": "Font plumbing removed entirely; PR6 touches only PrintOptionsDialog.cpp/.hpp",
+      "evidence": [
+        "Widgets/TextInput.cpp cf7e1a12, TextInput.hpp 0fe74b46, ComboBox.cpp e734d135, ComboBox.hpp 2d695e56 identical at 79df7ae3, cbde5d13 and 47a28ade",
+        "cbde5d13 PrintOptionsDialog.cpp:1011,1049,1092,1132,1171 wxCB_READONLY + SetFont(Label::Body_12)",
+        "79df7ae3 ComboBox.cpp:51-53 hides entry; :199-204 routes hidden case to TextInput/wxWindow::SetFont; TextInput.cpp:331 render uses GetFont()",
+        "Historical height equivalence: 191c22e TextInput::SetFont re-ran messureSize, which reads text_ctrl->GetSize() (TextInput.cpp:400); SetFont does not resize, so selector heights match the final head",
+        "bodies/bambu-pr-6.md:3 now states widget files retain stock behavior"
+      ],
+      "trigger": "n/a",
+      "failure": "n/a",
+      "fix": "none",
+      "verify": "done (blob comparison, source read)"
+    },
+    {
+      "id": "CF-02",
+      "prs": ["bambu-8", "bambu-10"],
+      "severity": "non-blocking",
+      "status": "fixed",
+      "category": "pr-description-dependency",
+      "title": "PR8/PR10 based on master; bodies say validated together, no code dependency",
+      "evidence": ["final-heads.json parents 79df7ae3; bodies 'Independent of #5'"],
+      "trigger": "n/a", "failure": "n/a", "fix": "none", "verify": "done"
+    },
+    {
+      "id": "CF-03",
+      "prs": ["bambu-3", "bambu-5"],
+      "severity": "non-blocking",
+      "status": "fixed; pending parent's push/reachability check",
+      "category": "pr-description-validation",
+      "title": "Harness payload published with exact-head runs and linked from bodies",
+      "evidence": [
+        "0c2cd4e4:docs/pr-evidence/2026-10-28/peer-review/harnesses/evidence/project-final/results.json after.commit=0826d59e, 2 expected reds + 4 greens, PASS",
+        "…/caller-units-final/results.json after.commit=a1b43d73, total_changed_lines=43, arithmetic_matrix 104, PASS",
+        "…/historical-final/results.json scope 'historical fourteen-site geometry' at e20789d7, 'PASS: 236 assertions'",
+        "…/progress-native/REPORT.md: 348 pass, 24 known unbreakable-name reds (matches bambu-pr-5.md:7)",
+        "all bodies link tree/4505000a…/peer-review/; PR10 links 0c2cd4e4…/partial-camera-review/STATUS.md (exists)",
+        "No network: GitHub reachability of these commits not verified"
+      ],
+      "trigger": "Upstream reviewer follows the links.",
+      "failure": "Only if the branch was not pushed.",
+      "fix": "Parent confirms origin/review/screenshots is at or beyond 0c2cd4e4 on GitHub.",
+      "verify": "git ls-remote origin review/screenshots"
+    },
+    {
+      "id": "CF-04", "prs": ["bambu-7"], "severity": "non-blocking", "status": "fixed (unchanged head 763edb4f)",
+      "category": "inaccurate-comment", "title": "Comment attributions corrected", "evidence": ["round-2 verification stands"],
+      "trigger": "n/a", "failure": "n/a", "fix": "none", "verify": "done"
+    },
+    {
+      "id": "CF-05", "prs": ["bambu-3"], "severity": "non-blocking", "status": "retained; conceded (unchanged head 0826d59e)",
+      "category": "duplication", "title": "Two locked generation reads retained", "evidence": ["round-2 verification stands"],
+      "trigger": "n/a", "failure": "n/a", "fix": "none", "verify": "done"
+    },
+    {
+      "id": "CF-06", "prs": ["bambu-3"], "severity": "non-blocking", "status": "retained; conceded (unchanged head)",
+      "category": "simplification-optional", "title": "Deferred lookup retained with accurate comment", "evidence": ["round-2 verification stands"],
+      "trigger": "n/a", "failure": "n/a", "fix": "none", "verify": "done"
+    },
+    {
+      "id": "CF-07", "prs": ["bambu-3"], "severity": "non-blocking", "status": "cleanup fixed; convention retained; conceded (unchanged head)",
+      "category": "consistency", "title": "UI-thread remove_all removed", "evidence": ["round-2 verification stands"],
+      "trigger": "n/a", "failure": "n/a", "fix": "none", "verify": "done"
+    },
+    {
+      "id": "CF-08",
+      "prs": ["bambu-10"],
+      "severity": "non-blocking",
+      "status": "residual reopened; comment cross-reference requested",
+      "category": "duplicated-constant",
+      "title": "340 reintroduced as kAmsControlWebInitialHeightDip, duplicating the panel's kMinHeightDip without naming it",
+      "evidence": [
+        "df28193c:src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp:599-600 'Match the panel minimum…' kAmsControlWebInitialHeightDip = 340",
+        "df28193c:src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.cpp:17 anonymous-namespace kMinHeightDip = 340 (with derivation comment)",
+        "df28193c DeviceWebHost.cpp:604 function-local kMinHeightDip = 220 (clamp floor), same identifier, different value, two lines below the new comment",
+        "DeviceWebHost.cpp:672 comment also cites 340"
+      ],
+      "trigger": "Maintainer edits one of the two 340 definitions, or reads 'panel minimum' and lands on the 220 clamp constant.",
+      "failure": "Silent drift between host fallback and panel minimum; misleading cross-reference. No functional defect at this head; correctness of the fallback itself is camera_fable's scope and accepted here.",
+      "fix": "Change the comment to name the source: 'Same value as kMinHeightDip in wgtAmsControlWebPanel.cpp; keep them equal.' Optionally pass the panel minimum into the host at construction instead of a second definition. Do not add panel state.",
+      "verify": "grep -n 340 src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.cpp"
+    },
+    {
+      "id": "CF-09", "prs": ["bambu-2"], "severity": "non-blocking", "status": "fixed (unchanged head dc097952)",
+      "category": "redundant-comment", "title": "Repeated call-site comments removed", "evidence": ["round-2 verification stands"],
+      "trigger": "n/a", "failure": "n/a", "fix": "none", "verify": "done"
+    },
+    {
+      "id": "CF-10", "prs": ["bambu-8"], "severity": "non-blocking", "status": "fixed (unchanged head e9658ac6)",
+      "category": "duplicated-constant", "title": "Shared gap constant", "evidence": ["round-2 verification stands"],
+      "trigger": "n/a", "failure": "n/a", "fix": "none", "verify": "done"
+    },
+    {
+      "id": "CF-11", "prs": ["wx-2"], "severity": "non-blocking", "status": "fixed (unchanged head ed8b87d0)",
+      "category": "comment-gap", "title": "Settings creation and -2 clamp explained", "evidence": ["round-2 verification stands"],
+      "trigger": "n/a", "failure": "n/a", "fix": "none", "verify": "done"
+    },
+    {
+      "id": "CF-12", "prs": ["wx-1"], "severity": "non-blocking", "status": "fixed (unchanged head 888eaac6)",
+      "category": "repo-idiom", "title": "GTK4 exclusion and suppression idiom", "evidence": ["round-2 verification stands"],
+      "trigger": "n/a", "failure": "n/a", "fix": "none", "verify": "done"
+    },
+    {
+      "id": "CF-13", "prs": ["bambu-9"], "severity": "non-blocking", "status": "retained; conceded (unchanged head e51f9b9c)",
+      "category": "pre-existing-duplication", "title": "Shared target-size helper only", "evidence": ["round-2 verification stands"],
+      "trigger": "n/a", "failure": "n/a", "fix": "none", "verify": "done"
+    },
+    {
+      "id": "CF-14",
+      "prs": ["wx-1", "wx-2"],
+      "severity": "non-blocking",
+      "status": "partially fixed; wx-2 'fourteen' wording still on disk",
+      "category": "pr-description-staleness",
+      "title": "Provenance sentence added to both wx bodies; wx-pr-2 still says the companion branch 'fixes fourteen identified sites'",
+      "evidence": [
+        "round2/bodies/wx-pr-1.md:14 and wx-pr-2.md:16 carry the provenance sentence",
+        "round2/bodies/wx-pr-2.md:12 'fixes fourteen identified sites' vs bambu-pr-5.md:3 'fourteen geometry sites, 51 additional…'",
+        "Parent round-3 response states intent to drop the general fourteen claim; file mtime 02:06 predates that statement"
+      ],
+      "trigger": "Reader compares the wx-2 and PR5 bodies.",
+      "failure": "Understated companion scope.",
+      "fix": "Replace with 'corrects the original fourteen sites plus later bitmap/helper/font callers' or link the PR5 body.",
+      "verify": "grep -n fourteen round2/bodies/wx-pr-2.md"
+    },
+    {
+      "id": "CF-15",
+      "prs": ["bambu-5"],
+      "severity": "non-blocking",
+      "status": "conceded",
+      "category": "consistency",
+      "title": "Empty-icon Button sites intentionally keep ICON_SINGLE_SIZE; rule verified and stated in body",
+      "evidence": [
+        "79df7ae3 Button.cpp:54-56: ScalableBitmap constructed only when icon non-empty; iconSize otherwise unused",
+        "a1b43d73 remaining uses MultiMachineManagerPage.cpp:348,381 and MultiTaskManagerPage.cpp:580,629,658,952,1001,1030 all pass \"\"; SendMultiMachinePage.cpp has none remaining and all four converted sites pass a named icon",
+        "bodies/bambu-pr-5.md:3 'empty-icon callers retain their existing arguments because they construct no bitmap'"
+      ],
+      "trigger": "n/a", "failure": "n/a", "fix": "none", "verify": "done"
+    },
+    {
+      "id": "CF-16",
+      "prs": ["bambu-2", "bambu-3", "bambu-5", "bambu-6", "bambu-7", "bambu-9"],
+      "severity": "non-blocking",
+      "status": "retained by parent; documented disagreement, acceptable for fork drafts",
+      "category": "history-hygiene",
+      "title": "Duplicate commit subjects remain; PR6 history adds then removes the font plumbing",
+      "evidence": [
+        "git log 79df7ae3..cbde5d13: 191c22e and 8a70086 same subject, then cbde5d1 'Remove font plumbing…'",
+        "dc097952, 0826d59e, a1b43d73, 763edb4f, e51f9b9c each contain a same-subject pair"
+      ],
+      "trigger": "Upstream submission.",
+      "failure": "History does not explain the review changes; not a code defect.",
+      "fix": "Squash or retitle when rebasing for upstream, as the parent already plans.",
+      "verify": "git log --oneline per branch before submission"
+    },
+    {
+      "id": "CF-17",
+      "prs": ["bambu-10"],
+      "severity": "non-blocking",
+      "status": "new",
+      "category": "pr-description-currency",
+      "title": "PR10 body and peer-review README state that the Fable rechecks failed; this recheck has now completed, and the sentences are process noise for upstream",
+      "evidence": [
+        "round2/bodies/bambu-pr-10.md:18 'its final independent Fable recheck failed to complete due to an API rate limit'",
+        "0c2cd4e4:docs/pr-evidence/2026-10-28/peer-review/README.md 'The final Fable camera and cleanliness rechecks did not complete'; review-status.json alongside",
+        "round3/unavailable.json lists both round-3 Fable tasks as failed; this report is the cleanliness retry"
+      ],
+      "trigger": "Publishing the body/README after the round-3 retries land, or submitting upstream with model/rate-limit references.",
+      "failure": "Stale review-status statements; infrastructure details irrelevant to maintainers.",
+      "fix": "After round-3 retries finish, refresh review-status.json/README and the PR10 sentence (keep only the technical limitation sentences); strip model and rate-limit references before any upstream submission.",
+      "verify": "grep -n -i 'fable\\|codex\\|rate limit' round2/bodies/*.md docs/pr-evidence/2026-10-28/peer-review/README.md"
+    }
+  ],
+  "clean": ["bambu-1", "bambu-2", "bambu-3", "bambu-4", "bambu-5", "bambu-6", "bambu-7", "bambu-8", "bambu-9", "wx-1"],
+  "limits": [
+    "No compiler, build, GUI, printer or network used.",
+    "Platform claims checked against source and the pinned wx tree only; not Windows/macOS compilation.",
+    "GitHub reachability of linked evidence commits not verified (remote-tracking ref only).",
+    "Taste decisions not reopened."
+  ]
+}

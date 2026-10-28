@@ -1,0 +1,1 @@
+The original review hit a Claude API rate limit. Its automatic continuation completed on terminal run ordinal 2 with zero blockers. The immutable report covers app `47a28ade` / wx `3fea0af4`. Parent responses and the comment-only source delta are separate files; the original rate-limit snapshots remain preserved. No Windows/macOS build or runtime result is claimed.

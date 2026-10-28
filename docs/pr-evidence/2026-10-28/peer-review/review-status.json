@@ -1,16 +1,11 @@
 {
-  "review_tasks_completed": 25,
-  "unavailable_final_reviews": [
-    {
-      "scope": "cleanliness_fable",
-      "round": 3,
-      "reason": "Claude API rate limit"
-    }
-  ],
+  "review_tasks_completed": 26,
+  "unavailable_final_reviews": [],
   "final_print_options_round3": "0 blockers; baseline widgets restored",
   "known_open_blocking_findings": 0,
   "startup_fix_independently_rereviewed": true,
   "upstream_submitted": false,
   "installed_application_changed": false,
-  "final_camera_round3": "0 blockers; auto-resumed after initial API rate limit; 168 modeled cases; no native runtime"
+  "final_camera_round3": "0 blockers; auto-resumed after initial API rate limit; 168 modeled cases; no native runtime",
+  "final_cleanliness_round3": "0 blockers; automatic continuation completed; only comment/body follow-ups"
 }

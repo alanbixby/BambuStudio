@@ -1,7 +1,7 @@
 {
   "app_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
   "wx_base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
-  "reviewed_app_commit": "47a28ade55ec26d12096151f8ad7d93ebde174bc",
+  "reviewed_app_commit": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
   "reviewed_wx_commit": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
   "patches": [
     {
@@ -14,8 +14,7 @@
         "src/slic3r/GUI/GLCanvas3D.cpp"
       ],
       "draft_url": "https://github.com/alanbixby/BambuStudio/pull/1",
-      "base_branch": "master",
-      "old_head": "f899b75e113c4e7fdf422842c4403e9b62906bdd"
+      "base_branch": "master"
     },
     {
       "repository": "alanbixby/BambuStudio",
@@ -29,8 +28,7 @@
         "src/slic3r/GUI/Overview/AssemblyStepsUtilsImgui.cpp"
       ],
       "draft_url": "https://github.com/alanbixby/BambuStudio/pull/2",
-      "base_branch": "fix/assembly-return-context",
-      "old_head": "0f97216d6672aedd325e3b6526cdb4b10a4f65b9"
+      "base_branch": "fix/assembly-return-context"
     },
     {
       "repository": "alanbixby/BambuStudio",
@@ -46,8 +44,7 @@
         "src/slic3r/GUI/Project.hpp"
       ],
       "draft_url": "https://github.com/alanbixby/BambuStudio/pull/3",
-      "base_branch": "master",
-      "old_head": "a667512789236ea21f5530bcd31c496b4db43fab"
+      "base_branch": "master"
     },
     {
       "repository": "alanbixby/BambuStudio",
@@ -60,8 +57,7 @@
         "resources/web/model_new/index.css"
       ],
       "draft_url": "https://github.com/alanbixby/BambuStudio/pull/4",
-      "base_branch": "master",
-      "old_head": "b3dacfa61b17385703e700779207e83e0c1041af"
+      "base_branch": "master"
     },
     {
       "repository": "alanbixby/BambuStudio",
@@ -91,8 +87,7 @@
         "src/slic3r/GUI/calib_dlg.cpp"
       ],
       "draft_url": "https://github.com/alanbixby/BambuStudio/pull/5",
-      "base_branch": "master",
-      "old_head": "e20789d722ffb71ac410b3fe341c157687d12624"
+      "base_branch": "master"
     },
     {
       "repository": "alanbixby/BambuStudio",
@@ -105,8 +100,7 @@
         "src/slic3r/GUI/PrintOptionsDialog.hpp"
       ],
       "draft_url": "https://github.com/alanbixby/BambuStudio/pull/6",
-      "base_branch": "master",
-      "old_head": "191c22e46dc6b39d6bb9d104bfe2f78e950b90d5"
+      "base_branch": "master"
     },
     {
       "repository": "alanbixby/BambuStudio",
@@ -120,8 +114,7 @@
         "src/slic3r/GUI/OptionsGroup.cpp"
       ],
       "draft_url": "https://github.com/alanbixby/BambuStudio/pull/7",
-      "base_branch": "master",
-      "old_head": "6ab2240a55a3ae47950473939b2d3762671cab9e"
+      "base_branch": "master"
     },
     {
       "repository": "alanbixby/BambuStudio",
@@ -133,8 +126,7 @@
         "src/slic3r/GUI/Plater.cpp"
       ],
       "draft_url": "https://github.com/alanbixby/BambuStudio/pull/8",
-      "base_branch": "master",
-      "old_head": "9af699ab828bf9aeab155578e08df452e2f3d7e6"
+      "base_branch": "master"
     },
     {
       "repository": "alanbixby/BambuStudio",
@@ -147,13 +139,12 @@
         "src/slic3r/GUI/Widgets/TempInput.hpp"
       ],
       "draft_url": "https://github.com/alanbixby/BambuStudio/pull/9",
-      "base_branch": "master",
-      "old_head": "0688d34a8c68ac193f9ac6791661515c98013b81"
+      "base_branch": "master"
     },
     {
       "repository": "alanbixby/BambuStudio",
       "branch": "fix/camera-ams-balance",
-      "head": "df28193c8e4aa5f2439f81eed83caa842a01c5ea",
+      "head": "fab83eef842e6967fa06d0bb05410940b4787d28",
       "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
       "patch": "bambu-10-camera-ams-balance.patch",
       "paths": [
@@ -166,7 +157,7 @@
       ],
       "draft_url": "https://github.com/alanbixby/BambuStudio/pull/10",
       "base_branch": "master",
-      "old_head": "6d4ff325538c4c8bea01218a0677d24b1a4d9eb7"
+      "peer_reviewed_head_before_comment": "df28193c8e4aa5f2439f81eed83caa842a01c5ea"
     },
     {
       "repository": "alanbixby/wxWidgets",
@@ -178,8 +169,7 @@
         "src/gtk/control.cpp"
       ],
       "draft_url": "https://github.com/alanbixby/wxWidgets/pull/1",
-      "base_branch": "master",
-      "old_head": "ca4200bf130f843d74dfab47ba6d48114c411b92"
+      "base_branch": "master"
     },
     {
       "repository": "alanbixby/wxWidgets",
@@ -193,14 +183,14 @@
         "src/gtk/window.cpp"
       ],
       "draft_url": "https://github.com/alanbixby/wxWidgets/pull/2",
-      "base_branch": "master",
-      "old_head": "89666fc46bcf8576a85b8cb728c38fcb2f095e09"
+      "base_branch": "master"
     }
   ],
-  "composition": {
+  "composition": "Both exported patch sets reproduce their reviewed combined trees exactly",
+  "composition_trees": {
     "app": {
-      "combined_commit": "47a28ade55ec26d12096151f8ad7d93ebde174bc",
-      "tree": "14e1b9585e9f54a1201a3d7b1aa3bfd408523fcf",
+      "combined_commit": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+      "tree": "4cb02f6dd2789c00d9ab4db590f8b23ae3a3f85b",
       "matches": true
     },
     "wx": {
@@ -208,5 +198,12 @@
       "tree": "0830198d9a071d11c3a7067b308e9fc0205f1cbf",
       "matches": true
     }
-  }
+  },
+  "local_tooltip_backport": "Already upstream; used only to build the older exact-tag local bundle",
+  "peer_review": {
+    "completed": 26,
+    "unavailable_final_rechecks": 0,
+    "record": "../../evidence/peer-review-20261028/README.md"
+  },
+  "peer_reviewed_app_commit_before_comment": "47a28ade55ec26d12096151f8ad7d93ebde174bc"
 }

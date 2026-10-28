@@ -1,0 +1,215 @@
+{
+  "app_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+  "wx_base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+  "reviewed_app_commit": "24d91027fb6d07bbffac558afbeba699292e653a",
+  "reviewed_wx_commit": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+  "patches": [
+    {
+      "repository": "alanbixby/BambuStudio",
+      "branch": "fix/assembly-return-context",
+      "head": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+      "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "patch": "bambu-01-assembly-return-context.patch",
+      "paths": [
+        "src/slic3r/GUI/GLCanvas3D.cpp"
+      ],
+      "draft_url": "https://github.com/alanbixby/BambuStudio/pull/1",
+      "base_branch": "master",
+      "old_head": "f899b75e113c4e7fdf422842c4403e9b62906bdd"
+    },
+    {
+      "repository": "alanbixby/BambuStudio",
+      "branch": "fix/assembly-sidebar-clearance",
+      "head": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+      "parent": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+      "patch": "bambu-02-assembly-sidebar-clearance.patch",
+      "paths": [
+        "src/slic3r/GUI/GLCanvas3D.cpp",
+        "src/slic3r/GUI/Overview/AssemblyStepsUtils.hpp",
+        "src/slic3r/GUI/Overview/AssemblyStepsUtilsImgui.cpp"
+      ],
+      "draft_url": "https://github.com/alanbixby/BambuStudio/pull/2",
+      "base_branch": "fix/assembly-return-context",
+      "old_head": "0f97216d6672aedd325e3b6526cdb4b10a4f65b9"
+    },
+    {
+      "repository": "alanbixby/BambuStudio",
+      "branch": "fix/project-metadata",
+      "head": "0826d59e1e1b36bf80b82904859c64f339749820",
+      "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "patch": "bambu-03-project-metadata.patch",
+      "paths": [
+        "resources/web/model_new/index.js",
+        "src/libslic3r/Model.cpp",
+        "src/libslic3r/Model.hpp",
+        "src/slic3r/GUI/Project.cpp",
+        "src/slic3r/GUI/Project.hpp"
+      ],
+      "draft_url": "https://github.com/alanbixby/BambuStudio/pull/3",
+      "base_branch": "master",
+      "old_head": "a667512789236ea21f5530bcd31c496b4db43fab"
+    },
+    {
+      "repository": "alanbixby/BambuStudio",
+      "branch": "fix/project-reader-styles",
+      "head": "b3dacfa61b17385703e700779207e83e0c1041af",
+      "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "patch": "bambu-04-project-reader-styles.patch",
+      "paths": [
+        "resources/web/model_new/css/dark.css",
+        "resources/web/model_new/index.css"
+      ],
+      "draft_url": "https://github.com/alanbixby/BambuStudio/pull/4",
+      "base_branch": "master",
+      "old_head": "b3dacfa61b17385703e700779207e83e0c1041af"
+    },
+    {
+      "repository": "alanbixby/BambuStudio",
+      "branch": "fix/native-dip-geometry",
+      "head": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+      "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "patch": "bambu-05-native-dip-geometry.patch",
+      "paths": [
+        "src/slic3r/GUI/AboutDialog.cpp",
+        "src/slic3r/GUI/AmsMappingPopup.cpp",
+        "src/slic3r/GUI/BindDialog.cpp",
+        "src/slic3r/GUI/CapsuleButton.cpp",
+        "src/slic3r/GUI/CreatePresetsDialog.cpp",
+        "src/slic3r/GUI/MainFrame.cpp",
+        "src/slic3r/GUI/MediaPlayCtrl.cpp",
+        "src/slic3r/GUI/MultiMachineManagerPage.cpp",
+        "src/slic3r/GUI/MultiTaskManagerPage.cpp",
+        "src/slic3r/GUI/ObjectDataViewModel.cpp",
+        "src/slic3r/GUI/Plater.cpp",
+        "src/slic3r/GUI/SendMultiMachinePage.cpp",
+        "src/slic3r/GUI/SendToPrinter.cpp",
+        "src/slic3r/GUI/StatusPanel.cpp",
+        "src/slic3r/GUI/StepMeshDialog.cpp",
+        "src/slic3r/GUI/Widgets/AMSItem.cpp",
+        "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp",
+        "src/slic3r/GUI/Widgets/ProgressDialog.cpp",
+        "src/slic3r/GUI/calib_dlg.cpp"
+      ],
+      "draft_url": "https://github.com/alanbixby/BambuStudio/pull/5",
+      "base_branch": "master",
+      "old_head": "e20789d722ffb71ac410b3fe341c157687d12624"
+    },
+    {
+      "repository": "alanbixby/BambuStudio",
+      "branch": "fix/print-options-reflow",
+      "head": "8a700863e05d6aac3e7ae17ee92cbf697703fef1",
+      "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "patch": "bambu-06-print-options-reflow.patch",
+      "paths": [
+        "src/slic3r/GUI/PrintOptionsDialog.cpp",
+        "src/slic3r/GUI/PrintOptionsDialog.hpp",
+        "src/slic3r/GUI/Widgets/ComboBox.cpp",
+        "src/slic3r/GUI/Widgets/ComboBox.hpp",
+        "src/slic3r/GUI/Widgets/TextInput.hpp"
+      ],
+      "draft_url": "https://github.com/alanbixby/BambuStudio/pull/6",
+      "base_branch": "master",
+      "old_head": "191c22e46dc6b39d6bb9d104bfe2f78e950b90d5"
+    },
+    {
+      "repository": "alanbixby/BambuStudio",
+      "branch": "fix/settings-field-width",
+      "head": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+      "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "patch": "bambu-07-settings-field-width.patch",
+      "paths": [
+        "src/slic3r/GUI/OG_CustomCtrl.cpp",
+        "src/slic3r/GUI/OG_CustomCtrl.hpp",
+        "src/slic3r/GUI/OptionsGroup.cpp"
+      ],
+      "draft_url": "https://github.com/alanbixby/BambuStudio/pull/7",
+      "base_branch": "master",
+      "old_head": "6ab2240a55a3ae47950473939b2d3762671cab9e"
+    },
+    {
+      "repository": "alanbixby/BambuStudio",
+      "branch": "fix/sidebar-card-spacing",
+      "head": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+      "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "patch": "bambu-08-sidebar-card-spacing.patch",
+      "paths": [
+        "src/slic3r/GUI/Plater.cpp"
+      ],
+      "draft_url": "https://github.com/alanbixby/BambuStudio/pull/8",
+      "base_branch": "master",
+      "old_head": "9af699ab828bf9aeab155578e08df452e2f3d7e6"
+    },
+    {
+      "repository": "alanbixby/BambuStudio",
+      "branch": "fix/temperature-value-alignment",
+      "head": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+      "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "patch": "bambu-09-temperature-value-alignment.patch",
+      "paths": [
+        "src/slic3r/GUI/Widgets/TempInput.cpp",
+        "src/slic3r/GUI/Widgets/TempInput.hpp"
+      ],
+      "draft_url": "https://github.com/alanbixby/BambuStudio/pull/9",
+      "base_branch": "master",
+      "old_head": "0688d34a8c68ac193f9ac6791661515c98013b81"
+    },
+    {
+      "repository": "alanbixby/BambuStudio",
+      "branch": "fix/camera-ams-balance",
+      "head": "6e81cd8f92313dfa8c693baab022a18945f74add",
+      "parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "patch": "bambu-10-camera-ams-balance.patch",
+      "paths": [
+        "src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.cpp",
+        "src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.h",
+        "src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp",
+        "src/slic3r/GUI/DeviceWeb/DeviceWebHost.hpp",
+        "src/slic3r/GUI/StatusPanel.cpp",
+        "src/slic3r/GUI/StatusPanel.hpp"
+      ],
+      "draft_url": "https://github.com/alanbixby/BambuStudio/pull/10",
+      "base_branch": "master",
+      "old_head": "6d4ff325538c4c8bea01218a0677d24b1a4d9eb7"
+    },
+    {
+      "repository": "alanbixby/wxWidgets",
+      "branch": "fix/gtk-label-font-measurement",
+      "head": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+      "parent": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+      "patch": "wx-01-gtk-label-font-measurement.patch",
+      "paths": [
+        "src/gtk/control.cpp"
+      ],
+      "draft_url": "https://github.com/alanbixby/wxWidgets/pull/1",
+      "base_branch": "master",
+      "old_head": "ca4200bf130f843d74dfab47ba6d48114c411b92"
+    },
+    {
+      "repository": "alanbixby/wxWidgets",
+      "branch": "fix/gtk-font-dpi-conversion",
+      "head": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4",
+      "parent": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+      "patch": "wx-02-gtk-font-dpi-conversion.patch",
+      "paths": [
+        "include/wx/window.h",
+        "interface/wx/window.h",
+        "src/gtk/window.cpp"
+      ],
+      "draft_url": "https://github.com/alanbixby/wxWidgets/pull/2",
+      "base_branch": "master",
+      "old_head": "89666fc46bcf8576a85b8cb728c38fcb2f095e09"
+    }
+  ],
+  "composition": {
+    "app": {
+      "combined_commit": "24d91027fb6d07bbffac558afbeba699292e653a",
+      "tree": "f801fc5599c496cfd168a6ceab3aa238f1c6de93",
+      "matches": true
+    },
+    "wx": {
+      "combined_commit": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+      "tree": "0830198d9a071d11c3a7067b308e9fc0205f1cbf",
+      "matches": true
+    }
+  }
+}

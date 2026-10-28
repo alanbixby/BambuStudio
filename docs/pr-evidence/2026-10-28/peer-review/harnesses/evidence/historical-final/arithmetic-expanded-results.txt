@@ -1,0 +1,6 @@
+factor=0.75 camera 428 -> 600; padded label 61 -> 81; progress 184 -> 244; center 30,19 -> 40,25; line endpoint 103 -> 137; sync y 234 -> 235
+factor=1 camera 570 -> 570; padded label 108 -> 108; progress 245 -> 245; center 40,25 -> 40,25; line endpoint 137 -> 137; sync y 235 -> 235
+factor=1.25 camera 713 -> 540; padded label 169 -> 135; progress 306 -> 246; center 50,31 -> 40,25; line endpoint 171 -> 137; sync y 237 -> 236
+factor=1.5 camera 855 -> 510; padded label 243 -> 162; progress 368 -> 248; center 60,38 -> 40,25; line endpoint 206 -> 137; sync y 238 -> 236
+factor=2 camera 1140 -> 450; padded label 432 -> 216; progress 490 -> 250; center 80,50 -> 40,25; line endpoint 274 -> 137; sync y 240 -> 237
+236 assertions passed

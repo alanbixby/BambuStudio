@@ -1,0 +1,751 @@
+{
+  "test_kind": "native follow-up validation; no new review round",
+  "application_commit": "24d91027fb6d07bbffac558afbeba699292e653a",
+  "application_source_sha256": "91625271dfa5761e8b307516b9ff21456c23b4f92181a35cfed12cf5b809aea8",
+  "actual_source_matches_prepared": true,
+  "followup_patch_sha256": "61e939f687e0aa1f90e164e880d91fc6c6c5770ac14137c349e7d7e317900a26",
+  "wx_commit": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+  "private_archives": {
+    "libwx_gtk3u_core-3.1.a": {
+      "source": "/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/deps-build/destdir/usr/local/lib/libwx_gtk3u_core-3.1.a",
+      "private_copy": "/tmp/bambu-peer-review-20261028/implementation/progress-native-probe-followup/private-wx/lib/libwx_gtk3u_core-3.1.a",
+      "sha256": "53da679b427c37a72300985c81c7f779182d32066fe9881a4812ee76dccedc7a",
+      "source_mtime_ns": 1793165367000000000,
+      "size": 29228946
+    },
+    "libwx_baseu-3.1.a": {
+      "source": "/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/deps-build/destdir/usr/local/lib/libwx_baseu-3.1.a",
+      "private_copy": "/tmp/bambu-peer-review-20261028/implementation/progress-native-probe-followup/private-wx/lib/libwx_baseu-3.1.a",
+      "sha256": "d281166b58c5f8e7128292e731f5b5983641599ea3ebf7b670f3e0c3859a81c1",
+      "source_mtime_ns": 1793148789000000000,
+      "size": 6534342
+    },
+    "libwxregexu-3.1.a": {
+      "source": "/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/deps-build/destdir/usr/local/lib/libwxregexu-3.1.a",
+      "private_copy": "/tmp/bambu-peer-review-20261028/implementation/progress-native-probe-followup/private-wx/lib/libwxregexu-3.1.a",
+      "sha256": "d923f84fd215adbb7efa2670252752f8f9e6b14c500d2d1ed3866d01195981f2",
+      "source_mtime_ns": 1793148778000000000,
+      "size": 165360
+    },
+    "libjpeg.a": {
+      "source": "/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/deps-build/destdir/usr/local/lib/libjpeg.a",
+      "private_copy": "/tmp/bambu-peer-review-20261028/implementation/progress-native-probe-followup/private-wx/lib/libjpeg.a",
+      "sha256": "44bb57bb298b0620729d1730beef033a4610ad5f6b9b3b840e7c0bc09aae0cb9",
+      "source_mtime_ns": 1793148415000000000,
+      "size": 1311436
+    },
+    "libpng16.a": {
+      "source": "/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/deps-build/destdir/usr/local/lib/libpng16.a",
+      "private_copy": "/tmp/bambu-peer-review-20261028/implementation/progress-native-probe-followup/private-wx/lib/libpng16.a",
+      "sha256": "9d1cbac7294331348a09f575178bbce3999ffbd66a05a985d60978247931bb86",
+      "source_mtime_ns": 1793148410000000000,
+      "size": 428922
+    },
+    "libtiff.a": {
+      "source": "/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/deps-build/destdir/usr/local/lib/libtiff.a",
+      "private_copy": "/tmp/bambu-peer-review-20261028/implementation/progress-native-probe-followup/private-wx/lib/libtiff.a",
+      "sha256": "eea25d1fb5315347decf5067150e63e4c647525f95ab3ef122e5a127f3a76439",
+      "source_mtime_ns": 1793148422000000000,
+      "size": 836418
+    }
+  },
+  "private_header_count": 1495,
+  "prior_evidence_files": 315,
+  "prior_evidence_byte_identical": true,
+  "private_archives_byte_identical": true,
+  "compile_jobs": 1,
+  "compile_exit": 0,
+  "matrices": {
+    "Adwaita": {
+      "processes": 24,
+      "rows": 372,
+      "followup_rows": 186,
+      "all_process_exit_codes_zero": true
+    },
+    "wide scrollbar, 7px spacing, simple border": {
+      "processes": 24,
+      "rows": 372,
+      "followup_rows": 186,
+      "all_process_exit_codes_zero": true
+    }
+  },
+  "followup_non_unbreakable_rows": 348,
+  "followup_non_unbreakable_pass": true,
+  "known_unbreakable_failed_rows": 24,
+  "full_pass_including_known_unbreakable": false,
+  "initial_geometry": [
+    {
+      "run": "new-96-scale1-initial-short",
+      "dpi": 96,
+      "GDK_SCALE": 1,
+      "initial": "short",
+      "wrap": 325,
+      "outer": [
+        345,
+        150
+      ],
+      "client": [
+        330,
+        150
+      ],
+      "label_height": 17,
+      "native_text_bottom": 17,
+      "virtual_height": 150,
+      "scroll_px": 0,
+      "border": [
+        0,
+        0
+      ],
+      "scrollbar_width": 15,
+      "scrollbar_spacing": 0,
+      "initial_pass": true
+    },
+    {
+      "run": "new-96-scale1-initial-long",
+      "dpi": 96,
+      "GDK_SCALE": 1,
+      "initial": "long",
+      "wrap": 325,
+      "outer": [
+        345,
+        150
+      ],
+      "client": [
+        330,
+        150
+      ],
+      "label_height": 1717,
+      "native_text_bottom": 1717,
+      "virtual_height": 1717,
+      "scroll_px": 1570,
+      "border": [
+        0,
+        0
+      ],
+      "scrollbar_width": 15,
+      "scrollbar_spacing": 0,
+      "initial_pass": true
+    },
+    {
+      "run": "new-144-scale1-initial-short",
+      "dpi": 144,
+      "GDK_SCALE": 1,
+      "initial": "short",
+      "wrap": 485,
+      "outer": [
+        508,
+        225
+      ],
+      "client": [
+        493,
+        225
+      ],
+      "label_height": 24,
+      "native_text_bottom": 24,
+      "virtual_height": 225,
+      "scroll_px": 0,
+      "border": [
+        0,
+        0
+      ],
+      "scrollbar_width": 15,
+      "scrollbar_spacing": 0,
+      "initial_pass": true
+    },
+    {
+      "run": "new-144-scale1-initial-long",
+      "dpi": 144,
+      "GDK_SCALE": 1,
+      "initial": "long",
+      "wrap": 485,
+      "outer": [
+        508,
+        225
+      ],
+      "client": [
+        493,
+        225
+      ],
+      "label_height": 2424,
+      "native_text_bottom": 2424,
+      "virtual_height": 2424,
+      "scroll_px": 2200,
+      "border": [
+        0,
+        0
+      ],
+      "scrollbar_width": 15,
+      "scrollbar_spacing": 0,
+      "initial_pass": true
+    },
+    {
+      "run": "new-192-scale1-initial-short",
+      "dpi": 192,
+      "GDK_SCALE": 1,
+      "initial": "short",
+      "wrap": 645,
+      "outer": [
+        670,
+        300
+      ],
+      "client": [
+        655,
+        300
+      ],
+      "label_height": 32,
+      "native_text_bottom": 32,
+      "virtual_height": 300,
+      "scroll_px": 0,
+      "border": [
+        0,
+        0
+      ],
+      "scrollbar_width": 15,
+      "scrollbar_spacing": 0,
+      "initial_pass": true
+    },
+    {
+      "run": "new-192-scale1-initial-long",
+      "dpi": 192,
+      "GDK_SCALE": 1,
+      "initial": "long",
+      "wrap": 645,
+      "outer": [
+        670,
+        300
+      ],
+      "client": [
+        655,
+        300
+      ],
+      "label_height": 3232,
+      "native_text_bottom": 3232,
+      "virtual_height": 3232,
+      "scroll_px": 2935,
+      "border": [
+        0,
+        0
+      ],
+      "scrollbar_width": 15,
+      "scrollbar_spacing": 0,
+      "initial_pass": true
+    },
+    {
+      "run": "new-96-scale2-initial-short",
+      "dpi": 96,
+      "GDK_SCALE": 2,
+      "initial": "short",
+      "wrap": 325,
+      "outer": [
+        345,
+        150
+      ],
+      "client": [
+        330,
+        150
+      ],
+      "label_height": 17,
+      "native_text_bottom": 17,
+      "virtual_height": 150,
+      "scroll_px": 0,
+      "border": [
+        0,
+        0
+      ],
+      "scrollbar_width": 15,
+      "scrollbar_spacing": 0,
+      "initial_pass": true
+    },
+    {
+      "run": "new-96-scale2-initial-long",
+      "dpi": 96,
+      "GDK_SCALE": 2,
+      "initial": "long",
+      "wrap": 325,
+      "outer": [
+        345,
+        150
+      ],
+      "client": [
+        330,
+        150
+      ],
+      "label_height": 1717,
+      "native_text_bottom": 1717,
+      "virtual_height": 1717,
+      "scroll_px": 1570,
+      "border": [
+        0,
+        0
+      ],
+      "scrollbar_width": 15,
+      "scrollbar_spacing": 0,
+      "initial_pass": true
+    },
+    {
+      "run": "new-144-scale2-initial-short",
+      "dpi": 144,
+      "GDK_SCALE": 2,
+      "initial": "short",
+      "wrap": 485,
+      "outer": [
+        508,
+        225
+      ],
+      "client": [
+        493,
+        225
+      ],
+      "label_height": 24,
+      "native_text_bottom": 24,
+      "virtual_height": 225,
+      "scroll_px": 0,
+      "border": [
+        0,
+        0
+      ],
+      "scrollbar_width": 15,
+      "scrollbar_spacing": 0,
+      "initial_pass": true
+    },
+    {
+      "run": "new-144-scale2-initial-long",
+      "dpi": 144,
+      "GDK_SCALE": 2,
+      "initial": "long",
+      "wrap": 485,
+      "outer": [
+        508,
+        225
+      ],
+      "client": [
+        493,
+        225
+      ],
+      "label_height": 2424,
+      "native_text_bottom": 2424,
+      "virtual_height": 2424,
+      "scroll_px": 2200,
+      "border": [
+        0,
+        0
+      ],
+      "scrollbar_width": 15,
+      "scrollbar_spacing": 0,
+      "initial_pass": true
+    },
+    {
+      "run": "new-192-scale2-initial-short",
+      "dpi": 192,
+      "GDK_SCALE": 2,
+      "initial": "short",
+      "wrap": 645,
+      "outer": [
+        670,
+        300
+      ],
+      "client": [
+        655,
+        300
+      ],
+      "label_height": 32,
+      "native_text_bottom": 32,
+      "virtual_height": 300,
+      "scroll_px": 0,
+      "border": [
+        0,
+        0
+      ],
+      "scrollbar_width": 15,
+      "scrollbar_spacing": 0,
+      "initial_pass": true
+    },
+    {
+      "run": "new-192-scale2-initial-long",
+      "dpi": 192,
+      "GDK_SCALE": 2,
+      "initial": "long",
+      "wrap": 645,
+      "outer": [
+        670,
+        300
+      ],
+      "client": [
+        655,
+        300
+      ],
+      "label_height": 3232,
+      "native_text_bottom": 3232,
+      "virtual_height": 3232,
+      "scroll_px": 2935,
+      "border": [
+        0,
+        0
+      ],
+      "scrollbar_width": 15,
+      "scrollbar_spacing": 0,
+      "initial_pass": true
+    },
+    {
+      "run": "new-96-scale1-initial-short-border-stress",
+      "dpi": 96,
+      "GDK_SCALE": 1,
+      "initial": "short",
+      "wrap": 325,
+      "outer": [
+        373,
+        152
+      ],
+      "client": [
+        330,
+        150
+      ],
+      "label_height": 17,
+      "native_text_bottom": 17,
+      "virtual_height": 150,
+      "scroll_px": 0,
+      "border": [
+        2,
+        2
+      ],
+      "scrollbar_width": 34,
+      "scrollbar_spacing": 7,
+      "initial_pass": true
+    },
+    {
+      "run": "new-96-scale1-initial-long-border-stress",
+      "dpi": 96,
+      "GDK_SCALE": 1,
+      "initial": "long",
+      "wrap": 325,
+      "outer": [
+        373,
+        152
+      ],
+      "client": [
+        330,
+        150
+      ],
+      "label_height": 1717,
+      "native_text_bottom": 1717,
+      "virtual_height": 1717,
+      "scroll_px": 1570,
+      "border": [
+        2,
+        2
+      ],
+      "scrollbar_width": 34,
+      "scrollbar_spacing": 7,
+      "initial_pass": true
+    },
+    {
+      "run": "new-144-scale1-initial-short-border-stress",
+      "dpi": 144,
+      "GDK_SCALE": 1,
+      "initial": "short",
+      "wrap": 485,
+      "outer": [
+        536,
+        227
+      ],
+      "client": [
+        493,
+        225
+      ],
+      "label_height": 24,
+      "native_text_bottom": 24,
+      "virtual_height": 225,
+      "scroll_px": 0,
+      "border": [
+        2,
+        2
+      ],
+      "scrollbar_width": 34,
+      "scrollbar_spacing": 7,
+      "initial_pass": true
+    },
+    {
+      "run": "new-144-scale1-initial-long-border-stress",
+      "dpi": 144,
+      "GDK_SCALE": 1,
+      "initial": "long",
+      "wrap": 485,
+      "outer": [
+        536,
+        227
+      ],
+      "client": [
+        493,
+        225
+      ],
+      "label_height": 2424,
+      "native_text_bottom": 2424,
+      "virtual_height": 2424,
+      "scroll_px": 2200,
+      "border": [
+        2,
+        2
+      ],
+      "scrollbar_width": 34,
+      "scrollbar_spacing": 7,
+      "initial_pass": true
+    },
+    {
+      "run": "new-192-scale1-initial-short-border-stress",
+      "dpi": 192,
+      "GDK_SCALE": 1,
+      "initial": "short",
+      "wrap": 645,
+      "outer": [
+        698,
+        302
+      ],
+      "client": [
+        655,
+        300
+      ],
+      "label_height": 32,
+      "native_text_bottom": 32,
+      "virtual_height": 300,
+      "scroll_px": 0,
+      "border": [
+        2,
+        2
+      ],
+      "scrollbar_width": 34,
+      "scrollbar_spacing": 7,
+      "initial_pass": true
+    },
+    {
+      "run": "new-192-scale1-initial-long-border-stress",
+      "dpi": 192,
+      "GDK_SCALE": 1,
+      "initial": "long",
+      "wrap": 645,
+      "outer": [
+        698,
+        302
+      ],
+      "client": [
+        655,
+        300
+      ],
+      "label_height": 3232,
+      "native_text_bottom": 3232,
+      "virtual_height": 3232,
+      "scroll_px": 2935,
+      "border": [
+        2,
+        2
+      ],
+      "scrollbar_width": 34,
+      "scrollbar_spacing": 7,
+      "initial_pass": true
+    },
+    {
+      "run": "new-96-scale2-initial-short-border-stress",
+      "dpi": 96,
+      "GDK_SCALE": 2,
+      "initial": "short",
+      "wrap": 325,
+      "outer": [
+        373,
+        152
+      ],
+      "client": [
+        330,
+        150
+      ],
+      "label_height": 17,
+      "native_text_bottom": 17,
+      "virtual_height": 150,
+      "scroll_px": 0,
+      "border": [
+        2,
+        2
+      ],
+      "scrollbar_width": 34,
+      "scrollbar_spacing": 7,
+      "initial_pass": true
+    },
+    {
+      "run": "new-96-scale2-initial-long-border-stress",
+      "dpi": 96,
+      "GDK_SCALE": 2,
+      "initial": "long",
+      "wrap": 325,
+      "outer": [
+        373,
+        152
+      ],
+      "client": [
+        330,
+        150
+      ],
+      "label_height": 1717,
+      "native_text_bottom": 1717,
+      "virtual_height": 1717,
+      "scroll_px": 1570,
+      "border": [
+        2,
+        2
+      ],
+      "scrollbar_width": 34,
+      "scrollbar_spacing": 7,
+      "initial_pass": true
+    },
+    {
+      "run": "new-144-scale2-initial-short-border-stress",
+      "dpi": 144,
+      "GDK_SCALE": 2,
+      "initial": "short",
+      "wrap": 485,
+      "outer": [
+        536,
+        227
+      ],
+      "client": [
+        493,
+        225
+      ],
+      "label_height": 24,
+      "native_text_bottom": 24,
+      "virtual_height": 225,
+      "scroll_px": 0,
+      "border": [
+        2,
+        2
+      ],
+      "scrollbar_width": 34,
+      "scrollbar_spacing": 7,
+      "initial_pass": true
+    },
+    {
+      "run": "new-144-scale2-initial-long-border-stress",
+      "dpi": 144,
+      "GDK_SCALE": 2,
+      "initial": "long",
+      "wrap": 485,
+      "outer": [
+        536,
+        227
+      ],
+      "client": [
+        493,
+        225
+      ],
+      "label_height": 2424,
+      "native_text_bottom": 2424,
+      "virtual_height": 2424,
+      "scroll_px": 2200,
+      "border": [
+        2,
+        2
+      ],
+      "scrollbar_width": 34,
+      "scrollbar_spacing": 7,
+      "initial_pass": true
+    },
+    {
+      "run": "new-192-scale2-initial-short-border-stress",
+      "dpi": 192,
+      "GDK_SCALE": 2,
+      "initial": "short",
+      "wrap": 645,
+      "outer": [
+        698,
+        302
+      ],
+      "client": [
+        655,
+        300
+      ],
+      "label_height": 32,
+      "native_text_bottom": 32,
+      "virtual_height": 300,
+      "scroll_px": 0,
+      "border": [
+        2,
+        2
+      ],
+      "scrollbar_width": 34,
+      "scrollbar_spacing": 7,
+      "initial_pass": true
+    },
+    {
+      "run": "new-192-scale2-initial-long-border-stress",
+      "dpi": 192,
+      "GDK_SCALE": 2,
+      "initial": "long",
+      "wrap": 645,
+      "outer": [
+        698,
+        302
+      ],
+      "client": [
+        655,
+        300
+      ],
+      "label_height": 3232,
+      "native_text_bottom": 3232,
+      "virtual_height": 3232,
+      "scroll_px": 2935,
+      "border": [
+        2,
+        2
+      ],
+      "scrollbar_width": 34,
+      "scrollbar_spacing": 7,
+      "initial_pass": true
+    }
+  ],
+  "verification_commands": {
+    "followup": {
+      "argv": [
+        "python3",
+        "/tmp/bambu-peer-review-20261028/implementation/progress-native-probe-followup/verify.py"
+      ],
+      "exit": 0,
+      "stdout": "{\"checked_followup_rows\": 348, \"failed_rows\": 0, \"known_unbreakable_red\": 24, \"prior_initial_red_144_192\": 16, \"prior_evidence_byte_identical\": true, \"pass\": true}\n",
+      "stderr": ""
+    },
+    "full": {
+      "argv": [
+        "python3",
+        "/tmp/bambu-peer-review-20261028/implementation/progress-native-probe-followup/verify.py",
+        "--include-known-unbreakable"
+      ],
+      "exit": 1,
+      "stdout": "{\"checked_followup_rows\": 372, \"failed_rows\": 24, \"known_unbreakable_red\": 24, \"prior_initial_red_144_192\": 16, \"prior_evidence_byte_identical\": true, \"pass\": false}\n",
+      "stderr": ""
+    }
+  },
+  "evidence_sha256": {
+    "input-check.json": "ac2b08916d43853f874cf5541299d18d8deb690ed025a85075d83063387359a9",
+    "patch-application.json": "2bbf8f4fe2620b0ea968c35d0f136e98faf2b12ec365b8d334ead4756a87f97d",
+    "extraction.json": "48bad95e7ff08b65d020662b11a9e8ac1bb781b1502205bd1a3738b4ae47276a",
+    "compile-command.json": "cdba0be5727233cc5a390a55469ab9d99478eab3024ba909b52e92ac5be7332c",
+    "compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "probe.cpp": "d5fa653cce4cedf8319c3064a884a5f35d19fbc1f97c26d12efe8de759371012",
+    "probe": "42565e6316fd481ed694a64bf07a402581c27c8376da36744e4a06b26cc44ecd",
+    "private-archive-provenance.json": "bbc6cdf1c1dc18b9097464361fb8b1e8c7f9df8bfc469a78935360ddab2b781c",
+    "prior-evidence-sha256.json": "4a8a21598a04140862abc91b5d7733cf7057c3fc40d8d003bc6d53a8a0f9f078",
+    "results.json": "9d1fc7357bc9f3edbe2cba1c23dd7d0f8845f85a087e54c36d69fb5b530bd39d",
+    "results-border-stress.json": "a6c6baf435586518f803f74ee3b400f9292a035f035412f2e9fca4dcefb9071c",
+    "run-commands.json": "f1bcb2509dabdeb23c7812611e626561b79e9aa8274390928d4d7204e1aa89d8",
+    "run-commands-border-stress.json": "5dd313a731221580901b6232a8af89bedd264cad81398731cdffa812dcfb9fe9",
+    "xvfb-command.json": "130ad464b058fa034b6532824e0e1e737dabec91cd09e8b405a6692f5fcf25a1",
+    "xvfb-command-border-stress.json": "b95e6250324e17bdd0859e21f89f79481ca42f401ec7945f25ac8d1f2bffb251",
+    "verify-followup.json": "9e70349b8f7c52493cac959a4bb8b45b059a5db9306b62e9fac9b388ee2187e6",
+    "verify-full.json": "bfdf8454fbf22a8cb46acd493e65fe421c6d12978ae3b882dd5c73e278080ea1",
+    "SOURCE-INTERPRETATION.md": "f940aa7c13bbacf3b28a490d6d8ecf91000f3bd248314c08349925d6357ca1db"
+  },
+  "limits": [
+    "No Windows/macOS compile or runtime",
+    "No full Studio launch, printer, or existing desktop connection",
+    "No-cancel adaptive dialog shell; application lifecycle and main-frame parenting omitted",
+    "No live DPI/monitor transition; native coordinates are logical GTK pixels"
+  ],
+  "platform_interpretation": "Direct wxDialog base call restores GTK top-level resize; pinned Windows/macOS hierarchy resolves to the previous implementation. Source interpretation only.",
+  "report_sha256": "fbbf7c6413f34ed38b02b000c0ab389f1541a3e82f259953ba722ae87980872a"
+}

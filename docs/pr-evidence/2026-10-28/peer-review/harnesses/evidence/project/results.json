@@ -1,0 +1,70 @@
+{
+  "before": {
+    "commit": "53fdfb67ed5272f6547a995d8bc0d19e9f37de6e",
+    "sha256": {
+      "src/slic3r/GUI/Project.cpp": "23364d6c53af923d92ff7542a00bd9a40ff5eced598f842825357cabd8c106fa",
+      "src/slic3r/GUI/Project.hpp": "9d7b51d5e1cc277c4025d1c7d081c4a1dd769b74d130e7f7430aff33877e6ad1",
+      "src/libslic3r/Model.cpp": "84843d5f4910909abc37403ad2dfc1ff404a51c134f8a207d55ab571d1223792",
+      "src/libslic3r/Model.hpp": "3733369695ac3ff71673ed284a2c814add71e0eef07f226bf71e50a8f05eaffb"
+    }
+  },
+  "after": {
+    "kind": "uncommitted candidate tree; hashes identify tested bytes",
+    "sha256": {
+      "src/slic3r/GUI/Project.cpp": "318955c72082dd1c9f32d9ce2c357ca2ca4bbeafae9f2b1e6949ff0b85297708",
+      "src/slic3r/GUI/Project.hpp": "9d7b51d5e1cc277c4025d1c7d081c4a1dd769b74d130e7f7430aff33877e6ad1",
+      "src/libslic3r/Model.cpp": "95b04a2ede04bb36449acdce86d077aa9338963c3c01c3b810bcf2c5d68ef289",
+      "src/libslic3r/Model.hpp": "4adfa3f0dc81b8b0d127a874026d957f1b7e4334336624b8a123df15a7012d9a"
+    }
+  },
+  "unchanged_model_bodies": [
+    "std::string Model::get_auxiliary_file_temp_path()",
+    "std::string Model::get_backup_path()",
+    "std::string Model::get_backup_path(const std::string &sub_path)",
+    "Model::~Model()",
+    "void Model::set_backup_path(",
+    "void Model::load_from("
+  ],
+  "compiler_jobs": 1,
+  "json_header_sha256": "33e4d4e3c750a8ab990f1f637c6a1b35411534d7873a507ca1c36d7d40751e4b",
+  "toolchain": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "runs": [
+    {
+      "source": "before",
+      "case": "cleanup",
+      "exit": 1,
+      "expected_failure": true
+    },
+    {
+      "source": "before",
+      "case": "identity",
+      "exit": 1,
+      "expected_failure": true
+    },
+    {
+      "source": "after",
+      "case": "cleanup",
+      "exit": 0,
+      "expected_failure": false
+    },
+    {
+      "source": "after",
+      "case": "identity",
+      "exit": 0,
+      "expected_failure": false
+    },
+    {
+      "source": "after",
+      "case": "reuse",
+      "exit": 0,
+      "expected_failure": false
+    },
+    {
+      "source": "after",
+      "case": "lifecycle",
+      "exit": 0,
+      "expected_failure": false
+    }
+  ],
+  "result": "PASS"
+}

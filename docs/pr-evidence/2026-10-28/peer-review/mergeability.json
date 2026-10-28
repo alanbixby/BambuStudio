@@ -1,0 +1,242 @@
+[
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/assembly-return-context",
+    "head": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+    "purpose": "declared-base",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "a230991dd3e226d31c9831217009ad144a059c6a",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/assembly-return-context",
+    "head": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+    "purpose": "latest-upstream",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "a230991dd3e226d31c9831217009ad144a059c6a",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/assembly-sidebar-clearance",
+    "head": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+    "purpose": "declared-base",
+    "base": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+    "exit_code": 0,
+    "result": "c7341562a6046e1c3823d58d75e870533053e8fe",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/assembly-sidebar-clearance",
+    "head": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+    "purpose": "latest-upstream",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "c7341562a6046e1c3823d58d75e870533053e8fe",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/project-metadata",
+    "head": "0826d59e1e1b36bf80b82904859c64f339749820",
+    "purpose": "declared-base",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "2442b25e89f0c5edecb029ba7cb7301a7c63cd77",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/project-metadata",
+    "head": "0826d59e1e1b36bf80b82904859c64f339749820",
+    "purpose": "latest-upstream",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "2442b25e89f0c5edecb029ba7cb7301a7c63cd77",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/project-reader-styles",
+    "head": "b3dacfa61b17385703e700779207e83e0c1041af",
+    "purpose": "declared-base",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "b9b2e68c53152f255720ba11695cf4794ab4883e",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/project-reader-styles",
+    "head": "b3dacfa61b17385703e700779207e83e0c1041af",
+    "purpose": "latest-upstream",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "b9b2e68c53152f255720ba11695cf4794ab4883e",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/native-dip-geometry",
+    "head": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+    "purpose": "declared-base",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "d714d9dedd6bfca70f9f58f1bd98a3864421c9d4",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/native-dip-geometry",
+    "head": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+    "purpose": "latest-upstream",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "d714d9dedd6bfca70f9f58f1bd98a3864421c9d4",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/print-options-reflow",
+    "head": "8a700863e05d6aac3e7ae17ee92cbf697703fef1",
+    "purpose": "declared-base",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "cc96d7115a326706bebbc6d4422518e806011ce7",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/print-options-reflow",
+    "head": "8a700863e05d6aac3e7ae17ee92cbf697703fef1",
+    "purpose": "latest-upstream",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "cc96d7115a326706bebbc6d4422518e806011ce7",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/settings-field-width",
+    "head": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+    "purpose": "declared-base",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "4ac31392e530280280762d2f60c2543779b67e95",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/settings-field-width",
+    "head": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+    "purpose": "latest-upstream",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "4ac31392e530280280762d2f60c2543779b67e95",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/sidebar-card-spacing",
+    "head": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+    "purpose": "declared-base",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "c663a6cb83ea179334c4d26f8d84718d1ecb1bc0",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/sidebar-card-spacing",
+    "head": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+    "purpose": "latest-upstream",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "c663a6cb83ea179334c4d26f8d84718d1ecb1bc0",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/temperature-value-alignment",
+    "head": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+    "purpose": "declared-base",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "ba7939dbe93460d637a884528320d899d060766f",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/temperature-value-alignment",
+    "head": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+    "purpose": "latest-upstream",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "ba7939dbe93460d637a884528320d899d060766f",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/camera-ams-balance",
+    "head": "6e81cd8f92313dfa8c693baab022a18945f74add",
+    "purpose": "declared-base",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "9fb23b4e79a27f6c25d1813866ab3a264f6b9962",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/BambuStudio",
+    "branch": "fix/camera-ams-balance",
+    "head": "6e81cd8f92313dfa8c693baab022a18945f74add",
+    "purpose": "latest-upstream",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "exit_code": 0,
+    "result": "9fb23b4e79a27f6c25d1813866ab3a264f6b9962",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/wxWidgets",
+    "branch": "fix/gtk-label-font-measurement",
+    "head": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+    "purpose": "declared-base",
+    "base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+    "exit_code": 0,
+    "result": "6c1dfc3dc39e7c370b5cd40c6f36913ff52ab71c",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/wxWidgets",
+    "branch": "fix/gtk-label-font-measurement",
+    "head": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+    "purpose": "latest-upstream",
+    "base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+    "exit_code": 0,
+    "result": "6c1dfc3dc39e7c370b5cd40c6f36913ff52ab71c",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/wxWidgets",
+    "branch": "fix/gtk-font-dpi-conversion",
+    "head": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4",
+    "purpose": "declared-base",
+    "base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+    "exit_code": 0,
+    "result": "4637851256e12ca34a37fcb3da30cd9489b60b53",
+    "stderr": ""
+  },
+  {
+    "repository": "alanbixby/wxWidgets",
+    "branch": "fix/gtk-font-dpi-conversion",
+    "head": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4",
+    "purpose": "latest-upstream",
+    "base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+    "exit_code": 0,
+    "result": "4637851256e12ca34a37fcb3da30cd9489b60b53",
+    "stderr": ""
+  }
+]

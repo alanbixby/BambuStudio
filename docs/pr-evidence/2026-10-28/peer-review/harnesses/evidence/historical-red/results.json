@@ -1,0 +1,36 @@
+{
+  "scope": "historical fourteen-site geometry",
+  "before": {
+    "commit": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "sha256": {
+      "src/slic3r/GUI/MediaPlayCtrl.cpp": "a30d0ecd4986aa15ca971c764bf51c6cd900fa2400a07ac859fa01a18ea87726",
+      "src/slic3r/GUI/calib_dlg.cpp": "2aeee56bf6cac1e96b1353ee2e68a58dcceae9cd626d6618415143df70c7ff51",
+      "src/slic3r/GUI/Widgets/ProgressDialog.cpp": "df4736e901779bf137492a7f6fad7bccbc98d17bdc6e4ec98094adda9fb07ff4",
+      "src/slic3r/GUI/Widgets/AMSItem.cpp": "7f2294d04cf74b8fd21a12cf62182e30437cb8e17d19ddf465c7ac36ada3137f",
+      "src/slic3r/GUI/AmsMappingPopup.cpp": "7744d1c25e50e2d6a0e03521018eb557b04fec2837e4388b35fb4456a7215ea0",
+      "src/slic3r/GUI/Plater.cpp": "4a5a4db32d9ae48e98ba0e53c1fba5cf6700eb67cb2746318627b43c4add86d8"
+    }
+  },
+  "after": {
+    "commit": "e20789d722ffb71ac410b3fe341c157687d12624",
+    "sha256": {
+      "src/slic3r/GUI/MediaPlayCtrl.cpp": "226f94b3fdb4125c24399081f27b9b7198ce8b19daca6a8dde014cb03ec1eb3f",
+      "src/slic3r/GUI/calib_dlg.cpp": "20da8db6fb3135ee33c446a25c95523f3bfdc3a1754715bcf7d01fb6070a5d14",
+      "src/slic3r/GUI/Widgets/ProgressDialog.cpp": "cc4d12049beb2d38e0a0b080f28c78458fd985e4f7276fd40fa4ebb7101f4391",
+      "src/slic3r/GUI/Widgets/AMSItem.cpp": "8b9bd8ceec27a0639c7bb00b1d838e663f17df05da8a2a98c62135b07c639fbd",
+      "src/slic3r/GUI/AmsMappingPopup.cpp": "69ec5668bac2a08b806b1820d71d6afe1f90fcd6b12b8c59df5b8684fe4e7a8a",
+      "src/slic3r/GUI/Plater.cpp": "836a33f136ac942580b363e02d58b4630219bd0a4c15f814bc1e2bc4c09f4d48"
+    }
+  },
+  "negative_control": true,
+  "binary_exit": 1,
+  "compiler_jobs": 1,
+  "compiler_flags": [
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "toolchain": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "result": "PASS (expected failure)"
+}

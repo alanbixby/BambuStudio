@@ -1,0 +1,114 @@
+[
+  {
+    "path": "MainFrame.cpp",
+    "name": "SideButton",
+    "line": 2057,
+    "text": "SideButton(slice_panel, \"\", \"sidebutton_dropdown\", 0, FromDIP(14))",
+    "code": "SideButton(slice_panel,   ,                      , 0, FromDIP(14))"
+  },
+  {
+    "path": "MainFrame.cpp",
+    "name": "SideButton",
+    "line": 2059,
+    "text": "SideButton(print_panel, \"\", \"sidebutton_dropdown\", 0, FromDIP(14))",
+    "code": "SideButton(print_panel,   ,                      , 0, FromDIP(14))"
+  },
+  {
+    "path": "Monitor.cpp",
+    "name": "Button",
+    "line": 59,
+    "text": "Button(this, \"\", \"monitor_add_machine\", FromDIP(24))",
+    "code": "Button(this,   ,                      , FromDIP(24))"
+  },
+  {
+    "path": "MultiMachineManagerPage.cpp",
+    "name": "Button",
+    "line": 446,
+    "text": "Button(m_flipping_panel, \"\", \"go_last_plate\", 0, FromDIP(20))",
+    "code": "Button(m_flipping_panel,   ,                , 0, FromDIP(20))"
+  },
+  {
+    "path": "MultiMachineManagerPage.cpp",
+    "name": "Button",
+    "line": 464,
+    "text": "Button(m_flipping_panel, \"\", \"go_next_plate\", 0, FromDIP(20))",
+    "code": "Button(m_flipping_panel,   ,                , 0, FromDIP(20))"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "name": "Button",
+    "line": 1084,
+    "text": "Button(m_flipping_panel, \"\", \"go_last_plate\", wxBORDER_NONE, FromDIP(20))",
+    "code": "Button(m_flipping_panel,   ,                , wxBORDER_NONE, FromDIP(20))"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "name": "Button",
+    "line": 1104,
+    "text": "Button(m_flipping_panel, \"\", \"go_next_plate\", wxBORDER_NONE, FromDIP(20))",
+    "code": "Button(m_flipping_panel,   ,                , wxBORDER_NONE, FromDIP(20))"
+  },
+  {
+    "path": "SendToPrinter.cpp",
+    "name": "Button",
+    "line": 507,
+    "text": "Button(m_rename_normal_panel, \"\", \"ams_editable\", wxBORDER_NONE, FromDIP(10))",
+    "code": "Button(m_rename_normal_panel,   ,               , wxBORDER_NONE, FromDIP(10))"
+  },
+  {
+    "path": "StatusPanel.cpp",
+    "name": "Button",
+    "line": 816,
+    "text": "Button(this, _CTX(L_CONTEXT(\"Quit\", \"Quit_Switching\"), \"Quit_Switching\"), \"\", 0, FromDIP(22))",
+    "code": "Button(this, _CTX(L_CONTEXT(      ,                 ),                 ),   , 0, FromDIP(22))"
+  },
+  {
+    "path": "StatusPanel.cpp",
+    "name": "Button",
+    "line": 826,
+    "text": "Button(this, _L(\"Retry\"), \"\", 0, FromDIP(22))",
+    "code": "Button(this, _L(       ),   , 0, FromDIP(22))"
+  },
+  {
+    "path": "StatusPanel.cpp",
+    "name": "Button",
+    "line": 2748,
+    "text": "Button(panel, wxString(\"10\"), \"monitor_bed_up\", 0, FromDIP(15))",
+    "code": "Button(panel, wxString(    ),                 , 0, FromDIP(15))"
+  },
+  {
+    "path": "StatusPanel.cpp",
+    "name": "Button",
+    "line": 2757,
+    "text": "Button(panel, wxString(\" 1\"), \"monitor_bed_up\", 0, FromDIP(15))",
+    "code": "Button(panel, wxString(    ),                 , 0, FromDIP(15))"
+  },
+  {
+    "path": "StatusPanel.cpp",
+    "name": "Button",
+    "line": 2773,
+    "text": "Button(panel, wxString(\" 1\"), \"monitor_bed_down\", 0, FromDIP(15))",
+    "code": "Button(panel, wxString(    ),                   , 0, FromDIP(15))"
+  },
+  {
+    "path": "StatusPanel.cpp",
+    "name": "Button",
+    "line": 2782,
+    "text": "Button(panel, wxString(\"10\"), \"monitor_bed_down\", 0, FromDIP(15))",
+    "code": "Button(panel, wxString(    ),                   , 0, FromDIP(15))"
+  },
+  {
+    "path": "StatusPanel.cpp",
+    "name": "Button",
+    "line": 2821,
+    "text": "Button(panel, \"\", \"monitor_extruder_up\", 0, FromDIP(22))",
+    "code": "Button(panel,   ,                      , 0, FromDIP(22))"
+  },
+  {
+    "path": "StatusPanel.cpp",
+    "name": "Button",
+    "line": 2837,
+    "text": "Button(panel, \"\", \"monitor_extruder_down\", 0, FromDIP(22))",
+    "code": "Button(panel,   ,                        , 0, FromDIP(22))"
+  }
+]

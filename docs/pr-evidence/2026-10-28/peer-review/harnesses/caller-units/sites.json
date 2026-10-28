@@ -1,0 +1,105 @@
+{
+  "AboutDialog.cpp": {
+    "298": 16
+  },
+  "AmsMappingPopup.cpp": {
+    "49": 8,
+    "1308": 60,
+    "1309": 20,
+    "1927": 140,
+    "1928": 110
+  },
+  "BindDialog.cpp": {
+    "382": 100,
+    "922": 80,
+    "989": 100,
+    "1146": 80
+  },
+  "CapsuleButton.cpp": {
+    "28": 16,
+    "29": 16
+  },
+  "CreatePresetsDialog.cpp": {
+    "1582": 20,
+    "1589": 20,
+    "2986": 20,
+    "2987": 20,
+    "2997": 20,
+    "2998": 20,
+    "3478": 24
+  },
+  "MainFrame.cpp": {
+    "2057": 14,
+    "2059": 14
+  },
+  "MultiMachineManagerPage.cpp": {
+    "325": [
+      "ICON_SINGLE_SIZE",
+      16
+    ],
+    "358": [
+      "ICON_SINGLE_SIZE",
+      16
+    ],
+    "446": 20,
+    "464": 20
+  },
+  "MultiTaskManagerPage.cpp": {
+    "589": [
+      "ICON_SINGLE_SIZE",
+      16
+    ],
+    "609": [
+      "ICON_SINGLE_SIZE",
+      16
+    ],
+    "638": [
+      "ICON_SINGLE_SIZE",
+      16
+    ],
+    "961": [
+      "ICON_SINGLE_SIZE",
+      16
+    ],
+    "981": [
+      "ICON_SINGLE_SIZE",
+      16
+    ],
+    "1010": [
+      "ICON_SINGLE_SIZE",
+      16
+    ],
+    "1084": 20,
+    "1104": 20
+  },
+  "SendMultiMachinePage.cpp": {
+    "1243": [
+      "ICON_SINGLE_SIZE",
+      16
+    ],
+    "1265": [
+      "ICON_SINGLE_SIZE",
+      16
+    ],
+    "1308": [
+      "ICON_SINGLE_SIZE",
+      16
+    ],
+    "1329": [
+      "ICON_SINGLE_SIZE",
+      16
+    ]
+  },
+  "SendToPrinter.cpp": {
+    "507": 10
+  },
+  "StepMeshDialog.cpp": {
+    "93": 120
+  },
+  "Widgets/MultiNozzleSync.cpp": {
+    "29": 60,
+    "224": 90,
+    "293": 90,
+    "319": 90
+  }
+}

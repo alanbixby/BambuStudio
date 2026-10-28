@@ -1,0 +1,1 @@
+FAIL factor=0.75: camera fits remaining pixel budget

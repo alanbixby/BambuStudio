@@ -1,0 +1,812 @@
+{
+  "base": "53fdfb67ed5272f6547a995d8bc0d19e9f37de6e",
+  "checks": [
+    {
+      "path": "src/slic3r/GUI/AboutDialog.cpp",
+      "changed_lines": 1,
+      "removed_direct_nested_conversions": 1,
+      "removed_macro_conversions": 0
+    },
+    {
+      "path": "src/slic3r/GUI/AmsMappingPopup.cpp",
+      "changed_lines": 5,
+      "removed_direct_nested_conversions": 5,
+      "removed_macro_conversions": 0
+    },
+    {
+      "path": "src/slic3r/GUI/BindDialog.cpp",
+      "changed_lines": 4,
+      "removed_direct_nested_conversions": 4,
+      "removed_macro_conversions": 0
+    },
+    {
+      "path": "src/slic3r/GUI/CapsuleButton.cpp",
+      "changed_lines": 2,
+      "removed_direct_nested_conversions": 2,
+      "removed_macro_conversions": 0
+    },
+    {
+      "path": "src/slic3r/GUI/CreatePresetsDialog.cpp",
+      "changed_lines": 7,
+      "removed_direct_nested_conversions": 7,
+      "removed_macro_conversions": 0
+    },
+    {
+      "path": "src/slic3r/GUI/MainFrame.cpp",
+      "changed_lines": 2,
+      "removed_direct_nested_conversions": 2,
+      "removed_macro_conversions": 0
+    },
+    {
+      "path": "src/slic3r/GUI/MultiMachineManagerPage.cpp",
+      "changed_lines": 4,
+      "removed_direct_nested_conversions": 2,
+      "removed_macro_conversions": 2
+    },
+    {
+      "path": "src/slic3r/GUI/MultiTaskManagerPage.cpp",
+      "changed_lines": 8,
+      "removed_direct_nested_conversions": 2,
+      "removed_macro_conversions": 6
+    },
+    {
+      "path": "src/slic3r/GUI/SendMultiMachinePage.cpp",
+      "changed_lines": 4,
+      "removed_direct_nested_conversions": 0,
+      "removed_macro_conversions": 4
+    },
+    {
+      "path": "src/slic3r/GUI/SendToPrinter.cpp",
+      "changed_lines": 1,
+      "removed_direct_nested_conversions": 1,
+      "removed_macro_conversions": 0
+    },
+    {
+      "path": "src/slic3r/GUI/StepMeshDialog.cpp",
+      "changed_lines": 1,
+      "removed_direct_nested_conversions": 1,
+      "removed_macro_conversions": 0
+    },
+    {
+      "path": "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp",
+      "changed_lines": 4,
+      "removed_direct_nested_conversions": 4,
+      "removed_macro_conversions": 0
+    }
+  ],
+  "total_changed_lines": 43,
+  "patch_sha256": "5ffac01ec9ecd41849e220d9f12ae8ec5b8a3b3eee8ed4b9b2bf198cb569af8f",
+  "apply_check_whitespace_error": "passed",
+  "original_repository_clean": true,
+  "arithmetic_matrix": [
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 8,
+      "prior_wx_height": 8,
+      "corrected_wx_height": 8
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 10,
+      "prior_wx_height": 10,
+      "corrected_wx_height": 10
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 14,
+      "prior_wx_height": 14,
+      "corrected_wx_height": 14
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 16,
+      "prior_wx_height": 16,
+      "corrected_wx_height": 16
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 20,
+      "prior_wx_height": 20,
+      "corrected_wx_height": 20
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 24,
+      "prior_wx_height": 24,
+      "corrected_wx_height": 24
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 60,
+      "prior_wx_height": 60,
+      "corrected_wx_height": 60
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 80,
+      "prior_wx_height": 80,
+      "corrected_wx_height": 80
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 90,
+      "prior_wx_height": 90,
+      "corrected_wx_height": 90
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 100,
+      "prior_wx_height": 100,
+      "corrected_wx_height": 100
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 110,
+      "prior_wx_height": 110,
+      "corrected_wx_height": 110
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 120,
+      "prior_wx_height": 120,
+      "corrected_wx_height": 120
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 140,
+      "prior_wx_height": 140,
+      "corrected_wx_height": 140
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 8,
+      "prior_wx_height": 8,
+      "corrected_wx_height": 8
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 10,
+      "prior_wx_height": 10,
+      "corrected_wx_height": 10
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 14,
+      "prior_wx_height": 14,
+      "corrected_wx_height": 14
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 16,
+      "prior_wx_height": 16,
+      "corrected_wx_height": 16
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 20,
+      "prior_wx_height": 20,
+      "corrected_wx_height": 20
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 24,
+      "prior_wx_height": 24,
+      "corrected_wx_height": 24
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 60,
+      "prior_wx_height": 60,
+      "corrected_wx_height": 60
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 80,
+      "prior_wx_height": 80,
+      "corrected_wx_height": 80
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 90,
+      "prior_wx_height": 90,
+      "corrected_wx_height": 90
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 100,
+      "prior_wx_height": 100,
+      "corrected_wx_height": 100
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 110,
+      "prior_wx_height": 110,
+      "corrected_wx_height": 110
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 120,
+      "prior_wx_height": 120,
+      "corrected_wx_height": 120
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 140,
+      "prior_wx_height": 140,
+      "corrected_wx_height": 140
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 8,
+      "prior_wx_height": 13,
+      "corrected_wx_height": 10
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 10,
+      "prior_wx_height": 16,
+      "corrected_wx_height": 13
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 14,
+      "prior_wx_height": 23,
+      "corrected_wx_height": 18
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 16,
+      "prior_wx_height": 25,
+      "corrected_wx_height": 20
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 20,
+      "prior_wx_height": 31,
+      "corrected_wx_height": 25
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 24,
+      "prior_wx_height": 38,
+      "corrected_wx_height": 30
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 60,
+      "prior_wx_height": 94,
+      "corrected_wx_height": 75
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 80,
+      "prior_wx_height": 125,
+      "corrected_wx_height": 100
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 90,
+      "prior_wx_height": 141,
+      "corrected_wx_height": 113
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 100,
+      "prior_wx_height": 156,
+      "corrected_wx_height": 125
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 110,
+      "prior_wx_height": 173,
+      "corrected_wx_height": 138
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 120,
+      "prior_wx_height": 188,
+      "corrected_wx_height": 150
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 140,
+      "prior_wx_height": 219,
+      "corrected_wx_height": 175
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 8,
+      "prior_wx_height": 13,
+      "corrected_wx_height": 10
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 10,
+      "prior_wx_height": 16,
+      "corrected_wx_height": 13
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 14,
+      "prior_wx_height": 23,
+      "corrected_wx_height": 18
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 16,
+      "prior_wx_height": 25,
+      "corrected_wx_height": 20
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 20,
+      "prior_wx_height": 31,
+      "corrected_wx_height": 25
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 24,
+      "prior_wx_height": 38,
+      "corrected_wx_height": 30
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 60,
+      "prior_wx_height": 94,
+      "corrected_wx_height": 75
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 80,
+      "prior_wx_height": 125,
+      "corrected_wx_height": 100
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 90,
+      "prior_wx_height": 141,
+      "corrected_wx_height": 113
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 100,
+      "prior_wx_height": 156,
+      "corrected_wx_height": 125
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 110,
+      "prior_wx_height": 173,
+      "corrected_wx_height": 138
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 120,
+      "prior_wx_height": 188,
+      "corrected_wx_height": 150
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 140,
+      "prior_wx_height": 219,
+      "corrected_wx_height": 175
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 8,
+      "prior_wx_height": 18,
+      "corrected_wx_height": 12
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 10,
+      "prior_wx_height": 23,
+      "corrected_wx_height": 15
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 14,
+      "prior_wx_height": 32,
+      "corrected_wx_height": 21
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 16,
+      "prior_wx_height": 36,
+      "corrected_wx_height": 24
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 20,
+      "prior_wx_height": 45,
+      "corrected_wx_height": 30
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 24,
+      "prior_wx_height": 54,
+      "corrected_wx_height": 36
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 60,
+      "prior_wx_height": 135,
+      "corrected_wx_height": 90
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 80,
+      "prior_wx_height": 180,
+      "corrected_wx_height": 120
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 90,
+      "prior_wx_height": 203,
+      "corrected_wx_height": 135
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 100,
+      "prior_wx_height": 225,
+      "corrected_wx_height": 150
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 110,
+      "prior_wx_height": 248,
+      "corrected_wx_height": 165
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 120,
+      "prior_wx_height": 270,
+      "corrected_wx_height": 180
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 140,
+      "prior_wx_height": 315,
+      "corrected_wx_height": 210
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 8,
+      "prior_wx_height": 18,
+      "corrected_wx_height": 12
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 10,
+      "prior_wx_height": 23,
+      "corrected_wx_height": 15
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 14,
+      "prior_wx_height": 32,
+      "corrected_wx_height": 21
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 16,
+      "prior_wx_height": 36,
+      "corrected_wx_height": 24
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 20,
+      "prior_wx_height": 45,
+      "corrected_wx_height": 30
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 24,
+      "prior_wx_height": 54,
+      "corrected_wx_height": 36
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 60,
+      "prior_wx_height": 135,
+      "corrected_wx_height": 90
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 80,
+      "prior_wx_height": 180,
+      "corrected_wx_height": 120
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 90,
+      "prior_wx_height": 203,
+      "corrected_wx_height": 135
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 100,
+      "prior_wx_height": 225,
+      "corrected_wx_height": 150
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 110,
+      "prior_wx_height": 248,
+      "corrected_wx_height": 165
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 120,
+      "prior_wx_height": 270,
+      "corrected_wx_height": 180
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 140,
+      "prior_wx_height": 315,
+      "corrected_wx_height": 210
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 8,
+      "prior_wx_height": 32,
+      "corrected_wx_height": 16
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 10,
+      "prior_wx_height": 40,
+      "corrected_wx_height": 20
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 14,
+      "prior_wx_height": 56,
+      "corrected_wx_height": 28
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 16,
+      "prior_wx_height": 64,
+      "corrected_wx_height": 32
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 20,
+      "prior_wx_height": 80,
+      "corrected_wx_height": 40
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 24,
+      "prior_wx_height": 96,
+      "corrected_wx_height": 48
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 60,
+      "prior_wx_height": 240,
+      "corrected_wx_height": 120
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 80,
+      "prior_wx_height": 320,
+      "corrected_wx_height": 160
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 90,
+      "prior_wx_height": 360,
+      "corrected_wx_height": 180
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 100,
+      "prior_wx_height": 400,
+      "corrected_wx_height": 200
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 110,
+      "prior_wx_height": 440,
+      "corrected_wx_height": 220
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 120,
+      "prior_wx_height": 480,
+      "corrected_wx_height": 240
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 140,
+      "prior_wx_height": 560,
+      "corrected_wx_height": 280
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 8,
+      "prior_wx_height": 32,
+      "corrected_wx_height": 16
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 10,
+      "prior_wx_height": 40,
+      "corrected_wx_height": 20
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 14,
+      "prior_wx_height": 56,
+      "corrected_wx_height": 28
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 16,
+      "prior_wx_height": 64,
+      "corrected_wx_height": 32
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 20,
+      "prior_wx_height": 80,
+      "corrected_wx_height": 40
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 24,
+      "prior_wx_height": 96,
+      "corrected_wx_height": 48
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 60,
+      "prior_wx_height": 240,
+      "corrected_wx_height": 120
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 80,
+      "prior_wx_height": 320,
+      "corrected_wx_height": 160
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 90,
+      "prior_wx_height": 360,
+      "corrected_wx_height": 180
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 100,
+      "prior_wx_height": 400,
+      "corrected_wx_height": 200
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 110,
+      "prior_wx_height": 440,
+      "corrected_wx_height": 220
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 120,
+      "prior_wx_height": 480,
+      "corrected_wx_height": 240
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 140,
+      "prior_wx_height": 560,
+      "corrected_wx_height": 280
+    }
+  ],
+  "limits": "Source checks and modeled arithmetic only; no native program, GUI, compiler, or full build run."
+}

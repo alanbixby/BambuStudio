@@ -1,0 +1,15 @@
+# Direct-base resize call: frozen native-source interpretation
+
+Source inspected: wx commit `3fea0af433d9630f79eaf8fbfc062364ba456be3`. Read-only copies are under `frozen-wx-source/`. This is source interpretation; no Windows or macOS compiler or runtime was used.
+
+`wxDialog::DoSetSize(x,y,width,height,sizeFlags)` is a qualified call to the inherited base implementation. It does not redispatch into `ProgressDialog::DoSetSize`. All five arguments and the cancel-button sizing statement remain intact. A call to public `SetSize` here would be different because it would dispatch through the override again; that is not the proposed edit.
+
+`wxDialogBase` derives from `wxNavigationEnabled<wxTopLevelWindow>` (`include/wx/dialog.h:64`). The navigation template, dialog classes, and dialog base add no DoSetSize override. The common top-level wrapper selects its native platform class (`include/wx/toplevel.h:355–405`).
+
+- **GTK:** The qualified dialog-base lookup reaches `wxTopLevelWindowGTK::DoSetSize` (`include/wx/gtk/toplevel.h:163`, `src/gtk/toplevel.cpp:1239`). It calls `gtk_window_resize`, updates the non-resizable widget size request, handles pending fitting-client-size flags, and sends the window size event. The old `wxWindow::DoSetSize` skips this top-level override. Calling the direct dialog base restores the normal native top-level sizing path.
+- **Windows:** The dialog, native top-level, and native non-owned-window classes add no DoSetSize override. Both old wxWindow-qualified and new wxDialog-qualified calls resolve to `wxWindowMSW::DoSetSize` (`src/msw/window.cpp:2104`). The code uses the existing sizing flags and virtual DoMoveWindow path. The inspected source reveals no new platform API dependency or distinct Windows implementation selected by the edit.
+- **macOS:** The same hierarchy has no DoSetSize override between wxDialog and wxWindowMac. Both calls resolve to `wxWindowMac::DoSetSize` (`src/osx/window_osx.cpp:1108`), whose DoMoveWindow call remains virtual and reaches native non-owned-window handling. The edit does not bypass Cocoa top-level positioning through a newly chosen child-window routine.
+
+Caveats: GTK now performs the native resize and corresponding size-event work that the old override skipped. The override applies to both adaptive and non-adaptive dialogs; this probe executes the adaptive path only, with no cancel button and no application main-frame parent. Windows/macOS runtime behavior, decorated parented dialogs, cancel-button callbacks, and live DPI/monitor changes remain unexecuted. No specific cross-OS compile blocker was found in the pinned source. This is not a cross-OS build claim.
+
+Moving the first FormatString call immediately after SetSizer leaves all message controls, gauge, bottom controls, and sizer construction complete before formatting. Adaptive formatting no longer happens after the only initial Layout/Fit/Centre sequence. The non-adaptive helper `set_panel_height` updates its already-created simplebook/panels/text sizes; the source shows no dependency on DisableOtherWindows having run first. Non-adaptive runtime was not exercised here.

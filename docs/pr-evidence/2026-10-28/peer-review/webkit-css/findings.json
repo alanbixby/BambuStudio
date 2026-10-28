@@ -1,0 +1,19 @@
+{
+  "id": "WXO-2",
+  "verdict": "REJECTED",
+  "scope": "GTK 3.24.41, WebKitGTK API 4.1 runtime 2.52.6, private X11/Xvfb, forced font DPI 96/144/192, GDK_SCALE 1/2, GDK_DPI_SCALE=1",
+  "hypothesis": "GTK font-DPI FromDIP inflates embedded webview hosts while WebKit CSS-to-host scale stays unchanged",
+  "result": "WebKit already applies font DPI to CSS-to-device mapping at default page zoom 1.0. FromDIP(224), FromDIP(64), and FromDIP(560) expose 224, 64, and 560 CSS px at every tested configuration.",
+  "rendering_evidence": {
+    "native_runs_per_matrix_pass": 6,
+    "rendered_states_per_matrix_pass": 42,
+    "matrix_passes": 2,
+    "dpi144_scale1": {"gtk_host_width": 336, "physical_host_width": 336, "css_inner_width": 224, "device_pixel_ratio": 1.5, "css_marker_width": 32, "raster_marker_width": 48, "explicit_page_zoom": 1},
+    "dpi144_scale2": {"gtk_host_width": 336, "physical_host_width": 672, "css_inner_width": 224, "device_pixel_ratio": 3, "css_marker_width": 32, "raster_marker_width": 96, "explicit_page_zoom": 1}
+  },
+  "proposed_extra_zoom": "Rejected: page zoom 1.5 at 144 DPI reduces a matching 336-user-unit host to innerWidth 149 CSS px and causes the expanded synthetic menu to enter its compact breakpoint. At 192 DPI page zoom 2 reduces matching 448-user-unit host to 112 CSS px.",
+  "smallest_app_correction": "None: keep FromDIP sizing and existing zoom behavior. Optionally correct DeviceWebHost.cpp comment to call SetMinSize dimensions wx window coordinates rather than physical pixels on GTK.",
+  "production_patch": false,
+  "evidence_files": ["REPORT.md", "probe.cpp", "build.sh", "run.sh", "check.py", "matrix.csv", "matrix.json", "source-evidence.txt", "provenance.json", "linked-libraries.txt", "validation.txt", "gdk{1,2}-dpi{96,144,192}/measurements.jsonl", "gdk{1,2}-dpi{96,144,192}/*.png"],
+  "limits": ["Synthetic native GTK host matching pinned wx sizing, not full Bambu Home execution", "No real desktop XSettings normalization or Wayland coverage", "No older WebKit or Windows/macOS coverage", "No live DPI-change coverage", "Installed headers/GIR and actual runtime used; full WebKit implementation source unavailable locally"]
+}

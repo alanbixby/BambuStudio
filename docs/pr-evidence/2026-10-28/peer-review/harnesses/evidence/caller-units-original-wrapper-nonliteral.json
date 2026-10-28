@@ -1,0 +1,158 @@
+[
+  {
+    "path": "MultiMachineManagerPage.cpp",
+    "line": 325,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiMachineManagerPage.cpp",
+    "line": 348,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiMachineManagerPage.cpp",
+    "line": 358,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiMachineManagerPage.cpp",
+    "line": 381,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "line": 580,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "line": 589,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "line": 609,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "line": 629,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "line": 638,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "line": 658,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "line": 952,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "line": 961,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "line": 981,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "line": 1001,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "line": 1010,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "MultiTaskManagerPage.cpp",
+    "line": 1030,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "SendMultiMachinePage.cpp",
+    "line": 1243,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "SendMultiMachinePage.cpp",
+    "line": 1265,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "SendMultiMachinePage.cpp",
+    "line": 1308,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "SendMultiMachinePage.cpp",
+    "line": 1329,
+    "name": "Button",
+    "arg": "ICON_SINGLE_SIZE"
+  },
+  {
+    "path": "wxExtensions.cpp",
+    "line": 918,
+    "name": "ModeButton",
+    "arg": "const wxString&     mode        /* = wxEmptyString*/"
+  },
+  {
+    "path": "wxExtensions.cpp",
+    "line": 929,
+    "name": "ModeButton",
+    "arg": "int                 px_cnt/* = 16*/"
+  },
+  {
+    "path": "wxExtensions.cpp",
+    "line": 1017,
+    "name": "ModeButton",
+    "arg": "mode_icon_px_size()"
+  },
+  {
+    "path": "Widgets/AnimaController.cpp",
+    "line": 9,
+    "name": "AnimaIcon",
+    "arg": "int size"
+  },
+  {
+    "path": "Widgets/Button.cpp",
+    "line": 40,
+    "name": "Button",
+    "arg": "int iconSize"
+  },
+  {
+    "path": "Widgets/SideButton.cpp",
+    "line": 13,
+    "name": "SideButton",
+    "arg": "int iconSize"
+  }
+]

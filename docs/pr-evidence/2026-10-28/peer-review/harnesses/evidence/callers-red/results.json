@@ -1,0 +1,38 @@
+{
+  "before": {
+    "commit": "53fdfb67ed5272f6547a995d8bc0d19e9f37de6e",
+    "sha256": {
+      "src/slic3r/GUI/AboutDialog.cpp": "00aeb60e7031032f609a827308e1822975cd7a6f6737844ba616e8f5e4235f4a",
+      "src/slic3r/GUI/AmsMappingPopup.cpp": "69ec5668bac2a08b806b1820d71d6afe1f90fcd6b12b8c59df5b8684fe4e7a8a",
+      "src/slic3r/GUI/BindDialog.cpp": "8a4645624d9ea108d770c1c2009eb04b7364f460b966ca3c47c7eec738672b15",
+      "src/slic3r/GUI/CapsuleButton.cpp": "9976e25cb115272ace8e48b24c66fee2ffd40a65e5b7f3482e9cda4ffb77d239",
+      "src/slic3r/GUI/CreatePresetsDialog.cpp": "3e9888dd3135dedabf455a95f8c83e15ffa461ab5096d3e4d475c079d8c39e29",
+      "src/slic3r/GUI/MainFrame.cpp": "92db75e1fdf5ebf2b57a583126569954e9dd75befad8adb3431ef25f030af170",
+      "src/slic3r/GUI/MultiMachineManagerPage.cpp": "d4cda78cad705a128683645206530058ef028f5590025e7d016b8b482b16c3b3",
+      "src/slic3r/GUI/MultiTaskManagerPage.cpp": "dc696de2c6c3e6160abb6ae355efd03ee90ab1eaccd86b1aea1f7f13c7bdc8ca",
+      "src/slic3r/GUI/SendMultiMachinePage.cpp": "d47865496ac9114cc4311bbebf4c38b73677192baa59480a0ccf3ac45841e169",
+      "src/slic3r/GUI/SendToPrinter.cpp": "53555d19bb73746b7ea495b05b4a1b1fc016d9bd83d7395bf9f74f7395f02bcc",
+      "src/slic3r/GUI/StepMeshDialog.cpp": "3ab67e950e6bf45884ae2048ac9173d107c939a2ee077c32224baba11c0423b0",
+      "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp": "bb9476b8a6c15ee5795ca5e573027983f9a926bbe3e23631ddba637ad92ed62d"
+    }
+  },
+  "after": {
+    "kind": "uncommitted candidate tree; hashes identify tested bytes",
+    "sha256": {
+      "src/slic3r/GUI/AboutDialog.cpp": "52087e608850cb463ecd76d43f49ff597133e20ce789db4f5f30d4f71da78584",
+      "src/slic3r/GUI/AmsMappingPopup.cpp": "cb6f7f38368a319e92c2412ec7617ae87d0d7543944b90af06f12f71a78a3853",
+      "src/slic3r/GUI/BindDialog.cpp": "3139dafde16efb083aca7bafdc80a5f85469568b3b7eef2d60ca4dfa4f2f2f9b",
+      "src/slic3r/GUI/CapsuleButton.cpp": "189b7b61154af9bcb247751d8c228f0b58f6f64837b71900e89ba7098563e0a3",
+      "src/slic3r/GUI/CreatePresetsDialog.cpp": "5b1aab0e5a1148b98048b9bcda825c5ee583e0ba8889e8ce72013262c8f4bbd8",
+      "src/slic3r/GUI/MainFrame.cpp": "9df8cb40e261e7e07d46f56107c4e07b78b2bae15211793bcb0064d01b7989d5",
+      "src/slic3r/GUI/MultiMachineManagerPage.cpp": "d153d2533dd6bded564b15ca9a26c4317a872878560ba7f9fc285ad8636af7c4",
+      "src/slic3r/GUI/MultiTaskManagerPage.cpp": "6799c159c8b93793c163fb8784a5527a1838f3936c6bb3bdb026e50829da54c2",
+      "src/slic3r/GUI/SendMultiMachinePage.cpp": "526fccd31d4d68726d725fc0af9985e35e5c6935ed3634dc18fb18d406834f2d",
+      "src/slic3r/GUI/SendToPrinter.cpp": "f4936471a2beff2a16e84e17ef938177274da65d4557c3c0c55bcfcf8a068b43",
+      "src/slic3r/GUI/StepMeshDialog.cpp": "ebe007a5c8369d6ea7faa026d113dd3672e86cb6b5ba599de602dc8e849df66d",
+      "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp": "98b44e4b212541e357853202fb2b4da5c070d84c2fe2ecea9755babc98cd1168"
+    }
+  },
+  "result": "PASS (expected failure)",
+  "expected_rejection": "expected exact changed lines: src/slic3r/GUI/AboutDialog.cpp"
+}

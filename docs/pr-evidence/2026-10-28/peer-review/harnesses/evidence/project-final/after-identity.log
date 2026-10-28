@@ -1,0 +1,1 @@
+PASS identity: all three actual completion/start guards avoid creating getter and filesystem recreation; live Model/design and empty identity checked

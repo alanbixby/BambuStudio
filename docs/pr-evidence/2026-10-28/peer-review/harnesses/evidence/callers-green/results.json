@@ -1,0 +1,1131 @@
+{
+  "before": {
+    "commit": "53fdfb67ed5272f6547a995d8bc0d19e9f37de6e",
+    "sha256": {
+      "src/slic3r/GUI/AboutDialog.cpp": "00aeb60e7031032f609a827308e1822975cd7a6f6737844ba616e8f5e4235f4a",
+      "src/slic3r/GUI/AmsMappingPopup.cpp": "69ec5668bac2a08b806b1820d71d6afe1f90fcd6b12b8c59df5b8684fe4e7a8a",
+      "src/slic3r/GUI/BindDialog.cpp": "8a4645624d9ea108d770c1c2009eb04b7364f460b966ca3c47c7eec738672b15",
+      "src/slic3r/GUI/CapsuleButton.cpp": "9976e25cb115272ace8e48b24c66fee2ffd40a65e5b7f3482e9cda4ffb77d239",
+      "src/slic3r/GUI/CreatePresetsDialog.cpp": "3e9888dd3135dedabf455a95f8c83e15ffa461ab5096d3e4d475c079d8c39e29",
+      "src/slic3r/GUI/MainFrame.cpp": "92db75e1fdf5ebf2b57a583126569954e9dd75befad8adb3431ef25f030af170",
+      "src/slic3r/GUI/MultiMachineManagerPage.cpp": "d4cda78cad705a128683645206530058ef028f5590025e7d016b8b482b16c3b3",
+      "src/slic3r/GUI/MultiTaskManagerPage.cpp": "dc696de2c6c3e6160abb6ae355efd03ee90ab1eaccd86b1aea1f7f13c7bdc8ca",
+      "src/slic3r/GUI/SendMultiMachinePage.cpp": "d47865496ac9114cc4311bbebf4c38b73677192baa59480a0ccf3ac45841e169",
+      "src/slic3r/GUI/SendToPrinter.cpp": "53555d19bb73746b7ea495b05b4a1b1fc016d9bd83d7395bf9f74f7395f02bcc",
+      "src/slic3r/GUI/StepMeshDialog.cpp": "3ab67e950e6bf45884ae2048ac9173d107c939a2ee077c32224baba11c0423b0",
+      "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp": "bb9476b8a6c15ee5795ca5e573027983f9a926bbe3e23631ddba637ad92ed62d"
+    }
+  },
+  "after": {
+    "kind": "uncommitted candidate tree; hashes identify tested bytes",
+    "sha256": {
+      "src/slic3r/GUI/AboutDialog.cpp": "52087e608850cb463ecd76d43f49ff597133e20ce789db4f5f30d4f71da78584",
+      "src/slic3r/GUI/AmsMappingPopup.cpp": "cb6f7f38368a319e92c2412ec7617ae87d0d7543944b90af06f12f71a78a3853",
+      "src/slic3r/GUI/BindDialog.cpp": "3139dafde16efb083aca7bafdc80a5f85469568b3b7eef2d60ca4dfa4f2f2f9b",
+      "src/slic3r/GUI/CapsuleButton.cpp": "189b7b61154af9bcb247751d8c228f0b58f6f64837b71900e89ba7098563e0a3",
+      "src/slic3r/GUI/CreatePresetsDialog.cpp": "5b1aab0e5a1148b98048b9bcda825c5ee583e0ba8889e8ce72013262c8f4bbd8",
+      "src/slic3r/GUI/MainFrame.cpp": "9df8cb40e261e7e07d46f56107c4e07b78b2bae15211793bcb0064d01b7989d5",
+      "src/slic3r/GUI/MultiMachineManagerPage.cpp": "d153d2533dd6bded564b15ca9a26c4317a872878560ba7f9fc285ad8636af7c4",
+      "src/slic3r/GUI/MultiTaskManagerPage.cpp": "6799c159c8b93793c163fb8784a5527a1838f3936c6bb3bdb026e50829da54c2",
+      "src/slic3r/GUI/SendMultiMachinePage.cpp": "526fccd31d4d68726d725fc0af9985e35e5c6935ed3634dc18fb18d406834f2d",
+      "src/slic3r/GUI/SendToPrinter.cpp": "f4936471a2beff2a16e84e17ef938177274da65d4557c3c0c55bcfcf8a068b43",
+      "src/slic3r/GUI/StepMeshDialog.cpp": "ebe007a5c8369d6ea7faa026d113dd3672e86cb6b5ba599de602dc8e849df66d",
+      "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp": "98b44e4b212541e357853202fb2b4da5c070d84c2fe2ecea9755babc98cd1168"
+    }
+  },
+  "macro_source": {
+    "commit": "53fdfb67ed5272f6547a995d8bc0d19e9f37de6e",
+    "sha256": {
+      "src/slic3r/GUI/GUI_Utils.hpp": "2cb6205304efa0fda50424a01057fdca4c625d636f882752d97d281eab396009"
+    }
+  },
+  "checks": [
+    {
+      "path": "src/slic3r/GUI/AboutDialog.cpp",
+      "changed_lines": 1,
+      "removed_direct_nested_conversions": 1,
+      "removed_macro_conversions": 0,
+      "changes": [
+        {
+          "line": 298,
+          "nominal_size": 16,
+          "before": "        version_font.SetPointSize(FromDIP(16));",
+          "after": "        version_font.SetPointSize(16);"
+        }
+      ]
+    },
+    {
+      "path": "src/slic3r/GUI/AmsMappingPopup.cpp",
+      "changed_lines": 5,
+      "removed_direct_nested_conversions": 5,
+      "removed_macro_conversions": 0,
+      "changes": [
+        {
+          "line": 49,
+          "nominal_size": 8,
+          "before": "    m_arraw_bitmap_gray  = ScalableBitmap(this, \"drop_down2\", FromDIP(8));",
+          "after": "    m_arraw_bitmap_gray  = ScalableBitmap(this, \"drop_down2\", 8);"
+        },
+        {
+          "line": 1308,
+          "nominal_size": 60,
+          "before": "    m_transparent_mapping_item = ScalableBitmap(this, \"transparent_mapping_item\", FromDIP(60));",
+          "after": "    m_transparent_mapping_item = ScalableBitmap(this, \"transparent_mapping_item\", 60);"
+        },
+        {
+          "line": 1309,
+          "nominal_size": 20,
+          "before": "    mapping_item_checked = ScalableBitmap(this, \"mapping_item_checked\", FromDIP(20));",
+          "after": "    mapping_item_checked = ScalableBitmap(this, \"mapping_item_checked\", 20);"
+        },
+        {
+          "line": 1927,
+          "nominal_size": 140,
+          "before": "    m_img_enable_ams = new wxStaticBitmap(this, wxID_ANY, create_scaled_bitmap(\"monitor_upgrade_ams\", this, FromDIP(140)), wxDefaultPosition, wxDefaultSize, 0);",
+          "after": "    m_img_enable_ams = new wxStaticBitmap(this, wxID_ANY, create_scaled_bitmap(\"monitor_upgrade_ams\", this, 140), wxDefaultPosition, wxDefaultSize, 0);"
+        },
+        {
+          "line": 1928,
+          "nominal_size": 110,
+          "before": "    m_img_disable_ams = new wxStaticBitmap(this, wxID_ANY, create_scaled_bitmap(\"disable_ams_demo_icon\", this, FromDIP(110)), wxDefaultPosition, wxDefaultSize, 0);",
+          "after": "    m_img_disable_ams = new wxStaticBitmap(this, wxID_ANY, create_scaled_bitmap(\"disable_ams_demo_icon\", this, 110), wxDefaultPosition, wxDefaultSize, 0);"
+        }
+      ]
+    },
+    {
+      "path": "src/slic3r/GUI/BindDialog.cpp",
+      "changed_lines": 4,
+      "removed_direct_nested_conversions": 4,
+      "removed_macro_conversions": 0,
+      "changes": [
+        {
+          "line": 382,
+          "nominal_size": 100,
+          "before": "     m_printer_img = new wxStaticBitmap(m_panel_left, wxID_ANY, create_scaled_bitmap(\"printer_thumbnail\", nullptr, FromDIP(100)), wxDefaultPosition, wxSize(FromDIP(120), FromDIP(120)), 0);",
+          "after": "     m_printer_img = new wxStaticBitmap(m_panel_left, wxID_ANY, create_scaled_bitmap(\"printer_thumbnail\", nullptr, 100), wxDefaultPosition, wxSize(FromDIP(120), FromDIP(120)), 0);"
+        },
+        {
+          "line": 922,
+          "nominal_size": 80,
+          "before": "            auto bitmap = create_scaled_bitmap(img, this, FromDIP(80));",
+          "after": "            auto bitmap = create_scaled_bitmap(img, this, 80);"
+        },
+        {
+          "line": 989,
+          "nominal_size": 100,
+          "before": "     m_printer_img = new wxStaticBitmap(m_panel_left, wxID_ANY, create_scaled_bitmap(\"printer_thumbnail\", nullptr, FromDIP(100)), wxDefaultPosition, wxSize(FromDIP(120), FromDIP(120)), 0);",
+          "after": "     m_printer_img = new wxStaticBitmap(m_panel_left, wxID_ANY, create_scaled_bitmap(\"printer_thumbnail\", nullptr, 100), wxDefaultPosition, wxSize(FromDIP(120), FromDIP(120)), 0);"
+        },
+        {
+          "line": 1146,
+          "nominal_size": 80,
+          "before": "            auto bitmap = create_scaled_bitmap(img, this, FromDIP(80));",
+          "after": "            auto bitmap = create_scaled_bitmap(img, this, 80);"
+        }
+      ]
+    },
+    {
+      "path": "src/slic3r/GUI/CapsuleButton.cpp",
+      "changed_lines": 2,
+      "removed_direct_nested_conversions": 2,
+      "removed_macro_conversions": 0,
+      "changes": [
+        {
+          "line": 28,
+          "nominal_size": 16,
+          "before": "    tag_on_bmp = create_scaled_bitmap(\"capsule_tag_on\", nullptr, FromDIP(16));",
+          "after": "    tag_on_bmp = create_scaled_bitmap(\"capsule_tag_on\", nullptr, 16);"
+        },
+        {
+          "line": 29,
+          "nominal_size": 16,
+          "before": "    tag_off_bmp = create_scaled_bitmap(\"capsule_tag_off\", nullptr, FromDIP(16));",
+          "after": "    tag_off_bmp = create_scaled_bitmap(\"capsule_tag_off\", nullptr, 16);"
+        }
+      ]
+    },
+    {
+      "path": "src/slic3r/GUI/CreatePresetsDialog.cpp",
+      "changed_lines": 7,
+      "removed_direct_nested_conversions": 7,
+      "removed_macro_conversions": 0,
+      "changes": [
+        {
+          "line": 1582,
+          "nominal_size": 20,
+          "before": "    m_step_1 = new wxStaticBitmap(step_switch_panel, wxID_ANY, create_scaled_bitmap(\"step_1\", nullptr, FromDIP(20)), wxDefaultPosition, wxDefaultSize);",
+          "after": "    m_step_1 = new wxStaticBitmap(step_switch_panel, wxID_ANY, create_scaled_bitmap(\"step_1\", nullptr, 20), wxDefaultPosition, wxDefaultSize);"
+        },
+        {
+          "line": 1589,
+          "nominal_size": 20,
+          "before": "    m_step_2 = new wxStaticBitmap(step_switch_panel, wxID_ANY, create_scaled_bitmap(\"step_2_ready\", nullptr, FromDIP(20)), wxDefaultPosition, wxDefaultSize);",
+          "after": "    m_step_2 = new wxStaticBitmap(step_switch_panel, wxID_ANY, create_scaled_bitmap(\"step_2_ready\", nullptr, 20), wxDefaultPosition, wxDefaultSize);"
+        },
+        {
+          "line": 2986,
+          "nominal_size": 20,
+          "before": "    m_step_1->SetBitmap(create_scaled_bitmap(\"step_1\", nullptr, FromDIP(20)));",
+          "after": "    m_step_1->SetBitmap(create_scaled_bitmap(\"step_1\", nullptr, 20));"
+        },
+        {
+          "line": 2987,
+          "nominal_size": 20,
+          "before": "    m_step_2->SetBitmap(create_scaled_bitmap(\"step_2_ready\", nullptr, FromDIP(20)));",
+          "after": "    m_step_2->SetBitmap(create_scaled_bitmap(\"step_2_ready\", nullptr, 20));"
+        },
+        {
+          "line": 2997,
+          "nominal_size": 20,
+          "before": "    m_step_1->SetBitmap(create_scaled_bitmap(\"step_is_ok\", nullptr, FromDIP(20)));",
+          "after": "    m_step_1->SetBitmap(create_scaled_bitmap(\"step_is_ok\", nullptr, 20));"
+        },
+        {
+          "line": 2998,
+          "nominal_size": 20,
+          "before": "    m_step_2->SetBitmap(create_scaled_bitmap(\"step_2\", nullptr, FromDIP(20)));",
+          "after": "    m_step_2->SetBitmap(create_scaled_bitmap(\"step_2\", nullptr, 20));"
+        },
+        {
+          "line": 3478,
+          "nominal_size": 24,
+          "before": "    wxStaticBitmap *success_bitmap       = new wxStaticBitmap(this,wxID_ANY, create_scaled_bitmap(\"create_success\", nullptr, FromDIP(24)));",
+          "after": "    wxStaticBitmap *success_bitmap       = new wxStaticBitmap(this,wxID_ANY, create_scaled_bitmap(\"create_success\", nullptr, 24));"
+        }
+      ]
+    },
+    {
+      "path": "src/slic3r/GUI/MainFrame.cpp",
+      "changed_lines": 2,
+      "removed_direct_nested_conversions": 2,
+      "removed_macro_conversions": 0,
+      "changes": [
+        {
+          "line": 2057,
+          "nominal_size": 14,
+          "before": "    m_slice_option_btn = new SideButton(slice_panel, \"\", \"sidebutton_dropdown\", 0, FromDIP(14));",
+          "after": "    m_slice_option_btn = new SideButton(slice_panel, \"\", \"sidebutton_dropdown\", 0, 14);"
+        },
+        {
+          "line": 2059,
+          "nominal_size": 14,
+          "before": "    m_print_option_btn = new SideButton(print_panel, \"\", \"sidebutton_dropdown\", 0, FromDIP(14));",
+          "after": "    m_print_option_btn = new SideButton(print_panel, \"\", \"sidebutton_dropdown\", 0, 14);"
+        }
+      ]
+    },
+    {
+      "path": "src/slic3r/GUI/MultiMachineManagerPage.cpp",
+      "changed_lines": 4,
+      "removed_direct_nested_conversions": 2,
+      "removed_macro_conversions": 2,
+      "changes": [
+        {
+          "line": 325,
+          "nominal_size": 16,
+          "before": "    m_printer_name = new Button(m_table_head_panel, _L(\"Device Name\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, ICON_SINGLE_SIZE);",
+          "after": "    m_printer_name = new Button(m_table_head_panel, _L(\"Device Name\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, 16);"
+        },
+        {
+          "line": 358,
+          "nominal_size": 16,
+          "before": "    m_status = new Button(m_table_head_panel, _L(\"Device Status\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, ICON_SINGLE_SIZE);",
+          "after": "    m_status = new Button(m_table_head_panel, _L(\"Device Status\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, 16);"
+        },
+        {
+          "line": 446,
+          "nominal_size": 20,
+          "before": "    btn_last_page = new Button(m_flipping_panel, \"\", \"go_last_plate\", 0, FromDIP(20));",
+          "after": "    btn_last_page = new Button(m_flipping_panel, \"\", \"go_last_plate\", 0, 20);"
+        },
+        {
+          "line": 464,
+          "nominal_size": 20,
+          "before": "    btn_next_page = new Button(m_flipping_panel, \"\", \"go_next_plate\", 0, FromDIP(20));",
+          "after": "    btn_next_page = new Button(m_flipping_panel, \"\", \"go_next_plate\", 0, 20);"
+        }
+      ]
+    },
+    {
+      "path": "src/slic3r/GUI/MultiTaskManagerPage.cpp",
+      "changed_lines": 8,
+      "removed_direct_nested_conversions": 2,
+      "removed_macro_conversions": 6,
+      "changes": [
+        {
+          "line": 589,
+          "nominal_size": 16,
+          "before": "    m_printer_name = new Button(m_table_head_panel, _L(\"Device Name\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, ICON_SINGLE_SIZE);",
+          "after": "    m_printer_name = new Button(m_table_head_panel, _L(\"Device Name\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, 16);"
+        },
+        {
+          "line": 609,
+          "nominal_size": 16,
+          "before": "    m_status = new Button(m_table_head_panel, _L(\"Task Status\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, ICON_SINGLE_SIZE);",
+          "after": "    m_status = new Button(m_table_head_panel, _L(\"Task Status\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, 16);"
+        },
+        {
+          "line": 638,
+          "nominal_size": 16,
+          "before": "    m_send_time = new Button(m_table_head_panel, _L(\"Sent Time\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, ICON_SINGLE_SIZE, false);",
+          "after": "    m_send_time = new Button(m_table_head_panel, _L(\"Sent Time\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, 16, false);"
+        },
+        {
+          "line": 961,
+          "nominal_size": 16,
+          "before": "    m_printer_name = new Button(m_table_head_panel, _L(\"Device Name\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, ICON_SINGLE_SIZE);",
+          "after": "    m_printer_name = new Button(m_table_head_panel, _L(\"Device Name\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, 16);"
+        },
+        {
+          "line": 981,
+          "nominal_size": 16,
+          "before": "    m_status = new Button(m_table_head_panel, _L(\"Task Status\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, ICON_SINGLE_SIZE);",
+          "after": "    m_status = new Button(m_table_head_panel, _L(\"Task Status\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, 16);"
+        },
+        {
+          "line": 1010,
+          "nominal_size": 16,
+          "before": "    m_send_time = new Button(m_table_head_panel, _L(\"Sent Time\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, ICON_SINGLE_SIZE, false);",
+          "after": "    m_send_time = new Button(m_table_head_panel, _L(\"Sent Time\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, 16, false);"
+        },
+        {
+          "line": 1084,
+          "nominal_size": 20,
+          "before": "    btn_last_page = new Button(m_flipping_panel, \"\", \"go_last_plate\", wxBORDER_NONE, FromDIP(20));",
+          "after": "    btn_last_page = new Button(m_flipping_panel, \"\", \"go_last_plate\", wxBORDER_NONE, 20);"
+        },
+        {
+          "line": 1104,
+          "nominal_size": 20,
+          "before": "    btn_next_page = new Button(m_flipping_panel, \"\", \"go_next_plate\", wxBORDER_NONE, FromDIP(20));",
+          "after": "    btn_next_page = new Button(m_flipping_panel, \"\", \"go_next_plate\", wxBORDER_NONE, 20);"
+        }
+      ]
+    },
+    {
+      "path": "src/slic3r/GUI/SendMultiMachinePage.cpp",
+      "changed_lines": 4,
+      "removed_direct_nested_conversions": 0,
+      "removed_macro_conversions": 4,
+      "changes": [
+        {
+          "line": 1243,
+          "nominal_size": 16,
+          "before": "    m_printer_name = new Button(m_table_head_panel, _L(\"Device Name\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, ICON_SINGLE_SIZE);",
+          "after": "    m_printer_name = new Button(m_table_head_panel, _L(\"Device Name\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, 16);"
+        },
+        {
+          "line": 1265,
+          "nominal_size": 16,
+          "before": "    m_device_status = new Button(m_table_head_panel, _L(\"Device Status\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, ICON_SINGLE_SIZE);",
+          "after": "    m_device_status = new Button(m_table_head_panel, _L(\"Device Status\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, 16);"
+        },
+        {
+          "line": 1308,
+          "nominal_size": 16,
+          "before": "    m_ams = new Button(m_table_head_panel, _L(\"Ams Status\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, ICON_SINGLE_SIZE, false);",
+          "after": "    m_ams = new Button(m_table_head_panel, _L(\"Ams Status\"), \"toolbar_double_directional_arrow\", wxNO_BORDER, 16, false);"
+        },
+        {
+          "line": 1329,
+          "nominal_size": 16,
+          "before": "    m_refresh_button = new Button(m_table_head_panel, \"\", \"mall_control_refresh\", wxNO_BORDER, ICON_SINGLE_SIZE, false);",
+          "after": "    m_refresh_button = new Button(m_table_head_panel, \"\", \"mall_control_refresh\", wxNO_BORDER, 16, false);"
+        }
+      ]
+    },
+    {
+      "path": "src/slic3r/GUI/SendToPrinter.cpp",
+      "changed_lines": 1,
+      "removed_direct_nested_conversions": 1,
+      "removed_macro_conversions": 0,
+      "changes": [
+        {
+          "line": 507,
+          "nominal_size": 10,
+          "before": "    m_rename_button = new Button(m_rename_normal_panel, \"\", \"ams_editable\", wxBORDER_NONE, FromDIP(10));",
+          "after": "    m_rename_button = new Button(m_rename_normal_panel, \"\", \"ams_editable\", wxBORDER_NONE, 10);"
+        }
+      ]
+    },
+    {
+      "path": "src/slic3r/GUI/StepMeshDialog.cpp",
+      "changed_lines": 1,
+      "removed_direct_nested_conversions": 1,
+      "removed_macro_conversions": 0,
+      "changes": [
+        {
+          "line": 93,
+          "nominal_size": 120,
+          "before": "    auto  image_bitmap = create_scaled_bitmap(\"step_mesh_info\", this, FromDIP(120));",
+          "after": "    auto  image_bitmap = create_scaled_bitmap(\"step_mesh_info\", this, 120);"
+        }
+      ]
+    },
+    {
+      "path": "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp",
+      "changed_lines": 4,
+      "removed_direct_nested_conversions": 4,
+      "removed_macro_conversions": 0,
+      "changes": [
+        {
+          "line": 29,
+          "nominal_size": 60,
+          "before": "    wxBitmap icon        = create_scaled_bitmap(\"hotend_thumbnail\", nullptr, FromDIP(60));",
+          "after": "    wxBitmap icon        = create_scaled_bitmap(\"hotend_thumbnail\", nullptr, 60);"
+        },
+        {
+          "line": 224,
+          "nominal_size": 90,
+          "before": "    wxBitmap icon = create_scaled_bitmap(\"extruder_badge_none_selected\", nullptr, FromDIP(90));",
+          "after": "    wxBitmap icon = create_scaled_bitmap(\"extruder_badge_none_selected\", nullptr, 90);"
+        },
+        {
+          "line": 293,
+          "nominal_size": 90,
+          "before": "    wxBitmap icon = create_scaled_bitmap(badge_name, nullptr, FromDIP(90));",
+          "after": "    wxBitmap icon = create_scaled_bitmap(badge_name, nullptr, 90);"
+        },
+        {
+          "line": 319,
+          "nominal_size": 90,
+          "before": "    wxBitmap icon = create_scaled_bitmap(badge_name, nullptr, FromDIP(90));",
+          "after": "    wxBitmap icon = create_scaled_bitmap(badge_name, nullptr, 90);"
+        }
+      ]
+    }
+  ],
+  "total_changed_lines": 43,
+  "arithmetic_matrix": [
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 8,
+      "prior_wx_height": 8,
+      "corrected_wx_height": 8
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 10,
+      "prior_wx_height": 10,
+      "corrected_wx_height": 10
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 14,
+      "prior_wx_height": 14,
+      "corrected_wx_height": 14
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 16,
+      "prior_wx_height": 16,
+      "corrected_wx_height": 16
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 20,
+      "prior_wx_height": 20,
+      "corrected_wx_height": 20
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 24,
+      "prior_wx_height": 24,
+      "corrected_wx_height": 24
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 60,
+      "prior_wx_height": 60,
+      "corrected_wx_height": 60
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 80,
+      "prior_wx_height": 80,
+      "corrected_wx_height": 80
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 90,
+      "prior_wx_height": 90,
+      "corrected_wx_height": 90
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 100,
+      "prior_wx_height": 100,
+      "corrected_wx_height": 100
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 110,
+      "prior_wx_height": 110,
+      "corrected_wx_height": 110
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 120,
+      "prior_wx_height": 120,
+      "corrected_wx_height": 120
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 1,
+      "nominal": 140,
+      "prior_wx_height": 140,
+      "corrected_wx_height": 140
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 8,
+      "prior_wx_height": 8,
+      "corrected_wx_height": 8
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 10,
+      "prior_wx_height": 10,
+      "corrected_wx_height": 10
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 14,
+      "prior_wx_height": 14,
+      "corrected_wx_height": 14
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 16,
+      "prior_wx_height": 16,
+      "corrected_wx_height": 16
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 20,
+      "prior_wx_height": 20,
+      "corrected_wx_height": 20
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 24,
+      "prior_wx_height": 24,
+      "corrected_wx_height": 24
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 60,
+      "prior_wx_height": 60,
+      "corrected_wx_height": 60
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 80,
+      "prior_wx_height": 80,
+      "corrected_wx_height": 80
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 90,
+      "prior_wx_height": 90,
+      "corrected_wx_height": 90
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 100,
+      "prior_wx_height": 100,
+      "corrected_wx_height": 100
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 110,
+      "prior_wx_height": 110,
+      "corrected_wx_height": 110
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 120,
+      "prior_wx_height": 120,
+      "corrected_wx_height": 120
+    },
+    {
+      "dpi": 96,
+      "gdk_scale": 2,
+      "nominal": 140,
+      "prior_wx_height": 140,
+      "corrected_wx_height": 140
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 8,
+      "prior_wx_height": 13,
+      "corrected_wx_height": 10
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 10,
+      "prior_wx_height": 16,
+      "corrected_wx_height": 13
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 14,
+      "prior_wx_height": 23,
+      "corrected_wx_height": 18
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 16,
+      "prior_wx_height": 25,
+      "corrected_wx_height": 20
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 20,
+      "prior_wx_height": 31,
+      "corrected_wx_height": 25
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 24,
+      "prior_wx_height": 38,
+      "corrected_wx_height": 30
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 60,
+      "prior_wx_height": 94,
+      "corrected_wx_height": 75
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 80,
+      "prior_wx_height": 125,
+      "corrected_wx_height": 100
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 90,
+      "prior_wx_height": 141,
+      "corrected_wx_height": 113
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 100,
+      "prior_wx_height": 156,
+      "corrected_wx_height": 125
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 110,
+      "prior_wx_height": 173,
+      "corrected_wx_height": 138
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 120,
+      "prior_wx_height": 188,
+      "corrected_wx_height": 150
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 1,
+      "nominal": 140,
+      "prior_wx_height": 219,
+      "corrected_wx_height": 175
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 8,
+      "prior_wx_height": 13,
+      "corrected_wx_height": 10
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 10,
+      "prior_wx_height": 16,
+      "corrected_wx_height": 13
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 14,
+      "prior_wx_height": 23,
+      "corrected_wx_height": 18
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 16,
+      "prior_wx_height": 25,
+      "corrected_wx_height": 20
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 20,
+      "prior_wx_height": 31,
+      "corrected_wx_height": 25
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 24,
+      "prior_wx_height": 38,
+      "corrected_wx_height": 30
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 60,
+      "prior_wx_height": 94,
+      "corrected_wx_height": 75
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 80,
+      "prior_wx_height": 125,
+      "corrected_wx_height": 100
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 90,
+      "prior_wx_height": 141,
+      "corrected_wx_height": 113
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 100,
+      "prior_wx_height": 156,
+      "corrected_wx_height": 125
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 110,
+      "prior_wx_height": 173,
+      "corrected_wx_height": 138
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 120,
+      "prior_wx_height": 188,
+      "corrected_wx_height": 150
+    },
+    {
+      "dpi": 120,
+      "gdk_scale": 2,
+      "nominal": 140,
+      "prior_wx_height": 219,
+      "corrected_wx_height": 175
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 8,
+      "prior_wx_height": 18,
+      "corrected_wx_height": 12
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 10,
+      "prior_wx_height": 23,
+      "corrected_wx_height": 15
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 14,
+      "prior_wx_height": 32,
+      "corrected_wx_height": 21
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 16,
+      "prior_wx_height": 36,
+      "corrected_wx_height": 24
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 20,
+      "prior_wx_height": 45,
+      "corrected_wx_height": 30
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 24,
+      "prior_wx_height": 54,
+      "corrected_wx_height": 36
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 60,
+      "prior_wx_height": 135,
+      "corrected_wx_height": 90
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 80,
+      "prior_wx_height": 180,
+      "corrected_wx_height": 120
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 90,
+      "prior_wx_height": 203,
+      "corrected_wx_height": 135
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 100,
+      "prior_wx_height": 225,
+      "corrected_wx_height": 150
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 110,
+      "prior_wx_height": 248,
+      "corrected_wx_height": 165
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 120,
+      "prior_wx_height": 270,
+      "corrected_wx_height": 180
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 1,
+      "nominal": 140,
+      "prior_wx_height": 315,
+      "corrected_wx_height": 210
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 8,
+      "prior_wx_height": 18,
+      "corrected_wx_height": 12
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 10,
+      "prior_wx_height": 23,
+      "corrected_wx_height": 15
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 14,
+      "prior_wx_height": 32,
+      "corrected_wx_height": 21
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 16,
+      "prior_wx_height": 36,
+      "corrected_wx_height": 24
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 20,
+      "prior_wx_height": 45,
+      "corrected_wx_height": 30
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 24,
+      "prior_wx_height": 54,
+      "corrected_wx_height": 36
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 60,
+      "prior_wx_height": 135,
+      "corrected_wx_height": 90
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 80,
+      "prior_wx_height": 180,
+      "corrected_wx_height": 120
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 90,
+      "prior_wx_height": 203,
+      "corrected_wx_height": 135
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 100,
+      "prior_wx_height": 225,
+      "corrected_wx_height": 150
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 110,
+      "prior_wx_height": 248,
+      "corrected_wx_height": 165
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 120,
+      "prior_wx_height": 270,
+      "corrected_wx_height": 180
+    },
+    {
+      "dpi": 144,
+      "gdk_scale": 2,
+      "nominal": 140,
+      "prior_wx_height": 315,
+      "corrected_wx_height": 210
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 8,
+      "prior_wx_height": 32,
+      "corrected_wx_height": 16
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 10,
+      "prior_wx_height": 40,
+      "corrected_wx_height": 20
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 14,
+      "prior_wx_height": 56,
+      "corrected_wx_height": 28
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 16,
+      "prior_wx_height": 64,
+      "corrected_wx_height": 32
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 20,
+      "prior_wx_height": 80,
+      "corrected_wx_height": 40
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 24,
+      "prior_wx_height": 96,
+      "corrected_wx_height": 48
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 60,
+      "prior_wx_height": 240,
+      "corrected_wx_height": 120
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 80,
+      "prior_wx_height": 320,
+      "corrected_wx_height": 160
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 90,
+      "prior_wx_height": 360,
+      "corrected_wx_height": 180
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 100,
+      "prior_wx_height": 400,
+      "corrected_wx_height": 200
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 110,
+      "prior_wx_height": 440,
+      "corrected_wx_height": 220
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 120,
+      "prior_wx_height": 480,
+      "corrected_wx_height": 240
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 1,
+      "nominal": 140,
+      "prior_wx_height": 560,
+      "corrected_wx_height": 280
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 8,
+      "prior_wx_height": 32,
+      "corrected_wx_height": 16
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 10,
+      "prior_wx_height": 40,
+      "corrected_wx_height": 20
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 14,
+      "prior_wx_height": 56,
+      "corrected_wx_height": 28
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 16,
+      "prior_wx_height": 64,
+      "corrected_wx_height": 32
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 20,
+      "prior_wx_height": 80,
+      "corrected_wx_height": 40
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 24,
+      "prior_wx_height": 96,
+      "corrected_wx_height": 48
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 60,
+      "prior_wx_height": 240,
+      "corrected_wx_height": 120
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 80,
+      "prior_wx_height": 320,
+      "corrected_wx_height": 160
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 90,
+      "prior_wx_height": 360,
+      "corrected_wx_height": 180
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 100,
+      "prior_wx_height": 400,
+      "corrected_wx_height": 200
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 110,
+      "prior_wx_height": 440,
+      "corrected_wx_height": 220
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 120,
+      "prior_wx_height": 480,
+      "corrected_wx_height": 240
+    },
+    {
+      "dpi": 192,
+      "gdk_scale": 2,
+      "nominal": 140,
+      "prior_wx_height": 560,
+      "corrected_wx_height": 280
+    }
+  ],
+  "result": "PASS",
+  "limits": "Exact source replacements and lexical nested-call counts plus modeled arithmetic only. No AST, compiler, native wx, GUI, full build or exhaustive caller-safety proof. Excluded StatusPanel/em-size/rescale candidates remain outside these 43 sites."
+}

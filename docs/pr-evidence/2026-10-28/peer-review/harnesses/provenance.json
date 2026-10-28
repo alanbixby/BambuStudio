@@ -1,0 +1,24 @@
+{
+  "prepared_utc": "2026-10-28T05:26:03Z",
+  "host": "Linux-7.0.0-111031-tuxedo-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "git": "git version 2.43.0",
+  "original_input_tooling_sha256": {
+    "historical_dip_original_script": "ea211db89b4465da818b5eb0e9fcae1af918946dbf904e54b1ededc0552e021a",
+    "historical_dip_original_log": "31b9b26bfce16f9394bfe87e80f541c671b9afdfb72a687d92d6e09f380491d2",
+    "project_original_check_py": "edad4d93265b4cf8a0894c3cfab0d752cd3a8113a3586688e70e2d7fb0190932",
+    "project_original_extract_py": "c8f43167a9b548a4f20d3b27f780708b7b398eb8f489b064588c4d3f41852b00",
+    "project_original_doubles_hpp": "a05764e41e55f5605fce4e6a16e4642ed7939b00d0901530da69814d762c377f",
+    "project_original_panel-declarations_hpp": "521aec3bfef5c0c8c6dacfad7fa6e9d18af4f9c45d2f74a97860febf1004ec7d",
+    "project_original_tests_cpp": "61fc9af830334703a83ab122f16c2ddf14815e68521f9a3b2e44364fe50046ba",
+    "caller_original_audit_py": "30299b4f0dfe580076d0a7f24e53a613fcb98da225d3a9993af49506b45d2f98",
+    "caller_original_prepare_patch_py": "f84c77100311961dec3518be785d31862cfb18a156ff7fc6285cbbe06579813c",
+    "caller_original_verify_py": "23cd15ee96ceaa552439075bbd831a3d8376bc7ed43a8a01396e0f3eceb370fd"
+  },
+  "historical_green_matches_original_log_bytes": true,
+  "project_candidate_hashes_match_original_handoff": true,
+  "publication": "Prepared only; no commit/push/GitHub write. Root must publish and link on personal-fork evidence branch.",
+  "final_sha_runs": "Not yet possible: Project and caller candidates were uncommitted. Use --after once integrated.",
+  "execution": "Fresh isolated scratch runs; at most two concurrent compiler processes, one per runner. No application builds/native wx/GUI/printer tests.",
+  "fresh_immutable_caller_audit_matches_original_data": true
+}

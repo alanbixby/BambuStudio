@@ -1,0 +1,373 @@
+[
+  {
+    "path": "src/slic3r/GUI/AboutDialog.cpp",
+    "name": "SetPointSize",
+    "line": 298,
+    "text": "SetPointSize(FromDIP(16))",
+    "code": "SetPointSize(FromDIP(16))"
+  },
+  {
+    "path": "src/slic3r/GUI/AmsMappingPopup.cpp",
+    "name": "ScalableBitmap",
+    "line": 49,
+    "text": "ScalableBitmap(this, \"drop_down2\", FromDIP(8))",
+    "code": "ScalableBitmap(this,             , FromDIP(8))"
+  },
+  {
+    "path": "src/slic3r/GUI/AmsMappingPopup.cpp",
+    "name": "ScalableBitmap",
+    "line": 1308,
+    "text": "ScalableBitmap(this, \"transparent_mapping_item\", FromDIP(60))",
+    "code": "ScalableBitmap(this,                           , FromDIP(60))"
+  },
+  {
+    "path": "src/slic3r/GUI/AmsMappingPopup.cpp",
+    "name": "ScalableBitmap",
+    "line": 1309,
+    "text": "ScalableBitmap(this, \"mapping_item_checked\", FromDIP(20))",
+    "code": "ScalableBitmap(this,                       , FromDIP(20))"
+  },
+  {
+    "path": "src/slic3r/GUI/AmsMappingPopup.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 1927,
+    "text": "create_scaled_bitmap(\"monitor_upgrade_ams\", this, FromDIP(140))",
+    "code": "create_scaled_bitmap(                     , this, FromDIP(140))"
+  },
+  {
+    "path": "src/slic3r/GUI/AmsMappingPopup.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 1928,
+    "text": "create_scaled_bitmap(\"disable_ams_demo_icon\", this, FromDIP(110))",
+    "code": "create_scaled_bitmap(                       , this, FromDIP(110))"
+  },
+  {
+    "path": "src/slic3r/GUI/Auxiliary.cpp",
+    "name": "ScalableBitmap",
+    "line": 551,
+    "text": "ScalableBitmap(this, \"auxiliary_edit_mask\", FromDIP(30))",
+    "code": "ScalableBitmap(this,                      , FromDIP(30))"
+  },
+  {
+    "path": "src/slic3r/GUI/BindDialog.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 382,
+    "text": "create_scaled_bitmap(\"printer_thumbnail\", nullptr, FromDIP(100))",
+    "code": "create_scaled_bitmap(                   , nullptr, FromDIP(100))"
+  },
+  {
+    "path": "src/slic3r/GUI/BindDialog.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 922,
+    "text": "create_scaled_bitmap(img, this, FromDIP(80))",
+    "code": "create_scaled_bitmap(img, this, FromDIP(80))"
+  },
+  {
+    "path": "src/slic3r/GUI/BindDialog.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 989,
+    "text": "create_scaled_bitmap(\"printer_thumbnail\", nullptr, FromDIP(100))",
+    "code": "create_scaled_bitmap(                   , nullptr, FromDIP(100))"
+  },
+  {
+    "path": "src/slic3r/GUI/BindDialog.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 1146,
+    "text": "create_scaled_bitmap(img, this, FromDIP(80))",
+    "code": "create_scaled_bitmap(img, this, FromDIP(80))"
+  },
+  {
+    "path": "src/slic3r/GUI/CapsuleButton.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 28,
+    "text": "create_scaled_bitmap(\"capsule_tag_on\", nullptr, FromDIP(16))",
+    "code": "create_scaled_bitmap(                , nullptr, FromDIP(16))"
+  },
+  {
+    "path": "src/slic3r/GUI/CapsuleButton.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 29,
+    "text": "create_scaled_bitmap(\"capsule_tag_off\", nullptr, FromDIP(16))",
+    "code": "create_scaled_bitmap(                 , nullptr, FromDIP(16))"
+  },
+  {
+    "path": "src/slic3r/GUI/CreatePresetsDialog.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 1582,
+    "text": "create_scaled_bitmap(\"step_1\", nullptr, FromDIP(20))",
+    "code": "create_scaled_bitmap(        , nullptr, FromDIP(20))"
+  },
+  {
+    "path": "src/slic3r/GUI/CreatePresetsDialog.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 1589,
+    "text": "create_scaled_bitmap(\"step_2_ready\", nullptr, FromDIP(20))",
+    "code": "create_scaled_bitmap(              , nullptr, FromDIP(20))"
+  },
+  {
+    "path": "src/slic3r/GUI/CreatePresetsDialog.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 2986,
+    "text": "create_scaled_bitmap(\"step_1\", nullptr, FromDIP(20))",
+    "code": "create_scaled_bitmap(        , nullptr, FromDIP(20))"
+  },
+  {
+    "path": "src/slic3r/GUI/CreatePresetsDialog.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 2987,
+    "text": "create_scaled_bitmap(\"step_2_ready\", nullptr, FromDIP(20))",
+    "code": "create_scaled_bitmap(              , nullptr, FromDIP(20))"
+  },
+  {
+    "path": "src/slic3r/GUI/CreatePresetsDialog.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 2997,
+    "text": "create_scaled_bitmap(\"step_is_ok\", nullptr, FromDIP(20))",
+    "code": "create_scaled_bitmap(            , nullptr, FromDIP(20))"
+  },
+  {
+    "path": "src/slic3r/GUI/CreatePresetsDialog.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 2998,
+    "text": "create_scaled_bitmap(\"step_2\", nullptr, FromDIP(20))",
+    "code": "create_scaled_bitmap(        , nullptr, FromDIP(20))"
+  },
+  {
+    "path": "src/slic3r/GUI/CreatePresetsDialog.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 3478,
+    "text": "create_scaled_bitmap(\"create_success\", nullptr, FromDIP(24))",
+    "code": "create_scaled_bitmap(                , nullptr, FromDIP(24))"
+  },
+  {
+    "path": "src/slic3r/GUI/FilamentPickerDialog.cpp",
+    "name": "SetPointSize",
+    "line": 280,
+    "text": "SetPointSize(FromDIP(8))",
+    "code": "SetPointSize(FromDIP(8))"
+  },
+  {
+    "path": "src/slic3r/GUI/GUI_AuxiliaryList.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 32,
+    "text": "create_scaled_bitmap(\"import_file.png\", nullptr, FromDIP(21))",
+    "code": "create_scaled_bitmap(                 , nullptr, FromDIP(21))"
+  },
+  {
+    "path": "src/slic3r/GUI/GUI_AuxiliaryList.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 33,
+    "text": "create_scaled_bitmap(\"new_folder.png\", nullptr, FromDIP(21))",
+    "code": "create_scaled_bitmap(                , nullptr, FromDIP(21))"
+  },
+  {
+    "path": "src/slic3r/GUI/GUI_AuxiliaryList.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 34,
+    "text": "create_scaled_bitmap(\"delete.png\", nullptr, FromDIP(21))",
+    "code": "create_scaled_bitmap(            , nullptr, FromDIP(21))"
+  },
+  {
+    "path": "src/slic3r/GUI/MainFrame.cpp",
+    "name": "SideButton",
+    "line": 2057,
+    "text": "SideButton(slice_panel, \"\", \"sidebutton_dropdown\", 0, FromDIP(14))",
+    "code": "SideButton(slice_panel,   ,                      , 0, FromDIP(14))"
+  },
+  {
+    "path": "src/slic3r/GUI/MainFrame.cpp",
+    "name": "SideButton",
+    "line": 2059,
+    "text": "SideButton(print_panel, \"\", \"sidebutton_dropdown\", 0, FromDIP(14))",
+    "code": "SideButton(print_panel,   ,                      , 0, FromDIP(14))"
+  },
+  {
+    "path": "src/slic3r/GUI/Monitor.cpp",
+    "name": "Button",
+    "line": 59,
+    "text": "Button(this, \"\", \"monitor_add_machine\", FromDIP(24))",
+    "code": "Button(this,   ,                      , FromDIP(24))"
+  },
+  {
+    "path": "src/slic3r/GUI/MsgDialog.cpp",
+    "name": "Label",
+    "line": 414,
+    "text": "Label(this, font, wrapped_text, 0,\n                            wxSize(content_width, text_size.GetHeight() + FromDIP(4)))",
+    "code": "Label(this, font, wrapped_text, 0,\n                            wxSize(content_width, text_size.GetHeight() + FromDIP(4)))"
+  },
+  {
+    "path": "src/slic3r/GUI/MultiMachineManagerPage.cpp",
+    "name": "Button",
+    "line": 446,
+    "text": "Button(m_flipping_panel, \"\", \"go_last_plate\", 0, FromDIP(20))",
+    "code": "Button(m_flipping_panel,   ,                , 0, FromDIP(20))"
+  },
+  {
+    "path": "src/slic3r/GUI/MultiMachineManagerPage.cpp",
+    "name": "Button",
+    "line": 464,
+    "text": "Button(m_flipping_panel, \"\", \"go_next_plate\", 0, FromDIP(20))",
+    "code": "Button(m_flipping_panel,   ,                , 0, FromDIP(20))"
+  },
+  {
+    "path": "src/slic3r/GUI/MultiTaskManagerPage.cpp",
+    "name": "Button",
+    "line": 1084,
+    "text": "Button(m_flipping_panel, \"\", \"go_last_plate\", wxBORDER_NONE, FromDIP(20))",
+    "code": "Button(m_flipping_panel,   ,                , wxBORDER_NONE, FromDIP(20))"
+  },
+  {
+    "path": "src/slic3r/GUI/MultiTaskManagerPage.cpp",
+    "name": "Button",
+    "line": 1104,
+    "text": "Button(m_flipping_panel, \"\", \"go_next_plate\", wxBORDER_NONE, FromDIP(20))",
+    "code": "Button(m_flipping_panel,   ,                , wxBORDER_NONE, FromDIP(20))"
+  },
+  {
+    "path": "src/slic3r/GUI/Plater.cpp",
+    "name": "ScalableButton",
+    "line": 1731,
+    "text": "ScalableButton(this, wxID_ANY, \"page_up\", \"\", {FromDIP(14), FromDIP(14)}, wxDefaultPosition, wxBU_EXACTFIT | wxNO_BORDER, false, 14)",
+    "code": "ScalableButton(this, wxID_ANY,          ,   , {FromDIP(14), FromDIP(14)}, wxDefaultPosition, wxBU_EXACTFIT | wxNO_BORDER, false, 14)"
+  },
+  {
+    "path": "src/slic3r/GUI/Plater.cpp",
+    "name": "ScalableButton",
+    "line": 1739,
+    "text": "ScalableButton(this, wxID_ANY, \"page_down\", \"\", {FromDIP(14), FromDIP(14)}, wxDefaultPosition, wxBU_EXACTFIT | wxNO_BORDER, false, 14)",
+    "code": "ScalableButton(this, wxID_ANY,            ,   , {FromDIP(14), FromDIP(14)}, wxDefaultPosition, wxBU_EXACTFIT | wxNO_BORDER, false, 14)"
+  },
+  {
+    "path": "src/slic3r/GUI/Plater.cpp",
+    "name": "ScalableButton",
+    "line": 3089,
+    "text": "ScalableButton(p->m_btn_add_mixed_filament, wxID_ANY, \"add_filament\", wxEmptyString,\n                                            wxSize(FromDIP(16), FromDIP(16)), wxDefaultPosition, wxBU_EXACTFIT | wxNO_BORDER)",
+    "code": "ScalableButton(p->m_btn_add_mixed_filament, wxID_ANY,               , wxEmptyString,\n                                            wxSize(FromDIP(16), FromDIP(16)), wxDefaultPosition, wxBU_EXACTFIT | wxNO_BORDER)"
+  },
+  {
+    "path": "src/slic3r/GUI/SendToPrinter.cpp",
+    "name": "Button",
+    "line": 507,
+    "text": "Button(m_rename_normal_panel, \"\", \"ams_editable\", wxBORDER_NONE, FromDIP(10))",
+    "code": "Button(m_rename_normal_panel,   ,               , wxBORDER_NONE, FromDIP(10))"
+  },
+  {
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "name": "Button",
+    "line": 816,
+    "text": "Button(this, _CTX(L_CONTEXT(\"Quit\", \"Quit_Switching\"), \"Quit_Switching\"), \"\", 0, FromDIP(22))",
+    "code": "Button(this, _CTX(L_CONTEXT(      ,                 ),                 ),   , 0, FromDIP(22))"
+  },
+  {
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "name": "Button",
+    "line": 826,
+    "text": "Button(this, _L(\"Retry\"), \"\", 0, FromDIP(22))",
+    "code": "Button(this, _L(       ),   , 0, FromDIP(22))"
+  },
+  {
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "name": "ScalableButton",
+    "line": 1398,
+    "text": "ScalableButton(m_score_subtask_info, wxID_ANY, \"score_star_dark\", wxEmptyString, wxSize(FromDIP(26), FromDIP(26)), wxDefaultPosition,\n                                             wxBU_EXACTFIT | wxNO_BORDER, true, 26)",
+    "code": "ScalableButton(m_score_subtask_info, wxID_ANY,                  , wxEmptyString, wxSize(FromDIP(26), FromDIP(26)), wxDefaultPosition,\n                                             wxBU_EXACTFIT | wxNO_BORDER, true, 26)"
+  },
+  {
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "name": "Button",
+    "line": 2748,
+    "text": "Button(panel, wxString(\"10\"), \"monitor_bed_up\", 0, FromDIP(15))",
+    "code": "Button(panel, wxString(    ),                 , 0, FromDIP(15))"
+  },
+  {
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "name": "Button",
+    "line": 2757,
+    "text": "Button(panel, wxString(\" 1\"), \"monitor_bed_up\", 0, FromDIP(15))",
+    "code": "Button(panel, wxString(    ),                 , 0, FromDIP(15))"
+  },
+  {
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "name": "Button",
+    "line": 2773,
+    "text": "Button(panel, wxString(\" 1\"), \"monitor_bed_down\", 0, FromDIP(15))",
+    "code": "Button(panel, wxString(    ),                   , 0, FromDIP(15))"
+  },
+  {
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "name": "Button",
+    "line": 2782,
+    "text": "Button(panel, wxString(\"10\"), \"monitor_bed_down\", 0, FromDIP(15))",
+    "code": "Button(panel, wxString(    ),                   , 0, FromDIP(15))"
+  },
+  {
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "name": "Button",
+    "line": 2821,
+    "text": "Button(panel, \"\", \"monitor_extruder_up\", 0, FromDIP(22))",
+    "code": "Button(panel,   ,                      , 0, FromDIP(22))"
+  },
+  {
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "name": "Button",
+    "line": 2837,
+    "text": "Button(panel, \"\", \"monitor_extruder_down\", 0, FromDIP(22))",
+    "code": "Button(panel,   ,                        , 0, FromDIP(22))"
+  },
+  {
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "name": "ScalableButton",
+    "line": 6882,
+    "text": "ScalableButton(this, wxID_ANY, \"score_star_light\", wxEmptyString, wxSize(FromDIP(26), FromDIP(26)), wxDefaultPosition,\n                                                 wxBU_EXACTFIT | wxNO_BORDER, true, 26)",
+    "code": "ScalableButton(this, wxID_ANY,                   , wxEmptyString, wxSize(FromDIP(26), FromDIP(26)), wxDefaultPosition,\n                                                 wxBU_EXACTFIT | wxNO_BORDER, true, 26)"
+  },
+  {
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "name": "ScalableButton",
+    "line": 6885,
+    "text": "ScalableButton(this, wxID_ANY, \"score_star_dark\", wxEmptyString, wxSize(FromDIP(26), FromDIP(26)), wxDefaultPosition,\n                                                 wxBU_EXACTFIT | wxNO_BORDER, true, 26)",
+    "code": "ScalableButton(this, wxID_ANY,                  , wxEmptyString, wxSize(FromDIP(26), FromDIP(26)), wxDefaultPosition,\n                                                 wxBU_EXACTFIT | wxNO_BORDER, true, 26)"
+  },
+  {
+    "path": "src/slic3r/GUI/StepMeshDialog.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 93,
+    "text": "create_scaled_bitmap(\"step_mesh_info\", this, FromDIP(120))",
+    "code": "create_scaled_bitmap(                , this, FromDIP(120))"
+  },
+  {
+    "path": "src/slic3r/GUI/TextureImportDialog.cpp",
+    "name": "info",
+    "line": 3899,
+    "text": "info(*wxWHITE, std::max(1.5, (double)FromDIP(2)))",
+    "code": "info(*wxWHITE, std::max(1.5, (double)FromDIP(2)))"
+  },
+  {
+    "path": "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 29,
+    "text": "create_scaled_bitmap(\"hotend_thumbnail\", nullptr, FromDIP(60))",
+    "code": "create_scaled_bitmap(                  , nullptr, FromDIP(60))"
+  },
+  {
+    "path": "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 224,
+    "text": "create_scaled_bitmap(\"extruder_badge_none_selected\", nullptr, FromDIP(90))",
+    "code": "create_scaled_bitmap(                              , nullptr, FromDIP(90))"
+  },
+  {
+    "path": "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 293,
+    "text": "create_scaled_bitmap(badge_name, nullptr, FromDIP(90))",
+    "code": "create_scaled_bitmap(badge_name, nullptr, FromDIP(90))"
+  },
+  {
+    "path": "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp",
+    "name": "create_scaled_bitmap",
+    "line": 319,
+    "text": "create_scaled_bitmap(badge_name, nullptr, FromDIP(90))",
+    "code": "create_scaled_bitmap(badge_name, nullptr, FromDIP(90))"
+  }
+]

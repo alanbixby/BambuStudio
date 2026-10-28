@@ -1,0 +1,7 @@
+{
+  "commit": "53fdfb67ed5272f6547a995d8bc0d19e9f37de6e",
+  "source_files": 3055,
+  "lexical_candidates": 3084,
+  "containing_FromDIP": 53,
+  "limits": "Lexical candidate discovery only; includes disabled code, name collisions and false positives; manual unit analysis required."
+}

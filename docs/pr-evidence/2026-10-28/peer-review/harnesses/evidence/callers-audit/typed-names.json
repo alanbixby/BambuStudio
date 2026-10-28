@@ -1,0 +1,1230 @@
+{
+  "m_icon": [
+    "ScalableBitmap"
+  ],
+  "m_humidity_image": [
+    "ScalableBitmap"
+  ],
+  "m_description_icon_bitmap": [
+    "ScalableBitmap"
+  ],
+  "m_guide_image": [
+    "ScalableBitmap"
+  ],
+  "name_font": [
+    "wxFont"
+  ],
+  "note_font": [
+    "wxFont"
+  ],
+  "m_bitmap_transparent_def": [
+    "ScalableBitmap"
+  ],
+  "font": [
+    "wxFont"
+  ],
+  "version_font": [
+    "wxFont"
+  ],
+  "logo": [
+    "ScalableBitmap"
+  ],
+  "m_logo_bitmap": [
+    "ScalableBitmap"
+  ],
+  "m_arraw_bitmap_gray": [
+    "ScalableBitmap"
+  ],
+  "m_arraw_bitmap_white": [
+    "ScalableBitmap"
+  ],
+  "m_transparent_mitem": [
+    "ScalableBitmap"
+  ],
+  "m_filament_wheel_transparent": [
+    "ScalableBitmap"
+  ],
+  "m_ams_wheel_mitem": [
+    "ScalableBitmap"
+  ],
+  "m_ams_not_match": [
+    "ScalableBitmap"
+  ],
+  "m_rack_nozzle_bitmap": [
+    "ScalableBitmap"
+  ],
+  "m_transparent_mapping_item": [
+    "ScalableBitmap"
+  ],
+  "mapping_item_checked": [
+    "ScalableBitmap"
+  ],
+  "background_img": [
+    "ScalableBitmap"
+  ],
+  "close_img": [
+    "ScalableBitmap"
+  ],
+  "backup_current_use_white": [
+    "ScalableBitmap"
+  ],
+  "backup_current_use_black": [
+    "ScalableBitmap"
+  ],
+  "bitmap_backup_tips_0": [
+    "ScalableBitmap"
+  ],
+  "bitmap_backup_tips_1": [
+    "ScalableBitmap"
+  ],
+  "bitmap_editable": [
+    "ScalableBitmap"
+  ],
+  "bitmap_bg": [
+    "ScalableBitmap"
+  ],
+  "bitmap_editable_light": [
+    "ScalableBitmap"
+  ],
+  "m_file_bitmap": [
+    "ScalableBitmap"
+  ],
+  "m_file_cover": [
+    "ScalableBitmap"
+  ],
+  "m_file_edit_mask": [
+    "ScalableBitmap"
+  ],
+  "m_file_delete": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_excel": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_pdf": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_txt": [
+    "ScalableBitmap"
+  ],
+  "normal_font": [
+    "wxFont"
+  ],
+  "bold_font": [
+    "wxFont"
+  ],
+  "m_printer_status_offline": [
+    "ScalableBitmap"
+  ],
+  "m_printer_status_busy": [
+    "ScalableBitmap"
+  ],
+  "m_printer_status_idle": [
+    "ScalableBitmap"
+  ],
+  "m_printer_status_lock": [
+    "ScalableBitmap"
+  ],
+  "m_printer_in_lan": [
+    "ScalableBitmap"
+  ],
+  "m_prev_bmp_normal": [
+    "ScalableBitmap"
+  ],
+  "m_prev_bmp_hover": [
+    "ScalableBitmap"
+  ],
+  "m_help_bmp_normal": [
+    "ScalableBitmap"
+  ],
+  "m_help_bmp_hover": [
+    "ScalableBitmap"
+  ],
+  "m_bmp": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_normal": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_hover": [
+    "ScalableBitmap"
+  ],
+  "bg": [
+    "ScalableBitmap"
+  ],
+  "bullet_black": [
+    "ScalableBitmap"
+  ],
+  "bullet_blue": [
+    "ScalableBitmap"
+  ],
+  "bullet_white": [
+    "ScalableBitmap"
+  ],
+  "icon": [
+    "ScalableBitmap"
+  ],
+  "font12": [
+    "wxFont"
+  ],
+  "font14": [
+    "wxFont"
+  ],
+  "m_ams_slot_readonly": [
+    "ScalableBitmap"
+  ],
+  "humitidy_image": [
+    "ScalableBitmap"
+  ],
+  "drying_img": [
+    "ScalableBitmap"
+  ],
+  "idle_img": [
+    "ScalableBitmap"
+  ],
+  "bm": [
+    "ScalableBitmap"
+  ],
+  "bmp": [
+    "ScalableBitmap"
+  ],
+  "m_switch_btn": [
+    "ScalableButton"
+  ],
+  "f": [
+    "wxFont"
+  ],
+  "m_action_font": [
+    "wxFont"
+  ],
+  "title_font": [
+    "wxFont"
+  ],
+  "credits_font": [
+    "wxFont"
+  ],
+  "init_font": [
+    "wxFont"
+  ],
+  "m_small_font": [
+    "wxFont"
+  ],
+  "m_bold_font": [
+    "wxFont"
+  ],
+  "m_normal_font": [
+    "wxFont"
+  ],
+  "m_code_font": [
+    "wxFont"
+  ],
+  "m_link_font": [
+    "wxFont"
+  ],
+  "m_bmp_delete": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_add": [
+    "ScalableBitmap"
+  ],
+  "bitmap": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_delete_focus": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_reset": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_reset_disable": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_reset_focus": [
+    "ScalableBitmap"
+  ],
+  "get_default_font_for_dpi": [
+    "wxFont"
+  ],
+  "get_default_font": [
+    "wxFont"
+  ],
+  "new_font": [
+    "wxFont"
+  ],
+  "m_wiki_icon": [
+    "ScalableBitmap"
+  ],
+  "m_wiki_icon_hover": [
+    "ScalableBitmap"
+  ],
+  "wx_font_normal": [
+    "wxFont"
+  ],
+  "wx_font": [
+    "wxFont"
+  ],
+  "wx_font_temp": [
+    "wxFont"
+  ],
+  "wx_font_": [
+    "wxFont"
+  ],
+  "label_font": [
+    "wxFont"
+  ],
+  "strong_font": [
+    "wxFont"
+  ],
+  "section_font": [
+    "wxFont"
+  ],
+  "header_font": [
+    "wxFont"
+  ],
+  "sim_title_font": [
+    "wxFont"
+  ],
+  "opt_title_font": [
+    "wxFont"
+  ],
+  "acct_font": [
+    "wxFont"
+  ],
+  "env_font": [
+    "wxFont"
+  ],
+  "opt_font": [
+    "wxFont"
+  ],
+  "lab_bold_font": [
+    "wxFont"
+  ],
+  "caveat_title_font": [
+    "wxFont"
+  ],
+  "fix_title_font": [
+    "wxFont"
+  ],
+  "opt_bold_font": [
+    "wxFont"
+  ],
+  "qf_bold": [
+    "wxFont"
+  ],
+  "m_status_icon": [
+    "ScalableBitmap"
+  ],
+  "m_checked_icon": [
+    "ScalableBitmap"
+  ],
+  "m_unchecked_icon": [
+    "ScalableBitmap"
+  ],
+  "m_model_time_icon": [
+    "ScalableBitmap"
+  ],
+  "m_model_weight_icon": [
+    "ScalableBitmap"
+  ],
+  "m_logo_bmp": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_loading": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_failed": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_empty": [
+    "ScalableBitmap"
+  ],
+  "monospace": [
+    "wxFont"
+  ],
+  "msg_font": [
+    "wxFont"
+  ],
+  "boldfont": [
+    "wxFont"
+  ],
+  "m_bitmap_check_disable": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_check_off": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_check_on": [
+    "ScalableBitmap"
+  ],
+  "old_font": [
+    "wxFont"
+  ],
+  "multi_extruder": [
+    "ScalableBitmap"
+  ],
+  "m_font": [
+    "wxFont"
+  ],
+  "sidetext_font": [
+    "wxFont"
+  ],
+  "m_tips_arrow": [
+    "ScalableButton"
+  ],
+  "m_retry_icon": [
+    "ScalableBitmap"
+  ],
+  "m_swipe_left_button": [
+    "ScalableButton"
+  ],
+  "m_swipe_right_button": [
+    "ScalableButton"
+  ],
+  "m_swipe_frontmost_button": [
+    "ScalableButton"
+  ],
+  "m_swipe_backmost_button": [
+    "ScalableButton"
+  ],
+  "m_swipe_left_bmp_disable": [
+    "ScalableBitmap"
+  ],
+  "m_swipe_left_bmp_normal": [
+    "ScalableBitmap"
+  ],
+  "m_swipe_left_bmp_hover": [
+    "ScalableBitmap"
+  ],
+  "m_swipe_right_bmp_disable": [
+    "ScalableBitmap"
+  ],
+  "m_swipe_right_bmp_normal": [
+    "ScalableBitmap"
+  ],
+  "m_swipe_right_bmp_hover": [
+    "ScalableBitmap"
+  ],
+  "m_swipe_frontmost_bmp_disable": [
+    "ScalableBitmap"
+  ],
+  "m_swipe_frontmost_bmp_normal": [
+    "ScalableBitmap"
+  ],
+  "m_swipe_frontmost_bmp_hover": [
+    "ScalableBitmap"
+  ],
+  "m_swipe_backmost_bmp_disable": [
+    "ScalableBitmap"
+  ],
+  "m_swipe_backmost_bmp_normal": [
+    "ScalableBitmap"
+  ],
+  "m_swipe_backmost_bmp_hover": [
+    "ScalableBitmap"
+  ],
+  "btn_edit": [
+    "ScalableButton"
+  ],
+  "btn_up": [
+    "ScalableButton"
+  ],
+  "btn_down": [
+    "ScalableButton"
+  ],
+  "btn_edit_printer": [
+    "ScalableButton"
+  ],
+  "btn_connect_printer": [
+    "ScalableButton"
+  ],
+  "m_bpButton_add_filament": [
+    "ScalableButton"
+  ],
+  "m_bpButton_del_filament": [
+    "ScalableButton"
+  ],
+  "m_bpButton_ams_filament": [
+    "ScalableButton"
+  ],
+  "m_bpButton_set_filament": [
+    "ScalableButton"
+  ],
+  "btn_send_gcode": [
+    "ScalableButton"
+  ],
+  "edit_btn": [
+    "ScalableButton"
+  ],
+  "wiki_bed": [
+    "ScalableButton"
+  ],
+  "ams_btn": [
+    "ScalableButton"
+  ],
+  "m_bitmapCompatible": [
+    "ScalableBitmap"
+  ],
+  "m_bitmapIncompatible": [
+    "ScalableBitmap"
+  ],
+  "m_home_bmp": [
+    "ScalableBitmap"
+  ],
+  "heading_font": [
+    "wxFont"
+  ],
+  "card_title_font": [
+    "wxFont"
+  ],
+  "m_selected_bk": [
+    "ScalableBitmap"
+  ],
+  "m_selected_bk_dark": [
+    "ScalableBitmap"
+  ],
+  "m_selected_disabled_bk": [
+    "ScalableBitmap"
+  ],
+  "m_selected_disabled_bk_dark": [
+    "ScalableBitmap"
+  ],
+  "m_printoption_tips": [
+    "ScalableButton"
+  ],
+  "m_background_bitmap": [
+    "ScalableBitmap"
+  ],
+  "m_img_selected": [
+    "ScalableBitmap"
+  ],
+  "m_img_unselected": [
+    "ScalableBitmap"
+  ],
+  "m_img_selected_tag": [
+    "ScalableBitmap"
+  ],
+  "m_img_unselected_tag": [
+    "ScalableBitmap"
+  ],
+  "rename_editable": [
+    "ScalableBitmap"
+  ],
+  "rename_editable_light": [
+    "ScalableBitmap"
+  ],
+  "print_time": [
+    "ScalableBitmap"
+  ],
+  "print_weight": [
+    "ScalableBitmap"
+  ],
+  "ams_mapping_help_icon": [
+    "ScalableBitmap"
+  ],
+  "m_unbind_img": [
+    "ScalableBitmap"
+  ],
+  "m_edit_name_img": [
+    "ScalableBitmap"
+  ],
+  "m_select_unbind_img": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap": [
+    "ScalableBitmap"
+  ],
+  "SWITCH_FONT": [
+    "wxFont"
+  ],
+  "PAGE_TITLE_FONT": [
+    "wxFont"
+  ],
+  "left_nozzle_bmp": [
+    "ScalableBitmap"
+  ],
+  "right_nozzle_bmp": [
+    "ScalableBitmap"
+  ],
+  "left_pipe_bmp": [
+    "ScalableBitmap"
+  ],
+  "right_pipe_bmp": [
+    "ScalableBitmap"
+  ],
+  "nozzle_bmp": [
+    "ScalableBitmap"
+  ],
+  "light_star": [
+    "ScalableBitmap"
+  ],
+  "dark_star": [
+    "ScalableBitmap"
+  ],
+  "little_photo": [
+    "ScalableBitmap"
+  ],
+  "m_pipe_filled_load": [
+    "ScalableBitmap"
+  ],
+  "m_pipe_filled_unload": [
+    "ScalableBitmap"
+  ],
+  "m_pipe_empty_load": [
+    "ScalableBitmap"
+  ],
+  "m_pipe_empty_unload": [
+    "ScalableBitmap"
+  ],
+  "m_pipe_filled_load_unselected": [
+    "ScalableBitmap"
+  ],
+  "m_pipe_filled_unload_unselected": [
+    "ScalableBitmap"
+  ],
+  "m_pipe_empty_load_unselected": [
+    "ScalableBitmap"
+  ],
+  "m_pipe_empty_unload_unselected": [
+    "ScalableBitmap"
+  ],
+  "m_left_extruder_active_filled": [
+    "ScalableBitmap"
+  ],
+  "m_left_extruder_active_empty": [
+    "ScalableBitmap"
+  ],
+  "m_left_extruder_unactive_filled": [
+    "ScalableBitmap"
+  ],
+  "m_left_extruder_unactive_empty": [
+    "ScalableBitmap"
+  ],
+  "m_right_extruder_active_filled": [
+    "ScalableBitmap"
+  ],
+  "m_right_extruder_active_empty": [
+    "ScalableBitmap"
+  ],
+  "m_right_extruder_unactive_filled": [
+    "ScalableBitmap"
+  ],
+  "m_right_extruder_unactive_empty": [
+    "ScalableBitmap"
+  ],
+  "m_extruder_single_nozzle_empty_load": [
+    "ScalableBitmap"
+  ],
+  "m_extruder_single_nozzle_empty_unload": [
+    "ScalableBitmap"
+  ],
+  "m_extruder_single_nozzle_filled_load": [
+    "ScalableBitmap"
+  ],
+  "m_extruder_single_nozzle_filled_unload": [
+    "ScalableBitmap"
+  ],
+  "m_thumbnail_placeholder": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_use_time": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_use_weight": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_background": [
+    "ScalableBitmap"
+  ],
+  "m_thumbnail_brokenimg": [
+    "ScalableBitmap"
+  ],
+  "m_thumbnail_sdcard": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_speed": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_speed_active": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_axis_home": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_lamp_on": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_lamp_off": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_fan_on": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_fan_off": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_sdcard_state_normal": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_sdcard_state_abnormal": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_sdcard_state_no": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_recording_on": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_recording_off": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_timelapse_on": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_timelapse_off": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_vcamera_on": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_vcamera_off": [
+    "ScalableBitmap"
+  ],
+  "m_button_pause_resume": [
+    "ScalableButton"
+  ],
+  "m_button_abort": [
+    "ScalableButton"
+  ],
+  "m_reset_all_btn": [
+    "ScalableButton"
+  ],
+  "btn": [
+    "ScalableButton"
+  ],
+  "m_bmp_show_incompatible_presets": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_hide_incompatible_presets": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_value_lock": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_value_unlock": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_white_bullet": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_non_system": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_value_revert": [
+    "ScalableBitmap"
+  ],
+  "m_extruder_sync": [
+    "ScalableButton"
+  ],
+  "newtag_img": [
+    "ScalableBitmap"
+  ],
+  "m_arrow_img": [
+    "ScalableBitmap"
+  ],
+  "texture_import_section_title_font": [
+    "wxFont"
+  ],
+  "texture_import_warning_body_font": [
+    "wxFont"
+  ],
+  "texture_import_action_link_font": [
+    "wxFont"
+  ],
+  "m_normal": [
+    "ScalableBitmap"
+  ],
+  "m_hover": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_brand": [
+    "ScalableBitmap"
+  ],
+  "m_spinner": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_unmatched": [
+    "ScalableBitmap"
+  ],
+  "time_font": [
+    "wxFont"
+  ],
+  "btn_font": [
+    "wxFont"
+  ],
+  "m_equal": [
+    "ScalableButton"
+  ],
+  "m_header_font": [
+    "wxFont"
+  ],
+  "upgrade_green_icon": [
+    "ScalableBitmap"
+  ],
+  "m_img_ext": [
+    "ScalableBitmap"
+  ],
+  "m_img_monitor_ams": [
+    "ScalableBitmap"
+  ],
+  "m_img_extra_ams": [
+    "ScalableBitmap"
+  ],
+  "m_img_printer": [
+    "ScalableBitmap"
+  ],
+  "m_img_air_pump": [
+    "ScalableBitmap"
+  ],
+  "m_img_cutting": [
+    "ScalableBitmap"
+  ],
+  "m_img_laser": [
+    "ScalableBitmap"
+  ],
+  "m_img_extinguish": [
+    "ScalableBitmap"
+  ],
+  "m_img_rotary": [
+    "ScalableBitmap"
+  ],
+  "m_img_filatrack": [
+    "ScalableBitmap"
+  ],
+  "upgrade_gray_icon": [
+    "ScalableBitmap"
+  ],
+  "upgrade_yellow_icon": [
+    "ScalableBitmap"
+  ],
+  "m_img_nozzle_rack": [
+    "ScalableBitmap"
+  ],
+  "m_img_amshub": [
+    "ScalableBitmap"
+  ],
+  "m_img_exhaustfan": [
+    "ScalableBitmap"
+  ],
+  "body": [
+    "wxFont"
+  ],
+  "m_button_ams_setting_normal": [
+    "ScalableBitmap"
+  ],
+  "m_button_ams_setting_hover": [
+    "ScalableBitmap"
+  ],
+  "m_button_ams_setting_press": [
+    "ScalableBitmap"
+  ],
+  "tray_bitmap": [
+    "ScalableBitmap"
+  ],
+  "hum_img": [
+    "ScalableBitmap"
+  ],
+  "left_extruder_bmp": [
+    "ScalableBitmap"
+  ],
+  "right_extruder_bmp": [
+    "ScalableBitmap"
+  ],
+  "extruder_bmp": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_selected": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_ams_rfid_0": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_ams_rfid_1": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_ams_rfid_2": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_ams_rfid_3": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_ams_rfid_4": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_ams_rfid_5": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_ams_rfid_6": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_ams_rfid_7": [
+    "ScalableBitmap"
+  ],
+  "m_ams_extruder": [
+    "ScalableBitmap"
+  ],
+  "m_switcher": [
+    "ScalableBitmap"
+  ],
+  "m_ext_image": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_editable": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_editable_light": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_readonly": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_readonly_light": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_transparent": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_transparent_lite": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_extra_tray_left": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_extra_tray_right": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_extra_tray_mid": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_extra_tray_left_hover": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_extra_tray_right_hover": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_extra_tray_mid_hover": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_extra_tray_left_selected": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_extra_tray_right_selected": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_extra_tray_mid_selected": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_new_filament_hint": [
+    "ScalableBitmap"
+  ],
+  "m_ts_bitmap_cube": [
+    "ScalableBitmap"
+  ],
+  "m_ts_bitmap_cube_dark": [
+    "ScalableBitmap"
+  ],
+  "m_four_slot_bitmap": [
+    "ScalableBitmap"
+  ],
+  "m_four_slot_bitmap_dark": [
+    "ScalableBitmap"
+  ],
+  "m_single_slot_bitmap": [
+    "ScalableBitmap"
+  ],
+  "m_single_slot_bitmap_dark": [
+    "ScalableBitmap"
+  ],
+  "ams_sun_img": [
+    "ScalableBitmap"
+  ],
+  "ams_drying_img": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_extra_framework": [
+    "ScalableBitmap"
+  ],
+  "active_icon": [
+    "ScalableBitmap"
+  ],
+  "inactive_icon": [
+    "ScalableBitmap"
+  ],
+  "m_on": [
+    "ScalableBitmap"
+  ],
+  "m_half": [
+    "ScalableBitmap"
+  ],
+  "m_off": [
+    "ScalableBitmap"
+  ],
+  "m_on_disabled": [
+    "ScalableBitmap"
+  ],
+  "m_half_disabled": [
+    "ScalableBitmap"
+  ],
+  "m_off_disabled": [
+    "ScalableBitmap"
+  ],
+  "m_on_focused": [
+    "ScalableBitmap"
+  ],
+  "m_half_focused": [
+    "ScalableBitmap"
+  ],
+  "m_off_focused": [
+    "ScalableBitmap"
+  ],
+  "check_bitmap": [
+    "ScalableBitmap"
+  ],
+  "arrow_bitmap": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_bk": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_scale_0": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_scale_1": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_scale_2": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_scale_3": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_scale_4": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_scale_5": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_scale_6": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_scale_7": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_scale_8": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_scale_9": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_scale_10": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_add": [
+    "ScalableBitmap"
+  ],
+  "m_bitmap_decrease": [
+    "ScalableBitmap"
+  ],
+  "img_on": [
+    "ScalableBitmap"
+  ],
+  "img_off": [
+    "ScalableBitmap"
+  ],
+  "Label": [
+    "wxFont"
+  ],
+  "Head_48": [
+    "wxFont"
+  ],
+  "Head_32": [
+    "wxFont"
+  ],
+  "Head_24": [
+    "wxFont"
+  ],
+  "Head_20": [
+    "wxFont"
+  ],
+  "Head_18": [
+    "wxFont"
+  ],
+  "Head_16": [
+    "wxFont"
+  ],
+  "Head_15": [
+    "wxFont"
+  ],
+  "Head_14": [
+    "wxFont"
+  ],
+  "Head_13": [
+    "wxFont"
+  ],
+  "Head_12": [
+    "wxFont"
+  ],
+  "Head_11": [
+    "wxFont"
+  ],
+  "Head_10": [
+    "wxFont"
+  ],
+  "Body_16": [
+    "wxFont"
+  ],
+  "Body_15": [
+    "wxFont"
+  ],
+  "Body_14": [
+    "wxFont"
+  ],
+  "Body_13": [
+    "wxFont"
+  ],
+  "Body_12": [
+    "wxFont"
+  ],
+  "Body_10": [
+    "wxFont"
+  ],
+  "Body_11": [
+    "wxFont"
+  ],
+  "Body_9": [
+    "wxFont"
+  ],
+  "Body_8": [
+    "wxFont"
+  ],
+  "sysFont": [
+    "wxFont"
+  ],
+  "m_ban": [
+    "ScalableBitmap"
+  ],
+  "m_printing_img": [
+    "ScalableBitmap"
+  ],
+  "m_none_printing_img": [
+    "ScalableBitmap"
+  ],
+  "m_none_arrow_img": [
+    "ScalableBitmap"
+  ],
+  "m_none_add_img": [
+    "ScalableBitmap"
+  ],
+  "m_wifi_none_img": [
+    "ScalableBitmap"
+  ],
+  "m_wifi_weak_img": [
+    "ScalableBitmap"
+  ],
+  "m_wifi_middle_img": [
+    "ScalableBitmap"
+  ],
+  "m_wifi_strong_img": [
+    "ScalableBitmap"
+  ],
+  "m_network_wired_img": [
+    "ScalableBitmap"
+  ],
+  "m_more_err_open": [
+    "ScalableBitmap"
+  ],
+  "m_more_err_close": [
+    "ScalableBitmap"
+  ],
+  "badge": [
+    "ScalableBitmap",
+    "ScalableButton"
+  ],
+  "font_tip": [
+    "wxFont"
+  ],
+  "bmp_thumb": [
+    "ScalableBitmap"
+  ],
+  "bmp_ok": [
+    "ScalableBitmap"
+  ],
+  "bold": [
+    "wxFont"
+  ],
+  "round_icon": [
+    "ScalableBitmap"
+  ],
+  "normal_icon": [
+    "ScalableBitmap"
+  ],
+  "actice_icon": [
+    "ScalableBitmap"
+  ],
+  "degree_icon": [
+    "ScalableBitmap"
+  ],
+  "round_scale_hint_icon": [
+    "ScalableBitmap"
+  ],
+  "prefix_font": [
+    "wxFont"
+  ],
+  "unit_font": [
+    "wxFont"
+  ],
+  "icon_1": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_lock_closed": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_lock_closed_f": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_lock_open": [
+    "ScalableBitmap"
+  ],
+  "m_bmp_lock_open_f": [
+    "ScalableBitmap"
+  ],
+  "wx_font_stored": [
+    "wxFont"
+  ],
+  "get_wx_font": [
+    "wxFont"
+  ],
+  "get_stored_wx_font": [
+    "wxFont"
+  ],
+  "stored_wx_font": [
+    "wxFont"
+  ],
+  "WxFontUtils": [
+    "wxFont"
+  ],
+  "info": [
+    "wxFontInfo"
+  ],
+  "tempFont": [
+    "wxFont"
+  ],
+  "testFont": [
+    "wxFont"
+  ],
+  "load_wxFont": [
+    "wxFont"
+  ],
+  "create_wxFont": [
+    "wxFont"
+  ]
+}

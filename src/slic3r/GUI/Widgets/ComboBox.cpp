@@ -196,14 +196,6 @@ wxString ComboBox::GetTextLabel() const
     return TextInput::GetLabel();
 }
 
-bool ComboBox::SetFont(wxFont const& font)
-{
-    if (GetTextCtrl() && GetTextCtrl()->IsShown())
-        return GetTextCtrl()->SetFont(font);
-    else
-        return TextInput::SetFont(font);
-}
-
 int ComboBox::Append(const wxString &item, const wxBitmap &bitmap, int style)
 {
     if (&bitmap && bitmap.IsOk()) {

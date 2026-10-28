@@ -108,6 +108,17 @@ void TextInput::Create(wxWindow *     parent,
     messureSize();
 }
 
+bool TextInput::SetFont(const wxFont& font)
+{
+    const bool changed = StaticBox::SetFont(font);
+    if (text_ctrl) {
+        text_ctrl->SetFont(font);
+        messureSize();
+        Refresh();
+    }
+    return changed;
+}
+
 void TextInput::SetCornerRadius(double radius)
 {
     this->radius = radius;

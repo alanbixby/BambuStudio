@@ -67,6 +67,8 @@ public:
     void SetTextLabel(const wxString &label);
     wxString GetTextLabel() const;
 
+    bool SetFont(const wxFont& font) override;
+
     wxString GetString(unsigned int n) const override;
     void     SetString(unsigned int n, wxString const &value) override;
 

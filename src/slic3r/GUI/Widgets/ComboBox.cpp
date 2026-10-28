@@ -196,21 +196,12 @@ wxString ComboBox::GetTextLabel() const
     return TextInput::GetLabel();
 }
 
-bool ComboBox::SetFont(const wxFont& font)
+bool ComboBox::SetFont(wxFont const& font)
 {
-    const bool changed = TextInput::SetFont(font);
-    if (auto text_ctrl = GetTextCtrl()) {
-        if (text_ctrl->SetFont(font)) {
-            wxSize text_size = text_ctrl->GetSize();
-            // Cocoa's single-line best size can use a fixed variant height.
-            text_size.y = std::max(text_ctrl->GetBestSize().y,
-                                  text_ctrl->GetSizeFromTextSize(wxSize(0, text_ctrl->GetCharHeight())).y);
-            text_ctrl->SetSize(text_size);
-        }
-        messureSize();
-        Refresh();
-    }
-    return changed;
+    if (GetTextCtrl() && GetTextCtrl()->IsShown())
+        return GetTextCtrl()->SetFont(font);
+    else
+        return TextInput::SetFont(font);
 }
 
 int ComboBox::Append(const wxString &item, const wxBitmap &bitmap, int style)

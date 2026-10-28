@@ -1,0 +1,382 @@
+{
+  "extras": {
+    "limitations": [
+      "Final cleaned native build screenshots are pending; none of these assets may be relabeled as final acceptance.",
+      "Temperature values and print states differ between live captures. The images illustrate layout, not a controlled equal-value comparison. No temperature/print controls exercised by this task.",
+      "Screen/display/version coverage is limited to the retained 144-DPI XWayland setup."
+    ],
+    "assets": {
+      "temperature-alignment-historical-before": {
+        "caption": "Before: Historical combined build leaves a wide gap between the slash and short temperature targets; icons and degree units remain visible. Historical combined build evidence; not independent cleaned PR acceptance evidence.",
+        "original_sha256": "ffcddd6552d4b0c7d2fb5d6f11ff63c3c82f986fa2d9315a5a11db63b14f4cae",
+        "crop_box": [
+          2615,
+          185,
+          2855,
+          510
+        ],
+        "output_sha256": "f1ff6bc9c635d0f27f0861fd2142e652e648726d2bb232e4b4e17e088a408204",
+        "limitations": [],
+        "path": "docs/pr-evidence/2026-10-28/temperature-alignment-historical-before.png",
+        "provenance": {
+          "classification": "historical_combined_baseline",
+          "version": "02.08.04.57",
+          "attribution": "alignment-before-* capture checkpoint; exact baseline executable not independently established. Already includes earlier UI fixes; not stock."
+        }
+      },
+      "temperature-alignment-historical-after": {
+        "caption": "After: Historical combined build compacts the current-value/slash placement around short targets while retaining the left-side icons and target/unit spacing. Historical combined build evidence; not independent cleaned PR acceptance evidence.",
+        "original_sha256": "ea812b969608ab52b74e70b6b5820e99372d7a74cf81ded74b8acc90348cfc5d",
+        "crop_box": [
+          2615,
+          185,
+          2855,
+          510
+        ],
+        "output_sha256": "bb56a3b296ccfa295e864db68f2f1dca4b821969b33c2acac13bcc50138ed4be",
+        "limitations": [
+          "After capture contains different temperatures than the before capture. No live editing behavior is demonstrated."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/temperature-alignment-historical-after.png",
+        "provenance": {
+          "classification": "historical_combined",
+          "version": "02.08.04.57",
+          "attribution": "Retained evidence/alignment-runtime.md associates the after captures with this installed executable and bundle; no embedded screenshot attestation.",
+          "elf_sha256": "c8974eeedec2cf5f615b8a6382121c1cef690049485eb71200bf3ced0704b628",
+          "bundle_fingerprint": "8737deecbba79879dec82d66b7af4161742b49d5fc7d2ab653b560472fabf84b"
+        }
+      },
+      "temperature-hole-user-reference": {
+        "caption": "Reference before: Original user capture shows unused space after the slash for short temperature targets. Historical user screenshot; executable identity unverified; not stock or cleaned PR acceptance evidence.",
+        "original_sha256": "925abfe1cb331126fb2dcad8fc84bba5fc15eaa717afbb0d17523f15891c21e2",
+        "crop_box": [
+          175,
+          90,
+          390,
+          390
+        ],
+        "output_sha256": "8a7ee76f67ab5751678ddf3186affa987ed345ee00c38b07f3a114907479cd45",
+        "limitations": [
+          "Use as original report context, not a matched executable baseline."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/temperature-hole-user-reference.png",
+        "provenance": {
+          "classification": "historical_user_reference",
+          "version": "unverified",
+          "attribution": "Original user attachment; no executable hash or patch-set attribution available."
+        }
+      },
+      "sidebar-cards-historical-before": {
+        "caption": "Before: Historical combined build places the plate information action lower and farther from the right edge than the printer action. Historical combined build evidence; not independent cleaned PR acceptance evidence.",
+        "original_sha256": "e2d3dabdd589f3951d26d0338530cf7b058374f75d6cb7131eb7e86cdd15315d",
+        "crop_box": [
+          0,
+          160,
+          615,
+          320
+        ],
+        "output_sha256": "a3c44d1e4ef5ee5dda038fc9181371c6542f0d6b6357ea7887303c83c77f70d9",
+        "limitations": [],
+        "path": "docs/pr-evidence/2026-10-28/sidebar-cards-historical-before.png",
+        "provenance": {
+          "classification": "historical_combined_baseline",
+          "version": "02.08.04.57",
+          "attribution": "alignment-before-* capture checkpoint; exact baseline executable not independently established. Already includes earlier UI fixes; not stock."
+        }
+      },
+      "sidebar-cards-historical-after": {
+        "caption": "After: Historical combined build aligns printer and plate corner actions at their top-right insets. Historical combined build evidence; not independent cleaned PR acceptance evidence.",
+        "original_sha256": "3697482348409fdfd6eff90eb0a55e19b2feab9c635c80d7fc18cd80808948b6",
+        "crop_box": [
+          0,
+          160,
+          615,
+          320
+        ],
+        "output_sha256": "d279490a7fcac9d9a2255ad81fc33fb73276cdffa53e5ea2b90d5930f5265da0",
+        "limitations": [
+          "The cropped pair concerns corner action placement, not every sidebar layout policy."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/sidebar-cards-historical-after.png",
+        "provenance": {
+          "classification": "historical_combined",
+          "version": "02.08.04.57",
+          "attribution": "Retained evidence/alignment-runtime.md associates the after captures with this installed executable and bundle; no embedded screenshot attestation.",
+          "elf_sha256": "c8974eeedec2cf5f615b8a6382121c1cef690049485eb71200bf3ced0704b628",
+          "bundle_fingerprint": "8737deecbba79879dec82d66b7af4161742b49d5fc7d2ab653b560472fabf84b"
+        }
+      },
+      "purging-header-historical-after": {
+        "caption": "After: Historical combined build aligns the Purging volumes action right edge with the filament settings action below. Historical combined build evidence; not independent cleaned PR acceptance evidence.",
+        "original_sha256": "97f98d0f384b5a7b1c45117e477c832b963a7580a518d4f68c3ab84e913b394d",
+        "crop_box": [
+          0,
+          505,
+          760,
+          610
+        ],
+        "output_sha256": "838240ea1769735eef202c89a1909374b83273560f48a20541d173ef509b3650",
+        "limitations": [
+          "Dedicated purging-before.png is absent. A pre-purge-fix row remains visible in alignment-before-prepare.png; its crop coordinates are recorded as an unexported reference below.",
+          "Native record reports 139x29px button, 24px right inset, 9px inner padding per side; these measurements were not rerun."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/purging-header-historical-after.png",
+        "provenance": {
+          "classification": "historical_combined",
+          "version": "02.08.04.57",
+          "attribution": "evidence/purging-header.md associates purging-after.png with this installed executable and bundle.",
+          "elf_sha256": "7fc806ceb72cf8978772b70d9348848fa62b585b54cbd1a2cf599e03e195c204",
+          "bundle_fingerprint": "21e17a4e29a6dd33f3477513448ebda87d951b3c10b57e3955634cc4cd851d16"
+        }
+      },
+      "stock-sidebar-cards-before": {
+        "caption": "Stock baseline before: Untouched Bambu Studio 02.08.04.57 with only the tooltip preload under the normal Plasma environment shows a narrow, truncated plate selector. No UI shim or DPI override; final cleaned native comparison pending.",
+        "original_sha256": "87db645effcb42ceb958674099e65c42a5d7f2166a6911506d29cc917f96ed30",
+        "crop_box": [
+          0,
+          0,
+          760,
+          170
+        ],
+        "output_sha256": "ab493b9fb7d97180ad9f456977397f1227392e8ac43cf213df49e2c9078ecaa3",
+        "limitations": [
+          "Root-supplied capture provenance; screenshot hash recorded here, executable hash not supplied."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/stock-sidebar-cards-before.png",
+        "provenance": {
+          "classification": "fresh_stock_baseline",
+          "version": "02.08.04.57",
+          "attribution": "Root capture provenance supplied in implementation follow-up: untouched stock AppImage, only tooltip preload, normal Plasma environment, no UI preload or DPI override. Not independently launched by this task.",
+          "elf_sha256": null,
+          "bundle_fingerprint": null
+        }
+      },
+      "stock-calibration-heading-before": {
+        "caption": "Stock baseline before: Untouched Bambu Studio 02.08.04.57 with only the tooltip preload shows the clipped Flow Dynamics Calibration heading and truncated Wiki label. No UI shim or DPI override; final cleaned native comparison pending.",
+        "original_sha256": "4d373c24f74bd7de95b7335161226e5140515bd5bb8880e740314932d606af49",
+        "crop_box": [
+          1550,
+          120,
+          2700,
+          200
+        ],
+        "output_sha256": "af76d4ea41c4b5ecb5df8182233c6e292476790f127880527a2a38deaf6c71b2",
+        "limitations": [
+          "The crop retains the full stock allocated heading region; clipping is present in the original full PNG."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/stock-calibration-heading-before.png",
+        "provenance": {
+          "classification": "fresh_stock_baseline",
+          "version": "02.08.04.57",
+          "attribution": "Root capture provenance supplied in implementation follow-up: untouched stock AppImage, only tooltip preload, normal Plasma environment, no UI preload or DPI override. Not independently launched by this task.",
+          "elf_sha256": null,
+          "bundle_fingerprint": null
+        }
+      }
+    }
+  },
+  "native": {
+    "limitations": [
+      "Cleaned combined native candidate, without preload; not an independent per-PR build.",
+      "Recorded Linux/XWayland session at 144 DPI; no claim for all languages/scales/drivers.",
+      "This task only read captures/records and prepared crops; root performed the GUI checks. Still images do not independently prove initial-load timing, process survival or runtime GLX correctness.",
+      "Actual camera imagery is excluded for privacy. Feed aspect and camera/Control bottom alignment are supported by geometry records and root visual verification, not these public crops.",
+      "Print Options remained fixed at 720x738. Resize attempt was ignored; no narrow/wide dialog viewport test is claimed.",
+      "No image content generated, retouched, composited or redacted; only crop/optional downscale and PNG re-encoding."
+    ],
+    "assets": {
+      "native-sidebar-cards-purge-swatches": {
+        "caption": "After: Printer and full plate selectors, aligned corner actions, Purging volumes header and filament swatches in Prepare. Cleaned combined native candidate, without preload; not an independent per-PR build.",
+        "original_sha256": "63ef8b827cb84c6437771cfef32fe08c6ff3455a5a216df280671e0c413463ca",
+        "crop_box": [
+          0,
+          108,
+          760,
+          785
+        ],
+        "output_sha256": "5a274e6693da4f78b45245e7fa97fe2f150ba46883db66de44b822e5d3834ce1",
+        "limitations": [
+          "Crop contains the upper sidebar only; the model scene is represented by the Return capture."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/native-sidebar-cards-purge-swatches.png"
+      },
+      "native-flow-dynamics-heading": {
+        "caption": "After: Flow Dynamics Calibration and Wiki headings fit their native allocations. Cleaned combined native candidate, without preload; not an independent per-PR build.",
+        "original_sha256": "821f9299420eef48e7768201ce4f1d62bf528bf1cdcf2cb3734257fde535e608",
+        "crop_box": [
+          1280,
+          140,
+          2965,
+          230
+        ],
+        "output_sha256": "f8eacba2e5e16de6bbf0d8cf2f203aa11e1c4789c4a2e36586f75d8e345631c5",
+        "limitations": [
+          "Root measured heading text 406x38 inside 632x57 and Wiki 47x27 inside 48x27; these are runtime measurements, not inferred from this crop."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/native-flow-dynamics-heading.png"
+      },
+      "native-project-initial-gallery": {
+        "caption": "After: Project gallery and title are populated in the root-recorded direct initial load. Cleaned combined native candidate, without preload; not an independent per-PR build.",
+        "original_sha256": "4d2d70c1e91236d4c239b1e2290cd707ae9522f5676e3436eaa588ad8aa097ef",
+        "crop_box": [
+          1100,
+          200,
+          2650,
+          980
+        ],
+        "output_sha256": "84d8ee674cb32a055cf0b7e59ba28cc86f316a01682627c650fb6d88b9266390",
+        "limitations": [
+          "Author/account and attribution handles are excluded by cropping. Initial-load timing is established by root interaction evidence; the still shows the loaded result."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/native-project-initial-gallery.png"
+      },
+      "native-project-dark-table-flow": {
+        "caption": "After: Scrolled Project view shows readable dark-mode text and links, both imported table rows and the following heading below the table. Cleaned combined native candidate, without preload; not an independent per-PR build.",
+        "original_sha256": "e2f4f423219a3c53a26e4db5cc1f1c2fdb368ff8f57c66fd5c0ff5b4c5011db3",
+        "crop_box": [
+          1440,
+          680,
+          2710,
+          2000
+        ],
+        "output_sha256": "244e57316acd1997ba37a01c8a6903f4bb92573072d44491231df5a16e621d87",
+        "limitations": [
+          "This is a scrolled capture using native AT-SPI, not the initial Project viewport.",
+          "Root measured table bottom=figure bottom=1701 and following heading top=1700; the one-pixel overlap is integer/border rounding."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/native-project-dark-table-flow.png"
+      },
+      "native-control-ams-temperature": {
+        "caption": "After: Complete native Control/AMS column with compact temperature readouts, degree units, Air Management and all AMS content visible; camera feed excluded. Cleaned combined native candidate, without preload; not an independent per-PR build.",
+        "original_sha256": "1e993818028177706157e265ec69dbe3d57390fcdce87894f7a6bd2387f36412",
+        "crop_box": [
+          2288,
+          110,
+          3840,
+          1435
+        ],
+        "output_sha256": "2dd3c14489a7b53884d4b6445c2575f50674452c4857ab7648189334e917a8e7",
+        "limitations": [
+          "Camera image and its physical identifier area are excluded; exact 14:9 aspect and aligned bottoms require the numeric record.",
+          "Root measured all four temperature target/unit gaps at 6px; no temperature editing or command is demonstrated."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/native-control-ams-temperature.png"
+      },
+      "native-print-progress-height": {
+        "caption": "After: Native Printing Progress renders the full 21% readout and its progress bar without the previous height clipping. Cleaned combined native candidate, without preload; not an independent per-PR build.",
+        "original_sha256": "1e993818028177706157e265ec69dbe3d57390fcdce87894f7a6bd2387f36412",
+        "crop_box": [
+          410,
+          1440,
+          2275,
+          1810
+        ],
+        "output_sha256": "33c748d6e10e5c241e336d09d0053583b6860dd87399ce1a6e252cff4af82ae9",
+        "limitations": [
+          "Root measured digits 34x33 inside 35x33 and percent 12x19 inside 13x19. No print command was sent during validation."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/native-print-progress-height.png"
+      },
+      "native-print-options-top": {
+        "caption": "After: Native Print Options shows full Medium selections and wrapped help text at its fixed 720x738 allocation. Cleaned combined native candidate, without preload; not an independent per-PR build.",
+        "original_sha256": "53e9b34049785b60eb381ac8dea891bb7b7995f800e911e9363a20f416df2c02",
+        "crop_box": [
+          0,
+          0,
+          720,
+          738
+        ],
+        "output_sha256": "758d2addbd61faf1fa48952f04d055e2443bf4d5d9c34737ef2ea064704321e7",
+        "limitations": [
+          "Fixed-size dialog only; no successful narrow/wide viewport test. Root reports all 31 checked label allocations fit."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/native-print-options-top.png"
+      },
+      "native-print-options-bottom": {
+        "caption": "After: The same native Print Options popup scrolls to its final Print Status Snapshot option. Cleaned combined native candidate, without preload; not an independent per-PR build.",
+        "original_sha256": "b7a288b61d90472f25ec313832809f0b9f998a9983ce0b88988dd6c8e8695d48",
+        "crop_box": [
+          0,
+          0,
+          720,
+          738
+        ],
+        "output_sha256": "16b65a7de0be327d31fd1dd564450da0eda235a5b2e117f2bd1a922c9b7a900f",
+        "limitations": [
+          "This is the bottom scroll state of the native popup, not a browser recreation. No option values were changed."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/native-print-options-bottom.png"
+      },
+      "native-settings-field-width": {
+        "caption": "After: Native Special mode fields show the complete None(allow paint) selection and aligned numeric fields. Cleaned combined native candidate, without preload; not an independent per-PR build.",
+        "original_sha256": "a542f08036f0951d1e632f75fd193c8112f7c393fde102d7c0c2a58a03f3d6b9",
+        "crop_box": [
+          0,
+          0,
+          760,
+          720
+        ],
+        "output_sha256": "a542f08036f0951d1e632f75fd193c8112f7c393fde102d7c0c2a58a03f3d6b9",
+        "limitations": [
+          "Uses the supplied actual 760x720 crop, not a reconstruction from OCR. Root measured field width 262px and reserved gutter 46px."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/native-settings-field-width.png"
+      },
+      "native-assembly-sidebar-toggle": {
+        "caption": "After: Assembly Structure leaves the sidebar toggle and Return action clear. Cleaned combined native candidate, without preload; not an independent per-PR build.",
+        "original_sha256": "ede3ea04cf313bb9e9285688e58faab11c959f3ff8600eb20f1de29b19680407",
+        "crop_box": [
+          0,
+          0,
+          600,
+          330
+        ],
+        "output_sha256": "ede3ea04cf313bb9e9285688e58faab11c959f3ff8600eb20f1de29b19680407",
+        "limitations": [
+          "Uses the supplied actual 600x330 crop. Root checked open/close interaction with a 6px clearance; a still alone does not demonstrate click behavior."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/native-assembly-sidebar-toggle.png"
+      },
+      "native-assembly-roundtrip-3": {
+        "caption": "Before Return: Assembly view in the third successful native-candidate round trip. Cleaned combined native candidate, without preload; not an independent per-PR build.",
+        "original_sha256": "332f156cd47e018863210d08a788417b1a7e42394a595dc3a4da885e6344202c",
+        "crop_box": [
+          0,
+          42,
+          3840,
+          2060
+        ],
+        "output_sha256": "5a7460452bf77a40ef8ce3535fa3497e9c2bb3311b6960ab01d647743c69d67c",
+        "limitations": [
+          "Both navigation-state images are from the fixed combined candidate; this is not an unfixed crash image."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/native-assembly-roundtrip-3.png"
+      },
+      "native-prepare-return-3": {
+        "caption": "After Return: Prepare restores its sidebar and renders both plates in the same third native-candidate round trip. Cleaned combined native candidate, without preload; not an independent per-PR build.",
+        "original_sha256": "c43921a167706ad65777d88a9dfb0d3bb5f7f52aed5bb60cf7585d5f7e428ce2",
+        "crop_box": [
+          0,
+          42,
+          3840,
+          2060
+        ],
+        "output_sha256": "31d343200f8273b9d5f70bbef7bd977ade66b00ff924d8d9306c9425a2651464",
+        "limitations": [
+          "Root performed three real Prepare/Assembly/Return round trips. A still does not prove process liveness or replace the separate historical GLX trace evidence."
+        ],
+        "path": "docs/pr-evidence/2026-10-28/native-prepare-return-3.png"
+      }
+    },
+    "build": {
+      "classification": "cleaned_combined_native_candidate",
+      "version": "02.08.04.57",
+      "elf_sha256": "88df689cf44ab22814a4e666f43c27b9a1218eeb837d9f6964b8f67897f9f869",
+      "bundle_fingerprint": "5029c1cdc1758ad203f7e8e619f3b8f42e9c4018b1d107594fb3e070a87b5a74",
+      "application_commit_prefix": "53fdfb67",
+      "wx_commit_prefix": "292aae41",
+      "runtime": "No-preload native candidate, as verified by root; this preparation task did not launch or inspect a live process.",
+      "attribution": "Build identity and GUI validation supplied by root in the final screenshot preparation instruction; source screenshot hashes independently recorded here."
+    }
+  }
+}

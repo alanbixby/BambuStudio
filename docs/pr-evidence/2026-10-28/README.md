@@ -1,3 +1,3 @@
-# Bambu Studio review evidence
+# Bambu Studio fork review evidence
 
-These are cropped historical screenshots from the combined Linux fixes. Each image caption and build qualification is recorded in manifest.json. They do not establish acceptance of independently rebuilt branches. Source changes remain in separate review branches; this assets-only branch is never proposed upstream.
+Historical screenshots are identified in manifest.json. The cleaned combined native screenshots, crops, build identity and qualifications are in native-manifest.json; validation-native.json records the native checks. Screenshots do not represent independently rebuilt PRs. Camera pixels and physical identifiers are excluded. This assets-only branch is never proposed upstream; production changes live in separate review branches.

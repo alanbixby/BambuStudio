@@ -1,0 +1,159 @@
+{
+  "elf_sha256": "88df689cf44ab22814a4e666f43c27b9a1218eeb837d9f6964b8f67897f9f869",
+  "bundle_fingerprint": "5029c1cdc1758ad203f7e8e619f3b8f42e9c4018b1d107594fb3e070a87b5a74",
+  "reviewed_app_commit": "53fdfb67ed5272f6547a995d8bc0d19e9f37de6e",
+  "reviewed_wx_commit": "292aae41bef6544ebd7c43096c8f7ce683c4f3fb",
+  "files_hashed": 6887,
+  "build_exit_code": 0,
+  "freshness_exit_code": 0,
+  "native_dip_tests_passed": 10,
+  "native_label_cases_passed": 6,
+  "limitations": [
+    "GUI acceptance is the combined native build, not isolated per-PR builds.",
+    "Live setup: Linux GTK3/XWayland, font DPI144, integer GDK scale1.",
+    "Temperature focus/typing/finish behavior was not exercised against the connected printer.",
+    "Other printers, long translations, Windows/macOS and distinct-screen migration were not live-tested.",
+    "Dynamic DPI conversion tests do not prove every existing widget relayouts on a monitor/font setting change."
+  ],
+  "runtime_acceptance": {
+    "desktop_command_relaunch": true,
+    "installed_elf_matches_candidate": true,
+    "LD_PRELOAD": null,
+    "shim_libraries_mapped": false,
+    "project_loaded_without_setup": true,
+    "calibration": {
+      "Flow Dynamics": {
+        "allocation": [
+          632,
+          57
+        ],
+        "text": [
+          406,
+          38
+        ]
+      },
+      "Flow Rate": {
+        "allocation": [
+          556,
+          57
+        ],
+        "text": [
+          330,
+          38
+        ]
+      },
+      "Wiki": {
+        "allocation": [
+          48,
+          27
+        ],
+        "text": [
+          47,
+          27
+        ]
+      }
+    },
+    "project": {
+      "without_edit_back": true,
+      "table_bottom": 1701,
+      "figure_bottom": 1701,
+      "following_heading_top": 1700,
+      "integer_border_tolerance": 2
+    },
+    "print_options": {
+      "client_size": [
+        720,
+        738
+      ],
+      "labels_checked": 31,
+      "label_failures": 0,
+      "bottom_reachable": true,
+      "resize_attempt": "ignored by fixed-size window; no narrow/wide validation claimed"
+    },
+    "control": {
+      "progress_digits": {
+        "allocation": [
+          35,
+          33
+        ],
+        "text": [
+          34,
+          33
+        ]
+      },
+      "percent": {
+        "allocation": [
+          13,
+          19
+        ],
+        "text": [
+          12,
+          19
+        ]
+      },
+      "temperature_unit_gaps": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "Air Management": "complete OCR and visible"
+    },
+    "camera": {
+      "camera_feed": {
+        "x": 3423,
+        "y": 219,
+        "width": 1862,
+        "height": 1197
+      },
+      "camera_aspect": 1.5555555555555556,
+      "camera_panel_bottom": 1476,
+      "control_column": {
+        "x": 5300,
+        "y": 165,
+        "width": 1537,
+        "height": 1311
+      },
+      "control_bottom": 1476,
+      "bottom_delta": 0
+    },
+    "ams": {
+      "full": [
+        1494,
+        733
+      ],
+      "resized": [
+        1011,
+        496
+      ],
+      "viewport_equals_content": true
+    },
+    "settings": {
+      "field_width": 262,
+      "reserved_right": 46,
+      "selected_text": "None(allow paint)",
+      "text_complete": true
+    },
+    "compare": "Both current preset names fit with stock geometry",
+    "sidebar": "Full plate name at local 1:1 proportion, no constructor min reset",
+    "assembly": {
+      "roundtrips": 3,
+      "view_states_verified": true,
+      "process_alive": true,
+      "GLX_error_markers": 0,
+      "sidebar_open_close_clearance": 6
+    },
+    "tooltip": {
+      "shown": true,
+      "caption": "Fuzzy skin thickness",
+      "window": [
+        450,
+        699
+      ],
+      "independent_pointer_grab_result": 0,
+      "dismissed_on_mouse_leave": true
+    },
+    "printer_values_changed": false,
+    "printer_control_commands_issued": false
+  }
+}

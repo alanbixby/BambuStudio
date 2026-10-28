@@ -1,0 +1,1 @@
+The delegated task failed to complete with a Claude API rate-limit error after writing these draft files. They are preserved as partial findings, not a completed review or signoff. Both new observations are nonblocking; the parent retained the existing jitter tolerance and disclosed possible asynchronous first-layout reflow. Native Windows/macOS rendering remains untested.

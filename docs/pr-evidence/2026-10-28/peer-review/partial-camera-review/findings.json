@@ -1,0 +1,70 @@
+{
+  "scope": "camera_fable",
+  "round": 3,
+  "reviewed": [
+    {"pr": 10, "branch": "fix/camera-ams-balance", "head_sha": "df28193c8e4aa5f2439f81eed83caa842a01c5ea", "base_sha": "79df7ae309be398ed30c9f397c13c9911c2edc57", "round2_head_sha": "6e81cd8f92313dfa8c693baab022a18945f74add", "round1_head_sha": "6d4ff325538c4c8bea01218a0677d24b1a4d9eb7"}
+  ],
+  "combined": {"app": "e79eb4721427ac7f136d6d5c5fa0acd962f57f30", "wx": "3fea0af433d9630f79eaf8fbfc062364ba456be3"},
+  "delta_since_round2": "src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp only, 5+/3-; blob 0db7cf8f identical in head and combined; exported round3 patch equals git diff base..head",
+  "open_blocking_count": 0,
+  "resolved": [
+    {"id": "CF-01", "status": "fixed, unchanged since round two", "evidence": "DeviceWebHost.cpp:617 @df28193c gates on view && GetNativeBackend(); pinned webview_edge.cpp:814-817 returns m_webView, set at :377 before m_webViewController at :383 in the same synchronous callback; zoom block at :617-623 precedes the jitter/equality returns at :626-633, so a pending zoom applies on the first ready report even when the size is unchanged"},
+    {"id": "CF-02", "status": "fixed, unchanged since round two", "evidence": "StatusPanel.cpp:2077,2169 and DeviceWebHost.cpp:611 exclude __WXOSX__; the new pending path cannot be reached on macOS because fit_camera_to_feed is the only SetFitZoom caller"},
+    {"id": "CF-03", "status": "conceded to UI owner; body states centered Control margins at zoom 1 for short windows; fit solver unchanged"},
+    {"id": "CF-04", "status": "fixed; close_camera_fullscreen queues the fit after frame->Destroy() (StatusPanel.cpp:2240)"},
+    {"id": "CF-05", "status": "conceded; comment and body no longer claim one-pass convergence"},
+    {"id": "CF-06", "status": "fixed; no dead guard, declaration relocated, backend wording corrected"},
+    {"id": "CF-07", "status": "documented in body"},
+    {"id": "CF-08", "status": "PR5 scope; documented per parent"},
+    {"id": "CF-09", "status": "fixed", "evidence": "SetAmsControlWebFitZoom @df28193c:656-665 applies the pending fit immediately using kAmsControlWebInitialHeightDip (340, inside the 220..360 clamp) so the panel min height is lround(FromDIP(340)*z) before any report; GetBaseHeight = lround(min/z) returns FromDIP(340) exactly for every 5% step at scale 1..2 (pending_zoom_model_r3.py); 168 modelled cases at 96/144/192 DPI, pages 220..360, GTK-ready and Edge-ready-after-3 show one zoom value across all pre-report passes and zero zoom API calls while unready; the old 6e81cd8f path in the same model reproduces 1.6 -> 2.0 -> 2.0 -> 1.6"}
+  ],
+  "findings": [
+    {
+      "id": "CF-10",
+      "prs": [10],
+      "severity": "non-blocking",
+      "regression": "relative to 6e81cd8f only; identical to 6d4ff325 and to the baseline jitter rule",
+      "os": "Linux GTK and Windows (any zoomed path); not macOS",
+      "title": "After a pre-report zoom the baseline 8 DIP jitter filter can absorb the first real content report, keeping the host at 340 DIP when the page is 333..347 DIP",
+      "evidence": [
+        "DeviceWebHost.cpp:608 @df28193c records m_last_logical_content_size before the jitter test at :626-630, and :662-664 seeds m_last_reported_content_size with the 340 DIP synthetic size",
+        "model: page 344 DIP at zoom >= 1.55 yields host 340*z and zoom one step above the report-first reference (1.60 vs 1.55) at 96, 144 and 192 DPI; 336 DIP at zoom 1.05 is absorbed, at zoom 2.0 it applies",
+        "wgtAmsControlWebPanel.cpp:13-17 says 340 is the tallest page stack, so the absorbed case is a sub-8 DIP gutter, not clipping"
+      ],
+      "trigger": "Web AMS first shown in a window whose fit zoom exceeds 1, with a page whose real height is within 8 DIP of 340.",
+      "failure": "Up to 7 DIP of empty host below the page and a fit zoom one 5% step from the report-first value; stable thereafter (next fit computes the same zoom). No loop.",
+      "fix": "Accept. Avoiding it needs either the one-int base-height cache rejected in round three or a 'reported once' flag, both more state than the effect warrants.",
+      "verify": "n/a; observe AMS host bottom on first show at 144 DPI wide window if a page height near 340 exists."
+    },
+    {
+      "id": "CF-11",
+      "prs": [10],
+      "severity": "non-blocking",
+      "regression": "relative to 6e81cd8f only; same sequence as 6d4ff325 minus the crash",
+      "os": "Windows WebView2 only",
+      "title": "Edge loads the page into the already-widened host at zoom 1, so its first report comes from a 586*z CSS px wide layout; a width-dependent page height would cause one over-zoom step before settling",
+      "evidence": [
+        "DeviceWebHost.cpp:636-642 @df28193c widens the host while :617 skips the zoom because GetNativeBackend() is null; pinned webview_edge.cpp:171-177 UpdateBounds is a no-op until m_webView exists and :386 applies the current (widened) client rect on creation",
+        "model with a hypothetical wide-layout first report of 260 DIP: SetZoomFactor 1.6 -> 2.0 -> 1.6 before settling; with a width-independent height the sequence is 1.6 once",
+        "GTK applies the zoom at widening time (webview_webkit.h:135 returns m_web_view immediately), so the CSS width stays 586 there"
+      ],
+      "trigger": "Windows, Device tab opened with web AMS on a window wide enough for zoom > 1, fit passes running before WebView2's asynchronous controller creation.",
+      "failure": "Transient only: the page may render briefly at the wide layout and one extra zoom step may apply, corrected by the report WebView2 sends after the zoom re-lays the page out. Nothing stale remains.",
+      "fix": "Accept and keep the existing body sentence about asynchronous WebView2 creation; a half-sentence that the first page layout may reflow once the backend applies the pending zoom would make the limit explicit. Deferring the widening would reintroduce the CF-09 inconsistency.",
+      "verify": "Windows runtime with SetZoomFactor logging: expect one value when the page height is width-independent."
+    }
+  ],
+  "held_up": [
+    "Delta touches only SetAmsControlWebFitZoom and a named constant; readiness gate, macOS exclusions, StatusPanel solver and fullscreen refit are byte-identical to 6e81cd8f",
+    "m_last_logical_content_size has no consumer beyond the three sites in DeviceWebHost.cpp; msw_rescale is empty; no other code writes the AMS panel min size, so the synthetic 340 cannot leak into another path",
+    "Suspend/ShowAndLoad cycles keep the host's logical height and the panel's zoomed min size, so GetBaseHeight stays consistent across hide/show",
+    "StatusPanel.cpp fit function in combined e79eb472 is identical to the head's; the remaining combined differences are PR5/PR9 hunks",
+    "Parent's implementation/camera probe fixture (probe-prefix.hpp:73) applies SetFitZoom immediately, so it again matches the source behaviour it tests"
+  ],
+  "limits": [
+    "No compile or runtime on any OS; Edge/GTK behaviour from pinned wx sources",
+    "pending_zoom_model_r3.py reuses round-one panel-height assumptions scaled by DPI; only structural behaviour is claimed",
+    "The page JS that reports content_size is not in the repository, so width dependence of its height (CF-11) is unknown",
+    "Round-two PR10 body (round2/bodies/bambu-pr-10.md, 01:41) is the latest body found; no round3 body directory exists"
+  ]
+}

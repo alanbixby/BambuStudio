@@ -1110,7 +1110,8 @@ void MediaPlayCtrl::SetStatus(wxString const &msg2, bool hyperlink)
     OutputDebugStringA("\n");
 #endif // __WXMSW__
 
-    wxGCDC dc;
+    wxClientDC dc(m_label_status);
+    dc.SetFont(m_label_status->GetFont());
     wxSize msg_size = dc.GetTextExtent(msg);
     // Window widths are already pixels; only the fixed spacing is in DIPs.
     int blank_width = GetSize().GetWidth() - FromDIP(120) - m_label_stat->GetSize().GetWidth() - m_button_play->GetSize().GetWidth();

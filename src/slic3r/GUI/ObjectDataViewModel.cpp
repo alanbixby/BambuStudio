@@ -587,7 +587,7 @@ void ObjectDataViewModel::UpdateBitmapForNode(ObjectDataViewModelNode *node)
             bmps.emplace_back(m_lock_bmp);
         if (is_volume_node) {
             if (!bmps.empty()) // ORCA: Add spacing between icons if there are multiple
-                bmps.emplace_back(create_scaled_bitmap("dot", nullptr, int(wxGetApp().em_unit() / 10) * 4));
+                bmps.emplace_back(create_scaled_bitmap("dot", nullptr, int(wxWindow::ToDIP(wxGetApp().em_unit(), nullptr) / 10) * 4));
             bmps.emplace_back(node->is_text_volume() ? m_text_volume_bmps[vol_type] :
                 node->is_svg_volume() ? m_svg_volume_bmps[vol_type] :
                 m_volume_bmps[vol_type]);

@@ -1579,14 +1579,14 @@ wxBoxSizer *CreatePrinterPresetDialog::create_step_switch_item()
     wxPanel *   step_switch_panel = new wxPanel(this);
     step_switch_panel->SetBackgroundColour(*wxWHITE);
     horizontal_sizer->Add(0, 0, 1, wxEXPAND,0);
-    m_step_1 = new wxStaticBitmap(step_switch_panel, wxID_ANY, create_scaled_bitmap("step_1", nullptr, FromDIP(20)), wxDefaultPosition, wxDefaultSize);
+    m_step_1 = new wxStaticBitmap(step_switch_panel, wxID_ANY, create_scaled_bitmap("step_1", nullptr, 20), wxDefaultPosition, wxDefaultSize);
     horizontal_sizer->Add(m_step_1, 0, wxEXPAND | wxLEFT | wxRIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(3));
     wxStaticText *static_create_printer_text = new wxStaticText(step_switch_panel, wxID_ANY, m_create_type.create_printer, wxDefaultPosition, wxDefaultSize);
     horizontal_sizer->Add(static_create_printer_text, 0, wxEXPAND | wxLEFT | wxRIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(3));
     auto divider_line = new wxPanel(step_switch_panel, wxID_ANY, wxDefaultPosition, wxSize(FromDIP(50), 1));
     divider_line->SetBackgroundColour(PRINTER_LIST_COLOUR);
     horizontal_sizer->Add(divider_line, 0, wxLEFT | wxRIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(3));
-    m_step_2 = new wxStaticBitmap(step_switch_panel, wxID_ANY, create_scaled_bitmap("step_2_ready", nullptr, FromDIP(20)), wxDefaultPosition, wxDefaultSize);
+    m_step_2 = new wxStaticBitmap(step_switch_panel, wxID_ANY, create_scaled_bitmap("step_2_ready", nullptr, 20), wxDefaultPosition, wxDefaultSize);
     horizontal_sizer->Add(m_step_2, 0, wxEXPAND | wxLEFT | wxRIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(3));
     wxStaticText *static_import_presets_text = new wxStaticText(step_switch_panel, wxID_ANY, _L("Import Preset"), wxDefaultPosition, wxDefaultSize);
     horizontal_sizer->Add(static_import_presets_text, 0, wxEXPAND | wxLEFT | wxRIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(3));
@@ -2983,8 +2983,8 @@ wxBoxSizer *CreatePrinterPresetDialog::create_page2_btns_item(wxWindow *parent)
 
 void CreatePrinterPresetDialog::show_page1()
 {
-    m_step_1->SetBitmap(create_scaled_bitmap("step_1", nullptr, FromDIP(20)));
-    m_step_2->SetBitmap(create_scaled_bitmap("step_2_ready", nullptr, FromDIP(20)));
+    m_step_1->SetBitmap(create_scaled_bitmap("step_1", nullptr, 20));
+    m_step_2->SetBitmap(create_scaled_bitmap("step_2_ready", nullptr, 20));
     m_page1->Show();
     m_page2->Hide();
     Refresh();
@@ -2994,8 +2994,8 @@ void CreatePrinterPresetDialog::show_page1()
 
 void CreatePrinterPresetDialog::show_page2()
 {
-    m_step_1->SetBitmap(create_scaled_bitmap("step_is_ok", nullptr, FromDIP(20)));
-    m_step_2->SetBitmap(create_scaled_bitmap("step_2", nullptr, FromDIP(20)));
+    m_step_1->SetBitmap(create_scaled_bitmap("step_is_ok", nullptr, 20));
+    m_step_2->SetBitmap(create_scaled_bitmap("step_2", nullptr, 20));
     m_page2->Show();
     m_page1->Hide();
     Refresh();
@@ -3475,7 +3475,7 @@ CreatePresetSuccessfulDialog::CreatePresetSuccessfulDialog(wxWindow *parent, con
     horizontal_sizer->Add(0, 0, 0, wxLEFT, FromDIP(30));
 
     wxBoxSizer *success_bitmap_sizer = new wxBoxSizer(wxVERTICAL);
-    wxStaticBitmap *success_bitmap       = new wxStaticBitmap(this,wxID_ANY, create_scaled_bitmap("create_success", nullptr, FromDIP(24)));
+    wxStaticBitmap *success_bitmap       = new wxStaticBitmap(this,wxID_ANY, create_scaled_bitmap("create_success", nullptr, 24));
     success_bitmap_sizer->Add(success_bitmap, 0, wxEXPAND, 0);
     horizontal_sizer->Add(success_bitmap_sizer, 0, wxEXPAND | wxALL, FromDIP(5));
 

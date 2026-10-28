@@ -504,7 +504,7 @@ SendToPrinterDialog::SendToPrinterDialog(Plater *plater)
     m_rename_text->SetForegroundColour(*wxBLACK);
     m_rename_text->SetFont(::Label::Body_13);
     m_rename_text->SetMaxSize(wxSize(FromDIP(390), -1));
-    m_rename_button = new Button(m_rename_normal_panel, "", "ams_editable", wxBORDER_NONE, FromDIP(10));
+    m_rename_button = new Button(m_rename_normal_panel, "", "ams_editable", wxBORDER_NONE, 10);
     m_rename_button->SetBackgroundColor(*wxWHITE);
     m_rename_button->SetBackgroundColour(*wxWHITE);
 

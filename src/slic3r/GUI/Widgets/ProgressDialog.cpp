@@ -113,11 +113,12 @@ wxString ProgressDialog::FormatString(wxString title)
         m_msg->Layout();
         m_msg->Fit();
 
-        m_msg_scrolledWindow->SetSize(wxSize(m_msg->GetSize().x + FromDIP(5), FromDIP(150)));
-        m_msg_scrolledWindow->SetMinSize(wxSize(m_msg->GetSize().x + FromDIP(5), FromDIP(150)));
-        m_msg_scrolledWindow->SetMaxSize(wxSize(m_msg->GetSize().x + FromDIP(5), FromDIP(150)));
-       // m_msg_scrolledWindow->Layout();
-        m_msg_scrolledWindow->Fit();
+        const wxSize viewport_size = m_msg_scrolledWindow->ClientToWindowSize(
+            wxSize(m_msg->GetSize().x + FromDIP(5), FromDIP(150)));
+        m_msg_scrolledWindow->SetMinSize(viewport_size);
+        m_msg_scrolledWindow->SetMaxSize(viewport_size);
+        m_msg_scrolledWindow->SetSize(viewport_size);
+        m_msg_scrolledWindow->FitInside();
     }
 
     
@@ -192,7 +193,7 @@ bool ProgressDialog::Create(const wxString &title, const wxString &message, int 
 
         m_sizer_main->Add(m_simplebook, 1, wxEXPAND | wxLEFT | wxRIGHT, FromDIP(28));
     } else {
-        m_msg_scrolledWindow = new wxScrolledWindow( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxVSCROLL );
+        m_msg_scrolledWindow = new wxScrolledWindow( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxVSCROLL | wxALWAYS_SHOW_SB );
         m_msg_scrolledWindow->SetScrollRate(0,5);
         wxBoxSizer* m_msg_sizer= new wxBoxSizer(wxVERTICAL);
 
@@ -262,11 +263,11 @@ bool ProgressDialog::Create(const wxString &title, const wxString &message, int 
     wxGetApp().UpdateDlgDarkUI(this);
 
     SetSizer(m_sizer_main);
+    FormatString(message);
     Layout();
     Fit();
     Centre(wxCENTER_FRAME | wxBOTH);
     DisableOtherWindows();
-    FormatString(message);
 
     Show();
     Enable();
@@ -817,7 +818,7 @@ void ProgressDialog::DoSetSize(int x, int y, int width, int height, int sizeFlag
     //    m_block_right->SetPosition(wxPoint(PROGRESSDIALOG_GAUGE_SIZE.x - 2, 0));
     //}
 #endif
-    wxWindow::DoSetSize(x, y, width, height, sizeFlags);
+    wxDialog::DoSetSize(x, y, width, height, sizeFlags);
 }
 
 void ProgressDialog::DisableOtherWindows()

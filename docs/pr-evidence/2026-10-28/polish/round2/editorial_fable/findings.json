@@ -1,0 +1,289 @@
+{
+  "partition": "editorial_fable",
+  "round": 2,
+  "reviewed_heads": {
+    "bambu-01": "f4218e246f3041077177d2487ce8824d522addfa",
+    "bambu-02": "3ba2657c70ef031d011da175a4daafb850e3b3b1",
+    "bambu-03": "ed5e975a59ee28242f67ded5e0722b19b61e0ed4",
+    "bambu-04": "44fa2692b16919f4519595d6bcd4f571777ea1d6",
+    "bambu-05": "305b41867feec57eb3d535d59920a9f091991762",
+    "bambu-06": "2604e8279cf03f0ac93b53205608a7d901aacfc4",
+    "bambu-07": "9df1217e47951f34cd95c65159f5329c88083c75",
+    "bambu-08": "5d431fccc52f0011f0613a74d224e81bc614d23f",
+    "bambu-09": "fc074b0ad0a55945fefcf16fe0b195a48d20e398",
+    "bambu-10": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+    "bambu-project-startup": "a2edccd9347f53d719984fd2997ce23155ee79a6",
+    "bambu-progress": "5608a478ca983cc63083627bb6f8854f575412db",
+    "bambu-ams-zoom": "54083d6fb80138c3404a58abc2c4300c0035dfd7",
+    "bambu-gtk-integration": "e77253cd2ff240df00890d2e798faa312df23e95",
+    "wx-01": "14a14a773c74ae23281417f58334b5c28ecfed12",
+    "wx-02": "d54f3313028fc439cea91f0b6a213e5ad2245b90"
+  },
+  "reviewed_bases": {
+    "app": "79df7ae309be398ed30c9f397c13c9911c2edc57 (master) except bambu-progress->305b4186, bambu-gtk-integration->5608a478, bambu-ams-zoom->bed9f5a1",
+    "wx": "abb542694ef4534a50e65c5b877b2774d02952ae"
+  },
+  "app_combined": "e9617d1a815183350bd9822fb894996aa086f47a",
+  "wx_integration": "0f2037facedf3d92660e7071b6754fe994aa744d",
+  "evidence_commit": "9ea10ea751a655b1c964f08ac4b2ce95bef07622",
+  "open_blocking_count": 0,
+  "convergence": "No blocking objection remains. Eight non-blocking items (ED-15 to ED-22); ED-15 is a one-line source doc amend that should land before any upstream wx submission. Stop after this round unless the parent wants the wording changes re-read.",
+  "prior_findings": [
+    {
+      "id": "ED-01",
+      "status": "resolved",
+      "disposition": "All 16 bodies are 54 to 79 prose words, one validation sentence pair, one provenance sentence, one evidence link, no model/quota/build-hash/process boilerplate (grep in REPORT.md). All 23 round-1 screenshot URLs are preserved; the two progress images moved from bambu-05 to bambu-progress with the split."
+    },
+    {
+      "id": "ED-02",
+      "status": "resolved",
+      "disposition": "No STATUS.md link in any body; evidence links point at immutable commit 9ea10ea7 with explicit <a id> anchors that match the #key fragments."
+    },
+    {
+      "id": "ED-03",
+      "status": "resolved",
+      "disposition": "No raw counts in prose; counts live in the evidence README."
+    },
+    {
+      "id": "ED-04",
+      "status": "resolved",
+      "disposition": "bambu-05 is mechanical only, leads with what it changes, states the Windows effect, carries no merge-gate paragraph; the gate moved to bambu-gtk-integration where it belongs."
+    },
+    {
+      "id": "ED-05",
+      "status": "resolved",
+      "disposition": "No fork PR numbers or 'independent of' remarks remain. Stacked bodies name their base by description (ams-zoom, gtk-integration); bambu-progress does not, see ED-19."
+    },
+    {
+      "id": "ED-06",
+      "status": "resolved",
+      "disposition": "Testing sentences for 02/06/07/08 now say 'checked visually on Linux'; harness claims are limited to PRs that have one (03, 05, 09, 10, ams-zoom, progress, project-startup, wx-01, wx-02), each checked against publication/README.md and implementation/ records."
+    },
+    {
+      "id": "ED-07",
+      "status": "resolved",
+      "disposition": "bambu-06 says 'The inner column follows the dialog width'; verified the dialog still sets its own size (PrintOptionsDialog.cpp:33 SetSize(FromDIP(480),FromDIP(520)) at 2604e827) and the body names narrow-dialog behavior as untested."
+    },
+    {
+      "id": "ED-08",
+      "status": "resolved",
+      "disposition": "bambu-progress states the always-allocated scrollbar and the percent row growing to its font height."
+    },
+    {
+      "id": "ED-09",
+      "status": "resolved (wx prefix conceded)",
+      "disposition": "Titles equal the single commit subjects for all 16 (verified). The wx titles lack a 'wxGTK3:' prefix; that is a style choice wx maintainers can rename at merge, conceded."
+    },
+    {
+      "id": "ED-10",
+      "status": "resolved",
+      "disposition": "rev-list base..head == 1 for all 16; parent == declared base; no commit bodies. bambu-02 is now on master (get_collapse_toolbar_height exists at 79df7ae3) and merge-tree is clean."
+    },
+    {
+      "id": "ED-11",
+      "status": "resolved",
+      "disposition": "git diff a1b43d73 5608a478 is empty: bambu-05 + bambu-progress recompose the old PR5 tree exactly. The progress-only diff also applies to plain master (checked in a temp tree)."
+    },
+    {
+      "id": "ED-12",
+      "status": "resolved",
+      "disposition": "Both wx heads have parent abb54269."
+    },
+    {
+      "id": "ED-13",
+      "status": "resolved",
+      "disposition": "No branch-comparison links; one immutable-commit evidence link per body."
+    },
+    {
+      "id": "ED-14",
+      "status": "resolved",
+      "disposition": "bambu-project-startup says 'Retry for about 16 seconds'; delays sum to 15.85 s."
+    }
+  ],
+  "findings": [
+    {
+      "id": "ED-15",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "wx-02"
+      ],
+      "heads": {
+        "wx-02": "d54f3313028fc439cea91f0b6a213e5ad2245b90"
+      },
+      "kind": "upstream-facing doc text (in source)",
+      "summary": "The public API documentation added by wx-02 says 'In this wxGTK3 fork, the conversion follows the GTK screen font resolution only when ...'. An upstream wx patch must not describe itself as a fork.",
+      "evidence": "interface/wx/window.h hunk at d54f3313 (patch line 'In this wxGTK3 fork, the conversion follows ...').",
+      "trigger": "wx maintainer reads the Doxygen text for FromDIP().",
+      "outcome": "Reads as fork-internal documentation; needs a rewrite request before merge.",
+      "smallest_fix": "Change to 'Under wxGTK3, the conversion follows the GTK screen font resolution only when ...'. One-line amend of the single commit.",
+      "verification_needed": "After amend: git diff shows only that line changed; interface/wx/sysopt.h text ('GTK3 only. If 1, ...') is already fine."
+    },
+    {
+      "id": "ED-16",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-10"
+      ],
+      "heads": {
+        "bambu-10": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7"
+      },
+      "kind": "screenshot relevance",
+      "summary": "The camera-fit PR's two images show the Control/AMS column only; the camera feed is cropped out (manifest.json: 'Camera image excluded for privacy'), so a reader cannot see the fit. The after image is also dominated by the AMS zoom that belongs to the stacked PR. The same evidence commit already holds camera-columns-before.png and camera-columns-after.png (1376x208), which show the camera band and the Control column side by side and make the width split obvious.",
+      "evidence": "images/camera-ams-before.png, images/native-control-ams-temperature.png (viewed); images/camera-columns-before.png and -after.png (viewed); docs/pr-evidence/2026-10-28/manifest.json captions at 91aa62a0.",
+      "trigger": "Maintainer opens the camera PR looking for the camera.",
+      "outcome": "The only visible change in the images is the AMS zoom, which this PR explicitly says it does not add.",
+      "smallest_fix": "Use the camera-columns pair as before/after for bambu-10 (captions: 'Before: the camera takes most of the row' / 'After: camera fit to its aspect, Control column wider'), keep the sentence that the lower part of the feed is cropped for privacy. Keep the current pair, if at all, only in bambu-ams-zoom.",
+      "verification_needed": "Parent confirms the camera-columns pair comes from the same historical combined build (manifest.json says checkpoint v02.08.04.57 for both) and that the privacy crop is acceptable to the user."
+    },
+    {
+      "id": "ED-17",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-03",
+        "bambu-05",
+        "bambu-08",
+        "bambu-10",
+        "bambu-ams-zoom",
+        "bambu-gtk-integration",
+        "bambu-progress",
+        "bambu-project-startup",
+        "wx-01",
+        "wx-02",
+        "bambu-01",
+        "bambu-02",
+        "bambu-06"
+      ],
+      "heads": {
+        "bambu-03": "ed5e975a59ee28242f67ded5e0722b19b61e0ed4",
+        "bambu-05": "305b41867feec57eb3d535d59920a9f091991762",
+        "bambu-08": "5d431fccc52f0011f0613a74d224e81bc614d23f",
+        "bambu-10": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+        "bambu-ams-zoom": "54083d6fb80138c3404a58abc2c4300c0035dfd7",
+        "bambu-gtk-integration": "e77253cd2ff240df00890d2e798faa312df23e95",
+        "bambu-progress": "5608a478ca983cc63083627bb6f8854f575412db",
+        "bambu-project-startup": "a2edccd9347f53d719984fd2997ce23155ee79a6",
+        "wx-01": "14a14a773c74ae23281417f58334b5c28ecfed12",
+        "wx-02": "d54f3313028fc439cea91f0b6a213e5ad2245b90",
+        "bambu-01": "f4218e246f3041077177d2487ce8824d522addfa",
+        "bambu-02": "3ba2657c70ef031d011da175a4daafb850e3b3b1",
+        "bambu-06": "2604e8279cf03f0ac93b53205608a7d901aacfc4"
+      },
+      "kind": "leftover internal vocabulary",
+      "summary": "Captions and a few sentences still use review-process words: 'Cleaned sidebar cards', 'Cleaned Control and AMS fit' (08, 10, ams-zoom); 'Combined native geometry' (05, gtk-integration, wx-02); 'Directly loaded native Project gallery' (03, project-startup); 'Unclipped native progress'; 'Native heading and Wiki' (wx-01); 'the combined series' (01, 02, 06, 08); 'the accepted 2x limit' (ams-zoom); 'the reviewed revision', 'the review fork', 'the accepted wx revision' (gtk-integration). 'Native' and 'cleaned' meant 'no-preload build' inside the review and mean nothing to a maintainer.",
+      "evidence": "grep over bodies-round2 (REPORT.md commands); image captions read in each body.",
+      "trigger": "Maintainer reads a caption.",
+      "outcome": "Mild puzzlement; the words hint at an internal process.",
+      "smallest_fix": "Captions: 'Before: ...' / 'After: ...'. Prose: 'a Linux build of the whole series' for 'the combined series'; 'capped at 2x' for 'the accepted 2x limit'; 'the fork revision that contains the two wx changes' for 'the reviewed revision'; drop 'native' except in 'native Windows/macOS'.",
+      "verification_needed": "Re-run the grep in REPORT.md: no 'cleaned', 'accepted', 'reviewed', 'review fork', 'combined series' left."
+    },
+    {
+      "id": "ED-18",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "wx-01",
+        "wx-02"
+      ],
+      "heads": {
+        "wx-01": "14a14a773c74ae23281417f58334b5c28ecfed12",
+        "wx-02": "d54f3313028fc439cea91f0b6a213e5ad2245b90"
+      },
+      "kind": "provenance sentence wrong repo",
+      "summary": "Both wx bodies end with 'Images show an earlier combined Linux build of this series.' In the wxWidgets repository there is no 'series'; the images are Bambu Studio screenshots.",
+      "evidence": "bodies-round2/wx-01.md and wx-02.md last paragraph.",
+      "trigger": "wx maintainer reads the caption.",
+      "outcome": "Unclear what application is shown and why.",
+      "smallest_fix": "'Images show Bambu Studio on Linux built with this change and its companion application fixes.'",
+      "verification_needed": "None beyond reading."
+    },
+    {
+      "id": "ED-19",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-progress"
+      ],
+      "heads": {
+        "bambu-progress": "5608a478ca983cc63083627bb6f8854f575412db"
+      },
+      "kind": "stacking not stated",
+      "summary": "bambu-progress is based on fix/native-dip-geometry but its body never says so, while the other two stacked bodies name their base. The diff also applies cleanly to plain master, which a maintainer would want to know.",
+      "evidence": "curated-prs.json base_branch=fix/native-dip-geometry; git apply --check of the progress-only diff against the master copies of StatusPanel.cpp and ProgressDialog.cpp succeeded.",
+      "trigger": "Maintainer sees a non-master base with no explanation.",
+      "outcome": "Looks accidentally stacked.",
+      "smallest_fix": "Add one sentence: 'Stacked on the double-DPI-scaling fix for review order; it applies to master on its own.'",
+      "verification_needed": "None."
+    },
+    {
+      "id": "ED-20",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-03",
+        "bambu-progress",
+        "bambu-08",
+        "bambu-gtk-integration",
+        "bambu-02",
+        "bambu-10"
+      ],
+      "heads": {
+        "bambu-03": "ed5e975a59ee28242f67ded5e0722b19b61e0ed4",
+        "bambu-progress": "5608a478ca983cc63083627bb6f8854f575412db",
+        "bambu-08": "5d431fccc52f0011f0613a74d224e81bc614d23f",
+        "bambu-gtk-integration": "e77253cd2ff240df00890d2e798faa312df23e95",
+        "bambu-02": "3ba2657c70ef031d011da175a4daafb850e3b3b1",
+        "bambu-10": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7"
+      },
+      "kind": "precision of six sentences",
+      "summary": "(a) bambu-03: 'A late link result updates the link without reloading an open editor' — the code does nothing visible while the editor page is open (is_editing_page() skips the script; the id is cached for the next visit). (b) bambu-progress: 'Unbreakable filenames remain a known limit' is opaque; and the wxWindow::DoSetSize -> wxDialog::DoSetSize change is unmentioned. (c) bambu-08: 'Give the pill its requested inner padding' — 'pill' is undefined; the diff sizes the Purging/Flushing volumes buttons to text plus 2x6 DIP. (d) bambu-gtk-integration: 'Older applications that do not opt in keep their existing sizing' is a wx-level statement inside an app PR. (e) bambu-02: 'The panel remains pinned in place' is unclear after 'Move the panel'. (f) bambu-10: the opening sentence 'Give the Control column the width a height-limited camera feed does not need' is hard to parse.",
+      "evidence": "bambu-03.patch start_model_id_lookup (if (!is_editing_page()) RunScript); bambu-progress.patch ProgressDialog.cpp DoSetSize hunk; bambu-08.patch text_padding; bodies as cited.",
+      "trigger": "Maintainer reads the body against the diff.",
+      "outcome": "Minor mismatch or confusion; no wrong claim about safety.",
+      "smallest_fix": "(a) 'A late link result updates the title link on the reader page; an open editor is left alone and picks it up on its next visit.' (b) 'Very long names with no spaces can still overflow the message area.' plus 'Dialog resizing now goes through the dialog's own size path.' (c) 'Size the Purging volumes and Flushing volumes buttons to their text plus padding.' (d) 'Builds that fetch wx without this opt-in keep their current sizing.' (e) drop the sentence. (f) 'When the camera feed is limited by height it no longer takes the whole row; the spare width goes to the Control column.'",
+      "verification_needed": "Parent re-reads each replacement against the diff; no code change."
+    },
+    {
+      "id": "ED-21",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-05",
+        "bambu-gtk-integration",
+        "wx-02"
+      ],
+      "heads": {
+        "bambu-05": "305b41867feec57eb3d535d59920a9f091991762",
+        "bambu-gtk-integration": "e77253cd2ff240df00890d2e798faa312df23e95",
+        "wx-02": "d54f3313028fc439cea91f0b6a213e5ad2245b90"
+      },
+      "kind": "screenshot does not show this PR's change",
+      "summary": "Three PRs share the sidebar-cards pair as before/after. For bambu-08 it is the right image. For bambu-05 none of the touched surfaces (About dialog, AMS popups, bind dialogs, calibration dialogs, media status text, bed/extruder buttons) appear; for gtk-integration and wx-02 the pair does show the overall font-DPI effect (clipped 'Text...' and wrapped 'Sync info' before, correct after) but the captions 'Original sidebar geometry' / 'Combined native geometry' do not say that. The before crop is 760x170 and the after is 760x677, so they are not like-for-like.",
+      "evidence": "images/stock-sidebar-cards-before.png and native-sidebar-cards-purge-swatches.png (viewed); bambu-05 path list.",
+      "trigger": "Maintainer looks for the PR's effect in the picture.",
+      "outcome": "Nothing to find (bambu-05) or no guidance (gtk-integration, wx-02).",
+      "smallest_fix": "Captions for gtk-integration and wx-02: 'Before: stock sizing at 144 DPI clips the plate name and wraps Sync info' / 'After: the same sidebar with font-DPI sizing'. For bambu-05 either say in the caption that the images show the whole series' sizing and that this PR's own dialogs were not captured, or drop the images and keep the sentence (the user's rule asks for screenshots on fork drafts, so prefer the caption).",
+      "verification_needed": "Parent confirms the 144 DPI figure from the historical capture record before writing it; otherwise omit the number."
+    },
+    {
+      "id": "ED-22",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-gtk-integration"
+      ],
+      "heads": {
+        "bambu-gtk-integration": "e77253cd2ff240df00890d2e798faa312df23e95"
+      },
+      "kind": "known limit, no action now",
+      "summary": "The pin targets alanbixby/wxWidgets at 0f2037fa (reachable; ls-remote shows review/font-dpi-integration at that SHA). This PR cannot be submitted upstream until bambulab/wxWidgets carries wx-01 and wx-02; the body says so. GUI_App.cpp already includes wx/sysopt.h (line 59 at e77253cd), the opt-in precedes window creation (build report disassembly), and the guard compiles the call out when wxUSE_SYSTEM_OPTIONS is 0.",
+      "evidence": "candidates/bambu-gtk-integration.patch; git ls-remote; implementation/build/REPORT.md.",
+      "trigger": "Upstream submission of this one PR.",
+      "outcome": "Blocked by the wx side, not by this body.",
+      "smallest_fix": "Nothing now; keep it a draft on the fork; replace the pin when wx lands.",
+      "verification_needed": "None."
+    }
+  ]
+}

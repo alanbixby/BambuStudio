@@ -1,0 +1,513 @@
+{
+  "reviewer": "native_sol",
+  "round": 2,
+  "open_blocking_count": 0,
+  "open_non_blocking_count": 0,
+  "new_findings_count": 0,
+  "resolved_prior_findings_count": 1,
+  "reviewed_exact_heads": [
+    {
+      "key": "bambu-01",
+      "repository": "alanbixby/BambuStudio",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "f4218e246f3041077177d2487ce8824d522addfa",
+      "tree": "a230991dd3e226d31c9831217009ad144a059c6a",
+      "actual_parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "commits": 1,
+      "patch_sha256": "174791d68de9b1849aa2fc37182fa4c439a5752a31baaffd7e06ba2b23c2f8c9",
+      "body_sha256": "e7918040824f2a3c1ff52eab80f220c9c84251758d61b0febadd65b4c1f94679",
+      "image_count": 2,
+      "additions": 3,
+      "deletions": 1,
+      "paths": [
+        "src/slic3r/GUI/GLCanvas3D.cpp"
+      ],
+      "code_review_scope": "focused",
+      "diff_check": 0,
+      "candidate_patch_identical": true,
+      "paths_different_from_old_head": []
+    },
+    {
+      "key": "bambu-02",
+      "repository": "alanbixby/BambuStudio",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "3ba2657c70ef031d011da175a4daafb850e3b3b1",
+      "tree": "b8b225821ab31b5e048a708aa686a7e692f9cf37",
+      "actual_parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "commits": 1,
+      "patch_sha256": "e93e4d273313ded21cb83139608bd12912774a23dc7c0b7cdeec25870699ff96",
+      "body_sha256": "b6a845590d865411501e46c5de4262b90a830e87f52d6324720f54c8757766bc",
+      "image_count": 2,
+      "additions": 10,
+      "deletions": 2,
+      "paths": [
+        "src/slic3r/GUI/GLCanvas3D.cpp",
+        "src/slic3r/GUI/Overview/AssemblyStepsUtils.hpp",
+        "src/slic3r/GUI/Overview/AssemblyStepsUtilsImgui.cpp"
+      ],
+      "code_review_scope": "focused",
+      "diff_check": 0,
+      "candidate_patch_identical": true,
+      "paths_different_from_old_head": [
+        "src/slic3r/GUI/GLCanvas3D.cpp"
+      ]
+    },
+    {
+      "key": "bambu-03",
+      "repository": "alanbixby/BambuStudio",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "ed5e975a59ee28242f67ded5e0722b19b61e0ed4",
+      "tree": "ffded8c3130ccaba1a3edb88e88a1cb603ce27db",
+      "actual_parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "commits": 1,
+      "patch_sha256": "849e9ff113a77d70cbfab4a0637140e9b310f5a5f9a93a0fa160a89e6bff6edd",
+      "body_sha256": "7571792f717a93449b456636e48421be7ad5284f1248475f00e72fa56dfa0be7",
+      "image_count": 2,
+      "additions": 254,
+      "deletions": 161,
+      "paths": [
+        "src/libslic3r/Model.cpp",
+        "src/libslic3r/Model.hpp",
+        "src/slic3r/GUI/Project.cpp",
+        "src/slic3r/GUI/Project.hpp"
+      ],
+      "code_review_scope": "metadata/body only",
+      "diff_check": 0,
+      "candidate_patch_identical": true,
+      "paths_different_from_old_head": [
+        "src/libslic3r/Model.hpp",
+        "src/slic3r/GUI/Project.cpp"
+      ]
+    },
+    {
+      "key": "bambu-04",
+      "repository": "alanbixby/BambuStudio",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "44fa2692b16919f4519595d6bcd4f571777ea1d6",
+      "tree": "b9b2e68c53152f255720ba11695cf4794ab4883e",
+      "actual_parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "commits": 1,
+      "patch_sha256": "9b1509b6aab6d69ef6800f197971d116f74817f8a8d1b6e1ec85d7e4dab543da",
+      "body_sha256": "73bd51619419e40c08e819d1df0fb10f01e3ffcf334fc4e782d123ade5725e55",
+      "image_count": 2,
+      "additions": 32,
+      "deletions": 0,
+      "paths": [
+        "resources/web/model_new/css/dark.css",
+        "resources/web/model_new/index.css"
+      ],
+      "code_review_scope": "metadata/body only",
+      "diff_check": 0,
+      "candidate_patch_identical": true,
+      "paths_different_from_old_head": []
+    },
+    {
+      "key": "bambu-05",
+      "repository": "alanbixby/BambuStudio",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "305b41867feec57eb3d535d59920a9f091991762",
+      "tree": "3863592aa8763ef66660769859309c593ab668fc",
+      "actual_parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "commits": 1,
+      "patch_sha256": "8c919dd0cc49863bdf4f2e5c0eeea3c2b53dadbe4f868f32c4ee3b9d90bd70f6",
+      "body_sha256": "a2d5c4d823dd22ccc5eb483dabe3378ababe6e8156e5e25262bf28a7fc15ca66",
+      "image_count": 2,
+      "additions": 66,
+      "deletions": 63,
+      "paths": [
+        "src/slic3r/GUI/AboutDialog.cpp",
+        "src/slic3r/GUI/AmsMappingPopup.cpp",
+        "src/slic3r/GUI/BindDialog.cpp",
+        "src/slic3r/GUI/CapsuleButton.cpp",
+        "src/slic3r/GUI/CreatePresetsDialog.cpp",
+        "src/slic3r/GUI/MainFrame.cpp",
+        "src/slic3r/GUI/MediaPlayCtrl.cpp",
+        "src/slic3r/GUI/MultiMachineManagerPage.cpp",
+        "src/slic3r/GUI/MultiTaskManagerPage.cpp",
+        "src/slic3r/GUI/ObjectDataViewModel.cpp",
+        "src/slic3r/GUI/Plater.cpp",
+        "src/slic3r/GUI/SendMultiMachinePage.cpp",
+        "src/slic3r/GUI/SendToPrinter.cpp",
+        "src/slic3r/GUI/StatusPanel.cpp",
+        "src/slic3r/GUI/StepMeshDialog.cpp",
+        "src/slic3r/GUI/Widgets/AMSItem.cpp",
+        "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp",
+        "src/slic3r/GUI/calib_dlg.cpp"
+      ],
+      "code_review_scope": "focused",
+      "diff_check": 0,
+      "candidate_patch_identical": true,
+      "paths_different_from_old_head": [
+        "src/slic3r/GUI/StatusPanel.cpp"
+      ]
+    },
+    {
+      "key": "bambu-06",
+      "repository": "alanbixby/BambuStudio",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "2604e8279cf03f0ac93b53205608a7d901aacfc4",
+      "tree": "33bab147dd1c6298c846ca46cf81b9349773ee58",
+      "actual_parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "commits": 1,
+      "patch_sha256": "1766b681c6490eaa6c53cfab413b12ce2a6a3ec01659496732277cddcff343bd",
+      "body_sha256": "7a454b921b3b11473688e35cc9c7b600507ca1b5c84881eeaa56959e39e525b5",
+      "image_count": 3,
+      "additions": 67,
+      "deletions": 71,
+      "paths": [
+        "src/slic3r/GUI/PrintOptionsDialog.cpp",
+        "src/slic3r/GUI/PrintOptionsDialog.hpp"
+      ],
+      "code_review_scope": "focused",
+      "diff_check": 0,
+      "candidate_patch_identical": true,
+      "paths_different_from_old_head": [
+        "src/slic3r/GUI/PrintOptionsDialog.cpp"
+      ]
+    },
+    {
+      "key": "bambu-07",
+      "repository": "alanbixby/BambuStudio",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "9df1217e47951f34cd95c65159f5329c88083c75",
+      "tree": "4ac31392e530280280762d2f60c2543779b67e95",
+      "actual_parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "commits": 1,
+      "patch_sha256": "20d0c4f8a77d6f76622a829790b6171e594fdc39fca8ebdf055f1d2558034436",
+      "body_sha256": "d4a97ccf94f03225130fa4eebc8ab953a82413b521674f746daa30640062c3c9",
+      "image_count": 2,
+      "additions": 64,
+      "deletions": 1,
+      "paths": [
+        "src/slic3r/GUI/OG_CustomCtrl.cpp",
+        "src/slic3r/GUI/OG_CustomCtrl.hpp",
+        "src/slic3r/GUI/OptionsGroup.cpp"
+      ],
+      "code_review_scope": "focused",
+      "diff_check": 0,
+      "candidate_patch_identical": true,
+      "paths_different_from_old_head": []
+    },
+    {
+      "key": "bambu-08",
+      "repository": "alanbixby/BambuStudio",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "5d431fccc52f0011f0613a74d224e81bc614d23f",
+      "tree": "c663a6cb83ea179334c4d26f8d84718d1ecb1bc0",
+      "actual_parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "commits": 1,
+      "patch_sha256": "7897bc78dd3acf4c8da10b28fa83979aed6d08fec5793dc323d54521db373939",
+      "body_sha256": "2563a408564f3a9f48e93695de06e5a12a7a248428acaa40c0183f6e8528b7ad",
+      "image_count": 2,
+      "additions": 21,
+      "deletions": 8,
+      "paths": [
+        "src/slic3r/GUI/Plater.cpp"
+      ],
+      "code_review_scope": "focused",
+      "diff_check": 0,
+      "candidate_patch_identical": true,
+      "paths_different_from_old_head": []
+    },
+    {
+      "key": "bambu-09",
+      "repository": "alanbixby/BambuStudio",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "fc074b0ad0a55945fefcf16fe0b195a48d20e398",
+      "tree": "ba7939dbe93460d637a884528320d899d060766f",
+      "actual_parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "commits": 1,
+      "patch_sha256": "c96229390f847c0375755752595013a754f0580698b9bedc4fb4f35a4797a5d8",
+      "body_sha256": "5cca444ac1d4a867a6538c7bc5b568e0f3d1e205f6eb09945c9655e27e9511a4",
+      "image_count": 2,
+      "additions": 80,
+      "deletions": 21,
+      "paths": [
+        "src/slic3r/GUI/Widgets/TempInput.cpp",
+        "src/slic3r/GUI/Widgets/TempInput.hpp"
+      ],
+      "code_review_scope": "metadata/body only",
+      "diff_check": 0,
+      "candidate_patch_identical": true,
+      "paths_different_from_old_head": []
+    },
+    {
+      "key": "bambu-10",
+      "repository": "alanbixby/BambuStudio",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+      "tree": "9556ac9563f0529e72423865e50837f4dd222988",
+      "actual_parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "commits": 1,
+      "patch_sha256": "da5df5165c94ea2136ffc89b371838689cd72df3eb403fdb46e7675e253cd888",
+      "body_sha256": "aa66d45b3488dedee268b07f8f7c444eccb8e91439aecfb7cb0fcac6ce97b118",
+      "image_count": 2,
+      "additions": 49,
+      "deletions": 0,
+      "paths": [
+        "src/slic3r/GUI/StatusPanel.cpp",
+        "src/slic3r/GUI/StatusPanel.hpp"
+      ],
+      "code_review_scope": "metadata/body only",
+      "diff_check": 0,
+      "candidate_patch_identical": true,
+      "paths_different_from_old_head": [
+        "src/slic3r/GUI/StatusPanel.cpp",
+        "src/slic3r/GUI/StatusPanel.hpp"
+      ]
+    },
+    {
+      "key": "bambu-project-startup",
+      "repository": "alanbixby/BambuStudio",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "a2edccd9347f53d719984fd2997ce23155ee79a6",
+      "tree": "bb4c2ffdc0c2a55924a51c1ba39ee041e0fd7589",
+      "actual_parent": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "commits": 1,
+      "patch_sha256": "aead33b86a0cda4702c3e0c9309fffdb8ca58385b2f97f2065b09c854956d159",
+      "body_sha256": "a64982cae97bd9696cd5fdf6144b596bf186c3ac870ad8e6b7f24a23d1de85f6",
+      "image_count": 2,
+      "additions": 40,
+      "deletions": 3,
+      "paths": [
+        "resources/web/model_new/index.js"
+      ],
+      "code_review_scope": "metadata/body only",
+      "diff_check": 0,
+      "candidate_patch_identical": true
+    },
+    {
+      "key": "bambu-progress",
+      "repository": "alanbixby/BambuStudio",
+      "base": "305b41867feec57eb3d535d59920a9f091991762",
+      "head": "5608a478ca983cc63083627bb6f8854f575412db",
+      "tree": "d714d9dedd6bfca70f9f58f1bd98a3864421c9d4",
+      "actual_parent": "305b41867feec57eb3d535d59920a9f091991762",
+      "commits": 1,
+      "patch_sha256": "426cf68a6d73a55187f396465631caf8292ef9284d605e8cda86b1b3c7fd33f3",
+      "body_sha256": "744b7d0fad28d2fb5e94152ce449c4f92867e432ec080d220350db2eacacdde9",
+      "image_count": 2,
+      "additions": 9,
+      "deletions": 10,
+      "paths": [
+        "src/slic3r/GUI/StatusPanel.cpp",
+        "src/slic3r/GUI/Widgets/ProgressDialog.cpp"
+      ],
+      "code_review_scope": "focused",
+      "diff_check": 0,
+      "candidate_patch_identical": true
+    },
+    {
+      "key": "bambu-ams-zoom",
+      "repository": "alanbixby/BambuStudio",
+      "base": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+      "head": "54083d6fb80138c3404a58abc2c4300c0035dfd7",
+      "tree": "e92779b0d53e68fda8ea2437bc82545c3f427b6a",
+      "actual_parent": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+      "commits": 1,
+      "patch_sha256": "39554ba2af33bdd1d4307323039f7e2c495ab3e33b7565206e0d466f8dbd43b9",
+      "body_sha256": "e9084f6676014925e21df4ad67535ade7d0c666c40d195bf4eaa0030d2ec2bb6",
+      "image_count": 2,
+      "additions": 183,
+      "deletions": 12,
+      "paths": [
+        "src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.cpp",
+        "src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.h",
+        "src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp",
+        "src/slic3r/GUI/DeviceWeb/DeviceWebHost.hpp",
+        "src/slic3r/GUI/StatusPanel.cpp",
+        "src/slic3r/GUI/StatusPanel.hpp"
+      ],
+      "code_review_scope": "metadata/body only",
+      "diff_check": 0,
+      "candidate_patch_identical": true
+    },
+    {
+      "key": "bambu-gtk-integration",
+      "repository": "alanbixby/BambuStudio",
+      "base": "5608a478ca983cc63083627bb6f8854f575412db",
+      "head": "e77253cd2ff240df00890d2e798faa312df23e95",
+      "tree": "ef80c1e91ba0d1e8c4cd4586555bc5e869b19400",
+      "actual_parent": "5608a478ca983cc63083627bb6f8854f575412db",
+      "commits": 1,
+      "patch_sha256": "114fa38fd88d2ec092f4bdb44ec28f68adad84d8c705576d3c5a00b469d8efe1",
+      "body_sha256": "58bd4b5eea59ab182e7bea981f71411756d1a1e1ea4e122b6ae31428d0361418",
+      "image_count": 2,
+      "additions": 7,
+      "deletions": 2,
+      "paths": [
+        "deps/wxWidgets/wxWidgets.cmake",
+        "src/slic3r/GUI/GUI_App.cpp"
+      ],
+      "code_review_scope": "focused",
+      "diff_check": 0,
+      "candidate_patch_identical": true
+    },
+    {
+      "key": "wx-01",
+      "repository": "alanbixby/wxWidgets",
+      "base": "abb542694ef4534a50e65c5b877b2774d02952ae",
+      "head": "14a14a773c74ae23281417f58334b5c28ecfed12",
+      "tree": "11f3ac737de6825d8c4a334e1d4c03b8f9852555",
+      "actual_parent": "abb542694ef4534a50e65c5b877b2774d02952ae",
+      "commits": 1,
+      "patch_sha256": "dd91179e8b88fd0bcd4b1e7cca22842763619f91f948f476f82b854967324f48",
+      "body_sha256": "36cc3bda72d9a41e7d480e9d824ac180a0554ebc55978c130389a72456f01e09",
+      "image_count": 2,
+      "additions": 24,
+      "deletions": 0,
+      "paths": [
+        "src/gtk/control.cpp"
+      ],
+      "code_review_scope": "metadata/body only",
+      "diff_check": 0,
+      "paths_different_from_old_head": []
+    },
+    {
+      "key": "wx-02",
+      "repository": "alanbixby/wxWidgets",
+      "base": "abb542694ef4534a50e65c5b877b2774d02952ae",
+      "head": "d54f3313028fc439cea91f0b6a213e5ad2245b90",
+      "tree": "0890f4df99b1995fdd0d1185708e9a2a57698de0",
+      "actual_parent": "abb542694ef4534a50e65c5b877b2774d02952ae",
+      "commits": 1,
+      "patch_sha256": "2390db98cbf30e2bdfcbd0687d57f18068730800c6249673cc891cf667c95ea1",
+      "body_sha256": "d79c8bc92fbe4458b35d926a829df7838efac72e3d9e9716af6f1aeea6efe6ba",
+      "image_count": 2,
+      "additions": 91,
+      "deletions": 3,
+      "paths": [
+        "include/wx/window.h",
+        "interface/wx/sysopt.h",
+        "interface/wx/window.h",
+        "src/gtk/window.cpp"
+      ],
+      "code_review_scope": "focused",
+      "diff_check": 0,
+      "paths_different_from_old_head": [
+        "interface/wx/sysopt.h",
+        "interface/wx/window.h",
+        "src/gtk/window.cpp"
+      ]
+    }
+  ],
+  "integration_app": "e9617d1a815183350bd9822fb894996aa086f47a",
+  "integration_wx": "0f2037facedf3d92660e7071b6754fe994aa744d",
+  "public_evidence_commit": "9ea10ea751a655b1c964f08ac4b2ce95bef07622",
+  "findings": [
+    {
+      "id": "NSOL-001",
+      "severity": "non-blocking",
+      "classification": "reviewability recommendation; not a demonstrated compatibility defect",
+      "title": "Separate mechanical DPI caller corrections from progress-dialog behavior",
+      "status": "resolved",
+      "disposition": "Concede: accepted and independently verified; no remaining objection.",
+      "repository": "alanbixby/BambuStudio",
+      "pr": 5,
+      "original_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "original_head": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+      "reviewed_heads": [
+        "305b41867feec57eb3d535d59920a9f091991762",
+        "5608a478ca983cc63083627bb6f8854f575412db",
+        "e77253cd2ff240df00890d2e798faa312df23e95"
+      ],
+      "locations": [
+        {
+          "head": "305b41867feec57eb3d535d59920a9f091991762",
+          "path": "src/slic3r/GUI/AboutDialog.cpp",
+          "line": 298
+        },
+        {
+          "head": "305b41867feec57eb3d535d59920a9f091991762",
+          "path": "src/slic3r/GUI/StatusPanel.cpp",
+          "line": 949
+        },
+        {
+          "head": "5608a478ca983cc63083627bb6f8854f575412db",
+          "path": "src/slic3r/GUI/Widgets/ProgressDialog.cpp",
+          "line": 116
+        },
+        {
+          "head": "5608a478ca983cc63083627bb6f8854f575412db",
+          "path": "src/slic3r/GUI/Widgets/ProgressDialog.cpp",
+          "line": 196
+        },
+        {
+          "head": "5608a478ca983cc63083627bb6f8854f575412db",
+          "path": "src/slic3r/GUI/Widgets/ProgressDialog.cpp",
+          "line": 265
+        },
+        {
+          "head": "e77253cd2ff240df00890d2e798faa312df23e95",
+          "path": "src/slic3r/GUI/GUI_App.cpp",
+          "line": 2909
+        }
+      ],
+      "trigger": "Maintainer reviews or rolls back the original mixed 19-file DPI patch.",
+      "outcome": "Previously, mechanical unit corrections and progress layout/lifecycle changes shared one review and rollback unit; the final candidates separate them.",
+      "smallest_practical_fix": "Already implemented: keep bambu-05 for unit/measurement corrections, bambu-progress for progress behavior, and the explicit GTK adoption after both. No additional fix requested.",
+      "evidence": [
+        "Original a1b43d73c23d08db6aa19047286c47c51f4cbe38 and final progress 5608a478ca983cc63083627bb6f8854f575412db both have tree d714d9dedd6bfca70f9f58f1bd98a3864421c9d4; git diff is empty.",
+        "bambu-05 is 66 additions/63 deletions across 18 files; bambu-progress is 9 additions/10 deletions across 2 files.",
+        "Declared and actual parents are units -> progress -> GTK adoption; each candidate has exactly one commit.",
+        "Progress description retains the persistent scrollbar and unbreakable-word limit; GTK adoption description discloses the temporary fork pin and native OS limitations.",
+        "boundary-checks.json records exact source comparison and independent in-memory recomposition."
+      ],
+      "verification_completed": [
+        "Full Git tree identity for split/recombination",
+        "Exact base/parent/count/diff checks",
+        "Immutable evidence anchors and source heads",
+        "Review of final candidate descriptions"
+      ],
+      "verification_needed": []
+    }
+  ],
+  "checked_commands_results": {
+    "audit_script": "audit.py",
+    "audit_results": "audit-results.json",
+    "audit_command": "python /tmp/bambu-polish-20261028/round2/native_sol/audit.py",
+    "git_diff_check": "16/16 pass",
+    "actual_parent_equals_declared_base": "16/16 pass",
+    "one_commit": "16/16 pass",
+    "frozen_app_patch_identity": "14/14 pass (full-index binary format)",
+    "maximum_added_deleted_lines": 415,
+    "boundary_script": "verify_boundaries.py",
+    "boundary_results": "boundary-checks.json",
+    "boundary_command": "python /tmp/bambu-polish-20261028/round2/native_sol/verify_boundaries.py",
+    "split_recomposition_tree_identity": true,
+    "app_independent_recomposition": {
+      "paths": 43,
+      "strict_context_hunks": 175,
+      "all_bytes_equal": true,
+      "path_set_equal": true
+    },
+    "wx_independent_recomposition": {
+      "paths": 5,
+      "strict_context_hunks": 6,
+      "all_bytes_equal": true,
+      "path_set_equal": true
+    },
+    "body_images": 33,
+    "body_image_git_png_blobs": "33/33 pass",
+    "immutable_evidence_head_anchor_and_caption": "16/16 pass",
+    "focused_exact_source_reads": "git show/grep/diff at declared immutable SHAs; snapshots in assigned directory",
+    "prior_build_evidence_read": [
+      "implementation/build/REPORT.md",
+      "implementation/build/verification.json",
+      "parent-bundle-check.json"
+    ],
+    "script_limits": "Python standard library plus read-only Git; all composition in memory, no compilation, no runtime behavior proof. Repeated identical contexts use the exact hunk coordinate only when the candidate base file equals the current in-memory file. Earlier scratch-script ambiguity assertion was corrected; final run passes."
+  },
+  "limitations": [
+    "Source review focused on bambu-01, bambu-02, bambu-05, bambu-06, bambu-07, bambu-08, bambu-progress and bambu-gtk-integration. wx-02 was read only to assess the app adoption/default-off boundary; no duplicate comprehensive wx review is claimed.",
+    "All sixteen candidates received exact-head metadata/patch consistency, recomposition and description checks. The other seven candidates did not receive a fresh comprehensive semantic code review from this reviewer.",
+    "No builds, compiler invocations, GUI actions, application launches, printer/profile operations, GitHub writes, branch/index edits or child delegations were performed.",
+    "No Windows/macOS build or runtime validation. No native GTK/Wayland/GLX runtime or asynchronous event-loop settling tests in this round.",
+    "The independent scripts check source and input consistency only; in-memory patch application, Git object availability and PNG signatures do not prove rendering, public URL availability or native behavior.",
+    "Existing Linux warm-build/probe records were inspected, not rerun. They disclose six local CMake adaptations and hidden/no-frame harness limits; they do not establish isolated-PR or full Studio runtime acceptance.",
+    "Historical screenshots remain evidence from earlier combined Linux builds. Translations, monitor migration, narrow dialogs, other printer/settings panels and long unbreakable progress strings are not newly established by this review.",
+    "The temporary review-fork wx pin must be replaced with an accepted revision before upstream submission as already disclosed. No upstream submission or all-OS/merge-readiness claim is made."
+  ],
+  "report": "REPORT.md",
+  "next_action": "Stop: no blocking objection remains in this partition; parent verifies reports. No reviewer-initiated round 3."
+}

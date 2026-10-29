@@ -1,0 +1,179 @@
+{
+  "reviewer": "design_scope_opus (Claude Opus 5.5)",
+  "round": 2,
+  "partition": "Design / scope / taste of the 16 curated candidates; wx font-DPI opt-in integration; camera/AMS split",
+  "reviewed_heads": {
+    "bambu-01": "f4218e246f3041077177d2487ce8824d522addfa (base 79df7ae309be398ed30c9f397c13c9911c2edc57)",
+    "bambu-02": "3ba2657c70ef031d011da175a4daafb850e3b3b1 (base 79df7ae309be398ed30c9f397c13c9911c2edc57)",
+    "bambu-03": "ed5e975a59ee28242f67ded5e0722b19b61e0ed4 (base 79df7ae309be398ed30c9f397c13c9911c2edc57)",
+    "bambu-04": "44fa2692b16919f4519595d6bcd4f571777ea1d6 (base 79df7ae309be398ed30c9f397c13c9911c2edc57)",
+    "bambu-05": "305b41867feec57eb3d535d59920a9f091991762 (base 79df7ae309be398ed30c9f397c13c9911c2edc57)",
+    "bambu-06": "2604e8279cf03f0ac93b53205608a7d901aacfc4 (base 79df7ae309be398ed30c9f397c13c9911c2edc57)",
+    "bambu-07": "9df1217e47951f34cd95c65159f5329c88083c75 (base 79df7ae309be398ed30c9f397c13c9911c2edc57)",
+    "bambu-08": "5d431fccc52f0011f0613a74d224e81bc614d23f (base 79df7ae309be398ed30c9f397c13c9911c2edc57)",
+    "bambu-09": "fc074b0ad0a55945fefcf16fe0b195a48d20e398 (base 79df7ae309be398ed30c9f397c13c9911c2edc57)",
+    "bambu-10": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7 (base 79df7ae309be398ed30c9f397c13c9911c2edc57)",
+    "bambu-project-startup": "a2edccd9347f53d719984fd2997ce23155ee79a6 (base 79df7ae309be398ed30c9f397c13c9911c2edc57)",
+    "bambu-progress": "5608a478ca983cc63083627bb6f8854f575412db (base 305b41867feec57eb3d535d59920a9f091991762)",
+    "bambu-ams-zoom": "54083d6fb80138c3404a58abc2c4300c0035dfd7 (base bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7)",
+    "bambu-gtk-integration": "e77253cd2ff240df00890d2e798faa312df23e95 (base 5608a478ca983cc63083627bb6f8854f575412db)",
+    "wx-01": "14a14a773c74ae23281417f58334b5c28ecfed12 (base abb542694ef4534a50e65c5b877b2774d02952ae)",
+    "wx-02": "d54f3313028fc439cea91f0b6a213e5ad2245b90 (base abb542694ef4534a50e65c5b877b2774d02952ae)",
+    "app_combined": "e9617d1a815183350bd9822fb894996aa086f47a",
+    "wx_integration": "0f2037facedf3d92660e7071b6754fe994aa744d"
+  },
+  "open_blocking_count": 0,
+  "prior_findings": [
+    {
+      "id": "DS-R1-01",
+      "status": "resolved",
+      "note": "bambu-03 = 4 native files, 415 lines; bambu-project-startup = index.js only, 43 lines; both one commit on 79df7ae3. Screenshot overlap carried to DS-R2-01."
+    },
+    {
+      "id": "DS-R1-02",
+      "status": "resolved",
+      "note": "bambu-10 = StatusPanel only, +49; bambu-ams-zoom = 195 lines stacked on bed9f5a1."
+    },
+    {
+      "id": "DS-R1-03",
+      "status": "conceded",
+      "note": "Cap now named once (54083d6f StatusPanel.cpp: constexpr double max_ams_zoom = 2.0, used by zoom_step and 'fit < max_ams_zoom'). With the user's explicit prior acceptance and the split letting upstream take the camera fit without the zoom, keeping 2.0 is a legitimate user decision. Wording nit on 'accepted' in DS-R2-05."
+    },
+    {
+      "id": "DS-R1-04",
+      "status": "resolved",
+      "note": "bambu-05 129 lines (18 files), bambu-progress 19 lines. Stacking note in DS-R2-03."
+    },
+    {
+      "id": "DS-R1-05",
+      "status": "conceded",
+      "note": "Body states 'The scrollbar stays allocated even for short messages.' A disclosed, deliberate trade-off."
+    },
+    {
+      "id": "DS-R1-06",
+      "status": "resolved",
+      "note": "bambu-02 is based on 79df7ae3."
+    },
+    {
+      "id": "DS-R1-07",
+      "status": "resolved",
+      "note": "Title 'Let single-value settings fields use spare panel width'; body names Printer and Filament and says only the Process panel was checked."
+    },
+    {
+      "id": "DS-R1-08",
+      "status": "resolved",
+      "note": "2604e827: update_smart_nozzle_blob_mode_desc() no longer wraps or lays out; the two switch callers call layout_options() after it; update_options() lays out once at its end."
+    },
+    {
+      "id": "DS-R1-09",
+      "status": "resolved",
+      "note": "All 16 heads are exactly one commit over their base with plain subjects and no review-process text."
+    },
+    {
+      "id": "DS-R1-10",
+      "status": "resolved",
+      "note": "wx-01 and wx-02 are based on abb54269."
+    },
+    {
+      "id": "DS-R1-11",
+      "status": "conceded",
+      "note": "Cross-reference comments in Model.cpp and Model.hpp are the minimal fix I offered."
+    },
+    {
+      "id": "DS-R1-12",
+      "status": "conceded",
+      "note": "Http::url_encode avoids touching wxGetApp() from the worker, and it is used the same way on the UI-thread snapshot. Justified."
+    }
+  ],
+  "findings": [
+    {
+      "id": "DS-R2-01",
+      "severity": "non-blocking",
+      "category": "evidence-attribution",
+      "pr": "bambu-05, bambu-gtk-integration, wx-02 (also bambu-03 / bambu-project-startup)",
+      "title": "Shared screenshot pairs mostly show another PR's change",
+      "evidence": "bodies-round2/bambu-05.md, bambu-gtk-integration.md and wx-02.md all embed the same pair as bambu-08.md: stock-sidebar-cards-before.png -> native-sidebar-cards-purge-swatches.png (blob 91aa62a0). Viewed both images. The visible difference is bambu-08's change: equal-width printer and plate cards, the full 'Textured PEI Plate' label and the moved help icon. The 'before' image is also cropped to the printer row only. bambu-03.md and bambu-project-startup.md embed an identical pair (project-metadata-before.png -> native-project-initial-gallery.png), and neither says which of the two fixes the before-state needs. The shared caption only says 'Images show an earlier combined Linux build of this series.'",
+      "trigger": "An upstream reviewer reads bambu-05, wx-02 or the GTK integration PR on its own.",
+      "outcome": "They credit the card layout change to a DPI or wx change that does not cause it, or they cannot tell what the PR changes visually. That works against the 'easy to review' goal and the screenshots requirement.",
+      "smallest_fix": "Before upstream, capture PR-specific images where practical. For wx-02 and the GTK integration: the same Linux window at Xft.dpi 144, opt-in off vs on. For bambu-05: a view whose icons or fonts change without bambu-08. Until then, change the alt text and add one clause in those three bodies, for example 'No isolated screenshot yet; this pair mainly shows the card change from #8.' In bambu-03 and project-startup, say in one clause which cause each fixes (slow online lookup vs page opened before the app answered).",
+      "verification": "Look at the images next to each PR's diff. Each visible difference should come from that PR, or the body should say it does not.",
+      "kind": "new (evidence clarity); not a code defect"
+    },
+    {
+      "id": "DS-R2-02",
+      "severity": "non-blocking",
+      "category": "efficiency",
+      "pr": "wx-02",
+      "title": "Every FromDIP/ToDIP call now does a system-option lookup, including in apps that have not opted in",
+      "evidence": "d54f3313 src/gtk/window.cpp wxGTKDIPScale(): 'if ( wxSystemOptions::GetOptionInt(\"gtk.window.font-dpi-scaling\") != 1 ) return 1;' runs on every FromDIP/ToDIP call. Previously, include/wx/window.h made these an inline identity on GTK3. abb54269 src/common/sysopt.cpp GetOption(): builds a wxString from the literal and does a case-insensitive linear Index(). When the option is unset (the default for every other GTK3 app), it also copies the name, runs two Replace() calls, calls GetAppName() and makes up to two wxGetenv() calls with concatenated names. BambuStudio calls FromDIP throughout layout and paint code. The API itself (one wxSystemOptions flag) follows existing wx idiom (gtk.control.disable-sensitivity-fix, gtk.desktop) and is not over-designed. Only the per-call lookup cost is new.",
+      "trigger": "Any GTK3 app linked against this wx calling FromDIP in a paint or layout loop.",
+      "outcome": "Several heap allocations and environment lookups per conversion that used to cost nothing. Nothing visibly breaks. Not measured; this conclusion comes from reading the code only.",
+      "smallest_fix": "Read the option once, for example 'static const bool s_fontDPIScaling = wxSystemOptions::GetOptionInt(\"gtk.window.font-dpi-scaling\") == 1;' inside wxGTKDIPScale. This matches the documented rule 'Set before creating windows and do not change it afterwards'. Caveat: a FromDIP(sz, NULL) call before the app sets the option would lock it off. Bambu sets it on the first line of OnInit, so Bambu is unaffected. If wx maintainers prefer the current live read, keep it and mention the cost in the commit message.",
+      "verification": "Rerun the existing default-off, zero and on probes, each in a separate process (with a cached value, switching the option inside one process no longer takes effect). Rebuild the Linux pair.",
+      "kind": "new minor efficiency; design choice for the wx owner"
+    },
+    {
+      "id": "DS-R2-03",
+      "severity": "non-blocking",
+      "category": "stack",
+      "pr": "bambu-progress",
+      "title": "Progress fix is stacked on the DPI PR but does not depend on it",
+      "evidence": "git diff 305b41867f 5608a478ca applied with 'git apply --check' to 79df7ae3 copies of StatusPanel.cpp and ProgressDialog.cpp: rc=0. bambu-05 does not touch ProgressDialog.cpp. bambu-progress.md does not mention the stacking. bambu-gtk-integration.md explains the order ('This follows the DPI unit corrections and progress layout fixes').",
+      "trigger": "Upstream review or merge of the 19-line visible fix (clipped progress digits).",
+      "outcome": "The small fix looks like it has to wait for the 129-line mechanical PR. A reviewer cannot tell the two are independent.",
+      "smallest_fix": "Keep the linear stack (05 -> progress -> GTK integration), which is a simple way to show that the GTK integration needs both. Add one sentence to the progress body: 'Stacked after #5 only for merge order; it also applies to master on its own.'",
+      "verification": "Body text check.",
+      "kind": "stack clarity; conceding the order itself"
+    },
+    {
+      "id": "DS-R2-04",
+      "severity": "non-blocking",
+      "category": "diff-noise",
+      "pr": "bambu-ams-zoom",
+      "title": "Unrelated comment rewrite in OnWebContentSizeChanged",
+      "evidence": "54083d6f src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp:691-692 replaces the base comment about FromDIP and CSS pixels with 'Convert reported CSS pixels to wx window coordinates; GTK applies its integer content scale when rendering.' The code beneath it (FromDIP(width), FromDIP(height)) is unchanged and is not part of the zoom path. The new wording is about GTK conversion, which belongs to the font-DPI opt-in.",
+      "trigger": "Diff review of the AMS zoom PR.",
+      "outcome": "Two changed lines that a reviewer has to puzzle over, unrelated to zoom.",
+      "smallest_fix": "Drop the comment change from bambu-ams-zoom. If it matters, move it into bambu-gtk-integration, where FromDIP's GTK meaning actually changes.",
+      "verification": "git diff bed9f5a1..new-head shows no change in OnWebContentSizeChanged.",
+      "kind": "new nit"
+    },
+    {
+      "id": "DS-R2-05",
+      "severity": "non-blocking",
+      "category": "body-wording",
+      "pr": "bambu-ams-zoom, bambu-gtk-integration, wx-02, bambu-09, bambu-10",
+      "title": "A few review-process and jargon phrases remain in the short bodies",
+      "evidence": "bambu-ams-zoom.md: 'Keep the accepted 2× limit' (an upstream reader does not know who accepted it); 'Native Linux resize fixtures and browser-source checks pass'. bambu-gtk-integration.md: 'Pin wx to the reviewed revision'. wx-02.md: 'existing identity conversion', 'Keep coordinate sentinels and integer bounds intact', 'C++98 checks'. bambu-09.md: 'native-API source checks'. bambu-10.md: 'The camera-only helper passes an isolated native Linux resize test'. Lengths are fine (61-88 words).",
+      "trigger": "The user's 'avoid overly technical language' goal.",
+      "outcome": "Small amounts of internal process language. Not wrong.",
+      "smallest_fix": "Examples: 'Limit AMS zoom to 2×'; 'Pin wx to a specific revision'; wx-02: 'By default sizes are unchanged, so apps that have not fixed double scaling are unaffected' and drop the sentinel sentence; 'Tested on Linux with a resize test app'. Fable owns the final wording.",
+      "verification": "Body reread.",
+      "kind": "editorial; defer to editorial reviewer"
+    },
+    {
+      "id": "DS-R2-06",
+      "severity": "non-blocking",
+      "category": "cross-os-clarity",
+      "pr": "bambu-gtk-integration",
+      "title": "State plainly that the wx pin changes no Windows/macOS code",
+      "evidence": "git diff --stat abb54269 0f2037fa: include/wx/window.h (the only compiled change adds '&& !defined(__WXGTK3__)' to the inline guard, which does not change other ports), interface/wx/*.h (docs only), src/gtk/control.cpp (inside #ifdef __WXGTK3__), src/gtk/window.cpp (inside #ifdef __WXGTK3__). abb54269 is the current bambulab/wxWidgets master (repositories.json). Today the pin builds the same Windows/macOS wx code as the old 'GIT_TAG master'. It does stop later bambulab master changes from flowing in automatically. The app opt-in in e77253cd is guarded by '#if defined(__WXGTK3__) && wxUSE_SYSTEM_OPTIONS'. With an older wx the option does nothing (SetOption stores an unused value), so older builds keep their previous conversion.",
+      "trigger": "The user's OS-compatibility question, and an upstream reviewer seeing a dependency-wide pin.",
+      "outcome": "The body says only 'Windows/macOS integration remains untested'. That is true but leaves out the more useful fact that no Windows/macOS wx code changes.",
+      "smallest_fix": "One clause: 'The pinned wx matches current bambulab/wxWidgets master plus two GTK3-only commits, so Windows/macOS compile the same wx code (not yet built here).'",
+      "verification": "Rerun the diff --stat above; body reread.",
+      "kind": "new clarity; source-verified, not runtime-verified"
+    }
+  ],
+  "checked_and_ok": [
+    "All 16 heads: git rev-list --count base..head == 1; diff stats match curated-prs.json (max 415 changed lines, bambu-03).",
+    "Independent recomposition: the 14 app candidate diffs, applied in stack order to 79df7ae3 copies of the 43 changed files, are byte-identical to e9617d1a (ok=43, bad=0).",
+    "wx-02 safety by reading: default-off returns scale 1 before any GTK call; the header still inlines identity for MSW/OSX/Qt; GTK2 is untouched; NULL window falls back to the default screen, or 1 when no screen exists; the app opt-in sits behind __WXGTK3__ && wxUSE_SYSTEM_OPTIONS, at the top of OnInit.",
+    "bambu-10 alone: fit_camera_to_feed() uses only feed aspect, camera height and the Control column's natural width. It returns to wxDefaultCoord min width when no extra width is needed. The base m_machine_ctrl_panel has no min size to lose (79df7ae3 StatusPanel.cpp:2007-2015).",
+    "bambu-ams-zoom: the cap is named once; macOS (__WXOSX__) is excluded in both StatusPanel and DeviceWebHost; the stub WebView in Widgets/WebView.cpp returns zoom 0, which leaves the base zoom unset and makes SetZoomFactor a no-op."
+  ],
+  "not_reviewed_here": [
+    "Project threading, buffering and the removal of old auxiliary-root deletion in bambu-03 (project_astra partition)",
+    "WebKitGTK/WebView2 runtime zoom behaviour, wx GTK runtime semantics (native_sol / wx_sol partitions)"
+  ]
+}

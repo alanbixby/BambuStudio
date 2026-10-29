@@ -1,5 +1,5 @@
 diff --git a/src/gtk/control.cpp b/src/gtk/control.cpp
-index f4a25ea14666acae7a6078010068a0debeedc49d..c02d8b41d1152d298e04fe93fb837a64b3dab958 100644
+index f4a25ea146..c02d8b41d1 100644
 --- a/src/gtk/control.cpp
 +++ b/src/gtk/control.cpp
 @@ -351,6 +351,30 @@ wxSize wxControl::GTKGetPreferredSize(GtkWidget* widget) const

@@ -1,0 +1,172 @@
+{
+  "method": "whitespace words after images/URLs removed and link labels retained",
+  "after": [
+    {
+      "key": "bambu-01",
+      "changed_lines": 4,
+      "files": 1,
+      "prose_words": 55,
+      "image_links": 2
+    },
+    {
+      "key": "bambu-02",
+      "changed_lines": 12,
+      "files": 3,
+      "prose_words": 54,
+      "image_links": 2
+    },
+    {
+      "key": "bambu-03",
+      "changed_lines": 415,
+      "files": 4,
+      "prose_words": 75,
+      "image_links": 2
+    },
+    {
+      "key": "bambu-04",
+      "changed_lines": 32,
+      "files": 2,
+      "prose_words": 66,
+      "image_links": 2
+    },
+    {
+      "key": "bambu-05",
+      "changed_lines": 129,
+      "files": 18,
+      "prose_words": 58,
+      "image_links": 2
+    },
+    {
+      "key": "bambu-06",
+      "changed_lines": 138,
+      "files": 2,
+      "prose_words": 73,
+      "image_links": 3
+    },
+    {
+      "key": "bambu-07",
+      "changed_lines": 65,
+      "files": 3,
+      "prose_words": 75,
+      "image_links": 2
+    },
+    {
+      "key": "bambu-08",
+      "changed_lines": 29,
+      "files": 1,
+      "prose_words": 61,
+      "image_links": 2
+    },
+    {
+      "key": "bambu-09",
+      "changed_lines": 101,
+      "files": 2,
+      "prose_words": 70,
+      "image_links": 2
+    },
+    {
+      "key": "bambu-10",
+      "changed_lines": 49,
+      "files": 2,
+      "prose_words": 79,
+      "image_links": 2
+    },
+    {
+      "key": "bambu-project-startup",
+      "changed_lines": 43,
+      "files": 1,
+      "prose_words": 73,
+      "image_links": 2
+    },
+    {
+      "key": "bambu-progress",
+      "changed_lines": 19,
+      "files": 2,
+      "prose_words": 77,
+      "image_links": 2
+    },
+    {
+      "key": "bambu-ams-zoom",
+      "changed_lines": 195,
+      "files": 6,
+      "prose_words": 73,
+      "image_links": 2
+    },
+    {
+      "key": "bambu-gtk-integration",
+      "changed_lines": 9,
+      "files": 2,
+      "prose_words": 72,
+      "image_links": 2
+    },
+    {
+      "key": "wx-01",
+      "changed_lines": 24,
+      "files": 1,
+      "prose_words": 73,
+      "image_links": 2
+    },
+    {
+      "key": "wx-02",
+      "changed_lines": 94,
+      "files": 4,
+      "prose_words": 69,
+      "image_links": 2
+    }
+  ],
+  "mean_words": 68.9375,
+  "max_words": 79,
+  "largest_changed_lines": 415,
+  "image_links": 33,
+  "before": [
+    {
+      "key": null,
+      "prose_words": 199
+    },
+    {
+      "key": null,
+      "prose_words": 125
+    },
+    {
+      "key": null,
+      "prose_words": 213
+    },
+    {
+      "key": null,
+      "prose_words": 207
+    },
+    {
+      "key": null,
+      "prose_words": 315
+    },
+    {
+      "key": null,
+      "prose_words": 156
+    },
+    {
+      "key": null,
+      "prose_words": 137
+    },
+    {
+      "key": null,
+      "prose_words": 158
+    },
+    {
+      "key": null,
+      "prose_words": 176
+    },
+    {
+      "key": null,
+      "prose_words": 265
+    },
+    {
+      "key": null,
+      "prose_words": 164
+    },
+    {
+      "key": null,
+      "prose_words": 266
+    }
+  ],
+  "before_mean_words": 198.41666666666666
+}

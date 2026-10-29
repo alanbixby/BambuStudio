@@ -1,0 +1,34 @@
+[
+  {
+    "repository": "alanbixby/BambuStudio",
+    "ref": "refs/heads/review/pre-polish-20261028",
+    "sha": "5e660cba7390af4c3cda945f406522112965a9ab",
+    "parents": [
+      "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+      "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+      "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+      "0826d59e1e1b36bf80b82904859c64f339749820",
+      "b3dacfa61b17385703e700779207e83e0c1041af",
+      "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+      "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+      "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+      "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+      "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+      "fab83eef842e6967fa06d0bb05410940b4787d28"
+    ],
+    "tree": "4cb02f6dd2789c00d9ab4db590f8b23ae3a3f85b",
+    "pushed": false
+  },
+  {
+    "repository": "alanbixby/wxWidgets",
+    "ref": "refs/heads/review/pre-polish-20261028",
+    "sha": "6faca88bb2e3f7af39e44b30b782d22f8b646afe",
+    "parents": [
+      "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+      "888eaac6622399a7b226f96fab837940c5cd5dc1",
+      "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4"
+    ],
+    "tree": "0830198d9a071d11c3a7067b308e9fc0205f1cbf",
+    "pushed": false
+  }
+]

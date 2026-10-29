@@ -1,5 +1,5 @@
 diff --git a/src/slic3r/GUI/GLCanvas3D.cpp b/src/slic3r/GUI/GLCanvas3D.cpp
-index 420f367b4b166a4693eeee363f27aac18ed397e1..f75f55497d099338d41f3e958fd4e0eb2bb57cbd 100644
+index 420f367b4..f75f55497 100644
 --- a/src/slic3r/GUI/GLCanvas3D.cpp
 +++ b/src/slic3r/GUI/GLCanvas3D.cpp
 @@ -10308,6 +10308,7 @@ void GLCanvas3D::_render_assembly_steps_view()
@@ -20,7 +20,7 @@ index 420f367b4b166a4693eeee363f27aac18ed397e1..f75f55497d099338d41f3e958fd4e0eb
      }
      {//solve ui overlap issue
 diff --git a/src/slic3r/GUI/Overview/AssemblyStepsUtils.hpp b/src/slic3r/GUI/Overview/AssemblyStepsUtils.hpp
-index 09ecc3deca18a03767844a52e2a580f7f8636ebe..a5203941c0bedc9c1837bd48ccce1968c2d172e6 100644
+index 09ecc3dec..a5203941c 100644
 --- a/src/slic3r/GUI/Overview/AssemblyStepsUtils.hpp
 +++ b/src/slic3r/GUI/Overview/AssemblyStepsUtils.hpp
 @@ -430,6 +430,9 @@ class AssemblyStepsUtils
@@ -45,7 +45,7 @@ index 09ecc3deca18a03767844a52e2a580f7f8636ebe..a5203941c0bedc9c1837bd48ccce1968
      // Overlay regions (rendered by GLCanvas3D) that part-number labels
      enum class AssemblyOverlayRect { Navigator, FitCamera, AssembleControl, ReturnToolbar };
 diff --git a/src/slic3r/GUI/Overview/AssemblyStepsUtilsImgui.cpp b/src/slic3r/GUI/Overview/AssemblyStepsUtilsImgui.cpp
-index ed3b9f256fdf616bd883da1cdc813b5a060d3194..10af66650c66a2bac0363e34f1e4bf9cb5b0e3e4 100644
+index ed3b9f256..10af66650 100644
 --- a/src/slic3r/GUI/Overview/AssemblyStepsUtilsImgui.cpp
 +++ b/src/slic3r/GUI/Overview/AssemblyStepsUtilsImgui.cpp
 @@ -3239,7 +3239,7 @@ void AssemblyStepsUtils::render_assembly_structure_panel(float canvas_w, float c

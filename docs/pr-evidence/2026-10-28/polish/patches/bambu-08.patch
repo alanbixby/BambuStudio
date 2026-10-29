@@ -1,5 +1,5 @@
 diff --git a/src/slic3r/GUI/Plater.cpp b/src/slic3r/GUI/Plater.cpp
-index a20b41da3d03ffd3b8ddeeeb698105b9f9a78f32..6726d6f16e37668accfac45798b0ec78795033ca 100644
+index a20b41da3..6726d6f16 100644
 --- a/src/slic3r/GUI/Plater.cpp
 +++ b/src/slic3r/GUI/Plater.cpp
 @@ -728,6 +728,7 @@ struct ExtruderGroup : StaticGroup

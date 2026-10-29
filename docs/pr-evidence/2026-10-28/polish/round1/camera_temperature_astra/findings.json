@@ -1,0 +1,143 @@
+{
+  "reviewer": "Astra",
+  "round": 1,
+  "partition": "Bambu PR9 temperature; PR10 camera/AMS",
+  "reviewed_heads": {
+    "bambu_09": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+    "bambu_10": "fab83eef842e6967fa06d0bb05410940b4787d28",
+    "app_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "app_combined": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+    "wx_upstream": "abb542694ef4534a50e65c5b877b2774d02952ae",
+    "wx_previous_upstream": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+    "wx_combined": "3fea0af433d9630f79eaf8fbfc062364ba456be3"
+  },
+  "open_blocking_count": 1,
+  "findings": [
+    {
+      "id": "ASTRA-CAM-001",
+      "severity": "blocking",
+      "status": "open",
+      "classification": "newly identified PR10 regression",
+      "prs": [
+        10
+      ],
+      "title": "Use visible client width rather than the old scrolled allocation when fitting the camera",
+      "evidence": [
+        {
+          "head": "fab83eef842e6967fa06d0bb05410940b4787d28",
+          "path": "src/slic3r/GUI/StatusPanel.cpp",
+          "lines": "2123,2154-2175",
+          "detail": "Reads row width from child allocations; installs target as explicit Control minimum; only Layout follows."
+        },
+        {
+          "head": "abb542694ef4534a50e65c5b877b2774d02952ae",
+          "path": "src/generic/scrlwing.cpp",
+          "lines": "187-209,760-818",
+          "detail": "Size handler updates virtual extent from existing minima; scrolled layout uses that virtual extent."
+        },
+        {
+          "head": "abb542694ef4534a50e65c5b877b2774d02952ae",
+          "path": "src/common/wincmn.cpp",
+          "lines": "952-958",
+          "detail": "SetMinSize invalidates best size without recomputing the scrolled extent."
+        },
+        {
+          "artifact": "resize_counterexample.py",
+          "result": "Nine source-derived arithmetic/event counterexamples pass; no native wx execution."
+        }
+      ],
+      "trigger": "Narrow a wide, short Status window while the camera is at its normal minimum height and AMS zoom is inactive (e.g. web AMS hidden, or macOS no-zoom branch).",
+      "outcome": "Prior enlarged Control minimum becomes the new virtual row width. At a 574-wide/288-high camera minimum, natural Control 614, and row 2200 -> 1400, Control remains 1626 and virtual row remains 2200, leaving 800 unnecessary horizontal pixels. Repeated fits are a fixed point.",
+      "smallest_practical_fix": "Derive the usable row budget from current client width minus existing spacers and natural minima, not enlarged child allocations. Refresh virtual extent after changing minima using existing FitInside behavior. FitInside alone cannot break the minimum-height fixed point.",
+      "verification_needed": "Disconnected native wide-to-narrow checks at constant short height with web AMS hidden/shown, macOS no zoom, fractional DPI, fullscreen exit, and genuinely too-small windows. Confirm scroll extent contracts without unrelated events.",
+      "proof_limits": "The model follows inspected production statements and wx layout ordering, with explicit fixture natural widths/heights. It proves the arithmetic fixed point, not an observed native screenshot or every platform event schedule."
+    },
+    {
+      "id": "ASTRA-CAM-002",
+      "severity": "non-blocking",
+      "status": "open",
+      "classification": "review-evidence correction",
+      "prs": [
+        10
+      ],
+      "title": "Constrain camera report models to the actual page reporting contract",
+      "evidence": [
+        {
+          "head": "fab83eef842e6967fa06d0bb05410940b4787d28",
+          "path": "src/slic3r/GUI/DeviceWeb/device_page/src/features/device-page/ams-control-web/AmsControlWebPage.tsx",
+          "lines": "23-39,119-128",
+          "detail": "Sends positive changed computed height only; constant width 586; no resize observer."
+        },
+        {
+          "head": "fab83eef842e6967fa06d0bb05410940b4787d28",
+          "path": "src/slic3r/GUI/DeviceWeb/device_page/src/features/device-page/ams-control-web/geometry.ts",
+          "lines": "116-141",
+          "detail": "Height depends on visible bands, not viewport width."
+        },
+        {
+          "path": "/home/bxb/.t3-nightly/projects/bambu-studio-linux-fixes/evidence/peer-review-20261028/round3/camera_fable/REPORT.md",
+          "section": "CF-10, CF-11 and Limits",
+          "detail": "Treats synthetic near-340/width-dependent startup reports as production implications; says page report source is absent."
+        }
+      ],
+      "trigger": "Use the prior pending-zoom model as evidence for production startup/re-layout behavior.",
+      "outcome": "Synthetic heights 336/344 and width-driven 260 -> 340 correction do not describe current page output. Real unchanged-height resize/DPI transitions can be missed by a model that injects extra reports.",
+      "smallest_practical_fix": "Correct historical evidence and qualify stress scenarios. Keep real readiness evidence; use the actual page hook and band heights for production claims. No source change required.",
+      "verification_needed": "Trace page hook -> DeviceWebBridge -> host. Distinguish real height changes from arbitrary model reports; do not assume a resize or zoom emits a content report."
+    },
+    {
+      "id": "ASTRA-DOC-001",
+      "severity": "non-blocking",
+      "status": "open",
+      "classification": "editorial simplification",
+      "prs": [
+        9,
+        10
+      ],
+      "title": "Consolidate duplicate validation and screenshot provenance paragraphs",
+      "evidence": [
+        {
+          "path": "/tmp/bambu-polish-20261028/round1/bambu-10-body.md",
+          "lines": "5,12,14,16,18,20",
+          "head": "fab83eef842e6967fa06d0bb05410940b4787d28"
+        },
+        {
+          "path": "/tmp/bambu-polish-20261028/round1/bambu-09-body.md",
+          "lines": "3,5,10,12,14",
+          "head": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37"
+        }
+      ],
+      "trigger": "Reviewer reads the current 274-word PR10 or 185-word PR9 descriptions.",
+      "outcome": "Repeated platform-test disclaimers and screenshot provenance, plus implementation/review history, obscure the small behavior change.",
+      "smallest_practical_fix": "One behavior paragraph, one validation/limitations paragraph, screenshots with one provenance caption, one evidence link. Retain fork approval boundary; move model details to evidence.",
+      "verification_needed": "Preserve both screenshot attachments, historical combined-build attribution, and unverified Windows/macOS status; do not imply the newest artifact was launched."
+    }
+  ],
+  "baseline_observations": [
+    {
+      "topic": "Temperature readonly",
+      "detail": "SetReadOnly is only a bool/mouse gate, not native SetEditable(false). Existing keyboard/submission behavior is not corrected by PR9 and is not attributed to it."
+    },
+    {
+      "topic": "AMS DPI refresh",
+      "detail": "OnHostShown updates only health state; msw_rescale is empty; unchanged-height page reports do not repeat on DPI/zoom changes. This stale-size path predates PR10."
+    }
+  ],
+  "checks": {
+    "details_file": "checks.json",
+    "diff_checks": "PR9 and PR10 passed",
+    "counterexample_command": "python3 -I /tmp/bambu-polish-20261028/round1/camera_temperature_astra/resize_counterexample.py",
+    "counterexample_result": "9 cases passed",
+    "counterexample_results_file": "resize_counterexample.json",
+    "source_manifest": "sources.json"
+  },
+  "limitations": [
+    "No builds or native execution on any OS.",
+    "No GUI, profiles, installed applications or printer interaction.",
+    "Resize model uses explicit fixture dimensions, not live measurements.",
+    "Historical executable models were not rerun.",
+    "Screenshots checked as frozen attachments/provenance, not visually inspected.",
+    "No all-OS compatibility or merge-readiness claim."
+  ],
+  "recommended_next_step": "Parent independently verify ASTRA-CAM-001 and implement or rebut; fresh delegation required for round2."
+}

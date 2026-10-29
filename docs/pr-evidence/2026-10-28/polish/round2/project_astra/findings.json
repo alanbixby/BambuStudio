@@ -1,0 +1,130 @@
+{
+  "scope": "project_astra",
+  "round": 2,
+  "reviewer": "gpt-6-astra",
+  "reviewed_heads": {
+    "bambu#3_candidate": "c0be044cd4ab4c69f857b52354fecfca50f420b3",
+    "bambu#4": "b3dacfa61b17385703e700779207e83e0c1041af"
+  },
+  "previous_pr3_head": "0826d59e1e1b36bf80b82904859c64f339749820",
+  "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+  "combined_app": "0b34fcad456618e5d023e4f475dffb3f75ae6472",
+  "wx_sources": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+  "wx_combined": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+  "wx_new_upstream": "abb542694ef4534a50e65c5b877b2774d02952ae",
+  "publication_status": "Local candidate only per supplied brief; remote state not queried or modified.",
+  "open_blocking_count": 0,
+  "open_non_blocking_count": 0,
+  "new_findings_count": 0,
+  "converged": true,
+  "findings": [
+    {
+      "id": "PA-001",
+      "severity": "blocking",
+      "status": "resolved",
+      "classification": "round-1 introduced correctness defect corrected in round-2 candidate",
+      "pr": "bambu#3",
+      "original_head": "0826d59e1e1b36bf80b82904859c64f339749820",
+      "reviewed_head": "c0be044cd4ab4c69f857b52354fecfca50f420b3",
+      "title": "DOM-ready replay erases a successful optional model-link lookup",
+      "locations": [
+        {
+          "head": "c0be044cd4ab4c69f857b52354fecfca50f420b3",
+          "path": "src/slic3r/GUI/Project.cpp",
+          "line": 311,
+          "end_line": 313
+        },
+        {
+          "head": "c0be044cd4ab4c69f857b52354fecfca50f420b3",
+          "path": "resources/web/model_new/index.js",
+          "line": 24,
+          "end_line": 32
+        },
+        {
+          "head": "c0be044cd4ab4c69f857b52354fecfca50f420b3",
+          "path": "resources/web/model_new/index.js",
+          "line": 158,
+          "end_line": 166
+        }
+      ],
+      "trigger": "Local payload with empty model_id is buffered before DOM ready; optional successful link update runs; DOM-ready replay consumes that payload.",
+      "original_outcome": "Replay restores empty model ID, removes the link, and suppresses the startup handshake after accepting metadata.",
+      "candidate_outcome": "Targeted update also writes the resolved ID into the existing buffered model, so replay retains ID 123 and its link.",
+      "smallest_practical_fix": "Applied three string literals that guard the pending command/nested values and update pending.model.model.model_id. No further source change requested.",
+      "resolution_evidence": [
+        "incremental.patch",
+        "fix-provenance.json",
+        "parent-results.json",
+        "candidate-results.json",
+        "negative-control.log",
+        "test-runs.json"
+      ],
+      "verification_completed": [
+        "Fresh source extraction from exact reviewed SHAs.",
+        "14 supplied checks pass; extended suite contains 22 total passing checks.",
+        "Previous PR head fails the fixed replay assertion; negative control is not upstream base.",
+        "Removing the three literals reproduces previous Project.cpp byte-for-byte.",
+        "Source inspection confirms unchanged lifetime/generation/project identity/editor checks."
+      ],
+      "verification_needed": [
+        "No further blocking verification for this demonstrated state correction. Native delayed-load testing remains useful to establish backend timing and real-world frequency; no such test was run."
+      ],
+      "fix_applied": true,
+      "published": false
+    }
+  ],
+  "known_limits": [
+    {
+      "topic": "PR4 inline colors/backgrounds",
+      "status": "Previously disclosed PF-09 limitation retained; not a new finding or claimed fix.",
+      "evidence": "b3dacfa61b17385703e700779207e83e0c1041af:resources/web/model_new/css/dark.css:159-166; native reader sanitizer retains styles."
+    },
+    {
+      "topic": "Clear semantics",
+      "status": "Inherited reader clear does not reset m_ModelID or every link class. The tests establish unchanged clear message and blank tested fields only.",
+      "evidence": "c0be044cd4ab4c69f857b52354fecfca50f420b3:resources/web/model_new/index.js:121-131; identical function in exact upstream base."
+    },
+    "DOM/jQuery, timer scheduler and optional success scheduling are doubles. No native renderer/GUI/network/threads/editor runtime were exercised.",
+    "Parent failed-lookup test omits success script; it does not test actual HTTP failure. New-document test uses separate VMs; it does not test native navigation. Latest-message test does not validate native project identity.",
+    "No C++ compilation, application build, Windows/macOS run, teardown stress or CI verification. Historical Linux build/screenshots are not candidate runtime evidence.",
+    "Nested payload guard is a truthiness check, not a schema validator for hostile/frozen/proxy objects.",
+    "wx comparison is scoped to five browser/event paths, not a whole-wx compatibility review."
+  ],
+  "checks": [
+    {
+      "command": "node check-parent.cjs",
+      "result": "14 pass, exit 0"
+    },
+    {
+      "command": "node check-reader.cjs",
+      "result": "22 total pass, exit 0 (includes the same 14)"
+    },
+    {
+      "command": "node negative-control/check-parent.cjs /tmp/bambu-polish-20261028/round2/project_astra/sources/previous__src__slic3r__GUI__Project.cpp",
+      "result": "Expected exit 1: empty model ID instead of 123"
+    },
+    {
+      "command": "git diff --check <base> <candidate/PR4 head>",
+      "result": "Both exit 0, no output"
+    },
+    {
+      "command": "git diff --numstat <base> <candidate/PR4 head>",
+      "result": "PR3 294 additions/164 deletions over five files; PR4 32 additions over two files"
+    },
+    {
+      "command": "git diff <candidate/PR4 head> <combined candidate> -- <respective paths>",
+      "result": "Both empty"
+    },
+    {
+      "command": "Remove added literals from freshly extracted candidate Project.cpp; compare bytes to previous head",
+      "result": "Equal; exactly three literal lines removed"
+    },
+    {
+      "command": "git diff <pinned wx> <combined wx/new upstream> -- <five browser/event paths>",
+      "result": "Combined empty; supplied upstream only changes Windows UpdateBounds rasterization scale"
+    }
+  ],
+  "grouping_advice": "Keep native local publication and safety guards coherent; keep 32-line CSS PR independent. PR3 has 458 changed lines. No new split/API/framework requested.",
+  "prose_advice": "Prior advice retained: consolidate screenshot provenance, move test-coordinate detail into evidence, retain inline-color/platform limits and upstream-approval boundary. No revised body reviewed.",
+  "report": "REPORT.md"
+}

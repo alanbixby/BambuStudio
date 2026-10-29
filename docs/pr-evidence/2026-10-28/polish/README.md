@@ -1,12 +1,21 @@
 # Validation notes for the focused PR series
 
-The series now has sixteen focused candidates. Every candidate has one commit and fewer than 500 added/deleted lines. Camera fit and AMS zoom are separate; Project startup and native loading are independent. DPI unit corrections, progress layout and explicit GTK adoption form a review chain. Both wx changes are based on upstream `abb542694ef4534a50e65c5b877b2774d02952ae`.
+Sixteen one-commit candidates, each below 500 added/deleted lines. Project page startup and native loading are independent. Camera fit and AMS zoom are separate. Mechanical DPI, progress layout and explicit GTK adoption form a small review chain. Assembly clearance is independent of Assembly return. Both wx changes are based on upstream `abb542694ef4534a50e65c5b877b2774d02952ae`.
 
-The GTK sizing change is off by default. Corrected Bambu opts in at startup and pins an exact revision from the review fork. Old applications keep identity conversions unless they explicitly enable the option. Replace the temporary fork pin with the accepted upstream revision before submitting that integration upstream.
+GTK font-DPI sizing is off by default. Corrected Bambu opts in at startup and pins `0f2037facedf3d92660e7071b6754fe994aa744d`. Replace the temporary fork URL/SHA with the accepted official revision before upstream adoption. Older apps keep their current default conversions.
 
-Project message ordering passes extracted-JavaScript scheduling checks; the previous source fails the same regression. The combined camera correction passes 72 private nativeGTK runs with 720 observations. The separate camera-only helper passes 8 runs with 80 observations. These fixtures use synthetic media and AMS panels, not a printer or WebView. Default-off/enabled conversion checks compile as C++98 with source doubles. The refreshed Linux integration build passed, with all product source checked against the frozen app/wx commits. Actual installed-archive probes passed with the option unset, off and on; a separate full wx build with system options disabled also passed. [Build record](build/REPORT.md). This used a warm build with six recorded local CMake adaptations, not a pristine checkout.
+The Linux warm build passed for app `e9617d1a815183350bd9822fb894996aa086f47a` and that wx pair. All product source was checked; six local CMake adaptations are disclosed. Actual native archive tests cover default-off/enabled, bounds, dynamic DPI and label fonts; a separate complete system-options-disabled wx build passes. [Build record](build/REPORT.md). Source-extracted Project scheduling checks reproduce the old link-order failure and pass on the correction. Native GTK camera fixtures verify width contraction and required scrolling, using synthetic controls rather than real video/WebViews.
 
-Windows/macOS have not been compiled or run. Source/API review, text merges and synthetic probes do not replace those checks. Screenshots on the PRs show earlier combined Linux builds. [Camera evidence correction](corrections.md) distinguishes older synthetic report schedules from production page behavior.
+Windows/macOS have not been compiled or run; the polished Studio bundle was not launched or installed. Screenshots are earlier Linux evidence, with shared-context and isolated-capture gaps disclosed in each draft. [Camera evidence correction](corrections.md) qualifies older stress-model assumptions. The existing installed bundle remains unchanged.
+
+[Parent decisions and limits](parent-responses.md). Review reports below retain their exact historical inputs; only two candidate heads changed after round2, moving one comment without altering the combined source tree. [Exact final composition](final-composition-check.json).
+
+round1: [camera_temperature_astra](round1/camera_temperature_astra/REPORT.md), [design_scope_opus](round1/design_scope_opus/REPORT.md), [editorial_fable](round1/editorial_fable/REPORT.md), [native_sol](round1/native_sol/REPORT.md), [project_astra](round1/project_astra/REPORT.md), [wx_sol](round1/wx_sol/REPORT.md).
+
+round2: [camera_temperature_astra](round2/camera_temperature_astra/REPORT.md), [design_scope_opus](round2/design_scope_opus/REPORT.md), [editorial_fable](round2/editorial_fable/REPORT.md), [native_sol](round2/native_sol/REPORT.md), [project_astra](round2/project_astra/REPORT.md), [wx_sol](round2/wx_sol/REPORT.md).
+
+round3: [design_scope_opus](round3/design_scope_opus/REPORT.md).
+
 
 <a id="bambu-01"></a>
 
@@ -84,13 +93,13 @@ Windows/macOS have not been compiled or run. Source/API review, text merges and 
 
 ## bambu-ams-zoom: Scale AMS to use spare room beside the camera
 
-183+ / 12- lines; 6 files. Base: `fix/camera-ams-balance`. Source: `54083d6fb80138c3404a58abc2c4300c0035dfd7`. [Patch](patches/bambu-ams-zoom.patch).
+181+ / 10- lines; 6 files. Base: `fix/camera-ams-balance`. Source: `a273fd21b1580662221037549e09bd7e10bcc615`. [Patch](patches/bambu-ams-zoom.patch).
 
 <a id="bambu-gtk-integration"></a>
 
 ## bambu-gtk-integration: Use a pinned wx build for GTK font sizing
 
-7+ / 2- lines; 2 files. Base: `fix/progress-text-layout`. Source: `e77253cd2ff240df00890d2e798faa312df23e95`. [Patch](patches/bambu-gtk-integration.patch).
+9+ / 4- lines; 3 files. Base: `fix/progress-text-layout`. Source: `74a75752f34633a5bb00d8a96bc6a30fc9a2744a`. [Patch](patches/bambu-gtk-integration.patch).
 
 <a id="wx-01"></a>
 
@@ -103,4 +112,3 @@ Windows/macOS have not been compiled or run. Source/API review, text merges and 
 ## wx-02: Allow apps to opt into GTK font-DPI sizing
 
 91+ / 3- lines; 4 files. Base: `master`. Source: `d54f3313028fc439cea91f0b6a213e5ad2245b90`. [Patch](patches/wx-02.patch).
-

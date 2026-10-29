@@ -1,0 +1,100 @@
+{
+  "scope": "project_astra",
+  "round": 1,
+  "reviewer": "gpt-6-astra",
+  "reviewed_heads": {
+    "bambu#3": "0826d59e1e1b36bf80b82904859c64f339749820",
+    "bambu#4": "b3dacfa61b17385703e700779207e83e0c1041af"
+  },
+  "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+  "combined_app": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+  "wx_sources": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+  "wx_combined": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+  "wx_new_upstream": "abb542694ef4534a50e65c5b877b2774d02952ae",
+  "open_blocking_count": 1,
+  "open_non_blocking_count": 0,
+  "findings": [
+    {
+      "id": "PA-001",
+      "severity": "blocking",
+      "classification": "new introduced correctness defect",
+      "pr": "bambu#3",
+      "head": "0826d59e1e1b36bf80b82904859c64f339749820",
+      "title": "DOM-ready replay erases a successful optional model-link lookup",
+      "locations": [
+        {
+          "path": "src/slic3r/GUI/Project.cpp",
+          "line": 308,
+          "end_line": 313
+        },
+        {
+          "path": "resources/web/model_new/index.js",
+          "line": 24,
+          "end_line": 32
+        },
+        {
+          "path": "resources/web/model_new/index.js",
+          "line": 39,
+          "end_line": 47
+        },
+        {
+          "path": "resources/web/model_new/index.js",
+          "line": 158,
+          "end_line": 166
+        }
+      ],
+      "trigger": "Reader handler exists before DOM ready; local payload with empty model_id is buffered; successful optional lookup runs targeted link script; DOM ready then replays the older buffered payload. macOS initial push bypasses bridge readiness, making it an eligible source path.",
+      "outcome": "Resolved ID 123 becomes empty, link class is absent, and projectInfoReceived suppresses a new handshake. This visit loses the optional model link until reload/navigation; metadata/editor data loss is not claimed.",
+      "evidence": [
+        "check-reader.cjs",
+        "reader-results.json",
+        "extracted-model-link.js",
+        "Project.cpp:125-135 permits early macOS dispatch",
+        "Widgets/WebView.cpp:1195-1198 and Utils/MacDarkMode.mm:107-114 use asynchronous native evaluation",
+        "resources/web/model_new/index.html:17-18 loads text.js after index.js"
+      ],
+      "smallest_practical_fix": "Update the model_id inside an existing buffered show_3mf_info payload when applying the targeted resolved ID; check nested payload shape and preserve editor/lifetime/generation/project guards. Do not replay the full payload. Scratch candidate is proposed-model-link.js.",
+      "verification_needed": [
+        "Execute freshly extracted fixed reader/native script through the pre-DOM failure schedule and normal DOM-ready-first schedule.",
+        "Check clear/no buffered message, navigation, editor-open, HTTP failure, and stale project/generation paths.",
+        "Native delayed-document-load verification would establish backend timing; the deterministic reproduction does not estimate real-world frequency."
+      ],
+      "fix_applied": false
+    }
+  ],
+  "known_limits": [
+    {
+      "topic": "PR4 explicit light table backgrounds",
+      "status": "Previously disclosed PF-09; retained scoped limitation, not a new finding.",
+      "evidence": "dark.css:159-166; reader sanitizer retains styles; arithmetic white-cell contrast declines 6.69:1 to 2.09:1."
+    },
+    "No Windows/macOS compilation or runtime, native GUI/browser execution, actual HTTP, real threads, builds or TSan.",
+    "Existing C++ harness inspected and source hashes checked, not rerun. Its negative control is intermediate PR head a667512789236ea21f5530bcd31c496b4db43fab, not upstream baseline.",
+    "Node VM has DOM/jQuery/scheduler doubles and injected HTTP success; no rendering or native timing proof."
+  ],
+  "checks": [
+    {
+      "command": "node check-reader.cjs",
+      "result": "8 checks pass, including reproduced broken state and scratch proposed-fix control."
+    },
+    {
+      "command": "git diff --check <base> <PR3/PR4 head>",
+      "result": "No output for either PR."
+    },
+    {
+      "command": "git diff <PR head> 1f880d3cd36e0317ff6535a7a089a30f079a4042 -- <respective changed paths>",
+      "result": "Both empty."
+    },
+    {
+      "command": "SHA256 extracted Project.cpp/Project.hpp/Model.cpp/Model.hpp against historical project-final manifest",
+      "result": "All four match."
+    },
+    {
+      "command": "git diff pinned wx to current combined / new upstream -- relevant browser and event files",
+      "result": "Combined unchanged; upstream has only UpdateBounds rasterization-scale delta in these files."
+    }
+  ],
+  "grouping_advice": "Keep native publication and its lifecycle/identity guards together. Reader handshake can be a separate focused commit after the PA-001 update contract is fixed. PR3 is 455 changed lines; PR4 remains an independent 32-line CSS PR. No generic framework or guard removal needed.",
+  "prose_advice": "Bodies are roughly 221/222 words; consolidate duplicate screenshot provenance and move implementation/test coordinates to linked evidence. Retain screenshots, honest platform limits, inline-color limitation and upstream-approval boundary.",
+  "report": "REPORT.md"
+}

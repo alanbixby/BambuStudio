@@ -1,5 +1,5 @@
 diff --git a/src/libslic3r/Model.cpp b/src/libslic3r/Model.cpp
-index b2e2a799e1439774d57847854fcfa0a35334cf93..b2a1cf294b00afdfd85e1967b588f7bb2bf4d06a 100644
+index b2e2a799e..b2a1cf294 100644
 --- a/src/libslic3r/Model.cpp
 +++ b/src/libslic3r/Model.cpp
 @@ -1096,6 +1096,12 @@ std::string Model::get_auxiliary_file_temp_path()
@@ -16,7 +16,7 @@ index b2e2a799e1439774d57847854fcfa0a35334cf93..b2a1cf294b00afdfd85e1967b588f7bb
  std::string Model::get_backup_path()
  {
 diff --git a/src/libslic3r/Model.hpp b/src/libslic3r/Model.hpp
-index 83440abfacff86b5decb45c5d2107f8b8ed550be..7163c7a27273555a2abd7b2b8ebcb3fb9cad8e53 100644
+index 83440abfa..7163c7a27 100644
 --- a/src/libslic3r/Model.hpp
 +++ b/src/libslic3r/Model.hpp
 @@ -1875,6 +1875,8 @@ public:
@@ -29,7 +29,7 @@ index 83440abfacff86b5decb45c5d2107f8b8ed550be..7163c7a27273555a2abd7b2b8ebcb3fb
      // BBS: backup
      std::string   get_backup_path();
 diff --git a/src/slic3r/GUI/Project.cpp b/src/slic3r/GUI/Project.cpp
-index 33592af7e06404a245ac1ae3d225799087715d22..d4abdac3188539ab8270d1aff5af65dda71c9788 100644
+index 33592af7e..d4abdac31 100644
 --- a/src/slic3r/GUI/Project.cpp
 +++ b/src/slic3r/GUI/Project.cpp
 @@ -33,6 +33,7 @@
@@ -506,7 +506,7 @@ index 33592af7e06404a245ac1ae3d225799087715d22..d4abdac3188539ab8270d1aff5af65dd
                          break;
                      }
 diff --git a/src/slic3r/GUI/Project.hpp b/src/slic3r/GUI/Project.hpp
-index a1a1f9b16637ecdce6b935ccb756b68d3620d35c..9fbe780f224fe33828a706cbf5ae5883ad8a76b7 100644
+index a1a1f9b16..9fbe780f2 100644
 --- a/src/slic3r/GUI/Project.hpp
 +++ b/src/slic3r/GUI/Project.hpp
 @@ -30,6 +30,8 @@

@@ -1,5 +1,5 @@
 diff --git a/src/slic3r/GUI/OG_CustomCtrl.cpp b/src/slic3r/GUI/OG_CustomCtrl.cpp
-index faa61abbb569bbcb8d060b6a17ab103590cc1f7b..33e290244ae312c9b7959c529c0f94ddf91d6265 100644
+index faa61abbb..33e290244 100644
 --- a/src/slic3r/GUI/OG_CustomCtrl.cpp
 +++ b/src/slic3r/GUI/OG_CustomCtrl.cpp
 @@ -6,6 +6,8 @@
@@ -96,7 +96,7 @@ index faa61abbb569bbcb8d060b6a17ab103590cc1f7b..33e290244ae312c9b7959c529c0f94dd
  {
      if (draw_just_act_buttons || !is_visible)
 diff --git a/src/slic3r/GUI/OG_CustomCtrl.hpp b/src/slic3r/GUI/OG_CustomCtrl.hpp
-index 579ef84ae5259bfedd7e46df4cfe12b064483dbc..deba67efe598da8942693355be2728cff76d9f3f 100644
+index 579ef84ae..deba67efe 100644
 --- a/src/slic3r/GUI/OG_CustomCtrl.hpp
 +++ b/src/slic3r/GUI/OG_CustomCtrl.hpp
 @@ -55,6 +55,7 @@ class OG_CustomCtrl :public wxPanel
@@ -116,7 +116,7 @@ index 579ef84ae5259bfedd7e46df4cfe12b064483dbc..deba67efe598da8942693355be2728cf
      //BBS
      int    get_title_width();
 diff --git a/src/slic3r/GUI/OptionsGroup.cpp b/src/slic3r/GUI/OptionsGroup.cpp
-index ea3094bd2e0b413c97ee1eb26b7a6c5d7f4a59aa..705808844dc377c9e2000d5f3913a659f80361ab 100644
+index ea3094bd2..705808844 100644
 --- a/src/slic3r/GUI/OptionsGroup.cpp
 +++ b/src/slic3r/GUI/OptionsGroup.cpp
 @@ -544,8 +544,11 @@ bool OptionsGroup::activate(std::function<void()> throw_if_canceled/* = [](){}*/

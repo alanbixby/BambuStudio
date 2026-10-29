@@ -1,5 +1,5 @@
 diff --git a/src/slic3r/GUI/AboutDialog.cpp b/src/slic3r/GUI/AboutDialog.cpp
-index 41f95d1c0b518412df3a9b91c5b148f82459da0e..fd71304390678665766bc768ebda686045e1ef6d 100644
+index 41f95d1c0..fd7130439 100644
 --- a/src/slic3r/GUI/AboutDialog.cpp
 +++ b/src/slic3r/GUI/AboutDialog.cpp
 @@ -295,7 +295,7 @@ AboutDialog::AboutDialog()
@@ -12,7 +12,7 @@ index 41f95d1c0b518412df3a9b91c5b148f82459da0e..fd71304390678665766bc768ebda6860
          version->SetForegroundColour(wxColour("#FFFFFD"));
          version->SetBackgroundColour(wxColour("#00AF42"));
 diff --git a/src/slic3r/GUI/AmsMappingPopup.cpp b/src/slic3r/GUI/AmsMappingPopup.cpp
-index 02123ae6c137ce561417536e3082cecfc2d06466..d55bb6b305e000c12002db07fc6a9bbc6f624ff3 100644
+index 02123ae6c..d55bb6b30 100644
 --- a/src/slic3r/GUI/AmsMappingPopup.cpp
 +++ b/src/slic3r/GUI/AmsMappingPopup.cpp
 @@ -46,7 +46,7 @@ const int LEFT_OFFSET = 2;
@@ -74,7 +74,7 @@ index 02123ae6c137ce561417536e3082cecfc2d06466..d55bb6b305e000c12002db07fc6a9bbc
      m_img_enable_ams->SetMinSize(wxSize(FromDIP(96), FromDIP(110)));
      m_img_disable_ams->SetMinSize(wxSize(FromDIP(96), FromDIP(110)));
 diff --git a/src/slic3r/GUI/BindDialog.cpp b/src/slic3r/GUI/BindDialog.cpp
-index 4662ac7dbb6231ab2f21c50d1238dcb421cb5ec5..f473bcdb99e5a3d9f8bd1536b9c1ca9b0c838977 100644
+index 4662ac7db..f473bcdb9 100644
 --- a/src/slic3r/GUI/BindDialog.cpp
 +++ b/src/slic3r/GUI/BindDialog.cpp
 @@ -379,7 +379,7 @@ PingCodeBindDialog::~PingCodeBindDialog() {
@@ -114,7 +114,7 @@ index 4662ac7dbb6231ab2f21c50d1238dcb421cb5ec5..f473bcdb99e5a3d9f8bd1536b9c1ca9b
          } catch (...) {}
  
 diff --git a/src/slic3r/GUI/CapsuleButton.cpp b/src/slic3r/GUI/CapsuleButton.cpp
-index 3249a21f906341c309d6680e56e8d052bb39b49a..ff49309b2f29ee237840a8a9f34d7cfbd50703da 100644
+index 3249a21f9..ff49309b2 100644
 --- a/src/slic3r/GUI/CapsuleButton.cpp
 +++ b/src/slic3r/GUI/CapsuleButton.cpp
 @@ -25,8 +25,8 @@ CapsuleButton::CapsuleButton(wxWindow *parent, wxWindowID id, const wxString &la
@@ -129,7 +129,7 @@ index 3249a21f906341c309d6680e56e8d052bb39b49a..ff49309b2f29ee237840a8a9f34d7cfb
      m_btn = new wxBitmapButton(this, wxID_ANY, selected?tag_on_bmp:tag_off_bmp, wxDefaultPosition, wxDefaultSize, wxNO_BORDER);
      m_btn->SetBackgroundColour(*wxWHITE);
 diff --git a/src/slic3r/GUI/CreatePresetsDialog.cpp b/src/slic3r/GUI/CreatePresetsDialog.cpp
-index ad02fb383701854112a36100c09e292aafc0f4f2..72db39855671f351a57439f54e42e8a2e84fcb70 100644
+index ad02fb383..72db39855 100644
 --- a/src/slic3r/GUI/CreatePresetsDialog.cpp
 +++ b/src/slic3r/GUI/CreatePresetsDialog.cpp
 @@ -1579,14 +1579,14 @@ wxBoxSizer *CreatePrinterPresetDialog::create_step_switch_item()
@@ -181,7 +181,7 @@ index ad02fb383701854112a36100c09e292aafc0f4f2..72db39855671f351a57439f54e42e8a2
      horizontal_sizer->Add(success_bitmap_sizer, 0, wxEXPAND | wxALL, FromDIP(5));
  
 diff --git a/src/slic3r/GUI/MainFrame.cpp b/src/slic3r/GUI/MainFrame.cpp
-index d38b5d24dca11648b14f1197691cea2db116a89b..913d256e9c62e354de32747223f47ad59f1aec60 100644
+index d38b5d24d..913d256e9 100644
 --- a/src/slic3r/GUI/MainFrame.cpp
 +++ b/src/slic3r/GUI/MainFrame.cpp
 @@ -2054,9 +2054,9 @@ wxBoxSizer* MainFrame::create_side_tools()
@@ -197,7 +197,7 @@ index d38b5d24dca11648b14f1197691cea2db116a89b..913d256e9c62e354de32747223f47ad5
      auto slice_sizer = new wxBoxSizer(wxHORIZONTAL);
      slice_sizer->Add(m_slice_option_btn, 0, wxRIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(1));
 diff --git a/src/slic3r/GUI/MediaPlayCtrl.cpp b/src/slic3r/GUI/MediaPlayCtrl.cpp
-index 776dc2a15adea73d36b874bccb933e1642f5b069..40c9774bdbb4062059039bd2ee30fe37a21d54e4 100644
+index 776dc2a15..40c9774bd 100644
 --- a/src/slic3r/GUI/MediaPlayCtrl.cpp
 +++ b/src/slic3r/GUI/MediaPlayCtrl.cpp
 @@ -1110,9 +1110,11 @@ void MediaPlayCtrl::SetStatus(wxString const &msg2, bool hyperlink)
@@ -215,7 +215,7 @@ index 776dc2a15adea73d36b874bccb933e1642f5b069..40c9774bdbb4062059039bd2ee30fe37
  
      wxString display_text = msg;
 diff --git a/src/slic3r/GUI/MultiMachineManagerPage.cpp b/src/slic3r/GUI/MultiMachineManagerPage.cpp
-index 678644d9f545e0eb4388efd1260b5da72df96c30..b73dd168239c9ea61ced72655d512acd4abe10ba 100644
+index 678644d9f..b73dd1682 100644
 --- a/src/slic3r/GUI/MultiMachineManagerPage.cpp
 +++ b/src/slic3r/GUI/MultiMachineManagerPage.cpp
 @@ -322,7 +322,7 @@ MultiMachineManagerPage::MultiMachineManagerPage(wxWindow* parent)
@@ -255,7 +255,7 @@ index 678644d9f545e0eb4388efd1260b5da72df96c30..b73dd168239c9ea61ced72655d512acd
      btn_next_page->SetMaxSize(wxSize(FromDIP(20), FromDIP(20)));
      btn_next_page->SetBackgroundColor(head_bg);
 diff --git a/src/slic3r/GUI/MultiTaskManagerPage.cpp b/src/slic3r/GUI/MultiTaskManagerPage.cpp
-index be146c751a52277f20f5ab6a4bef9304e9dd86df..eb6d8438a907965a396290f9637ed6f364f39e65 100644
+index be146c751..eb6d8438a 100644
 --- a/src/slic3r/GUI/MultiTaskManagerPage.cpp
 +++ b/src/slic3r/GUI/MultiTaskManagerPage.cpp
 @@ -586,7 +586,7 @@ LocalTaskManagerPage::LocalTaskManagerPage(wxWindow* parent)
@@ -331,7 +331,7 @@ index be146c751a52277f20f5ab6a4bef9304e9dd86df..eb6d8438a907965a396290f9637ed6f3
      btn_next_page->SetMaxSize(wxSize(FromDIP(20), FromDIP(20)));
      btn_next_page->SetBackgroundColor(head_bg);
 diff --git a/src/slic3r/GUI/ObjectDataViewModel.cpp b/src/slic3r/GUI/ObjectDataViewModel.cpp
-index e164048bd16e39cf7adf9b8b9a6545a82d7c531a..15ed43a513c30433a3f8044472721bb0d74102ea 100644
+index e164048bd..15ed43a51 100644
 --- a/src/slic3r/GUI/ObjectDataViewModel.cpp
 +++ b/src/slic3r/GUI/ObjectDataViewModel.cpp
 @@ -587,7 +587,7 @@ void ObjectDataViewModel::UpdateBitmapForNode(ObjectDataViewModelNode *node)
@@ -344,7 +344,7 @@ index e164048bd16e39cf7adf9b8b9a6545a82d7c531a..15ed43a513c30433a3f8044472721bb0
                  node->is_svg_volume() ? m_svg_volume_bmps[vol_type] :
                  m_volume_bmps[vol_type]);
 diff --git a/src/slic3r/GUI/Plater.cpp b/src/slic3r/GUI/Plater.cpp
-index a20b41da3d03ffd3b8ddeeeb698105b9f9a78f32..94b8d9434d1ecf79543ba88c4c9fc286422c4beb 100644
+index a20b41da3..94b8d9434 100644
 --- a/src/slic3r/GUI/Plater.cpp
 +++ b/src/slic3r/GUI/Plater.cpp
 @@ -5082,7 +5082,7 @@ void Sidebar::pop_sync_nozzle_and_ams_dialog() {
@@ -357,7 +357,7 @@ index a20b41da3d03ffd3b8ddeeeb698105b9f9a78f32..94b8d9434d1ecf79543ba88c4c9fc286
          int same_dialog_pos_x     = get_sidebar_pos_right_x() + FromDIP(5);
          temp_na_info.dialog_pos.x = same_dialog_pos_x;
 diff --git a/src/slic3r/GUI/SendMultiMachinePage.cpp b/src/slic3r/GUI/SendMultiMachinePage.cpp
-index c81fb76f974680f527baed80bfe33b6007e11639..6bf82c8ce939e8bc96ba257eed952f74cba8cc32 100644
+index c81fb76f9..6bf82c8ce 100644
 --- a/src/slic3r/GUI/SendMultiMachinePage.cpp
 +++ b/src/slic3r/GUI/SendMultiMachinePage.cpp
 @@ -1240,7 +1240,7 @@ wxPanel* SendMultiMachinePage::create_page()
@@ -397,7 +397,7 @@ index c81fb76f974680f527baed80bfe33b6007e11639..6bf82c8ce939e8bc96ba257eed952f74
      m_refresh_button->SetCornerRadius(0);
      m_refresh_button->SetFont(TABLE_HEAD_FONT);
 diff --git a/src/slic3r/GUI/SendToPrinter.cpp b/src/slic3r/GUI/SendToPrinter.cpp
-index 32b8f5f541058fde43b77f21e78e1718e4ee9832..19b136b42e89893c39140970cc9c3ad80cced8b5 100644
+index 32b8f5f54..19b136b42 100644
 --- a/src/slic3r/GUI/SendToPrinter.cpp
 +++ b/src/slic3r/GUI/SendToPrinter.cpp
 @@ -504,7 +504,7 @@ SendToPrinterDialog::SendToPrinterDialog(Plater *plater)
@@ -410,7 +410,7 @@ index 32b8f5f541058fde43b77f21e78e1718e4ee9832..19b136b42e89893c39140970cc9c3ad8
      m_rename_button->SetBackgroundColour(*wxWHITE);
  
 diff --git a/src/slic3r/GUI/StatusPanel.cpp b/src/slic3r/GUI/StatusPanel.cpp
-index 1267e0014700417e339b427e7dec876e48cc77fb..a42dcf38828c690f78cb62e73254bb0190e32a6b 100644
+index 1267e0014..a42dcf388 100644
 --- a/src/slic3r/GUI/StatusPanel.cpp
 +++ b/src/slic3r/GUI/StatusPanel.cpp
 @@ -946,7 +946,7 @@ PrintingTaskPanel::PrintingTaskPanel(wxWindow *parent, PrintingTaskType type) :
@@ -477,7 +477,7 @@ index 1267e0014700417e339b427e7dec876e48cc77fb..a42dcf38828c690f78cb62e73254bb01
      m_bpButton_e_down_10->SetBackgroundColor(e_ctrl_bg);
      m_bpButton_e_down_10->SetBorderColor(e_ctrl_bd);
 diff --git a/src/slic3r/GUI/StepMeshDialog.cpp b/src/slic3r/GUI/StepMeshDialog.cpp
-index e293ed852f4d805da8d3a59d0f0894887297380c..3183da31576e48fddd088d0f0ff0c87cfb29ee50 100644
+index e293ed852..3183da315 100644
 --- a/src/slic3r/GUI/StepMeshDialog.cpp
 +++ b/src/slic3r/GUI/StepMeshDialog.cpp
 @@ -90,7 +90,7 @@ StepMeshDialog::StepMeshDialog(wxWindow* parent, Slic3r::Step& file, double line
@@ -490,7 +490,7 @@ index e293ed852f4d805da8d3a59d0f0894887297380c..3183da31576e48fddd088d0f0ff0c87c
      // wxPanel* overlay_panel = new wxPanel(this, wxID_ANY, wxDefaultPosition, image_bitmap.GetSize(), wxTAB_TRAVERSAL);
      // overlay_panel->SetBackgroundStyle(wxBG_STYLE_PAINT);
 diff --git a/src/slic3r/GUI/Widgets/AMSItem.cpp b/src/slic3r/GUI/Widgets/AMSItem.cpp
-index 411daf7d1be2d81828cbc1143656a46374b1e103..c024883e797a67bbeb9779bf9073b3102bae7110 100644
+index 411daf7d1..c024883e7 100644
 --- a/src/slic3r/GUI/Widgets/AMSItem.cpp
 +++ b/src/slic3r/GUI/Widgets/AMSItem.cpp
 @@ -339,7 +339,7 @@ void AMSExtText::doRender(wxDC& dc)
@@ -503,7 +503,7 @@ index 411daf7d1be2d81828cbc1143656a46374b1e103..c024883e797a67bbeb9779bf9073b310
  }
  
 diff --git a/src/slic3r/GUI/Widgets/MultiNozzleSync.cpp b/src/slic3r/GUI/Widgets/MultiNozzleSync.cpp
-index 5f562d954e3980256c1b97f08c6cf0dba802d65a..9ae1c3c3d47d6147ff653e3693af952038c0d828 100644
+index 5f562d954..9ae1c3c3d 100644
 --- a/src/slic3r/GUI/Widgets/MultiNozzleSync.cpp
 +++ b/src/slic3r/GUI/Widgets/MultiNozzleSync.cpp
 @@ -26,7 +26,7 @@ ManualNozzleCountDialog::ManualNozzleCountDialog(wxWindow *parent, NozzleVolumeT
@@ -543,7 +543,7 @@ index 5f562d954e3980256c1b97f08c6cf0dba802d65a..9ae1c3c3d47d6147ff653e3693af9520
      Layout();
  }
 diff --git a/src/slic3r/GUI/calib_dlg.cpp b/src/slic3r/GUI/calib_dlg.cpp
-index be3468f5424cb08ae23fd9b3269a507caf29dc96..42bf66c50c96579fc06e36c0c8983cbf47a94dc2 100644
+index be3468f54..42bf66c50 100644
 --- a/src/slic3r/GUI/calib_dlg.cpp
 +++ b/src/slic3r/GUI/calib_dlg.cpp
 @@ -79,7 +79,8 @@ PA_Calibration_Dlg::PA_Calibration_Dlg(wxWindow* parent, wxWindowID id, Plater*

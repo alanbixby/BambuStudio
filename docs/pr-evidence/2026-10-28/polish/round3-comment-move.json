@@ -1,0 +1,14 @@
+[
+  {
+    "key": "bambu-ams-zoom",
+    "old": "54083d6fb80138c3404a58abc2c4300c0035dfd7",
+    "new": "a273fd21b1580662221037549e09bd7e10bcc615",
+    "reason": "Move CSS/DIP conversion comment from AMS zoom to GTK adoption; product-source union unchanged"
+  },
+  {
+    "key": "bambu-gtk-integration",
+    "old": "e77253cd2ff240df00890d2e798faa312df23e95",
+    "new": "74a75752f34633a5bb00d8a96bc6a30fc9a2744a",
+    "reason": "Move CSS/DIP conversion comment from AMS zoom to GTK adoption; product-source union unchanged"
+  }
+]

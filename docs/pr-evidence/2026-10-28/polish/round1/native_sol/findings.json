@@ -1,0 +1,154 @@
+{
+  "reviewer": "native_sol",
+  "round": 1,
+  "open_blocking_count": 0,
+  "non_blocking_count": 1,
+  "reviewed_exact_heads": [
+    {
+      "pr": 1,
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+      "frozen_patch_identical": true,
+      "diff_check": "pass",
+      "additions": 3,
+      "deletions": 1,
+      "files": 1,
+      "patch_sha256": "174791d68de9b1849aa2fc37182fa4c439a5752a31baaffd7e06ba2b23c2f8c9"
+    },
+    {
+      "pr": 2,
+      "base": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+      "head": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+      "frozen_patch_identical": true,
+      "diff_check": "pass",
+      "additions": 10,
+      "deletions": 2,
+      "files": 3,
+      "patch_sha256": "90b29108522ca2ec9ba72c7ec5f9fc9e421c4286c707d5d2148d4d25f9cade3c"
+    },
+    {
+      "pr": 5,
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+      "frozen_patch_identical": true,
+      "diff_check": "pass",
+      "additions": 75,
+      "deletions": 73,
+      "files": 19,
+      "patch_sha256": "b0a52c90b439c7ab9da9da16901d4e19e86fb998c61454f4b02c7e46918ae026"
+    },
+    {
+      "pr": 6,
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+      "frozen_patch_identical": true,
+      "diff_check": "pass",
+      "additions": 66,
+      "deletions": 71,
+      "files": 2,
+      "patch_sha256": "a09b3e2f80a51cb38adb44b51a348a7c20299ada3c1a6486b199813b0c030ece"
+    },
+    {
+      "pr": 7,
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+      "frozen_patch_identical": true,
+      "diff_check": "pass",
+      "additions": 64,
+      "deletions": 1,
+      "files": 3,
+      "patch_sha256": "20d0c4f8a77d6f76622a829790b6171e594fdc39fca8ebdf055f1d2558034436"
+    },
+    {
+      "pr": 8,
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "head": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+      "frozen_patch_identical": true,
+      "diff_check": "pass",
+      "additions": 21,
+      "deletions": 8,
+      "files": 1,
+      "patch_sha256": "7897bc78dd3acf4c8da10b28fa83979aed6d08fec5793dc323d54521db373939"
+    }
+  ],
+  "wx_reference": "abb542694ef4534a50e65c5b877b2774d02952ae",
+  "findings": [
+    {
+      "id": "NSOL-001",
+      "severity": "non-blocking",
+      "classification": "reviewability recommendation; not a demonstrated compatibility defect",
+      "title": "Separate mechanical DPI caller corrections from progress-dialog behavior",
+      "repository": "alanbixby/BambuStudio",
+      "pr": 5,
+      "head": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "locations": [
+        {
+          "path": "src/slic3r/GUI/AboutDialog.cpp",
+          "line": 298
+        },
+        {
+          "path": "src/slic3r/GUI/AmsMappingPopup.cpp",
+          "line": 49
+        },
+        {
+          "path": "src/slic3r/GUI/StatusPanel.cpp",
+          "line": 949
+        },
+        {
+          "path": "src/slic3r/GUI/Widgets/ProgressDialog.cpp",
+          "line": 116
+        },
+        {
+          "path": "src/slic3r/GUI/Widgets/ProgressDialog.cpp",
+          "line": 196
+        },
+        {
+          "path": "src/slic3r/GUI/Widgets/ProgressDialog.cpp",
+          "line": 265
+        },
+        {
+          "path": "src/slic3r/GUI/Widgets/ProgressDialog.cpp",
+          "line": 821
+        }
+      ],
+      "evidence": [
+        "Exact diff contains 51 changed bitmap/helper/point-font inputs: pr5-caller-inventory.json",
+        "Same diff changes adaptive scrolling, initial fitting, top-level size dispatch and progress-label height",
+        "75 additions / 73 deletions across 19 files; no 1000-line size issue",
+        "Two commits share a title; second includes both mechanical inputs and progress changes"
+      ],
+      "trigger": "Maintainer reviews or rolls back the 19-file DPI patch.",
+      "outcome": "Mechanical unit corrections and native layout/lifecycle behavior require different review evidence and share one rollback unit.",
+      "smallest_practical_fix": "Optionally split the 51 bitmap/helper/point-font inputs from measured geometry/progress behavior, preserving exact recombined source. Alternatively retain the small PR with clearly titled review commits and a short scope map. Do not introduce a new helper framework.",
+      "verification_needed": [
+        "Compare recombined source trees byte-for-byte with this frozen PR5 head",
+        "Check each split patch against declared base",
+        "Update wx consumer-correction merge gate to cover both app changes",
+        "Keep native progress evidence with behavior change and do not substitute caller arithmetic checks"
+      ],
+      "status": "open_optional"
+    }
+  ],
+  "checked_commands_results": {
+    "audit_script": "audit.py",
+    "audit_result": "audit-results.json",
+    "frozen_patch_identity": "6/6 pass",
+    "diff_check": "6/6 pass",
+    "source_hashes": 31,
+    "pr5_input_inventory": 51,
+    "wx_upstream_advance_files": [
+      "src/msw/webview_edge.cpp"
+    ]
+  },
+  "limitations": [
+    "Read-only immutable-source and input-consistency review; no builds or compiler invocations",
+    "No native MSW/Cocoa/GTK runtime, GUI interaction, printer/profile operation or GLX tracing in this round",
+    "Historical artifact/screenshot/runtime evidence not rerun; no isolated-PR or all-OS rendering claim",
+    "Async settling, monitor migration, native Wayland, translations, non-default-printer and narrow-window rendering not established",
+    "Known unbreakable-word progress wrapping and fixed-width narrow Assembly bounds are baseline limits, not new regressions attributed here",
+    "Consumer/wx merge sequencing remains a maintainer integration gate"
+  ],
+  "report": "REPORT.md",
+  "next_action": "Parent verifies findings; no reviewer-initiated next round"
+}

@@ -1,0 +1,177 @@
+{
+  "reviewer": "Astra",
+  "round": 2,
+  "partition": "Temperature bambu-09; camera bambu-10; stacked bambu-ams-zoom",
+  "reviewed_heads": {
+    "bambu-09": "fc074b0ad0a55945fefcf16fe0b195a48d20e398",
+    "bambu-10": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+    "bambu-ams-zoom": "54083d6fb80138c3404a58abc2c4300c0035dfd7",
+    "app_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "app_combined": "e9617d1a815183350bd9822fb894996aa086f47a",
+    "wx_base": "abb542694ef4534a50e65c5b877b2774d02952ae",
+    "wx_integration": "0f2037facedf3d92660e7071b6754fe994aa744d",
+    "published_evidence": "9ea10ea751a655b1c964f08ac4b2ce95bef07622"
+  },
+  "reviewed_candidates": [
+    {
+      "key": "bambu-09",
+      "head": "fc074b0ad0a55945fefcf16fe0b195a48d20e398",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "one_commit": true,
+      "changed_lines": 101,
+      "diff_check": "PASS",
+      "body_file": "/tmp/bambu-polish-20261028/bodies-round2/bambu-09.md",
+      "body_sha256": "5cca444ac1d4a867a6538c7bc5b568e0f3d1e205f6eb09945c9655e27e9511a4",
+      "image_urls_retained": true
+    },
+    {
+      "key": "bambu-10",
+      "head": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "one_commit": true,
+      "changed_lines": 49,
+      "diff_check": "PASS",
+      "body_file": "/tmp/bambu-polish-20261028/bodies-round2/bambu-10.md",
+      "body_sha256": "aa66d45b3488dedee268b07f8f7c444eccb8e91439aecfb7cb0fcac6ce97b118",
+      "image_urls_retained": true
+    },
+    {
+      "key": "bambu-ams-zoom",
+      "head": "54083d6fb80138c3404a58abc2c4300c0035dfd7",
+      "base": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+      "one_commit": true,
+      "changed_lines": 195,
+      "diff_check": "PASS",
+      "body_file": "/tmp/bambu-polish-20261028/bodies-round2/bambu-ams-zoom.md",
+      "body_sha256": "e9084f6676014925e21df4ad67535ade7d0c666c40d195bf4eaa0030d2ec2bb6",
+      "image_urls_retained": true
+    }
+  ],
+  "open_blocking_count": 0,
+  "open_nonblocking_count": 0,
+  "new_findings": [],
+  "findings": [
+    {
+      "id": "ASTRA-CAM-001",
+      "severity": "blocking",
+      "status": "resolved",
+      "classification": "prior PR10 regression corrected in camera and AMS candidates",
+      "title": "Use visible client width rather than the old scrolled allocation when fitting the camera",
+      "evidence": [
+        {
+          "head": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+          "path": "src/slic3r/GUI/StatusPanel.cpp",
+          "lines": "2054-2076"
+        },
+        {
+          "head": "54083d6fb80138c3404a58abc2c4300c0035dfd7",
+          "path": "src/slic3r/GUI/StatusPanel.cpp",
+          "lines": "2124-2179"
+        },
+        {
+          "artifact": "checks.json",
+          "detail": "Exact camera-only extracted source; final AMS helper differs from native-tested 010ae252 only by naming the 2x cap; 44 candidate TSV files/440 observations audited and matched to zero recorded exits; original negative-control narrow row has 800px excess."
+        }
+      ],
+      "trigger": "Narrow a wide short Status window with the camera at minimum height.",
+      "outcome": "Old fixed-point mechanism removed; corrected recorded fixtures contract virtual width and preserve necessary undersized scrolling.",
+      "smallest_practical_fix": "Implemented: use current client width minus existing spacers, bound to natural minima, then refresh virtual extent. No further source fix requested.",
+      "verification_needed": "No additional proof required to close this source-level objection. Real app playback/fullscreen, WebView2 and Cocoa remain compatibility validation limits.",
+      "proof_limits": "Raw observations were independently audited, not rerun. Native fixtures are synthetic GTK layouts; do not prove all platform event schedules."
+    },
+    {
+      "id": "ASTRA-CAM-002",
+      "severity": "non-blocking",
+      "status": "resolved",
+      "classification": "prior evidence correction accepted and independently checked",
+      "title": "Constrain camera report models to the actual page reporting contract",
+      "evidence": [
+        {
+          "head": "54083d6fb80138c3404a58abc2c4300c0035dfd7",
+          "path": "src/slic3r/GUI/DeviceWeb/device_page/src/features/device-page/ams-control-web/AmsControlWebPage.tsx",
+          "lines": "23-39,119-128"
+        },
+        {
+          "head": "54083d6fb80138c3404a58abc2c4300c0035dfd7",
+          "path": "src/slic3r/GUI/DeviceWeb/device_page/src/features/device-page/ams-control-web/geometry.ts",
+          "lines": "116-141"
+        },
+        {
+          "head": "54083d6fb80138c3404a58abc2c4300c0035dfd7",
+          "path": "src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp",
+          "lines": "603-676"
+        },
+        {
+          "head": "9ea10ea751a655b1c964f08ac4b2ce95bef07622",
+          "path": "docs/pr-evidence/2026-10-28/polish/corrections.md",
+          "lines": "1-3"
+        }
+      ],
+      "trigger": "Treat old synthetic startup/width-dependent reports as actual page behavior.",
+      "outcome": "Current publication explicitly corrects that interpretation and matches the positive changed-height hook and inspected full-body band heights.",
+      "smallest_practical_fix": "Implemented documentation correction; historical reports remain immutable. No source fix requested.",
+      "verification_needed": "Continue distinguishing actual page height changes from stress inputs; do not assume resize or zoom generates a report.",
+      "proof_limits": "Source trace and constants checked; actual browser message timing not executed."
+    },
+    {
+      "id": "ASTRA-DOC-001",
+      "severity": "non-blocking",
+      "status": "resolved",
+      "classification": "prior editorial simplification completed",
+      "title": "Consolidate duplicate validation and screenshot provenance paragraphs",
+      "evidence": [
+        {
+          "head": "fc074b0ad0a55945fefcf16fe0b195a48d20e398",
+          "path": "/tmp/bambu-polish-20261028/bodies-round2/bambu-09.md",
+          "lines": "1-8"
+        },
+        {
+          "head": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+          "path": "/tmp/bambu-polish-20261028/bodies-round2/bambu-10.md",
+          "lines": "1-8"
+        },
+        {
+          "head": "54083d6fb80138c3404a58abc2c4300c0035dfd7",
+          "path": "/tmp/bambu-polish-20261028/bodies-round2/bambu-ams-zoom.md",
+          "lines": "1-8"
+        }
+      ],
+      "trigger": "Read the former repetitive candidate descriptions.",
+      "outcome": "Current bodies are concise and scoped, retain both image URLs, disclose historical combined Linux images and native platform limits, and identify the camera image as also showing AMS.",
+      "smallest_practical_fix": "Implemented body rewrite; no additional edit required.",
+      "verification_needed": "Preserve these exact limits and image links during fork publication; upstream publication still requires user approval.",
+      "proof_limits": "Frozen body text and URL retention checked; images not fetched or visually inspected, remote PR bodies not updated."
+    }
+  ],
+  "converged": true,
+  "recommended_next_step": "Stop this partition at round2; no new review started. Parent may verify the report and continue authorized fork-only publication.",
+  "checks": {
+    "command": "python3 -I /tmp/bambu-polish-20261028/round2/camera_temperature_astra/audit.py",
+    "result": "PASS",
+    "commands_and_results": "checks.json",
+    "source_manifest": "sources.json",
+    "candidate_TSV_files": 44,
+    "candidate_recorded_observations": 440,
+    "fresh_native_runs": 0,
+    "diff_checks": "Three candidates pass; one commit each; 101/49/195 changed lines"
+  },
+  "baseline_observations": [
+    {
+      "topic": "Temperature readonly",
+      "detail": "Existing bool/mouse gate and keyboard/submission semantics are unchanged; not a new candidate defect."
+    },
+    {
+      "topic": "AMS DPI refresh",
+      "detail": "Unchanged-height page hook does not re-report on resize/zoom; existing show/DPI refresh limitations are not fixed or attributed to these candidates."
+    }
+  ],
+  "limitations": [
+    "Review covers this three-candidate partition, not all sixteen candidates.",
+    "No builds, GUI, native runs, printer interaction, network or GitHub writes in this review. Only assigned scratch output written.",
+    "Recorded GTK fixtures use synthetic content and fallback16:9 media; no full-app playback, first-frame dispatch, fullscreen lifecycle, real DOM or WebView2/Cocoa acceptance.",
+    "Windows/macOS not compiled or run. Native temperature typing/caret behavior remains unchecked.",
+    "Build report and parent bundle check read, but build/bundle/complete source-input audit not independently repeated here.",
+    "Screenshots checked for link retention and provenance only; not fetched or visually reinspected.",
+    "No all-OS compatibility or merge-readiness claim."
+  ]
+}

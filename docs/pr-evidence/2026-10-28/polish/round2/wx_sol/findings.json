@@ -1,0 +1,108 @@
+{
+  "reviewer": "Sol",
+  "partition": "wx1/wx2 and Bambu upstream integration",
+  "round": 2,
+  "status": "converged",
+  "open_blocking_count": 0,
+  "open_non_blocking_count": 0,
+  "new_finding_count": 0,
+  "reviewed_heads": {
+    "wx1": "14a14a773c74ae23281417f58334b5c28ecfed12",
+    "wx2": "d54f3313028fc439cea91f0b6a213e5ad2245b90",
+    "app5": "305b41867feec57eb3d535d59920a9f091991762",
+    "app_progress": "5608a478ca983cc63083627bb6f8854f575412db",
+    "app_gtk_integration": "e77253cd2ff240df00890d2e798faa312df23e95",
+    "app_combined": "e9617d1a815183350bd9822fb894996aa086f47a",
+    "wx_integration": "0f2037facedf3d92660e7071b6754fe994aa744d"
+  },
+  "reviewed_bases": {
+    "wx_current_upstream": "abb542694ef4534a50e65c5b877b2774d02952ae",
+    "app": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "app_progress": "305b41867feec57eb3d535d59920a9f091991762",
+    "app_gtk_integration": "5608a478ca983cc63083627bb6f8854f575412db"
+  },
+  "additional_exact_release_heads": [
+    "b506005bc4ee62124e24bf00e0f58656db3646a6",
+    "f5e51a20bd328d4a043af9344825d7347270c2c9"
+  ],
+  "findings": [
+    {
+      "id": "WXSOL-001",
+      "severity": "blocking",
+      "category": "integration",
+      "status": "resolved",
+      "title": "The reviewed wx behavior is not selected by Bambu, and wx2 on master would reach uncorrected release branches",
+      "novelty": "Prior finding; closed by independently verified backward-compatible opt-in and exact separate adoption candidate.",
+      "affected_prs": [
+        "alanbixby/wxWidgets#2",
+        "alanbixby/BambuStudio#5",
+        "bambu-gtk-integration"
+      ],
+      "locations": [
+        {"sha": "d54f3313028fc439cea91f0b6a213e5ad2245b90", "path": "src/gtk/window.cpp", "line": 4394},
+        {"sha": "0f2037facedf3d92660e7071b6754fe994aa744d", "path": "include/wx/sysopt.h", "line": 59},
+        {"sha": "d54f3313028fc439cea91f0b6a213e5ad2245b90", "path": "interface/wx/sysopt.h", "line": 91},
+        {"sha": "e77253cd2ff240df00890d2e798faa312df23e95", "path": "src/slic3r/GUI/GUI_App.cpp", "line": 2909},
+        {"sha": "e77253cd2ff240df00890d2e798faa312df23e95", "path": "deps/wxWidgets/wxWidgets.cmake", "line": 27}
+      ],
+      "trigger": "Previously, fetching wx master would eventually enable nonidentity conversion for uncorrected release applications. The current implementation requires the explicit gtk.window.font-dpi-scaling option to equal 1.",
+      "outcome": "Default and options-disabled conversions return identity before GTK/window access. The sampled release trees contain no opt-in. Corrected Bambu explicitly opts in early and selects an exact reachable combined wx revision. The previous default release-wide regression no longer follows from these candidates.",
+      "parent_response_assessment": "Accepted. Release backports or protective release pins are no longer required to preserve default behavior. The existing system-options zero accessor is sufficient; no framework or source doubles are needed in production. The separate adoption candidate is concrete rather than a warning-only gate.",
+      "proof": "Full wx tree equals upstream abb5426 plus exactly the five changed files from the two candidate trees; both candidate heads are ancestors. Live read-only ls-remote confirms 0f2037fa at the declared fork branch. Integration recipe/startup blobs match the combined app. Both exact release trees still fetch master but contain no option name. 51 supplied native process logs and two live archives were hash-checked; source/accessor and options-disabled 613-step build completion inspected. Live ELF disassembly was regenerated read-only and matches the saved SetOption(1)-before-on_init_inner evidence.",
+      "smallest_practical_fix": "Implemented: default-off system option plus tiny separate Bambu adoption draft pinned to the combined wx source. Before any later upstream integration submission, replace the temporary fork URL/SHA with the accepted official revision as the candidate body already requires.",
+      "verification_needed": "Closure checks completed in verification.json/commands.json. Windows/macOS and complete Studio runtime behavior remain unvalidated and must not be represented as validated; absence of those runs is not itself an open blocker.",
+      "blocking_scope": "No remaining blocker for the reviewed personal-fork drafts. No approval for upstream submission or all-platform readiness."
+    },
+    {
+      "id": "WXSOL-002",
+      "severity": "non-blocking",
+      "category": "description-accuracy",
+      "status": "resolved",
+      "title": "wx1 body overstates its wrapped-label exclusion",
+      "novelty": "Prior wording finding; revised candidate body independently checked against source.",
+      "affected_prs": ["alanbixby/wxWidgets#1"],
+      "locations": [
+        {"sha": "14a14a773c74ae23281417f58334b5c28ecfed12", "path": "src/gtk/control.cpp", "line": 356},
+        {"sha": "14a14a773c74ae23281417f58334b5c28ecfed12", "path": "src/gtk/stattext.cpp", "line": 237},
+        {"source": "/tmp/bambu-polish-20261028/bodies-round2/wx-01.md", "line": 1}
+      ],
+      "trigger": "The old description promised all wrapped static labels retained their prior path, although wxStaticText best-size measurement temporarily disables wrapping.",
+      "outcome": "The new sentence describes the GTK label measurement state, not an exclusion of all wxStaticText wrapping paths; it matches the implementation.",
+      "parent_response_assessment": "Accepted without further source or body changes.",
+      "proof": "Candidate body now says: The check runs while GTK measures a label without wrapping; other widget types keep their existing path. Source checks wrapping at control.cpp:356; stattext.cpp:237 disables it for measurement and :251 restores it.",
+      "smallest_practical_fix": "Implemented the narrow wording correction. No implementation change is required by this finding.",
+      "verification_needed": "Completed direct body/source comparison. No native test is necessary to verify the wording correction. Supplied direct wrapped-GTK-label exclusion probe does not establish exclusion of every wxStaticText wrapping path."
+    }
+  ],
+  "checked_commands_and_results": {
+    "script": "python3 /tmp/bambu-polish-20261028/round2/wx_sol/verify.py",
+    "result": "PASS",
+    "recorded_command_count": 145,
+    "all_candidates_metadata_count": 16,
+    "all_candidates_one_commit": true,
+    "largest_changed_lines": 415,
+    "source_and_body_review_candidate_count": 5,
+    "supplied_native_log_hashes_checked": 51,
+    "live_archives_hashed": 2,
+    "production_archive_members_hashed": 2,
+    "compiled_cpp_path_records_and_live_sources_checked": 21,
+    "unique_compiled_cpp_sources_checked": 20,
+    "live_app_elf_sha256": "e25ee5adf9b6af148bdf9e79265cc3ad0f1c59a73e59cfc38a84f3e764a93c3d",
+    "live_startup_disassembly_matches_saved_evidence": true,
+    "wx_tree_composition": "Exact union of upstream abb5426 and both wx candidate changes",
+    "pin_remote": "https://github.com/alanbixby/wxWidgets refs/heads/review/font-dpi-integration = 0f2037facedf3d92660e7071b6754fe994aa744d",
+    "commands": "commands.json",
+    "verification": "verification.json"
+  },
+  "limitations": [
+    "No builds, probe execution, GTK/Studio launch, GUI/input, installation, repository/index/branch writes, GitHub writes or delegation occurred. All reviewer writes are confined to the assigned scratch directory.",
+    "Portable Python verifies source/metadata/hash correspondence only. Existing native results were inspected rather than reproduced.",
+    "Source/body conclusions are scoped to wx1/wx2 and three Bambu dependency-chain candidates; other eleven candidates received metadata checks only.",
+    "Windows/macOS have not been compiled or run. No new GTK2/GTK4, shared-library, native Wayland, Debug or C++98 native-library validation.",
+    "Supplied build is warm with six disclosed local CMake adaptations. Supplied native probes use private Xvfb, hidden/no-frame harnesses and no Studio event loop.",
+    "Sampled two release heads rather than an exhaustive support-branch inventory. Explicit system-option environment activation is opt-in.",
+    "Historical screenshots show earlier combined Linux builds and are not final isolated-PR visual acceptance.",
+    "Temporary fork pin must become an accepted official revision before upstream submission. This review does not authorize upstream PRs or claim all-OS/complete-runtime/merge readiness."
+  ],
+  "next_round": "Not requested; stop after this converged partition review."
+}

@@ -1,5 +1,5 @@
 diff --git a/deps/wxWidgets/wxWidgets.cmake b/deps/wxWidgets/wxWidgets.cmake
-index 46f50becd434647ae340ad85782a1eb35fd7b4b4..5914327485449bca6eafee1de98159103528f085 100644
+index 46f50becd..591432748 100644
 --- a/deps/wxWidgets/wxWidgets.cmake
 +++ b/deps/wxWidgets/wxWidgets.cmake
 @@ -24,8 +24,8 @@ endif ()
@@ -13,8 +13,23 @@ index 46f50becd434647ae340ad85782a1eb35fd7b4b4..5914327485449bca6eafee1de9815910
      DEPENDS ${PNG_PKG} ${ZLIB_PKG} ${EXPAT_PKG} ${TIFF_PKG} ${JPEG_PKG}
      CMAKE_ARGS
          -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+diff --git a/src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp b/src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp
+index 5155bfb95..3db94ad63 100644
+--- a/src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp
++++ b/src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp
+@@ -656,8 +656,8 @@ void DeviceWebHost::OnWebContentSizeChanged(int width, int height)
+     // the current DPI on show.
+     m_last_logical_content_size = wxSize(width, height);
+ 
+-    // The web page reports its size in DIP/CSS pixels, so FromDIP() is the
+-    // correct conversion to the physical pixels wxWindow::SetMinSize() expects.
++    // Convert reported CSS pixels to wx window coordinates; GTK applies its
++    // integer content scale when rendering.
+     wxSize content_size(FromDIP(width), FromDIP(height));
+     if (content_size == m_last_reported_content_size) {
+         return;
 diff --git a/src/slic3r/GUI/GUI_App.cpp b/src/slic3r/GUI/GUI_App.cpp
-index c78ffde20b1a81f569a5e8ee47a5784e0ee29d2b..f888e4e6f64d0f09485d5fd78290da39444dc318 100644
+index c78ffde20..f888e4e6f 100644
 --- a/src/slic3r/GUI/GUI_App.cpp
 +++ b/src/slic3r/GUI/GUI_App.cpp
 @@ -2906,6 +2906,11 @@ void GUI_App::UnRegisterMacPowerCallBack()

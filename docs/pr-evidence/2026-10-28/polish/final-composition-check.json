@@ -1,0 +1,130 @@
+{
+  "app": {
+    "recomposed": "094d67e9702508a845195e85fb17084db6da74e4",
+    "combined_head": "e9617d1a815183350bd9822fb894996aa086f47a",
+    "match": true,
+    "source_head_index_status_unchanged": true,
+    "individual_master_merges": [
+      {
+        "key": "bambu-01",
+        "head": "f4218e246f3041077177d2487ce8824d522addfa",
+        "declared_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+        "master_text_merge": "PASS",
+        "patch_sha256": "53ef1a03912a9b487c7bd3dcd1757eae38f69c9ec92be597f6a08c76fdd74145"
+      },
+      {
+        "key": "bambu-02",
+        "head": "3ba2657c70ef031d011da175a4daafb850e3b3b1",
+        "declared_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+        "master_text_merge": "PASS",
+        "patch_sha256": "843779272215c8b77274919733c60d449e445de3d77008b38408a352845b831b"
+      },
+      {
+        "key": "bambu-03",
+        "head": "ed5e975a59ee28242f67ded5e0722b19b61e0ed4",
+        "declared_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+        "master_text_merge": "PASS",
+        "patch_sha256": "b7b561abc26eded7790ddb2656af6802bb339cee4d25c6d2231a9fffff5a92c4"
+      },
+      {
+        "key": "bambu-04",
+        "head": "44fa2692b16919f4519595d6bcd4f571777ea1d6",
+        "declared_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+        "master_text_merge": "PASS",
+        "patch_sha256": "6e07901cce2ca84eb80fcf002115b5806b03fa26a186726771348678f37ba5e5"
+      },
+      {
+        "key": "bambu-05",
+        "head": "305b41867feec57eb3d535d59920a9f091991762",
+        "declared_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+        "master_text_merge": "PASS",
+        "patch_sha256": "a456671396f931f5c3fa07280e486b60d3f9c08d4ab8cbb23d8603a1f3c700db"
+      },
+      {
+        "key": "bambu-06",
+        "head": "2604e8279cf03f0ac93b53205608a7d901aacfc4",
+        "declared_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+        "master_text_merge": "PASS",
+        "patch_sha256": "c1cca258e4fb842876f7bfbce3245391212d80c07300fa9df003a9165d934429"
+      },
+      {
+        "key": "bambu-07",
+        "head": "9df1217e47951f34cd95c65159f5329c88083c75",
+        "declared_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+        "master_text_merge": "PASS",
+        "patch_sha256": "4736d61d5cd54b7fd91f39e8b221bc906e8fc3d284f45363423ee7482cdafadb"
+      },
+      {
+        "key": "bambu-08",
+        "head": "5d431fccc52f0011f0613a74d224e81bc614d23f",
+        "declared_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+        "master_text_merge": "PASS",
+        "patch_sha256": "51d2f239b086b6dbd5d5be3a74a77ab663f799bffdb4ac54c67970ef03f59caf"
+      },
+      {
+        "key": "bambu-09",
+        "head": "fc074b0ad0a55945fefcf16fe0b195a48d20e398",
+        "declared_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+        "master_text_merge": "PASS",
+        "patch_sha256": "13db5a244eed4c603f09d9fc75df213fd7f5b087b84ceb2bb025b4400a7ab316"
+      },
+      {
+        "key": "bambu-10",
+        "head": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+        "declared_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+        "master_text_merge": "PASS",
+        "patch_sha256": "207253443ff391fef5942845be37f54fa1b2b8c3622a7d3c716ffa4edf787fbe"
+      },
+      {
+        "key": "bambu-project-startup",
+        "head": "a2edccd9347f53d719984fd2997ce23155ee79a6",
+        "declared_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+        "master_text_merge": "PASS",
+        "patch_sha256": "54c6cb6f746ef649c9ab848bccc1ce87506e7aa59a0b2111c49051f043a747e6"
+      },
+      {
+        "key": "bambu-progress",
+        "head": "5608a478ca983cc63083627bb6f8854f575412db",
+        "declared_base": "305b41867feec57eb3d535d59920a9f091991762",
+        "master_text_merge": "PASS",
+        "patch_sha256": "c1a16609ca75fbcfb7c255851c3952f36f050654b70b78fdf9e43f3d8bdea3d0"
+      },
+      {
+        "key": "bambu-ams-zoom",
+        "head": "a273fd21b1580662221037549e09bd7e10bcc615",
+        "declared_base": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+        "master_text_merge": "PASS",
+        "patch_sha256": "66880cfffc1835181412b44d477d574ac0a69f4fe7f0136986870cbacda8702c"
+      },
+      {
+        "key": "bambu-gtk-integration",
+        "head": "74a75752f34633a5bb00d8a96bc6a30fc9a2744a",
+        "declared_base": "5608a478ca983cc63083627bb6f8854f575412db",
+        "master_text_merge": "PASS",
+        "patch_sha256": "832c5000f85c536a7ba94391040debdcdbb5a1ccd986fb3f95329004cd4dfff1"
+      }
+    ]
+  },
+  "wx": {
+    "recomposed": "db3c30ee5fb3043b7798ae0029ef51312fe9fc65",
+    "combined_head": "0f2037facedf3d92660e7071b6754fe994aa744d",
+    "match": true,
+    "source_head_index_status_unchanged": true,
+    "individual_master_merges": [
+      {
+        "key": "wx-01",
+        "head": "14a14a773c74ae23281417f58334b5c28ecfed12",
+        "declared_base": "abb542694ef4534a50e65c5b877b2774d02952ae",
+        "master_text_merge": "PASS",
+        "patch_sha256": "9d4603b687f9f15173cf0cb48e1ca1d8f0f1b1314ada4463b291e1ce08134321"
+      },
+      {
+        "key": "wx-02",
+        "head": "d54f3313028fc439cea91f0b6a213e5ad2245b90",
+        "declared_base": "abb542694ef4534a50e65c5b877b2774d02952ae",
+        "master_text_merge": "PASS",
+        "patch_sha256": "d6314d718db9a3c89f6c25317747d0b5ae81c54d8c28c0ea5a176f266f65cc8b"
+      }
+    ]
+  }
+}

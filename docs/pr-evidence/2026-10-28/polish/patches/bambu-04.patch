@@ -1,5 +1,5 @@
 diff --git a/resources/web/model_new/css/dark.css b/resources/web/model_new/css/dark.css
-index b0e742add2a5dba172cd7b050efd7def76b41a28..eefcba18d8519be2eaabb2cb15229476fa890feb 100644
+index b0e742add..eefcba18d 100644
 --- a/resources/web/model_new/css/dark.css
 +++ b/resources/web/model_new/css/dark.css
 @@ -154,3 +154,14 @@ input {
@@ -18,7 +18,7 @@ index b0e742add2a5dba172cd7b050efd7def76b41a28..eefcba18d8519be2eaabb2cb15229476
 +  color: #81c7ff;
 +}
 diff --git a/resources/web/model_new/index.css b/resources/web/model_new/index.css
-index 156f0c0159f4b9e640b24ed42f57cdfa6f006981..6301992af450e4f5ad6dac99a293c4398d9eba87 100644
+index 156f0c015..6301992af 100644
 --- a/resources/web/model_new/index.css
 +++ b/resources/web/model_new/index.css
 @@ -176,3 +176,24 @@ hr {

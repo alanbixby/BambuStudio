@@ -1,5 +1,5 @@
 diff --git a/src/slic3r/GUI/StatusPanel.cpp b/src/slic3r/GUI/StatusPanel.cpp
-index a42dcf38828c690f78cb62e73254bb0190e32a6b..c4e629cbd170c836bebd1ae45594fc8bfa7b77a2 100644
+index a42dcf388..c4e629cbd 100644
 --- a/src/slic3r/GUI/StatusPanel.cpp
 +++ b/src/slic3r/GUI/StatusPanel.cpp
 @@ -1122,12 +1122,10 @@ void PrintingTaskPanel::create_panel(wxWindow *parent)
@@ -16,7 +16,7 @@ index a42dcf38828c690f78cb62e73254bb0190e32a6b..c4e629cbd170c836bebd1ae45594fc8b
  
      sizer_percent->Add(m_staticText_progress_percent, 0, 0, 0);
 diff --git a/src/slic3r/GUI/Widgets/ProgressDialog.cpp b/src/slic3r/GUI/Widgets/ProgressDialog.cpp
-index 956a7476feed09ceee9ba993233cd2f58862e017..2722827350de815cd13813d5fc0d29fd7caa9713 100644
+index 956a7476f..272282735 100644
 --- a/src/slic3r/GUI/Widgets/ProgressDialog.cpp
 +++ b/src/slic3r/GUI/Widgets/ProgressDialog.cpp
 @@ -113,11 +113,12 @@ wxString ProgressDialog::FormatString(wxString title)

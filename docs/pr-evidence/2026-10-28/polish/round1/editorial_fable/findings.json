@@ -1,0 +1,352 @@
+{
+  "partition": "editorial_fable",
+  "round": 1,
+  "reviewed_heads": {
+    "bambu-01": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+    "bambu-02": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+    "bambu-03": "0826d59e1e1b36bf80b82904859c64f339749820",
+    "bambu-04": "b3dacfa61b17385703e700779207e83e0c1041af",
+    "bambu-05": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+    "bambu-06": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+    "bambu-07": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+    "bambu-08": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+    "bambu-09": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+    "bambu-10": "fab83eef842e6967fa06d0bb05410940b4787d28",
+    "wx-01": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+    "wx-02": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4"
+  },
+  "open_blocking_count": 1,
+  "blocking_note": "ED-01 is editorial, not a code defect. It is resolved by applying the proposed bodies; no source change is required.",
+  "findings": [
+    {
+      "id": "ED-01",
+      "severity": "blocking",
+      "status": "open",
+      "prs": [
+        "bambu-01",
+        "bambu-02",
+        "bambu-03",
+        "bambu-04",
+        "bambu-05",
+        "bambu-06",
+        "bambu-07",
+        "bambu-08",
+        "bambu-09",
+        "bambu-10",
+        "wx-01",
+        "wx-02"
+      ],
+      "heads": {
+        "bambu-01": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+        "bambu-02": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+        "bambu-03": "0826d59e1e1b36bf80b82904859c64f339749820",
+        "bambu-04": "b3dacfa61b17385703e700779207e83e0c1041af",
+        "bambu-05": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+        "bambu-06": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+        "bambu-07": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+        "bambu-08": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+        "bambu-09": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+        "bambu-10": "fab83eef842e6967fa06d0bb05410940b4787d28",
+        "wx-01": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+        "wx-02": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4"
+      },
+      "kind": "editorial (user goal)",
+      "summary": "Live bodies are not upstream-ready: 3 to 4 boilerplate paragraphs repeat per PR, the same screenshot-provenance fact is stated twice in PR2/3/5/6/7/8/9/10, and internal process language remains (ELF hash, 'cleaned no-preload build', 'without preloads', 'peer-review follow-ups', 'Fork draft only; upstream submission requires approval', two or three evidence links).",
+      "evidence": "round1/*-body.md (identical to live-prs.json bodies, verified). Prose word counts 125 to 315 per body (editorial_fable/body-check.json). Example double statement: bambu-02-body.md paragraphs 4 and 5 both say the after screenshots are the combined build.",
+      "trigger": "A maintainer opens any of the twelve PRs.",
+      "outcome": "The change is buried under repeated disclaimers; the user's explicit question 'too verbose / AI slopified?' is answered yes.",
+      "smallest_fix": "Replace each body with editorial_fable/proposed-bodies/<key>.md: visible problem, what changed, one testing sentence, OS/merge gate where material, the same screenshots, one provenance sentence, one evidence link. Draft status stays on GitHub's draft flag rather than in prose.",
+      "verification_needed": "Parent diffs proposed vs live; rerun editorial_fable/check_bodies.py (all 25 screenshot URLs preserved, no model/quota/process words). Parent confirms the provenance sentence (app commit 53fdfb6 from validation-native.json reviewed_app_commit) is the build the after screenshots came from."
+    },
+    {
+      "id": "ED-02",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-10"
+      ],
+      "heads": {
+        "bambu-10": "fab83eef842e6967fa06d0bb05410940b4787d28"
+      },
+      "kind": "process leakage via link",
+      "summary": "PR10 links camera-review/STATUS.md, whose first sentence names a review model and an API rate limit. CF-17 removed that text from the body but it is one click away.",
+      "evidence": "bambu-10-body.md last paragraph; fetched https://github.com/alanbixby/BambuStudio/blob/9abf504f5d184add4f55ae7e88f653d7eb8ed273/docs/pr-evidence/2026-10-28/peer-review/camera-review/STATUS.md (HTTP 200), first line.",
+      "trigger": "Reviewer follows the 'Completed camera review' link.",
+      "outcome": "Model and quota process noise reaches an upstream reader.",
+      "smallest_fix": "Drop the STATUS.md link (done in proposed body); the camera-review directory is still inside the 9abf504f tree link that PR10 keeps.",
+      "verification_needed": "grep STATUS.md proposed-bodies/bambu-10.md returns nothing."
+    },
+    {
+      "id": "ED-03",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-01",
+        "bambu-04",
+        "bambu-05",
+        "bambu-10",
+        "wx-02"
+      ],
+      "heads": {
+        "bambu-01": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+        "bambu-04": "b3dacfa61b17385703e700779207e83e0c1041af",
+        "bambu-05": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+        "bambu-10": "fab83eef842e6967fa06d0bb05410940b4787d28",
+        "wx-02": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4"
+      },
+      "kind": "jargon / measurement soup",
+      "summary": "Raw measurements and harness counts sit in prose: '202 swaps, ten drawable switches' (PR1), 'AT-SPI ... y=1701 ... y=1700, within the two-physical-pixel border-rounding tolerance' (PR4), '348 initialization/update checks ... 24 known unbreakable-name failures', '236 assertions' (PR5), '168-case host/solver model' (PR10), '8,494' style counts in wx-02's linked README.",
+      "evidence": "Respective *-body.md paragraphs headed 'Validation'.",
+      "trigger": "Reader tries to learn what was tested.",
+      "outcome": "Numbers without context read as generated filler; the user asked for plain language.",
+      "smallest_fix": "One plain testing sentence per PR; counts stay in the linked evidence tree (done in proposed bodies).",
+      "verification_needed": "Parent reads proposed testing sentences against evidence README to confirm nothing overstated."
+    },
+    {
+      "id": "ED-04",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-05"
+      ],
+      "heads": {
+        "bambu-05": "a1b43d73c23d08db6aa19047286c47c51f4cbe38"
+      },
+      "kind": "ordering / emphasis",
+      "summary": "PR5's first paragraph is the wx merge gate, but PR5 is the side that is safe to merge first; the gate constrains wx#2. The visible defect (clipped progress digits, oversized icons above 100%) comes third.",
+      "evidence": "bambu-05-body.md paragraph 1 vs paragraphs 2 to 3; patch confirms PR5 has no wx dependency (all sites convert nominal values once, valid with stock wx).",
+      "trigger": "Maintainer reads the opening line.",
+      "outcome": "PR5 looks blocked on an external change when it is not.",
+      "smallest_fix": "Lead with the problem; keep one sentence: safe alone, needed on Linux once wx#2 lands, wx#2 must wait (done in proposed body).",
+      "verification_needed": "wx_sol / native_sol confirm PR5 compiles and behaves correctly against stock wx (not verified here)."
+    },
+    {
+      "id": "ED-05",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-02",
+        "bambu-04",
+        "bambu-08",
+        "bambu-10"
+      ],
+      "heads": {
+        "bambu-02": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+        "bambu-04": "b3dacfa61b17385703e700779207e83e0c1041af",
+        "bambu-08": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+        "bambu-10": "fab83eef842e6967fa06d0bb05410940b4787d28"
+      },
+      "kind": "fork-local cross references",
+      "summary": "Bodies reference other PRs by fork number or by swarm-internal names: 'Based on #1', 'Independent of the metadata and native DPI branches', 'Independent of #5; both were validated together'. Fork numbers will not match upstream numbers, and independence is already visible from base=master.",
+      "evidence": "bambu-02-body.md p2, bambu-04-body.md p5, bambu-08-body.md p3, bambu-10-body.md p3; live-prs.json base_branch=master for 4/8/10.",
+      "trigger": "PRs are opened upstream with new numbers.",
+      "outcome": "Dangling or wrong references.",
+      "smallest_fix": "PR2: refer to its base by title (done). PR4/8/10: drop the 'independent of' sentences (done). Renumber '#5' / 'wxWidgets #2' links at submission.",
+      "verification_needed": "Parent re-checks link targets when upstream PRs exist."
+    },
+    {
+      "id": "ED-06",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-02",
+        "bambu-06",
+        "bambu-07",
+        "bambu-08"
+      ],
+      "heads": {
+        "bambu-02": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+        "bambu-06": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+        "bambu-07": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+        "bambu-08": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f"
+      },
+      "kind": "test-claim honesty",
+      "summary": "Testing sentences describe non-tests: 'Source application and composition checks pass on the master base' (= the patch applies), 'source/syntax and focused allocation checks', 'Source tracing and static checks', 'Historical checks cover reachable toggle interaction'. These four PRs have Linux combined-build screenshots and no automated test.",
+      "evidence": "bambu-02/06/07/08-body.md 'Validation' paragraphs; evidence README lists harnesses only for Project, DIP arithmetic, progress dialog, WebKit, camera, wx.",
+      "trigger": "Reader asks what was actually run.",
+      "outcome": "Claims sound like test suites that do not exist.",
+      "smallest_fix": "Say 'checked by eye on Linux in the combined build; no automated test' (done in proposed bodies). PR6 keeps the one real measurement (31 captions checked, bottom reachable, from validation-native.json).",
+      "verification_needed": "Parent confirms no harness exists for 2/6/7/8 beyond the screenshots and AT-SPI readouts in validation-native.json."
+    },
+    {
+      "id": "ED-07",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-06"
+      ],
+      "heads": {
+        "bambu-06": "cbde5d139ced56b5e3d7def490446f06ccd2e791"
+      },
+      "kind": "hidden behavior change not stated",
+      "summary": "The patch removes the scrolled column's fixed 480 DIP min/max width and the sizer's 460 DIP minimum (PrintOptionsDialog.cpp lines 39-41 removed) but the body never says what now determines the dialog width. validation-native.json records 'resize_attempt: ignored by fixed-size window; no narrow/wide validation claimed'.",
+      "evidence": "bambu-06.patch hunk 1; validation-native.json print_options.resize_attempt.",
+      "trigger": "Reviewer asks what width the dialog has now on each platform.",
+      "outcome": "An all-platform layout change goes unmentioned.",
+      "smallest_fix": "One sentence: 'The fixed column width is gone; the dialog's own size sets it' (done). native_sol/design_scope should confirm which minimum now governs; I did not trace it.",
+      "verification_needed": "Native reviewer traces the dialog's min size after the removal."
+    },
+    {
+      "id": "ED-08",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-05"
+      ],
+      "heads": {
+        "bambu-05": "a1b43d73c23d08db6aa19047286c47c51f4cbe38"
+      },
+      "kind": "visible all-platform changes buried",
+      "summary": "Two user-visible changes on every platform are mid-paragraph asides: the progress dialog's message scroller now uses wxALWAYS_SHOW_SB (scrollbar always visible, even disabled), and the percent row can grow after its height caps are removed. WXO-5/WXO-6 were accepted in round 2 but the wording stayed buried.",
+      "evidence": "bambu-05.patch ProgressDialog.cpp line 585 (wxVSCROLL | wxALWAYS_SHOW_SB), StatusPanel.cpp removed SetMaxSize lines 429/434; bambu-05-body.md p2-p3.",
+      "trigger": "Maintainer skims the body.",
+      "outcome": "Surprise scrollbar on Windows/macOS attributed to a regression.",
+      "smallest_fix": "Explicit short sentences (done in proposed body).",
+      "verification_needed": "None beyond reading."
+    },
+    {
+      "id": "ED-09",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-01",
+        "bambu-05",
+        "bambu-07",
+        "bambu-08",
+        "bambu-09",
+        "bambu-10",
+        "wx-01",
+        "wx-02"
+      ],
+      "heads": {
+        "bambu-01": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+        "bambu-05": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+        "bambu-07": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+        "bambu-08": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+        "bambu-09": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+        "bambu-10": "fab83eef842e6967fa06d0bb05410940b4787d28",
+        "wx-01": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+        "wx-02": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4"
+      },
+      "kind": "titles",
+      "summary": "Titles describe mechanism rather than the visible result, e.g. 'Keep temperature values compact beside fixed unit columns', 'Fix repeated DPI scaling of native geometry and bitmaps', 'Share printer and plate space and align sidebar actions'. wx titles lack the port prefix wx maintainers expect.",
+      "evidence": "live-prs.json titles; titles.json proposals.",
+      "trigger": "PR list is scanned by a maintainer.",
+      "outcome": "Hard to tell what each PR fixes without opening it.",
+      "smallest_fix": "Apply titles.json (all under 72 characters) and use the same string as the squashed commit subject.",
+      "verification_needed": "None."
+    },
+    {
+      "id": "ED-10",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-02",
+        "bambu-03",
+        "bambu-05",
+        "bambu-06",
+        "bambu-07",
+        "bambu-09",
+        "bambu-10",
+        "wx-01",
+        "wx-02"
+      ],
+      "heads": {
+        "bambu-02": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+        "bambu-03": "0826d59e1e1b36bf80b82904859c64f339749820",
+        "bambu-05": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+        "bambu-06": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+        "bambu-07": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+        "bambu-09": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+        "bambu-10": "fab83eef842e6967fa06d0bb05410940b4787d28",
+        "wx-01": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+        "wx-02": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4"
+      },
+      "kind": "commit history",
+      "summary": "Duplicate-subject commits remain: PR2/5/7/9 have 'X' then 'X' with body 'Address verified peer-review findings'; PR3 has two identical subjects plus a third; PR6's three commits add then remove font plumbing; PR10's third commit is comment-only; wx follow-ups are titled 'Address peer review for <branch-name>'. PR1/4/8 are single commits.",
+      "evidence": "git log base..head per PR in bambu-studio-upstream and bambu-wx-upstream (see REPORT.md commands).",
+      "trigger": "Upstream merges without squashing, or a reviewer reads commit-by-commit.",
+      "outcome": "Noise history; PR6's history shows a reverted approach rather than the final change.",
+      "smallest_fix": "Squash each PR to one commit whose subject is the proposed title; keep PR2 rebased on the squashed PR1. Do this before upstream submission (the parent already planned this, CF-16); the user's current ask makes now the time.",
+      "verification_needed": "After squash: git diff <old-head> <new-head> is empty for each PR; git log shows one commit; GitHub still reports mergeable."
+    },
+    {
+      "id": "ED-11",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-03",
+        "bambu-05",
+        "bambu-10"
+      ],
+      "heads": {
+        "bambu-03": "0826d59e1e1b36bf80b82904859c64f339749820",
+        "bambu-05": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+        "bambu-10": "fab83eef842e6967fa06d0bb05410940b4787d28"
+      },
+      "kind": "size / split",
+      "summary": "No PR is near 1000 lines. Largest: PR3 455 lines over 5 files, PR10 222 over 6, PR5 148 over 19. One legitimate split candidate: PR5 mixes 17 files of one-line unit corrections with behavioral changes to the progress dialog, progress labels and camera status text (ProgressDialog.cpp, StatusPanel.cpp, MediaPlayCtrl.cpp), which carried the only prior blocking native finding (DIP-SOL-001). PR3's page script and native changes are one handshake and should stay together.",
+      "evidence": "live-prs.json additions/deletions/changed_files; bambu-05.patch file list.",
+      "trigger": "Reviewer of PR5 must context-switch between mechanical and behavioral hunks.",
+      "outcome": "Slower review; the behavioral part gets less attention than it needs.",
+      "smallest_fix": "Optional: split PR5 into 'Fix double DPI scaling of icons, fonts and measured sizes' (mechanical, 17 files) and 'Fix clipped progress text and dialog message area' (3 files). If split, the wx#2 gate sentence names both. Parent's call; not required for mergeability.",
+      "verification_needed": "If split: both halves apply cleanly to master and their union equals the current PR5 diff."
+    },
+    {
+      "id": "ED-12",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "wx-01",
+        "wx-02"
+      ],
+      "heads": {
+        "wx-01": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+        "wx-02": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4"
+      },
+      "kind": "stale base (known limit, no action)",
+      "summary": "Both wx PRs are based on e2fa9bda while the fork's upstream master is now abb54269. git merge-tree --write-tree abb54269 <head> is clean for both, and no file touched by either PR changed upstream between e2fa9bda and abb54269.",
+      "evidence": "REPORT.md commands section.",
+      "trigger": "Upstream asks for a rebase.",
+      "outcome": "None now; a trivial rebase later.",
+      "smallest_fix": "Nothing now. Rebase at submission if requested.",
+      "verification_needed": "None."
+    },
+    {
+      "id": "ED-13",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "wx-02"
+      ],
+      "heads": {
+        "wx-02": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4"
+      },
+      "kind": "moving link",
+      "summary": "wx-02 links the companion fix as a branch comparison (compare/master...fix/native-dip-geometry), which changes as the branch moves and breaks if the branch is renamed after squash.",
+      "evidence": "wx-02-body.md paragraph 6.",
+      "trigger": "Branch is squashed/renamed or master advances.",
+      "outcome": "Link shows a different or empty diff.",
+      "smallest_fix": "Link the PR instead: https://github.com/alanbixby/BambuStudio/pull/5 (done; HTTP 200).",
+      "verification_needed": "None."
+    },
+    {
+      "id": "ED-14",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-03"
+      ],
+      "heads": {
+        "bambu-03": "0826d59e1e1b36bf80b82904859c64f339749820"
+      },
+      "kind": "unquantified claim",
+      "summary": "Body says the startup handshake is 'bounded' without the bound. index.js retries at 100, 250, 500, 1000, 2000, 4000 and 8000 ms, about 16 s total, and only when window.wx.postMessage exists.",
+      "evidence": "bambu-03.patch index.js projectInfoRetryDelays.",
+      "trigger": "Reader asks how long an empty page can persist before giving up.",
+      "outcome": "Vague wording.",
+      "smallest_fix": "State 'retries its request for about 16 seconds' (done).",
+      "verification_needed": "None."
+    }
+  ]
+}

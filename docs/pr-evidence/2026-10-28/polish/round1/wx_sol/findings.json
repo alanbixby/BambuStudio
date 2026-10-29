@@ -1,0 +1,116 @@
+{
+  "reviewer": "Sol",
+  "partition": "wx1/wx2 and upstream integration",
+  "round": 1,
+  "reviewed_heads": {
+    "wx1": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+    "wx2": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4",
+    "app5": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+    "app_combined": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+    "wx_combined": "3fea0af433d9630f79eaf8fbfc062364ba456be3"
+  },
+  "reviewed_bases": {
+    "wx_frozen": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+    "wx_current_upstream": "abb542694ef4534a50e65c5b877b2774d02952ae",
+    "app": "79df7ae309be398ed30c9f397c13c9911c2edc57"
+  },
+  "additional_exact_release_heads": [
+    "b506005bc4ee62124e24bf00e0f58656db3646a6",
+    "f5e51a20bd328d4a043af9344825d7347270c2c9"
+  ],
+  "open_blocking_count": 1,
+  "open_non_blocking_count": 1,
+  "findings": [
+    {
+      "id": "WXSOL-001",
+      "severity": "blocking",
+      "category": "integration",
+      "status": "open",
+      "novelty": "Existing floating-dependency risk independently confirmed; this round adds exact release-branch evidence and the missing executable integration step. Not a newly discovered wx implementation bug.",
+      "title": "The reviewed wx behavior is not selected by Bambu, and wx2 on master would reach uncorrected release branches",
+      "affected_prs": [
+        "alanbixby/wxWidgets#2",
+        "alanbixby/BambuStudio#5",
+        "proposed separate Bambu dependency-pin/integration PR"
+      ],
+      "locations": [
+        {
+          "sha": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+          "path": "deps/wxWidgets/wxWidgets.cmake",
+          "line": 27
+        },
+        {
+          "sha": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+          "path": "deps/wxWidgets/wxWidgets.cmake",
+          "line": 28
+        },
+        {
+          "sha": "1f880d3cd36e0317ff6535a7a089a30f079a4042",
+          "path": "deps/CMakeLists.txt",
+          "line": 155
+        },
+        {
+          "sha": "f5e51a20bd328d4a043af9344825d7347270c2c9",
+          "path": "deps/wxWidgets/wxWidgets.cmake",
+          "line": 28
+        },
+        {
+          "sha": "f5e51a20bd328d4a043af9344825d7347270c2c9",
+          "path": "src/slic3r/GUI/MediaPlayCtrl.cpp",
+          "line": 1115
+        },
+        {
+          "sha": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4",
+          "path": "src/gtk/window.cpp",
+          "line": 4391
+        }
+      ],
+      "trigger": "A clean Bambu dependency build uses the current recipe. Today that selects bambulab/wxWidgets master rather than either fork fix. If wx2 subsequently merges to that master, an uncorrected release/20260929 (exact local head f5e51a20bd328d4a043af9344825d7347270c2c9) dependency rebuild at GTK font DPI 144 obtains the nonidentity conversion too.",
+      "outcome": "Today the reviewed GTK fixes are absent from the default fetched dependency; later the older release code scales already measured pixel widths again. Updating Bambu master with #5 does not fix that release. Existing warnings document the gate but do not provide a reproducible dependency selection or protect release recipes.",
+      "proof": "Exact source extracts and commands.json. Both local release heads b506005bc4ee62124e24bf00e0f58656db3646a6 and f5e51a20bd328d4a043af9344825d7347270c2c9 have GIT_TAG master. The newer release retains FromDIP(GetSize().GetWidth() - 120 - measured child widths), whereas app #5 removes the conversion around measured widths. With W=1000, child widths=100/20 and font scale=1.5, release max-status width is min(1140,900)=900 instead of corrected min(700,900)=700. This arithmetic illustration is not a native rendering run.",
+      "smallest_practical_fix": "Add a separate small Bambu dependency-pin/integration draft: pin an exact reachable wx SHA containing both reviewed GTK changes AND current upstream abb5426. A fork-only draft must use the fork URL when its SHA is not reachable from bambulab/wxWidgets. Keep #5 independent. Before wx2 goes to upstream master, pin each supported uncorrected release branch to each branch's last validated pre-wx2 revision (the frozen e2fa9bd or, after validating its Windows change, abb5426), or backport #5. If maintainers cannot protect release builds, carry wx2 on an opt-in wx branch and pin only the corrected app to it; do not merge wx2 to shared master. Legacy immutable tags need a documented build-time source pin or archived dependency; do not retag them.",
+      "verification_needed": "Review the concrete pin diff and source SHA ancestry/blob contents; confirm the SHA is fetchable from its declared repository; inspect supported release recipes at exact heads; clean rebuild dependency and application together on GTK3; compare 96/144 font DPI and GDK scale 1/2. The updated wx contains a Windows WebView change, so obtain a Windows build/text-scale smoke check before claiming that integration validated there. Keep native macOS/Windows results distinct from source checks.",
+      "blocking_scope": "Blocks wx2-to-shared-master and claiming a reproducible completed integration. Does not block independent wx1 or merging app #5 before the dependency change."
+    },
+    {
+      "id": "WXSOL-002",
+      "severity": "non-blocking",
+      "category": "description-accuracy",
+      "status": "open",
+      "novelty": "New wording issue independently checked in exact source.",
+      "title": "wx1 body overstates its wrapped-label exclusion",
+      "affected_prs": [
+        "alanbixby/wxWidgets#1"
+      ],
+      "locations": [
+        {
+          "sha": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+          "path": "src/gtk/control.cpp",
+          "line": 356
+        },
+        {
+          "sha": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+          "path": "src/gtk/stattext.cpp",
+          "line": 237
+        },
+        {
+          "source": "/tmp/bambu-polish-20261028/live-prs.json",
+          "field": "alanbixby/wxWidgets#1.body",
+          "quote": "Wrapped labels and other widgets retain their existing path."
+        }
+      ],
+      "trigger": "A reviewer reads the body as promising that wrapped wxStaticText never reaches the new invalidation branch.",
+      "outcome": "wxStaticText::DoGetBestSize temporarily disables GTK line wrapping before delegating measurement and reenables it afterward, so wrapped static texts can reach the new branch. This is not evidence of a layout defect; the scope statement is too broad.",
+      "smallest_practical_fix": "Replace the scope sentence with: \u201cThe check runs only when GTK measures a label without wrapping; other widget types keep their existing path.\u201d Keep the GTK4 exclusion statement. Mention wrapped wxStaticText in detailed evidence only if useful.",
+      "verification_needed": "Read the replacement body alongside stattext.cpp:237\u2013251 and control.cpp:356\u2013377. Native wrapped-label tests remain useful but are not required to verify this wording fix."
+    }
+  ],
+  "checks": "verification.json and commands.json",
+  "limitations": [
+    "No network, delegation, build, native probe, GUI interaction or repository writes.",
+    "Python arithmetic transcription and lexical thread scan are limited checks, not compiled/native proofs.",
+    "No Windows/macOS, GTK2/GTK4, shared-library or native Wayland runtime approval.",
+    "Local release refs are sampled recipes, not an exhaustive inventory of supported branches, forks or tags.",
+    "No claim of future upstream commits beyond abb542694ef4534a50e65c5b877b2774d02952ae; network prohibited."
+  ]
+}

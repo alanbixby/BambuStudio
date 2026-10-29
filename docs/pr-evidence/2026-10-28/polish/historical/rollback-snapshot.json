@@ -1,0 +1,98 @@
+{
+  "alanbixby/BambuStudio:1": {
+    "branch": "fix/assembly-return-context",
+    "head": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+    "base_branch": "master",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "tree": "a230991dd3e226d31c9831217009ad144a059c6a",
+    "body_file": "round1/bambu-01-body.md"
+  },
+  "alanbixby/BambuStudio:2": {
+    "branch": "fix/assembly-sidebar-clearance",
+    "head": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
+    "base_branch": "fix/assembly-return-context",
+    "base": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
+    "tree": "c7341562a6046e1c3823d58d75e870533053e8fe",
+    "body_file": "round1/bambu-02-body.md"
+  },
+  "alanbixby/BambuStudio:3": {
+    "branch": "fix/project-metadata",
+    "head": "0826d59e1e1b36bf80b82904859c64f339749820",
+    "base_branch": "master",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "tree": "2442b25e89f0c5edecb029ba7cb7301a7c63cd77",
+    "body_file": "round1/bambu-03-body.md"
+  },
+  "alanbixby/BambuStudio:4": {
+    "branch": "fix/project-reader-styles",
+    "head": "b3dacfa61b17385703e700779207e83e0c1041af",
+    "base_branch": "master",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "tree": "b9b2e68c53152f255720ba11695cf4794ab4883e",
+    "body_file": "round1/bambu-04-body.md"
+  },
+  "alanbixby/BambuStudio:5": {
+    "branch": "fix/native-dip-geometry",
+    "head": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
+    "base_branch": "master",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "tree": "d714d9dedd6bfca70f9f58f1bd98a3864421c9d4",
+    "body_file": "round1/bambu-05-body.md"
+  },
+  "alanbixby/BambuStudio:6": {
+    "branch": "fix/print-options-reflow",
+    "head": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
+    "base_branch": "master",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "tree": "6dfb68f0a215d68492eab47d8e022acfe7619253",
+    "body_file": "round1/bambu-06-body.md"
+  },
+  "alanbixby/BambuStudio:7": {
+    "branch": "fix/settings-field-width",
+    "head": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
+    "base_branch": "master",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "tree": "4ac31392e530280280762d2f60c2543779b67e95",
+    "body_file": "round1/bambu-07-body.md"
+  },
+  "alanbixby/BambuStudio:8": {
+    "branch": "fix/sidebar-card-spacing",
+    "head": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
+    "base_branch": "master",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "tree": "c663a6cb83ea179334c4d26f8d84718d1ecb1bc0",
+    "body_file": "round1/bambu-08-body.md"
+  },
+  "alanbixby/BambuStudio:9": {
+    "branch": "fix/temperature-value-alignment",
+    "head": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
+    "base_branch": "master",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "tree": "ba7939dbe93460d637a884528320d899d060766f",
+    "body_file": "round1/bambu-09-body.md"
+  },
+  "alanbixby/BambuStudio:10": {
+    "branch": "fix/camera-ams-balance",
+    "head": "fab83eef842e6967fa06d0bb05410940b4787d28",
+    "base_branch": "master",
+    "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+    "tree": "b0b107c990b075e7b1454354ff880dde0aaa57c0",
+    "body_file": "round1/bambu-10-body.md"
+  },
+  "alanbixby/wxWidgets:1": {
+    "branch": "fix/gtk-label-font-measurement",
+    "head": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+    "base_branch": "master",
+    "base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+    "tree": "6c1dfc3dc39e7c370b5cd40c6f36913ff52ab71c",
+    "body_file": "round1/wx-01-body.md"
+  },
+  "alanbixby/wxWidgets:2": {
+    "branch": "fix/gtk-font-dpi-conversion",
+    "head": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4",
+    "base_branch": "master",
+    "base": "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+    "tree": "4637851256e12ca34a37fcb3da30cd9489b60b53",
+    "body_file": "round1/wx-02-body.md"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "unique_urls": 39,
+  "all_200": true,
+  "original_images_preserved": 23,
+  "checked": [
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-01",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-02",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-03",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-04",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-05",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-06",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-07",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-08",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-09",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-10",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-ams-zoom",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-gtk-integration",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-progress",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#bambu-project-startup",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#wx-01",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/alanbixby/BambuStudio/tree/9ea10ea751a655b1c964f08ac4b2ce95bef07622/docs/pr-evidence/2026-10-28/polish/#wx-02",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/assembly-sidebar-before.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/camera-ams-before.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-assembly-roundtrip-3.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-assembly-sidebar-toggle.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-control-ams-temperature.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-flow-dynamics-heading.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-prepare-return-3.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-print-options-bottom.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-print-options-top.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-print-progress-height.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-project-dark-table-flow.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-project-initial-gallery.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-settings-field-width.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-sidebar-cards-purge-swatches.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-temperature-detail.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/print-options-before.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/printing-progress-user-before.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/project-dark-table-before.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/project-metadata-before.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/settings-field-width-before.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/stock-calibration-heading-before.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/stock-sidebar-cards-before.png",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/temperature-hole-user-reference.png",
+      "status": 200
+    }
+  ]
+}

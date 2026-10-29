@@ -1,5 +1,5 @@
 diff --git a/include/wx/window.h b/include/wx/window.h
-index 4bc21b75b9447692b6d8cf1294adb5b4a90379a9..4f033faa0c3a2384e5964de41936460d9e233699 100644
+index 4bc21b75b9..4f033faa0c 100644
 --- a/include/wx/window.h
 +++ b/include/wx/window.h
 @@ -2074,10 +2074,11 @@ inline wxWindow *wxWindowBase::GetGrandParent() const
@@ -26,7 +26,7 @@ index 4bc21b75b9447692b6d8cf1294adb5b4a90379a9..4f033faa0c3a2384e5964de41936460d
  // ----------------------------------------------------------------------------
  // global functions
 diff --git a/interface/wx/sysopt.h b/interface/wx/sysopt.h
-index 53d496544e2cfc5aad8b9900bc68aaaa0c733bf1..d84b814c4df0d5cbc5d67c1389d55cc59df1fbb2 100644
+index 53d496544e..d84b814c4d 100644
 --- a/interface/wx/sysopt.h
 +++ b/interface/wx/sysopt.h
 @@ -88,6 +88,10 @@
@@ -41,7 +41,7 @@ index 53d496544e2cfc5aad8b9900bc68aaaa0c733bf1..d84b814c4df0d5cbc5d67c1389d55cc5
          If 1, the backgrounds of windows with the wxBG_STYLE_COLOUR background
          style are cleared forcibly instead of relying on the underlying GTK+
 diff --git a/interface/wx/window.h b/interface/wx/window.h
-index f97375a40349b5b84597e3d2eeefc8ecd43478bb..935e2372b987ad993c59b1536859de110f2d21b4 100644
+index f97375a403..935e2372b9 100644
 --- a/interface/wx/window.h
 +++ b/interface/wx/window.h
 @@ -1074,6 +1074,13 @@ public:
@@ -59,7 +59,7 @@ index f97375a40349b5b84597e3d2eeefc8ecd43478bb..935e2372b987ad993c59b1536859de11
          values. It is not necessary if the sizes are already based on the
          DPI-independent units such as dialog units or if you are relying on the
 diff --git a/src/gtk/window.cpp b/src/gtk/window.cpp
-index 2497cf93449072e61812b316cf0be3a29b9e4c0d..d9890f1238cf47a4c7d0258f832e0d155c8bd895 100644
+index 2497cf9344..d9890f1238 100644
 --- a/src/gtk/window.cpp
 +++ b/src/gtk/window.cpp
 @@ -4377,6 +4377,82 @@ double wxWindowGTK::GetDPIScaleFactor() const

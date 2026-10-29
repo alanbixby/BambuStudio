@@ -1,0 +1,80 @@
+{
+  "reviewer": "design_scope_opus (Claude Opus 5.5)",
+  "round": 3,
+  "partition": "Closure of DS-R2-01..06 plus the round-3 comment move and body deltas (final round)",
+  "reviewed_heads": {
+    "bambu-01": "f4218e246f3041077177d2487ce8824d522addfa (base 79df7ae3)",
+    "bambu-02": "3ba2657c70ef031d011da175a4daafb850e3b3b1 (base 79df7ae3)",
+    "bambu-03": "ed5e975a59ee28242f67ded5e0722b19b61e0ed4 (base 79df7ae3)",
+    "bambu-04": "44fa2692b16919f4519595d6bcd4f571777ea1d6 (base 79df7ae3)",
+    "bambu-05": "305b41867feec57eb3d535d59920a9f091991762 (base 79df7ae3)",
+    "bambu-06": "2604e8279cf03f0ac93b53205608a7d901aacfc4 (base 79df7ae3)",
+    "bambu-07": "9df1217e47951f34cd95c65159f5329c88083c75 (base 79df7ae3)",
+    "bambu-08": "5d431fccc52f0011f0613a74d224e81bc614d23f (base 79df7ae3)",
+    "bambu-09": "fc074b0ad0a55945fefcf16fe0b195a48d20e398 (base 79df7ae3)",
+    "bambu-10": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7 (base 79df7ae3)",
+    "bambu-project-startup": "a2edccd9347f53d719984fd2997ce23155ee79a6 (base 79df7ae3)",
+    "bambu-progress": "5608a478ca983cc63083627bb6f8854f575412db (base 305b4186)",
+    "bambu-ams-zoom": "a273fd21b1580662221037549e09bd7e10bcc615 (base bed9f5a1) [NEW in round 3; was 54083d6f]",
+    "bambu-gtk-integration": "74a75752f34633a5bb00d8a96bc6a30fc9a2744a (base 5608a478) [NEW in round 3; was e77253cd]",
+    "wx-01": "14a14a773c74ae23281417f58334b5c28ecfed12 (base abb54269)",
+    "wx-02": "d54f3313028fc439cea91f0b6a213e5ad2245b90 (base abb54269)",
+    "app_combined": "e9617d1a815183350bd9822fb894996aa086f47a (79df7ae3 base)",
+    "wx_integration": "0f2037facedf3d92660e7071b6754fe994aa744d (abb54269 base)"
+  },
+  "open_blocking_count": 0,
+  "open_nonblocking_count": 1,
+  "prior_findings": [
+    {"id": "DS-R1-01", "status": "resolved (carried)"},
+    {"id": "DS-R1-02", "status": "resolved (carried)"},
+    {"id": "DS-R1-03", "status": "conceded (carried); cap named once, 2.0 kept by user decision"},
+    {"id": "DS-R1-04", "status": "resolved (carried)"},
+    {"id": "DS-R1-05", "status": "conceded (carried); disclosed in bambu-progress body"},
+    {"id": "DS-R1-06", "status": "resolved (carried)"},
+    {"id": "DS-R1-07", "status": "resolved (carried)"},
+    {"id": "DS-R1-08", "status": "resolved (carried)"},
+    {"id": "DS-R1-09", "status": "resolved (re-checked: all 16 heads are one commit over their base, plain subjects)"},
+    {"id": "DS-R1-10", "status": "resolved (carried)"},
+    {"id": "DS-R1-11", "status": "conceded (carried)"},
+    {"id": "DS-R1-12", "status": "conceded (carried)"},
+    {"id": "DS-R2-01", "status": "resolved, with wording nit split out as DS-R3-01", "note": "bambu-05, wx-02 and bambu-gtk-integration now say 'No isolated screenshot is available for this change yet; these earlier combined Linux images mainly show the card-spacing fix.' bambu-03 and bambu-project-startup now say the images do not tell a slow lookup apart from a missed startup request. The cause each PR fixes is already in each body's first sentence. All original image URLs are kept."},
+    {"id": "DS-R2-02", "status": "conceded", "note": "The rebuttal holds. wx-02's documented contract is 'set before creating windows', not 'set before the first FromDIP call'. A static cached on first use would quietly lock the feature off if an app or library called FromDIP(sz, NULL) during static init or pre-OnInit startup. wxGTKDIPScale already reads the GTK screen resolution on every call on purpose (d54f3313 src/gtk/window.cpp comment: 'Read it each time so settings changes and other screens use their own DPI'), so the cost is the same kind as work that is already there. The option lookup is still unmeasured, and recording that in the review evidence rather than the body is appropriate."},
+    {"id": "DS-R2-03", "status": "resolved", "note": "The bambu-progress body adds 'Stacked after the DPI fixes for merge order; this also applies to master independently.'"},
+    {"id": "DS-R2-04", "status": "resolved", "note": "git diff 54083d6f a273fd21 changes only the two comment lines in DeviceWebHost.cpp OnWebContentSizeChanged, putting back the base 79df7ae3 wording. git diff bed9f5a1 a273fd21 no longer touches that comment (the only 'CSS pixels' match is unchanged context in DeviceWebHost.hpp). git diff e77253cd 74a75752 moves the same two lines into the adoption PR (now 3 files, +9/-4). Each new head is one commit over its unchanged parent. Independent recomposition of all 14 app candidates in stack order onto 79df7ae3 matches e9617d1a byte for byte (ok=43, bad=0)."},
+    {"id": "DS-R2-05", "status": "resolved", "note": "'accepted 2x limit', 'reviewed revision', the coordinate-sentinel sentence, 'C++98 checks' and 'native-API source checks' are all gone. Test claims now say 'isolated Linux resize test app' or 'checked in source', not full-app acceptance."},
+    {"id": "DS-R2-06", "status": "resolved", "note": "The bambu-gtk-integration body now says 'The wx changes are GTK3-only on top of current upstream master. Windows/macOS integration remains untested.' That matches git diff --stat abb54269 0f2037fa as checked in round 2."}
+  ],
+  "findings": [
+    {
+      "id": "DS-R3-01",
+      "severity": "non-blocking",
+      "category": "evidence-attribution",
+      "pr": "bambu-05, wx-02, bambu-gtk-integration",
+      "title": "New alt text calls the stock 'before' image a combined-series image",
+      "evidence": "bodies-round3/{bambu-05,wx-02,bambu-gtk-integration}.md line 5: '![Combined-series sidebar before the card-spacing fix](.../stock-sidebar-cards-before.png)'. Line 8 says 'these earlier combined Linux images'. The file is named 'stock-' and its earlier published caption (publication/historical/live-prs.json, bambu #8 body) was 'Original printer/plate row'. So it shows the original app without any of this series. Also, 'the card-spacing fix' does not say which PR, and in the wx repository it refers to a PR that reviewers there cannot see.",
+      "trigger": "A reviewer reads the alt text or caption of one of these three PRs.",
+      "outcome": "They take the left image to be this series without #8. It is actually stock, so every change in the series differs between the two images, not only the card spacing. Small, but it is the same attribution confusion that DS-R2-01 was meant to remove.",
+      "smallest_fix": "Alt text: 'Original sidebar' and 'Sidebar with this whole series applied'. Caption: 'No isolated screenshot yet; these images compare the original app with the whole series, where the visible change is mostly the sidebar card spacing (BambuStudio #8).'",
+      "verification": "Reread the three bodies; the alt text matches the image file names and provenance.",
+      "kind": "new wording nit introduced by the DS-R2-01 fix; not a code defect"
+    }
+  ],
+  "observations_not_findings": [
+    "bambu-gtk-integration changes the OnWebContentSizeChanged comment in DeviceWebHost.cpp. The header comment on m_last_logical_content_size ('physical min size', DeviceWebHost.hpp) still uses the older wording. It is still roughly right and outside this round's scope, so no change is requested.",
+    "bambu-gtk-integration body is 104 words, the longest. The extra sentence is the DS-R2-06 clarification, so the length is justified."
+  ],
+  "checks": [
+    "git rev-list --count base..head == 1 for the two new heads; subjects 'Scale AMS to use spare room beside the camera' and 'Use a pinned wx build for GTK font sizing'",
+    "git diff 54083d6f a273fd21 and git diff e77253cd 74a75752: the same 2-line comment swapped between the two PRs, nothing else",
+    "round3/design_scope_opus/recompose.sh: 14 app candidate diffs applied to 79df7ae3 blob copies -> ok=43 bad=0 against e9617d1a (log in recompose.log)",
+    "final-composition-check.json wx: recomposed tree matches 0f2037fa (not rerun; wx heads unchanged since round 2, when I verified them)",
+    "diff bodies-round2 bodies-round3: only bambu-03, -05, -09, -10, -ams-zoom, -gtk-integration, -progress, -project-startup and wx-02 changed; every change was read",
+    "git status of the app repo is clean (read-only)"
+  ],
+  "limitations": [
+    "No build, launch, or Windows/macOS compile or runtime. Source and text review only.",
+    "No new screenshots taken. Isolated per-PR screenshots for bambu-05, wx-02, bambu-gtk-integration, bambu-03 and project-startup are still a validation gap before upstream, as the bodies now say.",
+    "Did not re-review Project threading (Astra partition) or WebKitGTK/WebView2 runtime behavior (Sol partitions).",
+    "No claim of all-OS correctness or upstream merge readiness."
+  ]
+}

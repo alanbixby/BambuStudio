@@ -1,5 +1,5 @@
 diff --git a/src/slic3r/GUI/PrintOptionsDialog.cpp b/src/slic3r/GUI/PrintOptionsDialog.cpp
-index 964ab24e31edbad5f72a9a96ae2163106a31fe3a..3747b93b9eac50a99419f6082be298fb71d2d60f 100644
+index 964ab24e3..3747b93b9 100644
 --- a/src/slic3r/GUI/PrintOptionsDialog.cpp
 +++ b/src/slic3r/GUI/PrintOptionsDialog.cpp
 @@ -36,11 +36,8 @@ PrintOptionsDialog::PrintOptionsDialog(wxWindow* parent)
@@ -409,7 +409,7 @@ index 964ab24e31edbad5f72a9a96ae2163106a31fe3a..3747b93b9eac50a99419f6082be298fb
  
  wxString PrintOptionsDialog::sensitivity_level_to_label_string(enum AiMonitorSensitivityLevel level) {
 diff --git a/src/slic3r/GUI/PrintOptionsDialog.hpp b/src/slic3r/GUI/PrintOptionsDialog.hpp
-index 84e4dd456dbb99d1c319ce735d67f3e6e577ca17..62d53254d34995c40f80b8c6529d0a86fa31b2af 100644
+index 84e4dd456..62d53254d 100644
 --- a/src/slic3r/GUI/PrintOptionsDialog.hpp
 +++ b/src/slic3r/GUI/PrintOptionsDialog.hpp
 @@ -227,6 +227,9 @@ public:

@@ -1,5 +1,5 @@
 diff --git a/src/slic3r/GUI/Widgets/TempInput.cpp b/src/slic3r/GUI/Widgets/TempInput.cpp
-index d0e1af23c22409b5793875a6e2486aeb637adff0..52e0e7ef0d106a9ed388376ffc7a36cdefe0c61e 100644
+index d0e1af23c..52e0e7ef0 100644
 --- a/src/slic3r/GUI/Widgets/TempInput.cpp
 +++ b/src/slic3r/GUI/Widgets/TempInput.cpp
 @@ -86,7 +86,7 @@ void TempInput::Create(wxWindow *parent, wxString text, wxString label, wxString
@@ -226,7 +226,7 @@ index d0e1af23c22409b5793875a6e2486aeb637adff0..52e0e7ef0d106a9ed388376ffc7a36cd
  
  void TempInput::mouseEnterWindow(wxMouseEvent &event)
 diff --git a/src/slic3r/GUI/Widgets/TempInput.hpp b/src/slic3r/GUI/Widgets/TempInput.hpp
-index 555fbb9ef5ac6e83ee6f655cba0d51eeea5384a9..c8fd959aa9108c3d2ae6cb1d5209cfd9b97f1f4d 100644
+index 555fbb9ef..c8fd959aa 100644
 --- a/src/slic3r/GUI/Widgets/TempInput.hpp
 +++ b/src/slic3r/GUI/Widgets/TempInput.hpp
 @@ -22,6 +22,8 @@ class TempInput : public wxNavigationEnabled<StaticBox>

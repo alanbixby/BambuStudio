@@ -1,5 +1,5 @@
 diff --git a/resources/web/model_new/index.js b/resources/web/model_new/index.js
-index 03097dc43d0b2a3470a932df85f53b076bb89d94..99e1876e39b27c4558a3433bf03493b055815e5d 100644
+index 03097dc43..99e1876e3 100644
 --- a/resources/web/model_new/index.js
 +++ b/resources/web/model_new/index.js
 @@ -1,14 +1,51 @@

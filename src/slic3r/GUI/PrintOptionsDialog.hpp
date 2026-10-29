@@ -227,6 +227,9 @@ public:
     void update_smart_nozzle_blob_mode_desc(int selection);
 
 private:
+    bool m_laying_out_options{false};
+    void layout_options();
+
     void UpdateOptionSavePrintFileToStorage(MachineObject *obj);
     void UpdateOptionOpenDoorCheck(MachineObject *obj);
     void UpdateOptionSnapshot(MachineObject *obj);

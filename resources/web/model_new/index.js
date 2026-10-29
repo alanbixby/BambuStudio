@@ -1,14 +1,51 @@
 var m_ModelID=null;
 
+// Per-document state: native pushes can arrive while scripts in <head> load,
+// before the destination elements exist. The native wx bridge may be installed
+// asynchronously, so a single DOM-ready request is not a reliable handshake.
+var projectDOMReady = false;
+var pendingProjectMessage = null;
+var projectInfoReceived = false;
+var projectInfoTimer = null;
+var projectInfoAttempt = 0;
+var projectInfoRetryDelays = [100, 250, 500, 1000, 2000, 4000, 8000];
+
+function RetryProjectInfo() {
+  if (projectInfoReceived) return;
+  // Do not call globalapi's asynchronous sender until the bridge exists.
+  if (window.wx && typeof window.wx.postMessage === 'function') {
+    RequestProjectInfo();
+  }
+  if (!projectInfoReceived && projectInfoAttempt < projectInfoRetryDelays.length) {
+    projectInfoTimer = setTimeout(RetryProjectInfo, projectInfoRetryDelays[projectInfoAttempt++]);
+  }
+}
+
 $(function () {
-  // 向宿主请求数据（握手）
+  projectDOMReady = true;
   TranslatePage();
-  RequestProjectInfo();
+  if (pendingProjectMessage) {
+    const pending = pendingProjectMessage;
+    pendingProjectMessage = null;
+    HandleStudio(pending);
+  }
+  if (!projectInfoReceived) RetryProjectInfo();
 });
 
 function HandleStudio(pVal)
 {
-	let strCmd=pVal['command'];
+  if (!pVal || typeof pVal !== 'object') return;
+  const strCmd = pVal.command;
+  if (strCmd === 'show_3mf_info' || strCmd === 'clear_3mf_info') {
+    if (!projectDOMReady) {
+      pendingProjectMessage = pVal;
+      return;
+    }
+  }
+  if (strCmd === 'show_3mf_info') {
+    projectInfoReceived = true;
+    clearTimeout(projectInfoTimer);
+  }
 	
 	if(strCmd=='show_3mf_info')
 	{

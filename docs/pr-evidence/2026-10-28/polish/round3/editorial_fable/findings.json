@@ -1,0 +1,159 @@
+{
+  "partition": "editorial_fable",
+  "round": 3,
+  "final_round": true,
+  "reviewed_heads": {
+    "bambu-01": "f4218e246f3041077177d2487ce8824d522addfa",
+    "bambu-02": "3ba2657c70ef031d011da175a4daafb850e3b3b1",
+    "bambu-03": "ed5e975a59ee28242f67ded5e0722b19b61e0ed4",
+    "bambu-04": "44fa2692b16919f4519595d6bcd4f571777ea1d6",
+    "bambu-05": "305b41867feec57eb3d535d59920a9f091991762",
+    "bambu-06": "2604e8279cf03f0ac93b53205608a7d901aacfc4",
+    "bambu-07": "9df1217e47951f34cd95c65159f5329c88083c75",
+    "bambu-08": "5d431fccc52f0011f0613a74d224e81bc614d23f",
+    "bambu-09": "fc074b0ad0a55945fefcf16fe0b195a48d20e398",
+    "bambu-10": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+    "bambu-project-startup": "a2edccd9347f53d719984fd2997ce23155ee79a6",
+    "bambu-progress": "5608a478ca983cc63083627bb6f8854f575412db",
+    "bambu-ams-zoom": "a273fd21b1580662221037549e09bd7e10bcc615",
+    "bambu-gtk-integration": "74a75752f34633a5bb00d8a96bc6a30fc9a2744a",
+    "wx-01": "14a14a773c74ae23281417f58334b5c28ecfed12",
+    "wx-02": "d54f3313028fc439cea91f0b6a213e5ad2245b90"
+  },
+  "reviewed_bases": {
+    "app": "79df7ae309be398ed30c9f397c13c9911c2edc57 (master) except bambu-progress->305b4186, bambu-gtk-integration->5608a478, bambu-ams-zoom->bed9f5a1",
+    "wx": "abb542694ef4534a50e65c5b877b2774d02952ae"
+  },
+  "app_combined": "e9617d1a815183350bd9822fb894996aa086f47a",
+  "wx_integration": "0f2037facedf3d92660e7071b6754fe994aa744d",
+  "evidence_commit": "9ea10ea751a655b1c964f08ac4b2ce95bef07622",
+  "bodies": "/tmp/bambu-polish-20261028/bodies-round3/*.md",
+  "open_blocking_count": 0,
+  "open_nonblocking_count": 3,
+  "convergence": "No blocking objection. ED-15 conceded as a recorded non-blocking disagreement. ED-16 to ED-22 closed. Three new non-blocking items (ED-23 evidence README/patches describe the round-2 heads for the two moved PRs; ED-24 residual wording; ED-25 bambu-03 body does not mention the companion page-script symbol). Round cap reached; no further round started.",
+  "prior_findings": [
+    {
+      "id": "ED-15",
+      "status": "conceded (non-blocking disagreement recorded)",
+      "disposition": "interface/wx/window.h at d54f3313 still says 'In this wxGTK3 fork, the conversion follows ...'. The parent's rebuttal is accepted for the stated target: bambulab/wxWidgets is itself a fork, the option is fork-specific, and the sentence accurately scopes the promise. The PR body contains no such phrase, and interface/wx/sysopt.h is neutral. Residual disagreement, no action: if this patch is ever offered to wxWidgets/wxWidgets, that one line should read 'Under wxGTK3, ...'."
+    },
+    {
+      "id": "ED-16",
+      "status": "resolved",
+      "disposition": "bambu-10 now uses camera-columns-before.png / camera-columns-after.png (1376x208, both viewed): before shows the feed taking most of the row with a narrow Control column, after shows a narrower feed and a wider Control column. Captions match. Privacy crop sentence kept."
+    },
+    {
+      "id": "ED-17",
+      "status": "resolved (small residue in ED-24)",
+      "disposition": "grep over bodies-round3 for cleaned|accepted|reviewed|review fork|combined series|preload|hash|quota|model names returns nothing. 'native' remains only in platform/runtime senses plus a few alt texts noted in ED-24."
+    },
+    {
+      "id": "ED-18",
+      "status": "resolved",
+      "disposition": "wx-01 ends 'Earlier Bambu Studio screenshots on Linux; the after image includes this change and companion application fixes.' wx-02 says 'these images compare the original Bambu Studio sidebar with the whole series' and links BambuStudio #8."
+    },
+    {
+      "id": "ED-19",
+      "status": "resolved",
+      "disposition": "bambu-progress: 'Stacked after the DPI fixes for merge order; this also applies to master independently.'"
+    },
+    {
+      "id": "ED-20",
+      "status": "resolved",
+      "disposition": "(a) bambu-03: 'Late results update the reader's title link without reloading the page; an open editor is left alone' matches start_model_id_lookup (!is_editing_page() guard). (b) bambu-progress names the no-space overflow and 'Use the dialog's own sizing path' (wxDialog::DoSetSize). (c) bambu-08: 'Size the Purging/Flushing volumes buttons to their text plus padding' matches text_padding = 2*FromDIP(6). (d) gtk-integration: 'Builds without the wx opt-in keep their existing sizing.' (e) bambu-02 pinned sentence gone. (f) bambu-10 opens 'When height limits the camera feed, give its unused width to the Control column.'"
+    },
+    {
+      "id": "ED-21",
+      "status": "resolved",
+      "disposition": "bambu-05, wx-02, gtk-integration: alt text 'Original sidebar' / 'Sidebar with this whole series applied' and the sentence 'No isolated screenshot yet; these images compare the original Bambu Studio sidebar with the whole series, mainly showing BambuStudio #8'. Both images viewed; stock-sidebar-cards-before.png (760x170) is the original Printer row, the after image (760x677) is the full sidebar. No DPI number was added."
+    },
+    {
+      "id": "ED-22",
+      "status": "resolved (known submission condition)",
+      "disposition": "gtk-integration body: 'The pin currently selects the fork containing both wx changes. Replace it with the official revision when those changes land.' Pin 0f2037fa is reachable at alanbixby/wxWidgets review/font-dpi-integration (ls-remote) and is a merge of 14a14a77 and d54f3313 on abb54269; tree equals c7cdfa5b."
+    }
+  ],
+  "findings": [
+    {
+      "id": "ED-23",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-ams-zoom",
+        "bambu-gtk-integration"
+      ],
+      "heads": {
+        "bambu-ams-zoom": "a273fd21b1580662221037549e09bd7e10bcc615",
+        "bambu-gtk-integration": "74a75752f34633a5bb00d8a96bc6a30fc9a2744a"
+      },
+      "kind": "evidence link describes a superseded head (new in round 3)",
+      "summary": "The published evidence README at 9ea10ea7 lists bambu-ams-zoom as 54083d6f (183+/12-, 6 files) and bambu-gtk-integration as e77253cd (7+/2-, 2 files), and its patches/ directory holds those round-2 diffs. The round-3 candidates are a273fd21 (181+/10-) and 74a75752 (9+/4-, 3 files) after the comment move. Both bodies link '#bambu-ams-zoom' and '#bambu-gtk-integration' in that README.",
+      "evidence": "round3/editorial_fable/evidence-README-9ea10ea7.md 'Source:' lines; round3/editorial_fable/published-patches/*.patch vs candidates/*-round3.patch (gtk-integration: 2 vs 3 files; ams-zoom published patch still contains the DeviceWebHost.cpp comment hunk).",
+      "trigger": "A reviewer follows the Validation notes link from either PR.",
+      "outcome": "The evidence names a different commit and line count than the PR shows; the published ams-zoom patch contains a hunk the PR no longer has.",
+      "smallest_fix": "Re-publish the evidence README and the two patch files with the round-3 heads as one new immutable commit on the fork, then replace 9ea10ea7 in the two bodies' Validation notes links. Alternatively, keep 9ea10ea7 and add one sentence to those two bodies: 'The linked notes predate a two-line comment move; code is otherwise identical.' The first option is cleaner.",
+      "verification_needed": "After republishing: README Source lines equal curated-prs-round3.json heads for all 16 keys; `git diff base..head` for the two PRs equals the published patch bytes; all 16 anchors still resolve."
+    },
+    {
+      "id": "ED-24",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-03",
+        "bambu-project-startup",
+        "bambu-progress",
+        "bambu-ams-zoom",
+        "bambu-10",
+        "wx-01"
+      ],
+      "heads": {
+        "bambu-03": "ed5e975a59ee28242f67ded5e0722b19b61e0ed4",
+        "bambu-project-startup": "a2edccd9347f53d719984fd2997ce23155ee79a6",
+        "bambu-progress": "5608a478ca983cc63083627bb6f8854f575412db",
+        "bambu-ams-zoom": "a273fd21b1580662221037549e09bd7e10bcc615",
+        "bambu-10": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+        "wx-01": "14a14a773c74ae23281417f58334b5c28ecfed12"
+      },
+      "kind": "residual wording (ED-17 residue, low priority)",
+      "summary": "Six small wording items remain: alt text 'Directly loaded Project gallery' (bambu-03, project-startup) and 'Historical Control and AMS' (ams-zoom) are not plain before/after labels; 'Native GTK probes' (progress) and 'GTK font-change probes' (wx-01) use harness vocabulary; project-startup refers to bambu-03 as 'the native loading change' without naming it; bambu-10 says 'the after image also includes AMS zoom' although the AMS panel is outside the 1376x208 crop, so a reader may look for it.",
+      "evidence": "bodies-round3 as cited; camera-columns-after.png viewed.",
+      "trigger": "Maintainer reads the captions.",
+      "outcome": "Mild puzzlement only; no wrong claim.",
+      "smallest_fix": "'After: Project gallery loaded' / 'Before: Control and AMS'; 'GTK layout tests' for 'probes'; 'the Project information change' for 'the native loading change'; 'the after capture came from a build that also had AMS zoom' for bambu-10.",
+      "verification_needed": "Re-read the six lines; no code change."
+    },
+    {
+      "id": "ED-25",
+      "severity": "non-blocking",
+      "status": "open",
+      "prs": [
+        "bambu-03"
+      ],
+      "heads": {
+        "bambu-03": "ed5e975a59ee28242f67ded5e0722b19b61e0ed4"
+      },
+      "kind": "body omits a visible cross-PR symbol",
+      "summary": "The late-link script in Project.cpp (start_model_id_lookup) reads a page global pendingProjectMessage that only bambu-project-startup defines; master index.js has no such symbol (grep count 0). The reference is guarded with typeof, so bambu-03 works alone, but the body never mentions the companion page script, while project-startup's body does mention bambu-03.",
+      "evidence": "bambu-03 diff Project.cpp: \"var pending=typeof pendingProjectMessage==='undefined'?null:pendingProjectMessage;\"; `git show 79df7ae3:resources/web/model_new/index.js | grep -c pendingProjectMessage` = 0.",
+      "trigger": "Reviewer reads the diff and searches for the symbol.",
+      "outcome": "Looks like a dangling reference until the reviewer finds the other PR.",
+      "smallest_fix": "One clause in bambu-03: 'It also updates a pending message held by the Project page retry change, when that is present.'",
+      "verification_needed": "None beyond reading."
+    }
+  ],
+  "verified_claims": [
+    "All 16 heads: rev-list base..head == 1, parent == declared base, commit subject == title, commit body empty, tree == curated tree, changed paths == curated paths (script in REPORT.md).",
+    "git diff 54083d6f a273fd21 and e77253cd 74a75752: only the two-line OnWebContentSizeChanged comment swapped; ams-zoom R3 no longer touches it; combined e9617d1a carries the gtk-integration wording; master 79df7ae3 carries the 'DIP/CSS ... physical pixels' wording.",
+    "Body claims read against diffs for all 16 (details in REPORT.md): camera refit triggers and release on narrowing; AMS 2x cap, 5% steps, macOS unzoomed, Edge backend wait; Project late-link editor guard, generation/alive checks, retry on later visit; progress ClientToWindowSize, wxALWAYS_SHOW_SB, FormatString before Fit, wxDialog::DoSetSize; sidebar proportions, help icon pin, text padding; settings field clamp/reserve/single-option; CSS heading/figure/empty caption; Print Options wrapped labels, Body_12 selectors, layout_options guard; temperature '000' editing width, MSW margin; DPI unit removals, point size 16; project-startup retry delays sum 15.85 s and typeof guards; wx-01 inside #ifdef __WXGTK3__ with #ifndef __WXGTK4__; wx-02 default-off option, inline identity kept for non-GTK3, option name matches GUI_App.cpp.",
+    "42 unique URLs in bodies-round3, all HTTP 200; 25 image URLs = 23 from round 2 plus camera-columns-before/after; nothing dropped.",
+    "All 16 <a id> anchors present in the README at 9ea10ea7; README has no model/quota vocabulary.",
+    "Process-word grep over bodies-round3: no hits for cleaned|accepted|reviewed|review fork|combined series|preload|hash|quota|model names."
+  ],
+  "limitations": [
+    "Source and text review only; no build, launch, screenshots, or Windows/macOS compile or run.",
+    "Evidence README at 9ea10ea7 was fetched over HTTPS; its content for the two moved PRs is stale (ED-23).",
+    "Word counts here (49 to 99 per body) include the provenance sentence and link text, so they are not comparable to the root's 68-word average; not a finding.",
+    "No all-OS or merge-readiness claim. Isolated per-PR screenshots remain missing for bambu-05, wx-02, gtk-integration, bambu-03 and project-startup, as their bodies state.",
+    "Round cap reached; no round 4 started."
+  ]
+}

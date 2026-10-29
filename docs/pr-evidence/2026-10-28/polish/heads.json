@@ -4,24 +4,21 @@
     "repository": "alanbixby/BambuStudio",
     "number": 1,
     "branch": "fix/assembly-return-context",
-    "candidate_branch": "polish/assembly-return-context",
     "head": "f4218e246f3041077177d2487ce8824d522addfa",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "base_branch": "master",
     "title": "Fix crash when returning from the Assembly view",
     "tree": "a230991dd3e226d31c9831217009ad144a059c6a",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-01.patch",
     "paths": [
       "src/slic3r/GUI/GLCanvas3D.cpp"
     ],
     "additions": 3,
     "deletions": 1,
     "commits": 1,
-    "published": false,
+    "published": true,
     "old_head": "f899b75e113c4e7fdf422842c4403e9b62906bdd",
     "url": "https://github.com/alanbixby/BambuStudio/pull/1",
     "changed_lines": 4,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-01.md",
     "image_source": "bambu-01"
   },
   {
@@ -29,13 +26,11 @@
     "repository": "alanbixby/BambuStudio",
     "number": 2,
     "branch": "fix/assembly-sidebar-clearance",
-    "candidate_branch": "polish/assembly-sidebar-clearance",
     "head": "3ba2657c70ef031d011da175a4daafb850e3b3b1",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "base_branch": "master",
     "title": "Keep the Assembly structure panel from covering the sidebar toggle",
     "tree": "b8b225821ab31b5e048a708aa686a7e692f9cf37",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-02.patch",
     "paths": [
       "src/slic3r/GUI/GLCanvas3D.cpp",
       "src/slic3r/GUI/Overview/AssemblyStepsUtils.hpp",
@@ -44,11 +39,10 @@
     "additions": 10,
     "deletions": 2,
     "commits": 1,
-    "published": false,
+    "published": true,
     "old_head": "dc097952b7f667fa22a7dcf5979d73fa6b3485e4",
     "url": "https://github.com/alanbixby/BambuStudio/pull/2",
     "changed_lines": 12,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-02.md",
     "image_source": "bambu-02"
   },
   {
@@ -56,13 +50,11 @@
     "repository": "alanbixby/BambuStudio",
     "number": 3,
     "branch": "fix/project-metadata",
-    "candidate_branch": "polish/project-metadata",
     "head": "ed5e975a59ee28242f67ded5e0722b19b61e0ed4",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "base_branch": "master",
     "title": "Show Project information without waiting for the network lookup",
     "tree": "ffded8c3130ccaba1a3edb88e88a1cb603ce27db",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-03.patch",
     "paths": [
       "src/libslic3r/Model.cpp",
       "src/libslic3r/Model.hpp",
@@ -72,11 +64,10 @@
     "additions": 254,
     "deletions": 161,
     "commits": 1,
-    "published": false,
+    "published": true,
     "old_head": "0826d59e1e1b36bf80b82904859c64f339749820",
     "url": "https://github.com/alanbixby/BambuStudio/pull/3",
     "changed_lines": 415,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-03.md",
     "image_source": "bambu-03"
   },
   {
@@ -84,13 +75,11 @@
     "repository": "alanbixby/BambuStudio",
     "number": 4,
     "branch": "fix/project-reader-styles",
-    "candidate_branch": "polish/project-reader-styles",
     "head": "44fa2692b16919f4519595d6bcd4f571777ea1d6",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "base_branch": "master",
     "title": "Fix dark-mode Project text colors and overlapping imported tables",
     "tree": "b9b2e68c53152f255720ba11695cf4794ab4883e",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-04.patch",
     "paths": [
       "resources/web/model_new/css/dark.css",
       "resources/web/model_new/index.css"
@@ -98,11 +87,10 @@
     "additions": 32,
     "deletions": 0,
     "commits": 1,
-    "published": false,
+    "published": true,
     "old_head": "b3dacfa61b17385703e700779207e83e0c1041af",
     "url": "https://github.com/alanbixby/BambuStudio/pull/4",
     "changed_lines": 32,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-04.md",
     "image_source": "bambu-04"
   },
   {
@@ -110,13 +98,11 @@
     "repository": "alanbixby/BambuStudio",
     "number": 5,
     "branch": "fix/native-dip-geometry",
-    "candidate_branch": "polish/native-dip-geometry",
     "head": "305b41867feec57eb3d535d59920a9f091991762",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "base_branch": "master",
     "title": "Fix double DPI scaling of icons, fonts and measured sizes",
     "tree": "3863592aa8763ef66660769859309c593ab668fc",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-05.patch",
     "paths": [
       "src/slic3r/GUI/AboutDialog.cpp",
       "src/slic3r/GUI/AmsMappingPopup.cpp",
@@ -140,11 +126,10 @@
     "additions": 66,
     "deletions": 63,
     "commits": 1,
-    "published": false,
+    "published": true,
     "old_head": "a1b43d73c23d08db6aa19047286c47c51f4cbe38",
     "url": "https://github.com/alanbixby/BambuStudio/pull/5",
     "changed_lines": 129,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-05.md",
     "image_source": "wx-02"
   },
   {
@@ -152,13 +137,11 @@
     "repository": "alanbixby/BambuStudio",
     "number": 6,
     "branch": "fix/print-options-reflow",
-    "candidate_branch": "polish/print-options-reflow",
     "head": "2604e8279cf03f0ac93b53205608a7d901aacfc4",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "base_branch": "master",
     "title": "Wrap Print Options descriptions instead of cutting them off",
     "tree": "33bab147dd1c6298c846ca46cf81b9349773ee58",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-06.patch",
     "paths": [
       "src/slic3r/GUI/PrintOptionsDialog.cpp",
       "src/slic3r/GUI/PrintOptionsDialog.hpp"
@@ -166,11 +149,10 @@
     "additions": 67,
     "deletions": 71,
     "commits": 1,
-    "published": false,
+    "published": true,
     "old_head": "cbde5d139ced56b5e3d7def490446f06ccd2e791",
     "url": "https://github.com/alanbixby/BambuStudio/pull/6",
     "changed_lines": 138,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-06.md",
     "image_source": "bambu-06"
   },
   {
@@ -178,13 +160,11 @@
     "repository": "alanbixby/BambuStudio",
     "number": 7,
     "branch": "fix/settings-field-width",
-    "candidate_branch": "polish/settings-field-width",
     "head": "9df1217e47951f34cd95c65159f5329c88083c75",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "base_branch": "master",
     "title": "Let single-value settings fields use spare panel width",
     "tree": "4ac31392e530280280762d2f60c2543779b67e95",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-07.patch",
     "paths": [
       "src/slic3r/GUI/OG_CustomCtrl.cpp",
       "src/slic3r/GUI/OG_CustomCtrl.hpp",
@@ -193,11 +173,10 @@
     "additions": 64,
     "deletions": 1,
     "commits": 1,
-    "published": false,
+    "published": true,
     "old_head": "763edb4f601575e364ae3fa58aadf014f1ca7adf",
     "url": "https://github.com/alanbixby/BambuStudio/pull/7",
     "changed_lines": 65,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-07.md",
     "image_source": "bambu-07"
   },
   {
@@ -205,24 +184,21 @@
     "repository": "alanbixby/BambuStudio",
     "number": 8,
     "branch": "fix/sidebar-card-spacing",
-    "candidate_branch": "polish/sidebar-card-spacing",
     "head": "5d431fccc52f0011f0613a74d224e81bc614d23f",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "base_branch": "master",
     "title": "Even out printer and plate cards and align header buttons",
     "tree": "c663a6cb83ea179334c4d26f8d84718d1ecb1bc0",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-08.patch",
     "paths": [
       "src/slic3r/GUI/Plater.cpp"
     ],
     "additions": 21,
     "deletions": 8,
     "commits": 1,
-    "published": false,
+    "published": true,
     "old_head": "e9658ac6a8bbcffe38eeb6eb0cce0d446e3c672f",
     "url": "https://github.com/alanbixby/BambuStudio/pull/8",
     "changed_lines": 29,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-08.md",
     "image_source": "bambu-08"
   },
   {
@@ -230,13 +206,11 @@
     "repository": "alanbixby/BambuStudio",
     "number": 9,
     "branch": "fix/temperature-value-alignment",
-    "candidate_branch": "polish/temperature-value-alignment",
     "head": "fc074b0ad0a55945fefcf16fe0b195a48d20e398",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "base_branch": "master",
     "title": "Close the gap between temperature values and their unit",
     "tree": "ba7939dbe93460d637a884528320d899d060766f",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-09.patch",
     "paths": [
       "src/slic3r/GUI/Widgets/TempInput.cpp",
       "src/slic3r/GUI/Widgets/TempInput.hpp"
@@ -244,11 +218,10 @@
     "additions": 80,
     "deletions": 21,
     "commits": 1,
-    "published": false,
+    "published": true,
     "old_head": "e51f9b9c4aa1489fcf73e3a9dc0b7e454cd8db37",
     "url": "https://github.com/alanbixby/BambuStudio/pull/9",
     "changed_lines": 101,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-09.md",
     "image_source": "bambu-09"
   },
   {
@@ -256,13 +229,11 @@
     "repository": "alanbixby/BambuStudio",
     "number": 10,
     "branch": "fix/camera-ams-balance",
-    "candidate_branch": "polish/camera-ams-balance",
     "head": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "base_branch": "master",
     "title": "Fit the live camera to its video aspect ratio",
     "tree": "9556ac9563f0529e72423865e50837f4dd222988",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-10.patch",
     "paths": [
       "src/slic3r/GUI/StatusPanel.cpp",
       "src/slic3r/GUI/StatusPanel.hpp"
@@ -270,48 +241,43 @@
     "additions": 49,
     "deletions": 0,
     "commits": 1,
-    "published": false,
+    "published": true,
     "old_head": "fab83eef842e6967fa06d0bb05410940b4787d28",
     "url": "https://github.com/alanbixby/BambuStudio/pull/10",
     "changed_lines": 49,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-10.md",
     "image_source": "bambu-10"
   },
   {
     "key": "bambu-project-startup",
     "repository": "alanbixby/BambuStudio",
-    "number": null,
+    "number": 11,
     "branch": "fix/project-page-ready",
-    "candidate_branch": "polish/project-page-ready",
     "head": "a2edccd9347f53d719984fd2997ce23155ee79a6",
     "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
     "base_branch": "master",
     "title": "Retry Project details until the page is ready",
     "tree": "bb4c2ffdc0c2a55924a51c1ba39ee041e0fd7589",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-project-startup.patch",
     "paths": [
       "resources/web/model_new/index.js"
     ],
     "additions": 40,
     "deletions": 3,
     "commits": 1,
-    "published": false,
+    "published": true,
     "changed_lines": 43,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-project-startup.md",
-    "image_source": "bambu-03"
+    "image_source": "bambu-03",
+    "url": "https://github.com/alanbixby/BambuStudio/pull/11"
   },
   {
     "key": "bambu-progress",
     "repository": "alanbixby/BambuStudio",
-    "number": null,
+    "number": 12,
     "branch": "fix/progress-text-layout",
-    "candidate_branch": "polish/progress-text-layout",
     "head": "5608a478ca983cc63083627bb6f8854f575412db",
     "base": "305b41867feec57eb3d535d59920a9f091991762",
     "base_branch": "fix/native-dip-geometry",
     "title": "Keep progress text and long messages from being clipped",
     "tree": "d714d9dedd6bfca70f9f58f1bd98a3864421c9d4",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-progress.patch",
     "paths": [
       "src/slic3r/GUI/StatusPanel.cpp",
       "src/slic3r/GUI/Widgets/ProgressDialog.cpp"
@@ -319,23 +285,21 @@
     "additions": 9,
     "deletions": 10,
     "commits": 1,
-    "published": false,
+    "published": true,
     "changed_lines": 19,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-progress.md",
-    "image_source": "bambu-05"
+    "image_source": "bambu-05",
+    "url": "https://github.com/alanbixby/BambuStudio/pull/12"
   },
   {
     "key": "bambu-ams-zoom",
     "repository": "alanbixby/BambuStudio",
-    "number": null,
+    "number": 13,
     "branch": "fix/ams-fit-zoom",
-    "candidate_branch": "polish/ams-fit-zoom-v3",
     "head": "a273fd21b1580662221037549e09bd7e10bcc615",
     "base": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
     "base_branch": "fix/camera-ams-balance",
     "title": "Scale AMS to use spare room beside the camera",
     "tree": "e63f3beab1ca938d60f979c7409e8bb6bdec9698",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-ams-zoom-round3.patch",
     "paths": [
       "src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.cpp",
       "src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.h",
@@ -347,23 +311,21 @@
     "additions": 181,
     "deletions": 10,
     "commits": 1,
-    "published": false,
+    "published": true,
     "changed_lines": 191,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-ams-zoom.md",
-    "image_source": "bambu-10"
+    "image_source": "bambu-10",
+    "url": "https://github.com/alanbixby/BambuStudio/pull/13"
   },
   {
     "key": "bambu-gtk-integration",
     "repository": "alanbixby/BambuStudio",
-    "number": null,
+    "number": 14,
     "branch": "fix/gtk-font-dpi-integration",
-    "candidate_branch": "polish/gtk-font-dpi-integration-v3",
     "head": "74a75752f34633a5bb00d8a96bc6a30fc9a2744a",
     "base": "5608a478ca983cc63083627bb6f8854f575412db",
     "base_branch": "fix/progress-text-layout",
     "title": "Use a pinned wx build for GTK font sizing",
     "tree": "09508715bdda14ccbe33b89ba20ede7f59676481",
-    "patch": "/tmp/bambu-polish-20261028/candidates/bambu-gtk-integration-round3.patch",
     "paths": [
       "deps/wxWidgets/wxWidgets.cmake",
       "src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp",
@@ -372,17 +334,16 @@
     "additions": 9,
     "deletions": 4,
     "commits": 1,
-    "published": false,
+    "published": true,
     "changed_lines": 13,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/bambu-gtk-integration.md",
-    "image_source": "wx-02"
+    "image_source": "wx-02",
+    "url": "https://github.com/alanbixby/BambuStudio/pull/14"
   },
   {
     "key": "wx-01",
     "repository": "alanbixby/wxWidgets",
     "number": 1,
     "branch": "fix/gtk-label-font-measurement",
-    "candidate_branch": "polish/gtk-label-font-measurement",
     "head": "14a14a773c74ae23281417f58334b5c28ecfed12",
     "base": "abb542694ef4534a50e65c5b877b2774d02952ae",
     "base_branch": "master",
@@ -391,13 +352,12 @@
     "paths": [
       "src/gtk/control.cpp"
     ],
-    "published": false,
+    "published": true,
     "commits": 1,
     "url": "https://github.com/alanbixby/wxWidgets/pull/1",
     "additions": 24,
     "deletions": 0,
     "changed_lines": 24,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/wx-01.md",
     "image_source": "wx-01"
   },
   {
@@ -405,7 +365,6 @@
     "repository": "alanbixby/wxWidgets",
     "number": 2,
     "branch": "fix/gtk-font-dpi-conversion",
-    "candidate_branch": "polish/gtk-font-dpi-conversion",
     "head": "d54f3313028fc439cea91f0b6a213e5ad2245b90",
     "base": "abb542694ef4534a50e65c5b877b2774d02952ae",
     "base_branch": "master",
@@ -417,13 +376,12 @@
       "src/gtk/window.cpp",
       "interface/wx/sysopt.h"
     ],
-    "published": false,
+    "published": true,
     "commits": 1,
     "url": "https://github.com/alanbixby/wxWidgets/pull/2",
     "additions": 91,
     "deletions": 3,
     "changed_lines": 94,
-    "body_file": "/tmp/bambu-polish-20261028/bodies-round3/wx-02.md",
     "image_source": "wx-02"
   }
 ]

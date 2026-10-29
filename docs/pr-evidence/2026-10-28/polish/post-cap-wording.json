@@ -1,0 +1,17 @@
+{
+  "findings": [
+    "ED-24",
+    "ED-25"
+  ],
+  "changed_bodies": [
+    "bambu-03",
+    "bambu-10",
+    "bambu-project-startup",
+    "bambu-progress",
+    "bambu-ams-zoom",
+    "wx-01"
+  ],
+  "source_changed": false,
+  "fourth_review_started": false,
+  "checked_by": "parent; simple requested wording changes after round3 cap"
+}

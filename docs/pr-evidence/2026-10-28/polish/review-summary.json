@@ -1,0 +1,73 @@
+{
+  "completed_reviews": 14,
+  "latest_open_blockers": 0,
+  "partitions": [
+    {
+      "scope": "design_scope_opus",
+      "completed_rounds": [
+        1,
+        2,
+        3
+      ],
+      "latest_round": 3,
+      "open_blockers": 0,
+      "report": "round3/design_scope_opus/REPORT.md"
+    },
+    {
+      "scope": "editorial_fable",
+      "completed_rounds": [
+        1,
+        2,
+        3
+      ],
+      "latest_round": 3,
+      "open_blockers": 0,
+      "report": "round3/editorial_fable/REPORT.md"
+    },
+    {
+      "scope": "project_astra",
+      "completed_rounds": [
+        1,
+        2
+      ],
+      "latest_round": 2,
+      "open_blockers": 0,
+      "report": "round2/project_astra/REPORT.md"
+    },
+    {
+      "scope": "native_sol",
+      "completed_rounds": [
+        1,
+        2
+      ],
+      "latest_round": 2,
+      "open_blockers": 0,
+      "report": "round2/native_sol/REPORT.md"
+    },
+    {
+      "scope": "camera_temperature_astra",
+      "completed_rounds": [
+        1,
+        2
+      ],
+      "latest_round": 2,
+      "open_blockers": 0,
+      "report": "round2/camera_temperature_astra/REPORT.md"
+    },
+    {
+      "scope": "wx_sol",
+      "completed_rounds": [
+        1,
+        2
+      ],
+      "latest_round": 2,
+      "open_blockers": 0,
+      "report": "round2/wx_sol/REPORT.md"
+    }
+  ],
+  "round_cap": 3,
+  "source_or_runtime_rebuild_after_comment_redistribution": false,
+  "product_source_union_unchanged": true,
+  "windows_macos_native_checks": false,
+  "upstream_submitted": false
+}

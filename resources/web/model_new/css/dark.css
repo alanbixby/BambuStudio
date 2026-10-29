@@ -154,3 +154,14 @@ input {
     color: hsl(0, 0%, 91%);
     border-color: hsl(0, 0%, 77%);
 }
+
+/* Reader descriptions and accessory captions set their own light-theme colors
+   in index.css, so they do not inherit the dark body foreground. */
+#projectDescription, #profileDescript,
+#bom-accessories, #assembly-accessories, #other-accessories {
+  color: var(--dark-color-base-text);
+}
+#projectDescription a,
+#profileDescript a {
+  color: #81c7ff;
+}

@@ -3239,7 +3239,7 @@ void AssemblyStepsUtils::render_assembly_structure_panel(float canvas_w, float c
 
     // Layout constants -------------------------------------------------------
     const float panel_x        = 12.0f * sc;
-    const float panel_y        = 17.0f * sc;
+    const float panel_y        = std::max(17.0f * sc, m_collapse_toolbar_bottom_y + 6.0f * sc);
     const float panel_w        = 384.0f * sc;       // 1.5x of original 256*sc
     const float panel_radius   = 4.0f * sc;
     // Header height tracks the title line (subtitle removed):

@@ -586,7 +586,7 @@ LocalTaskManagerPage::LocalTaskManagerPage(wxWindow* parent)
     m_task_name->SetCenter(false);
     m_table_head_sizer->Add(m_task_name, 0, wxALIGN_CENTER_VERTICAL, 0);
 
-    m_printer_name = new Button(m_table_head_panel, _L("Device Name"), "toolbar_double_directional_arrow", wxNO_BORDER, ICON_SINGLE_SIZE);
+    m_printer_name = new Button(m_table_head_panel, _L("Device Name"), "toolbar_double_directional_arrow", wxNO_BORDER, 16);
     m_printer_name->SetBackgroundColor(head_bg);
     m_printer_name->SetFont(TABLE_HEAD_FONT);
     m_printer_name->SetCornerRadius(0);
@@ -606,7 +606,7 @@ LocalTaskManagerPage::LocalTaskManagerPage(wxWindow* parent)
     });
     m_table_head_sizer->Add(m_printer_name, 0, wxALIGN_CENTER_VERTICAL, 0);
 
-    m_status = new Button(m_table_head_panel, _L("Task Status"), "toolbar_double_directional_arrow", wxNO_BORDER, ICON_SINGLE_SIZE);
+    m_status = new Button(m_table_head_panel, _L("Task Status"), "toolbar_double_directional_arrow", wxNO_BORDER, 16);
     m_status->SetBackgroundColor(head_bg);
     m_status->SetFont(TABLE_HEAD_FONT);
     m_status->SetCornerRadius(0);
@@ -635,7 +635,7 @@ LocalTaskManagerPage::LocalTaskManagerPage(wxWindow* parent)
     m_info->SetCenter(false);
     m_table_head_sizer->Add(m_info, 0, wxALIGN_CENTER_VERTICAL, 0);
 
-    m_send_time = new Button(m_table_head_panel, _L("Sent Time"), "toolbar_double_directional_arrow", wxNO_BORDER, ICON_SINGLE_SIZE, false);
+    m_send_time = new Button(m_table_head_panel, _L("Sent Time"), "toolbar_double_directional_arrow", wxNO_BORDER, 16, false);
     m_send_time->SetBackgroundColor(head_bg);
     m_send_time->SetFont(TABLE_HEAD_FONT);
     m_send_time->SetCornerRadius(0);
@@ -958,7 +958,7 @@ CloudTaskManagerPage::CloudTaskManagerPage(wxWindow* parent)
     m_task_name->SetCenter(false);
     m_table_head_sizer->Add(m_task_name, 0, wxALIGN_CENTER_VERTICAL, 0);
 
-    m_printer_name = new Button(m_table_head_panel, _L("Device Name"), "toolbar_double_directional_arrow", wxNO_BORDER, ICON_SINGLE_SIZE);
+    m_printer_name = new Button(m_table_head_panel, _L("Device Name"), "toolbar_double_directional_arrow", wxNO_BORDER, 16);
     m_printer_name->SetBackgroundColor(head_bg);
     m_printer_name->SetFont(TABLE_HEAD_FONT);
     m_printer_name->SetCornerRadius(0);
@@ -978,7 +978,7 @@ CloudTaskManagerPage::CloudTaskManagerPage(wxWindow* parent)
     });
     m_table_head_sizer->Add(m_printer_name, 0, wxALIGN_CENTER_VERTICAL, 0);
 
-    m_status = new Button(m_table_head_panel, _L("Task Status"), "toolbar_double_directional_arrow", wxNO_BORDER, ICON_SINGLE_SIZE);
+    m_status = new Button(m_table_head_panel, _L("Task Status"), "toolbar_double_directional_arrow", wxNO_BORDER, 16);
     m_status->SetBackgroundColor(head_bg);
     m_status->SetFont(TABLE_HEAD_FONT);
     m_status->SetCornerRadius(0);
@@ -1007,7 +1007,7 @@ CloudTaskManagerPage::CloudTaskManagerPage(wxWindow* parent)
     m_info->SetCenter(false);
     m_table_head_sizer->Add(m_info, 0, wxALIGN_CENTER_VERTICAL, 0);
 
-    m_send_time = new Button(m_table_head_panel, _L("Sent Time"), "toolbar_double_directional_arrow", wxNO_BORDER, ICON_SINGLE_SIZE, false);
+    m_send_time = new Button(m_table_head_panel, _L("Sent Time"), "toolbar_double_directional_arrow", wxNO_BORDER, 16, false);
     m_send_time->SetBackgroundColor(head_bg);
     m_send_time->SetFont(TABLE_HEAD_FONT);
     m_send_time->SetCornerRadius(0);
@@ -1081,7 +1081,7 @@ CloudTaskManagerPage::CloudTaskManagerPage(wxWindow* parent)
 
     m_flipping_page_sizer = new wxBoxSizer(wxHORIZONTAL);
     m_page_sizer = new wxBoxSizer(wxVERTICAL);
-    btn_last_page = new Button(m_flipping_panel, "", "go_last_plate", wxBORDER_NONE, FromDIP(20));
+    btn_last_page = new Button(m_flipping_panel, "", "go_last_plate", wxBORDER_NONE, 20);
     btn_last_page->SetMinSize(wxSize(FromDIP(20), FromDIP(20)));
     btn_last_page->SetMaxSize(wxSize(FromDIP(20), FromDIP(20)));
     btn_last_page->SetBackgroundColor(head_bg);
@@ -1101,7 +1101,7 @@ CloudTaskManagerPage::CloudTaskManagerPage(wxWindow* parent)
         Layout();*/
     });
     st_page_number = new wxStaticText(m_flipping_panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize);
-    btn_next_page = new Button(m_flipping_panel, "", "go_next_plate", wxBORDER_NONE, FromDIP(20));
+    btn_next_page = new Button(m_flipping_panel, "", "go_next_plate", wxBORDER_NONE, 20);
     btn_next_page->SetMinSize(wxSize(FromDIP(20), FromDIP(20)));
     btn_next_page->SetMaxSize(wxSize(FromDIP(20), FromDIP(20)));
     btn_next_page->SetBackgroundColor(head_bg);

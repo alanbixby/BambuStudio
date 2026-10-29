@@ -379,7 +379,7 @@ PingCodeBindDialog::~PingCodeBindDialog() {
      wxBoxSizer *m_sizere_left_h = new wxBoxSizer(wxHORIZONTAL);
      wxBoxSizer *m_sizere_left_v= new wxBoxSizer(wxVERTICAL);
 
-     m_printer_img = new wxStaticBitmap(m_panel_left, wxID_ANY, create_scaled_bitmap("printer_thumbnail", nullptr, FromDIP(100)), wxDefaultPosition, wxSize(FromDIP(120), FromDIP(120)), 0);
+     m_printer_img = new wxStaticBitmap(m_panel_left, wxID_ANY, create_scaled_bitmap("printer_thumbnail", nullptr, 100), wxDefaultPosition, wxSize(FromDIP(120), FromDIP(120)), 0);
      m_printer_img->SetBackgroundColour(BIND_DIALOG_GREY200);
      m_printer_img->Hide();
      m_printer_name = new wxStaticText(m_panel_left, wxID_ANY, wxEmptyString);
@@ -919,7 +919,7 @@ void BindMachineDialog::on_show(wxShowEvent &event)
         auto img = m_machine_info->get_printer_thumbnail_img_str();
         if (wxGetApp().dark_mode()) { img += "_dark"; }
         try {
-            auto bitmap = create_scaled_bitmap(img, this, FromDIP(80));
+            auto bitmap = create_scaled_bitmap(img, this, 80);
             m_printer_img->SetBitmap(bitmap);
         }
         catch (...){}
@@ -986,7 +986,7 @@ UnBindMachineDialog::UnBindMachineDialog(Plater *plater /*= nullptr*/)
      wxBoxSizer *m_sizere_left_h = new wxBoxSizer(wxHORIZONTAL);
      wxBoxSizer *m_sizere_left_v= new wxBoxSizer(wxVERTICAL);
 
-     m_printer_img = new wxStaticBitmap(m_panel_left, wxID_ANY, create_scaled_bitmap("printer_thumbnail", nullptr, FromDIP(100)), wxDefaultPosition, wxSize(FromDIP(120), FromDIP(120)), 0);
+     m_printer_img = new wxStaticBitmap(m_panel_left, wxID_ANY, create_scaled_bitmap("printer_thumbnail", nullptr, 100), wxDefaultPosition, wxSize(FromDIP(120), FromDIP(120)), 0);
      m_printer_img->SetBackgroundColour(BIND_DIALOG_GREY200);
      m_printer_img->Hide();
      m_printer_name     = new wxStaticText(m_panel_left, wxID_ANY, wxEmptyString);
@@ -1143,7 +1143,7 @@ void UnBindMachineDialog::on_show(wxShowEvent &event)
         auto img = m_machine_info->get_printer_thumbnail_img_str();
         if (wxGetApp().dark_mode()) { img += "_dark"; }
         try {
-            auto bitmap = create_scaled_bitmap(img, this, FromDIP(80));
+            auto bitmap = create_scaled_bitmap(img, this, 80);
             m_printer_img->SetBitmap(bitmap);
         } catch (...) {}
 

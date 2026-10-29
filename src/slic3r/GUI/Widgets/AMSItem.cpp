@@ -339,7 +339,7 @@ void AMSExtText::doRender(wxDC& dc)
     WxFontUtils::get_suitable_font_size(0.7 * size.GetHeight(), dc);
 
     auto    tsize = dc.GetMultiLineTextExtent("Ext");
-    wxPoint pot(FromDIP((size.x - tsize.x) / 2), FromDIP((size.y - tsize.y) / 2));
+    wxPoint pot((size.x - tsize.x) / 2, (size.y - tsize.y) / 2);
     dc.DrawText("Ext", pot);
 }
 

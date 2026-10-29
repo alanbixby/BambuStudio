@@ -26,7 +26,7 @@ ManualNozzleCountDialog::ManualNozzleCountDialog(wxWindow *parent, NozzleVolumeT
     wxPanel *content = new wxPanel(this);
     content->SetBackgroundColour(*wxWHITE);
 
-    wxBitmap icon        = create_scaled_bitmap("hotend_thumbnail", nullptr, FromDIP(60));
+    wxBitmap icon        = create_scaled_bitmap("hotend_thumbnail", nullptr, 60);
     auto    *nozzle_icon = new wxStaticBitmap(content, wxID_ANY, icon);
 
     wxBoxSizer *content_sizer = new wxBoxSizer(wxHORIZONTAL);
@@ -221,7 +221,7 @@ ExtruderBadge::ExtruderBadge(wxWindow* parent) : wxPanel(parent)
 {
     wxSizer* main_sizer = new wxBoxSizer(wxVERTICAL);
     SetBackgroundColour("#F8F8F8");
-    wxBitmap icon = create_scaled_bitmap("extruder_badge_none_selected", nullptr, FromDIP(90));
+    wxBitmap icon = create_scaled_bitmap("extruder_badge_none_selected", nullptr, 90);
 
     auto extruder_label = new Label(this, _L("Extruder"));
 
@@ -290,7 +290,7 @@ void ExtruderBadge::SetExtruderValid(bool right_on)
         badge_name = "extruder_badge_none_selected";
     else
         badge_name = "extruder_badge_none_selected_single";
-    wxBitmap icon = create_scaled_bitmap(badge_name, nullptr, FromDIP(90));
+    wxBitmap icon = create_scaled_bitmap(badge_name, nullptr, 90);
     badget->SetBitmap(icon);
 
     m_right_on = right_on;
@@ -316,7 +316,7 @@ void ExtruderBadge::SetExtruderStatus(bool left_selected, bool right_selected)
         badge_name = "extruder_badge_none_selected_single";
     }
 
-    wxBitmap icon = create_scaled_bitmap(badge_name, nullptr, FromDIP(90));
+    wxBitmap icon = create_scaled_bitmap(badge_name, nullptr, 90);
     badget->SetBitmap(icon);
     Layout();
 }

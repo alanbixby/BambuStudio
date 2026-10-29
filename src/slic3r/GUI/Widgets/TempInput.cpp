@@ -86,7 +86,7 @@ void TempInput::Create(wxWindow *parent, wxString text, wxString label, wxString
     style &= ~wxALIGN_CENTER_HORIZONTAL;
     state_handler.attach({&label_color, &text_color});
     state_handler.update_binds();
-    text_ctrl = new wxTextCtrl(this, wxID_ANY, text, {5, 5}, wxDefaultSize, wxTE_PROCESS_ENTER | wxBORDER_NONE, wxTextValidator(wxFILTER_NUMERIC), wxTextCtrlNameStr);
+    text_ctrl = new wxTextCtrl(this, wxID_ANY, text, {5, 5}, wxDefaultSize, wxTE_PROCESS_ENTER | wxTE_RIGHT | wxBORDER_NONE, wxTextValidator(wxFILTER_NUMERIC), wxTextCtrlNameStr);
     text_ctrl->SetBackgroundColour(StateColor::darkModeColorFor(*wxWHITE));
     text_ctrl->SetMaxLength(3);
     state_handler.attach_child(text_ctrl);
@@ -95,12 +95,28 @@ void TempInput::Create(wxWindow *parent, wxString text, wxString label, wxString
         ProcessEventLocally(e);
         e.Skip();
         if (m_read_only) return;
-        // enter input mode
+        // enter input mode; reserve three digits so typing does not shift the slash
+        m_editing = true;
+        layoutTarget();
+        Refresh();
         auto temp = text_ctrl->GetValue();
         if (temp.length() > 0 && temp[0] == (0x5f)) {
             text_ctrl->SetValue(wxEmptyString);
         }
         if (wdialog != nullptr) { wdialog->Dismiss(); }
+    });
+    text_ctrl->Bind(wxEVT_TEXT, [this](wxCommandEvent &e) {
+        e.Skip();
+        if (!m_editing) {
+            layoutTarget();
+            Refresh();
+        }
+    });
+    // The idle entry is only as wide as its digits; keep the slash, target
+    // and unit clickable as one editing target.
+    Bind(wxEVT_LEFT_DOWN, [this](wxMouseEvent &e) {
+        e.Skip();
+        if (!m_read_only && IsEnabled() && e.GetX() >= m_slash_x) text_ctrl->SetFocus();
     });
     text_ctrl->Bind(wxEVT_ENTER_WINDOW, [this](auto &e) {
         if (m_read_only) { SetCursor(wxCURSOR_ARROW); }
@@ -109,6 +125,11 @@ void TempInput::Create(wxWindow *parent, wxString text, wxString label, wxString
         e.SetId(GetId());
         ProcessEventLocally(e);
         e.Skip();
+        if (m_editing) {
+            m_editing = false;
+            layoutTarget();
+            Refresh();
+        }
 
         if (!m_on_changing) /*the wxCUSTOMEVT_SET_TEMP_FINISH event may popup a dialog, which may generate dead loop*/
         {
@@ -367,6 +388,33 @@ void TempInput::DoSetSize(int x, int y, int width, int height, int sizeFlags)
 {
     wxWindow::DoSetSize(x, y, width, height, sizeFlags);
     if (sizeFlags & wxSIZE_USE_EXISTING) return;
+    layoutTarget();
+}
+
+wxSize TempInput::targetSize(bool editing) const
+{
+    const auto value = text_ctrl->GetValue();
+    auto size = text_ctrl->GetTextExtent(editing ? wxString("000") : (value.IsEmpty() ? wxString("0") : value));
+    size.x = wxMax(size.x, text_ctrl->GetTextExtent(wxString("0")).x);
+#ifdef __WXGTK3__
+    // Borderless GTK3 has zero CSS padding; retain its compact idle size.
+    if (!editing) return size;
+#endif
+    size = text_ctrl->GetSizeFromTextSize(size);
+#ifdef __WXMSW__
+    // wx adds only the left margin; this control uses equal default font margins.
+    size.x += wxMax(0, text_ctrl->GetMargins().x);
+#endif
+    return size;
+}
+
+// Icons and nozzle markers stay on the left. "current / target C" is a compact
+// group anchored to the right edge: the unit keeps a fixed column, the target
+// entry includes native padding (and three digits while editing); render() draws the
+// slash and current value relative to the entry.
+void TempInput::layoutTarget()
+{
+    const int gap = FromDIP(4);
 
     padding_left = FromDIP(10);
     auto       left = padding_left;
@@ -387,20 +435,20 @@ void TempInput::DoSetSize(int x, int y, int width, int height, int sizeFlags)
     // label
     dc.SetFont(::Label::Head_14);
     labelSize = dc.GetMultiLineTextExtent(wxWindow::GetLabel());
-    left += labelSize.x;
-
-    // interval
-    left += 10;
+    left += labelSize.x + gap;
 
     // separator
     dc.SetFont(::Label::Body_12);
     auto sepSize = dc.GetMultiLineTextExtent(wxString("/"));
-    left += sepSize.x;
+    left += sepSize.x + gap;
 
-    // text text
-    auto textSize = text_ctrl->GetTextExtent(wxString("0000"));
+    // target entry
+    const auto textSize = targetSize(m_editing);
+    const int unit_width = degree_icon.bmp().IsOk() ? degree_icon.GetBmpWidth() : 0;
+    const int target_x = wxMax(left, GetSize().x - FromDIP(10) - unit_width - gap - textSize.x);
     text_ctrl->SetSize(textSize);
-    text_ctrl->SetPosition({left, (GetSize().y - text_ctrl->GetSize().y) / 2});
+    text_ctrl->SetPosition({target_x, (GetSize().y - text_ctrl->GetSize().y) / 2});
+    m_slash_x = target_x - gap - sepSize.x;
 }
 
 void TempInput::DoSetToolTipText(wxString const &tip)
@@ -517,6 +565,9 @@ void TempInput::render(wxDC &dc)
         pt.y = (size.y - labelSize.y) / 2;
     }
 
+    // current value sits just before the slash, which layoutTarget() places
+    // just before the target
+    pt.x = wxMax(pt.x, m_slash_x - FromDIP(4) - labelSize.x);
     dc.SetTextForeground(StateColor::darkModeColorFor("#323A3C"));
     dc.DrawText(text, pt);
 
@@ -525,7 +576,7 @@ void TempInput::render(wxDC &dc)
     auto sepSize = dc.GetMultiLineTextExtent(wxString("/"));
     dc.SetTextForeground(text_color.colorForStates(states));
     dc.SetTextBackground(background_color.colorForStates(states));
-    pt.x += labelSize.x + 10;
+    pt.x = m_slash_x;
     pt.y = (size.y - sepSize.y) / 2;
     dc.DrawText(wxString("/"), pt);
 
@@ -534,7 +585,7 @@ void TempInput::render(wxDC &dc)
         auto   pos    = text_ctrl->GetPosition();
         wxSize szIcon = degree_icon.GetBmpSize();
         pt.y          = (size.y - szIcon.y) / 2;
-        pt.x          = pos.x + text_ctrl->GetSize().x;
+        pt.x          = pos.x + text_ctrl->GetSize().x + FromDIP(4);
         dc.DrawBitmap(degree_icon.bmp(), pt);
     }
 }
@@ -544,7 +595,8 @@ void TempInput::messureMiniSize()
 {
     wxSize size = GetMinSize();
 
-    auto width  = 0;
+    // Left/right insets and the target-to-unit gap.
+    auto width  = 2 * FromDIP(10) + FromDIP(4);
     auto height = 0;
 
     wxClientDC dc(this);
@@ -569,8 +621,8 @@ void TempInput::messureMiniSize()
     width += labelSize.x;
     height = labelSize.y > height ? labelSize.y : height;
 
-    // interval
-    width += 10;
+    // gaps around the separator
+    width += 2 * FromDIP(4);
 
     // separator
     dc.SetFont(::Label::Body_12);
@@ -579,7 +631,7 @@ void TempInput::messureMiniSize()
     height = sepSize.y > height ? sepSize.y : height;
 
     // text text
-    auto textSize = text_ctrl->GetTextExtent(wxString("0000"));
+    const auto textSize = targetSize(true);
     width += textSize.x;
     height = textSize.y > height ? textSize.y : height;
 
@@ -597,6 +649,7 @@ void TempInput::messureMiniSize()
     if (size.y < height) size.y = height;
 
     SetSize(size);
+    layoutTarget();
 }
 
 
@@ -604,7 +657,8 @@ void TempInput::messureSize()
 {
     wxSize size = GetSize();
 
-    auto width  = 0;
+    // Left/right insets and the target-to-unit gap.
+    auto width  = 2 * FromDIP(10) + FromDIP(4);
     auto height = 0;
 
     wxClientDC dc(this);
@@ -629,8 +683,8 @@ void TempInput::messureSize()
     width += labelSize.x;
     height = labelSize.y > height ? labelSize.y : height;
 
-    // interval
-    width += 10;
+    // gaps around the separator
+    width += 2 * FromDIP(4);
 
     // separator
     dc.SetFont(::Label::Body_12);
@@ -639,7 +693,7 @@ void TempInput::messureSize()
     height = sepSize.y > height ? sepSize.y : height;
 
     // text text
-    auto textSize = text_ctrl->GetTextExtent(wxString("0000"));
+    const auto textSize = targetSize(true);
     width += textSize.x;
     height = textSize.y > height ? textSize.y : height;
 
@@ -657,9 +711,10 @@ void TempInput::messureSize()
     if (size.y < height) size.y = height;
 
     wxSize minSize = size;
-    minSize.x      = GetMinWidth();
+    minSize.x      = wxMax(GetMinWidth(), width);
     SetMinSize(minSize);
     SetSize(size);
+    layoutTarget();
 }
 
 void TempInput::mouseEnterWindow(wxMouseEvent &event)

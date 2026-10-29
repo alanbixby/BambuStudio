@@ -6,6 +6,8 @@
 #include "MsgDialog.hpp"
 #include "libslic3r/AppConfig.hpp"
 
+#include <algorithm>
+
 #include <wx/utils.h>
 #include <boost/algorithm/string/split.hpp>
 #include "libslic3r/Utils.hpp"
@@ -67,6 +69,10 @@ OG_CustomCtrl::OG_CustomCtrl(   wxWindow*            parent,
     this->Bind(wxEVT_MOTION,    &OG_CustomCtrl::OnMotion, this);
     this->Bind(wxEVT_LEFT_DOWN, &OG_CustomCtrl::OnLeftDown, this);
     this->Bind(wxEVT_LEAVE_WINDOW, &OG_CustomCtrl::OnLeaveWin, this);
+    this->Bind(wxEVT_SIZE, [this](wxSizeEvent& event) {
+        update_fields_width();
+        event.Skip();
+    });
 }
 
 void OG_CustomCtrl::init_ctrl_lines()
@@ -589,6 +595,15 @@ void OG_CustomCtrl::init_max_win_width()
         }
 }
 
+void OG_CustomCtrl::update_fields_width()
+{
+    bool changed = false;
+    for (CtrlLine& line : ctrl_lines)
+        changed |= line.fit_field_width();
+    if (changed)
+        Refresh();
+}
+
 int OG_CustomCtrl::get_title_width()
 {
     if (!GetLabel().IsEmpty())
@@ -647,6 +662,9 @@ void OG_CustomCtrl::msw_rescale()
     if (v_pos < label_sz.y) v_pos = label_sz.y;
     // BBS: new layout
     this->SetMinSize(wxSize(h_pos, v_pos));
+
+    // Field subclasses reset their widths in their msw_rescale() overrides.
+    update_fields_width();
 
     GetParent()->Layout();
 }
@@ -750,6 +768,46 @@ int OG_CustomCtrl::CtrlLine::get_max_win_width()
     }
 
     return max_win_width;
+}
+
+// These fields are positioned manually; their default widths do not use spare panel space.
+bool OG_CustomCtrl::CtrlLine::fit_field_width()
+{
+    if (draw_just_act_buttons || is_separator() || og_line.widget || ctrl->m_max_win_width > 0)
+        return false;
+
+    const std::vector<Option>& option_set = og_line.get_options();
+    if (option_set.size() != 1 || !og_line.get_extra_widgets().empty())
+        return false;
+    const Option& opt = option_set.front();
+    if (opt.opt.full_width || opt.opt.multiline || opt.side_widget != nullptr)
+        return false;
+
+    Field* field = ctrl->opt_group->get_field(opt.opt_id);
+    if (!field || !(dynamic_cast<Choice*>(field) || dynamic_cast<TextCtrl*>(field) || dynamic_cast<SpinCtrl*>(field)))
+        return false;
+    // A separately drawn side text would have to move with the field.
+    if (!opt.opt.sidetext.empty() && !field->combine_side_text())
+        return false;
+    wxWindow* win = field->getWindow();
+    if (!win)
+        return false;
+
+    const int em         = ctrl->m_em_unit;
+    const int base_width = (opt.opt.width >= 0 ? opt.opt.width : Field::def_width_wider()) * em;
+    const int undo_width = field->undo_bitmap() ? get_bitmap_size(field->undo_bitmap()->bmp()).GetWidth() : ctrl->m_bmp_blinking_sz.GetWidth();
+    // Combined-unit rows draw two gaps before reset; reserve both for all fields to keep their edges aligned.
+    const int reserve    = 2 * ctrl->m_h_gap + undo_width + em;
+    const int available  = ctrl->GetSize().GetWidth() - ctrl->get_pos(og_line, field).x - reserve;
+    const int width      = std::clamp(available, base_width, base_width + Field::def_width() * em);
+
+    if (win->GetSize().GetWidth() == width)
+        return false;
+    win->SetSize(wxSize(width, win->GetSize().GetHeight()));
+    // SpinInput does not relayout its children on SetSize().
+    if (auto spin = dynamic_cast<::SpinInput*>(win))
+        spin->Rescale();
+    return true;
 }
 
 void OG_CustomCtrl::CtrlLine::correct_items_positions()

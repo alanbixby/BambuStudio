@@ -1875,6 +1875,8 @@ public:
     std::string   propose_export_file_name_and_path(const std::string &new_extension) const;
     //BBS: add auxiliary files temp path
     std::string   get_auxiliary_file_temp_path();
+    // Noncreating counterpart of get_auxiliary_file_temp_path(); keep their path spelling identical.
+    std::string   get_auxiliary_file_temp_path_if_initialized() const;
 
     // BBS: backup
     std::string   get_backup_path();

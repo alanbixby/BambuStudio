@@ -1096,6 +1096,12 @@ std::string Model::get_auxiliary_file_temp_path()
     return get_backup_path("/Auxiliaries");
 }
 
+std::string Model::get_auxiliary_file_temp_path_if_initialized() const
+{
+    // Match get_backup_path("/Auxiliaries") without initializing the backup tree.
+    return backup_path.empty() ? std::string() : backup_path + "//Auxiliaries";
+}
+
 // BBS: backup dir
 std::string Model::get_backup_path()
 {

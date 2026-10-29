@@ -1,0 +1,32 @@
+{
+  "purpose": "Correct PR13 evidence to show the original dual-axis AMS overflow, rather than a later workaround checkpoint.",
+  "before": {
+    "file": "ams-overflow-original.png",
+    "sha256": "92684e6101a871c63d91d8da3f57b3e59260687e5f9dba10472cd514ccc36427",
+    "size": [
+      659,
+      715
+    ],
+    "source": "Original user-provided Control/AMS screenshot",
+    "operations": [],
+    "visible": "Horizontal and vertical scrollbars; A3 cut off on the right; lower cards and bottom controls below the viewport.",
+    "build": "Original report; exact executable/DPI not independently attested."
+  },
+  "after": {
+    "url": "https://raw.githubusercontent.com/alanbixby/BambuStudio/91aa62a0443203cbf6ab85a61ff1658b4ff0c020/docs/pr-evidence/2026-10-28/native-control-ams-temperature.png",
+    "sha256": "2dd3c14489a7b53884d4b6445c2575f50674452c4857ab7648189334e917a8e7",
+    "size": [
+      1552,
+      1325
+    ],
+    "source": "Previously published native-control-ams-temperature.png",
+    "build": "Combined native candidate v02.08.04.57, ELF88df689c, bundle5029c1cdc175",
+    "visible": "External spool, A1-A4, routing and bottom controls visible; no internal scrollbars."
+  },
+  "limits": [
+    "Historical captures at different sizes and times, not an isolated PR13 build or controlled pixel diff.",
+    "Application UI only; no camera feed, physical barcode, account or desktop.",
+    "Before PNG is published byte-for-byte; existing after image reused unchanged."
+  ],
+  "pull_request": "https://github.com/alanbixby/BambuStudio/pull/13"
+}

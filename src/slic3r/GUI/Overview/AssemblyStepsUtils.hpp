@@ -430,6 +430,9 @@ class AssemblyStepsUtils
     static constexpr double kPlayFrameInterval = 0.02;
     // Right-edge X (canvas coords) of the last-rendered "Assembly Structure"
     float m_assembly_structure_right_x{0.f};
+    // Bottom edge Y (canvas px) of the sidebar collapse toggle drawn by GLCanvas3D
+    // in the canvas' top-left corner, or 0 when that toggle is not shown.
+    float m_collapse_toolbar_bottom_y{0.f};
     // Right-side "Assembly Guide" panel
     int m_guide_connection_selected{-1};
     SelectionOrigin m_selection_origin{SelectionOrigin::None};
@@ -1015,6 +1018,10 @@ public://logic
     // Right edge X (canvas coords) of the most-recently rendered
     // "Assembly Structure" panel, or 0 when it hasn't been drawn yet.
     float get_assembly_structure_right_x() const { return m_assembly_structure_right_x; }
+    // Top edge Y (canvas coords) of the same panel; valid while the right edge is non-zero.
+    float get_assembly_structure_top_y() const { return m_panel_rect_structure_min.y; }
+    // The structure panel is anchored below this Y so it never covers the sidebar toggle.
+    void  set_collapse_toolbar_bottom_y(float y) { m_collapse_toolbar_bottom_y = std::max(0.f, y); }
     void  set_gizmo_toolbar_rect(float x0, float y0, float x1, float y1);
     // Overlay regions (rendered by GLCanvas3D) that part-number labels
     enum class AssemblyOverlayRect { Navigator, FitCamera, AssembleControl, ReturnToolbar };

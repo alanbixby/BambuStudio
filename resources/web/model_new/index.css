@@ -176,3 +176,24 @@ hr {
 #profileDescript {
   margin-top: 8px;
 }
+
+/* Relative heading leading prevents larger headings sharing the body 20px line box. */
+#projectDescription h1, #projectDescription h2, #projectDescription h3,
+#projectDescription h4, #projectDescription h5, #projectDescription h6,
+#profileDescript h1, #profileDescript h2, #profileDescript h3,
+#profileDescript h4, #profileDescript h5, #profileDescript h6 {
+  line-height: 1.25;
+}
+
+/* Imported fixed figure heights must not make following text overlap table rows. */
+#projectDescription figure.table,
+#profileDescript figure.table {
+  height: auto !important;
+}
+
+/* Empty accessory captions otherwise retain three separate top margins. */
+#bom-accessories:empty,
+#assembly-accessories:empty,
+#other-accessories:empty {
+  display: none;
+}

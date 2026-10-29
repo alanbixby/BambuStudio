@@ -17,6 +17,7 @@
 #include <wx/timer.h>
 #include <boost/log/trivial.hpp>
 #include <algorithm>
+#include <cmath>
 #include <chrono>
 
 namespace Slic3r { namespace GUI {
@@ -595,6 +596,9 @@ void DeviceWebHost::NotifyAmsControlWebChanged()
 // Locked host width (DIP) of the StatusPanel-embedded AmsControlWeb panel. The
 // page is laid out width:100%, so its reported width only echoes the container.
 static constexpr int kAmsControlWebWidthDip = 586;
+// Keep this equal to kMinHeightDip in wgtAmsControlWebPanel.cpp until the page
+// reports its content height.
+static constexpr int kAmsControlWebInitialHeightDip = 340;
 
 void DeviceWebHost::ApplyAmsControlWebHostSize(int height_dip)
 {
@@ -603,7 +607,22 @@ void DeviceWebHost::ApplyAmsControlWebHostSize(int height_dip)
     height_dip = std::clamp(height_dip, kMinHeightDip, kMaxHeightDip);
 
     m_last_logical_content_size = wxSize(kAmsControlWebWidthDip, height_dip);
-    wxSize content_size(FromDIP(kAmsControlWebWidthDip), FromDIP(height_dip));
+    wxSize content_size(int(std::lround(FromDIP(kAmsControlWebWidthDip) * m_ams_fit_zoom)),
+                        int(std::lround(FromDIP(height_dip) * m_ams_fit_zoom)));
+
+#ifndef __WXOSX__
+    // wx's macOS zoom is magnification, not layout zoom. StatusPanel keeps
+    // the AMS fit at 1 there until a layout-zoom backend is available.
+    // Edge creates its native backend asynchronously; a later content-size
+    // report retries the pending zoom once the backend exists.
+    if (wxWebView* view = GetWebView(); view && view->GetNativeBackend()) {
+        if (m_ams_base_zoom <= 0)
+            m_ams_base_zoom = view->GetZoomFactor();
+        const float zoom = float(m_ams_base_zoom * m_ams_fit_zoom);
+        if (std::abs(view->GetZoomFactor() - zoom) > 0.001f)
+            view->SetZoomFactor(zoom);
+    }
+#endif
 
     if (m_last_reported_content_size != wxDefaultSize) {
         const int jitter = FromDIP(8);
@@ -631,6 +650,19 @@ void DeviceWebHost::ApplyAmsControlWebHostSize(int height_dip)
         parent->Layout();
         parent->SendSizeEvent();
     }
+}
+
+void DeviceWebHost::SetAmsControlWebFitZoom(double zoom)
+{
+    if (m_mode != DeviceWebHostMode::DevicePageAmsControlWeb || std::abs(zoom - m_ams_fit_zoom) < 0.001)
+        return;
+
+    m_ams_fit_zoom = zoom;
+    // Bypass the height jitter filter: the whole size changes.
+    m_last_reported_content_size = wxDefaultSize;
+    const int height_dip = m_last_logical_content_size.GetHeight() > 0 ?
+        m_last_logical_content_size.GetHeight() : kAmsControlWebInitialHeightDip;
+    ApplyAmsControlWebHostSize(height_dip);
 }
 
 void DeviceWebHost::OnWebContentSizeChanged(int width, int height)

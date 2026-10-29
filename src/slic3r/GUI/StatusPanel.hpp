@@ -663,6 +663,7 @@ private:
     void on_ams_control_web_switch(wxCommandEvent& event);
 #endif
     void show_camera_fullscreen();
+    void fit_camera_to_feed();
 };
 
 class StatusPanel : public StatusBasePanel

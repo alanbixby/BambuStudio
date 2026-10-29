@@ -1,0 +1,147 @@
+diff --git a/include/wx/window.h b/include/wx/window.h
+index 4bc21b75b9447692b6d8cf1294adb5b4a90379a9..4f033faa0c3a2384e5964de41936460d9e233699 100644
+--- a/include/wx/window.h
++++ b/include/wx/window.h
+@@ -2074,10 +2074,11 @@ inline wxWindow *wxWindowBase::GetGrandParent() const
+     return m_parent ? m_parent->GetParent() : NULL;
+ }
+ 
+-#ifdef wxHAVE_DPI_INDEPENDENT_PIXELS
++#if defined(wxHAVE_DPI_INDEPENDENT_PIXELS) && !defined(__WXGTK3__)
+ 
+ // FromDIP() and ToDIP() become trivial in this case, so make them inline to
+-// avoid any overhead.
++// avoid any overhead. wxGTK3 defines them out of line in src/gtk/window.cpp
++// because its font resolution can differ from its integer window scale.
+ 
+ /* static */
+ inline wxSize
+@@ -2093,7 +2094,7 @@ wxWindowBase::ToDIP(const wxSize& sz, const wxWindowBase* WXUNUSED(w))
+     return sz;
+ }
+ 
+-#endif // wxHAVE_DPI_INDEPENDENT_PIXELS
++#endif // wxHAVE_DPI_INDEPENDENT_PIXELS && !__WXGTK3__
+ 
+ // ----------------------------------------------------------------------------
+ // global functions
+diff --git a/interface/wx/sysopt.h b/interface/wx/sysopt.h
+index 53d496544e2cfc5aad8b9900bc68aaaa0c733bf1..d84b814c4df0d5cbc5d67c1389d55cc59df1fbb2 100644
+--- a/interface/wx/sysopt.h
++++ b/interface/wx/sysopt.h
+@@ -88,6 +88,10 @@
+     @flag{gtk.desktop}
+         This option can be set to override the default desktop environment
+         determination. Supported values are GNOME and KDE.
++    @flag{gtk.window.font-dpi-scaling}
++        GTK3 only. If 1, wxWindow::FromDIP() and wxWindow::ToDIP() follow
++        the screen font resolution. Default: 0 (identity conversions).
++        Set before creating windows and do not change it afterwards.
+     @flag{gtk.window.force-background-colour}
+         If 1, the backgrounds of windows with the wxBG_STYLE_COLOUR background
+         style are cleared forcibly instead of relying on the underlying GTK+
+diff --git a/interface/wx/window.h b/interface/wx/window.h
+index f97375a40349b5b84597e3d2eeefc8ecd43478bb..935e2372b987ad993c59b1536859de110f2d21b4 100644
+--- a/interface/wx/window.h
++++ b/interface/wx/window.h
+@@ -1074,6 +1074,13 @@ public:
+         @endcode
+         to avoid using tiny bitmaps on high DPI screens.
+ 
++        In this wxGTK3 fork, the conversion follows the GTK screen font
++        resolution only when the wxSystemOptions option
++        @c gtk.window.font-dpi-scaling is set to 1 (default: 0).
++        GetDPIScaleFactor() and GetContentScaleFactor() still report the
++        integer window scale, so fractional font DPI can make them differ
++        from the scale used here.
++
+         Notice that this function is only needed when using hard coded pixel
+         values. It is not necessary if the sizes are already based on the
+         DPI-independent units such as dialog units or if you are relying on the
+diff --git a/src/gtk/window.cpp b/src/gtk/window.cpp
+index 2497cf93449072e61812b316cf0be3a29b9e4c0d..d9890f1238cf47a4c7d0258f832e0d155c8bd895 100644
+--- a/src/gtk/window.cpp
++++ b/src/gtk/window.cpp
+@@ -4377,6 +4377,82 @@ double wxWindowGTK::GetDPIScaleFactor() const
+     return GetContentScaleFactor();
+ }
+ 
++#ifdef __WXGTK3__
++
++// ----------------------------------------------------------------------------
++// DPI-independent pixels
++// ----------------------------------------------------------------------------
++
++// Point-sized GTK fonts follow the screen font resolution even when the
++// integer window scale is unchanged. Match DIP geometry to that resolution.
++namespace
++{
++
++double wxGTKDIPScale(const wxWindowBase* window)
++{
++    // Keep legacy applications on identity conversions unless they opt in.
++    if ( wxSystemOptions::GetOptionInt("gtk.window.font-dpi-scaling") != 1 )
++        return 1;
++
++    GtkWidget* const widget = window ? GTK_WIDGET(window->GetHandle()) : NULL;
++    GdkScreen* const screen = widget ? gtk_widget_get_screen(widget)
++                                    : gdk_screen_get_default();
++    if ( !screen )
++        return 1;
++
++    // Creating the screen settings applies Xft.dpi/XSETTINGS to its resolution.
++    // Read it each time so settings changes and other screens use their own DPI.
++    gtk_settings_get_for_screen(screen);
++    const double dpi = gdk_screen_get_resolution(screen);
++    return dpi > 0 && wxFinite(dpi) ? dpi / 96 : 1;
++}
++
++int wxGTKScaleCoord(int value, double scale)
++{
++    // -1 means "unspecified" and 0 has no size to scale.
++    if ( value == -1 || value == 0 )
++        return value;
++
++    const double product = value * scale;
++    if ( product >= INT_MAX )
++        return INT_MAX;
++    if ( product <= INT_MIN )
++        return INT_MIN;
++
++    int scaled = wxRound(product);
++    if ( value > 0 && scaled < 1 )
++        scaled = 1;
++    // Keep other negative coordinates from becoming the unspecified sentinel.
++    else if ( value < -1 && scaled > -2 )
++        scaled = -2;
++    return scaled;
++}
++
++} // anonymous namespace
++
++/* static */
++wxSize
++wxWindowBase::FromDIP(const wxSize& sz, const wxWindowBase* w)
++{
++    const double scale = wxGTKDIPScale(w);
++    if ( scale == 1 )
++        return sz;
++    return wxSize(wxGTKScaleCoord(sz.x, scale), wxGTKScaleCoord(sz.y, scale));
++}
++
++/* static */
++wxSize
++wxWindowBase::ToDIP(const wxSize& sz, const wxWindowBase* w)
++{
++    const double scale = wxGTKDIPScale(w);
++    if ( scale == 1 )
++        return sz;
++    return wxSize(wxGTKScaleCoord(sz.x, 1 / scale),
++                  wxGTKScaleCoord(sz.y, 1 / scale));
++}
++
++#endif // __WXGTK3__
++
+ void wxWindowGTK::GTKDisableFocusOutEvent()
+ {
+     g_signal_handlers_block_by_func( m_focusWidget,

@@ -1,0 +1,44 @@
+[
+  {
+    "path": "wx-opt-in/probes/conversion-options-1",
+    "reason": "compiled executable, source retained"
+  },
+  {
+    "path": "wx-opt-in/probes/conversion-options-0",
+    "reason": "compiled executable, source retained"
+  },
+  {
+    "path": "wx-opt-in/probes/startup-gtk3",
+    "reason": "compiled executable, source retained"
+  },
+  {
+    "path": "wx-opt-in/probes/startup-gtk3-no-options",
+    "reason": "compiled executable, source retained"
+  },
+  {
+    "path": "wx-opt-in/probes/startup-gtk2",
+    "reason": "compiled executable, source retained"
+  },
+  {
+    "path": "wx-opt-in/probes/startup-windows",
+    "reason": "compiled executable, source retained"
+  },
+  {
+    "path": "wx-opt-in/probes/startup-macos",
+    "reason": "compiled executable, source retained"
+  },
+  {
+    "path": "wx-opt-in/probes/non-gtk3",
+    "reason": "compiled executable, source retained"
+  },
+  {
+    "path": "camera-split-native/original-before.json",
+    "sha256": "0fcb157e2408a2aa4c5c96c84c8724e94fe89842275ce945dcdf57c1d1f1a0d5",
+    "reason": "duplicate sealed-input inventory retained locally"
+  },
+  {
+    "path": "camera-split-native/original-after.json",
+    "sha256": "0fcb157e2408a2aa4c5c96c84c8724e94fe89842275ce945dcdf57c1d1f1a0d5",
+    "reason": "duplicate sealed-input inventory retained locally"
+  }
+]

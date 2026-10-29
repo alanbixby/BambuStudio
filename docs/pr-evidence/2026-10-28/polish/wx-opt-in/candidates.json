@@ -1,0 +1,36 @@
+{
+  "base": "abb542694ef4534a50e65c5b877b2774d02952ae",
+  "combined": "c7cdfa5b7f384912e31b65070b853dbf90c30497",
+  "tree": "db3c30ee5fb3043b7798ae0029ef51312fe9fc65",
+  "candidates": [
+    {
+      "repository": "alanbixby/wxWidgets",
+      "number": 1,
+      "branch": "polish/gtk-label-font-measurement",
+      "base": "abb542694ef4534a50e65c5b877b2774d02952ae",
+      "head": "14a14a773c74ae23281417f58334b5c28ecfed12",
+      "old_head": "888eaac6622399a7b226f96fab837940c5cd5dc1",
+      "title": "Measure GTK labels after their font changes",
+      "paths": [
+        "src/gtk/control.cpp"
+      ]
+    },
+    {
+      "repository": "alanbixby/wxWidgets",
+      "number": 2,
+      "branch": "polish/gtk-font-dpi-conversion",
+      "base": "abb542694ef4534a50e65c5b877b2774d02952ae",
+      "head": "d54f3313028fc439cea91f0b6a213e5ad2245b90",
+      "old_head": "ed8b87d0aa56d9d6e703e617df5e446f85d3ffd4",
+      "title": "Allow apps to opt into GTK font-DPI sizing",
+      "paths": [
+        "include/wx/window.h",
+        "interface/wx/window.h",
+        "src/gtk/window.cpp",
+        "interface/wx/sysopt.h"
+      ]
+    }
+  ],
+  "integration_head": "0f2037facedf3d92660e7071b6754fe994aa744d",
+  "published": false
+}

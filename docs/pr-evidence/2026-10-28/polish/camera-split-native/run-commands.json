@@ -1,0 +1,90 @@
+[
+  {
+    "name": "camera-only-dpi96-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-split-native/probe-camera-only",
+      "96",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "camera-only-dpi96-scale1-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-split-native/probe-camera-only",
+      "96",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "camera-only-dpi144-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-split-native/probe-camera-only",
+      "144",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "camera-only-dpi192-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-split-native/probe-camera-only",
+      "192",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "camera-only-dpi96-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-split-native/probe-camera-only",
+      "96",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "camera-only-dpi144-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-split-native/probe-camera-only",
+      "144",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "camera-only-dpi192-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-split-native/probe-camera-only",
+      "192",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "camera-only-dpi192-scale2-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-split-native/probe-camera-only",
+      "192",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  }
+]

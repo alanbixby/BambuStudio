@@ -1,0 +1,33 @@
+[
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/bxb/.t3-nightly/projects/bambu-studio-upstream",
+      "show",
+      "0b34fcad456618e5d023e4f475dffb3f75ae6472:deps/wxWidgets/wxWidgets.cmake"
+    ],
+    "exit_code": 0,
+    "stdout": "set(_wx_toolkit \"\")\nif(CMAKE_SYSTEM_NAME STREQUAL \"Linux\")\n    set(_gtk_ver 2)\n    if (DEP_WX_GTK3)\n        set(_gtk_ver 3)\n    endif ()\n    set(_wx_toolkit \"-DwxBUILD_TOOLKIT=gtk${_gtk_ver}\")\n    set(_wx_private_font \"-DwxUSE_PRIVATE_FONTS=1\")\n    set(_wx_egl \"-DwxUSE_GLCANVAS_EGL=OFF\")\nelse ()\n    set(_wx_egl \"\")\nendif()\n\nif (MSVC)\n    set(_wx_edge \"-DwxUSE_WEBVIEW_EDGE=ON\")\nelse ()\n    set(_wx_edge \"-DwxUSE_WEBVIEW_EDGE=OFF\")\nendif ()\n\n# if (MSVC)\n#     set(_patch_cmd ${PATCH_CMD} ${CMAKE_CURRENT_LIST_DIR}/0001-wxWidget-fix.patch)\n# else ()\n#     set(_patch_cmd test -f WXWIDGETS_PATCHED || ${PATCH_CMD} ${CMAKE_CURRENT_LIST_DIR}/0001-wxWidget-fix.patch && touch WXWIDGETS_PATCHED)\n# endif ()\n\nbambustudio_add_cmake_project(wxWidgets\n    GIT_REPOSITORY \"https://github.com/bambulab/wxWidgets\"\n    GIT_TAG master\n    DEPENDS ${PNG_PKG} ${ZLIB_PKG} ${EXPAT_PKG} ${TIFF_PKG} ${JPEG_PKG}\n    CMAKE_ARGS\n        -DCMAKE_POLICY_VERSION_MINIMUM=3.5\n        -DwxBUILD_PRECOMP=OFF\n        ${_wx_toolkit}\n        \"-DCMAKE_DEBUG_POSTFIX:STRING=\"\n        -DwxBUILD_DEBUG_LEVEL=0\n        -DwxBUILD_SAMPLES=OFF\n        -DwxBUILD_SHARED=OFF\n        -DwxUSE_MEDIACTRL=ON\n        -DwxUSE_DETECT_SM=OFF\n        -DwxUSE_UNICODE=ON\n        ${_wx_private_font}\n        -DwxUSE_OPENGL=ON\n        -DwxUSE_WEBVIEW=ON\n        ${_wx_edge}\n        -DwxUSE_WEBVIEW_IE=OFF\n        -DwxUSE_REGEX=builtin\n        -DwxUSE_LIBMSPACK=OFF\n        -DwxUSE_LIBSDL=OFF\n        -DwxUSE_XTEST=OFF\n        -DwxUSE_STC=OFF\n        -DwxUSE_AUI=ON\n        -DwxUSE_EXCEPTIONS=OFF\n        -DwxUSE_LIBPNG=sys\n        -DwxUSE_ZLIB=sys\n        -DwxUSE_LIBJPEG=sys\n        -DwxUSE_LIBTIFF=sys\n        -DwxUSE_EXPAT=sys\n        ${_wx_egl}\n)\n\nif (MSVC)\n    add_debug_dep(dep_wxWidgets)\nendif ()\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/bxb/.t3-nightly/projects/bambu-wx-upstream",
+      "diff",
+      "e2fa9bda52f720242e35def30ac4a01fbe75f5a8",
+      "abb542694ef4534a50e65c5b877b2774d02952ae",
+      "--",
+      "src/gtk/window.cpp",
+      "src/gtk/control.cpp",
+      "include/wx/window.h",
+      "interface/wx/window.h",
+      "interface/wx/sysopt.h"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "conversion_original": {
+    "path": "src/gtk/window.cpp",
+    "start_line": 4380,
+    "sha256": "b1c407f30001407bc34d118fa5689376bfa9fb94b57753767e95bbffb7d2bfec"
+  },
+  "conversion_candidate": {
+    "path": "src/gtk/window.cpp",
+    "start_line": 4380,
+    "sha256": "c521c35083a9f0f117e02374fdf94b2d6386c8ee293cd2128cc7e00215a2fdc2"
+  },
+  "wrappers": {
+    "path": "include/wx/window.h",
+    "start_line": 996,
+    "sha256": "5b09c9d8eac35883d00d09ab2309768b712a0b1f9be067c19e6031b291416754"
+  },
+  "rounding": {
+    "path": "include/wx/math.h",
+    "start_line": 137,
+    "sha256": "6d97492f7b2d940f645d1c9ffb7aebf1adc89ccf9ae963539507f9c1700a357a"
+  },
+  "sysopt_header": {
+    "path": "include/wx/sysopt.h",
+    "sha256": "cee23602c8dc6757e49eed2e8e76b799160a9ab85051c395d0dfbca1c2949f73"
+  },
+  "startup_prefix_candidate": {
+    "path": "src/slic3r/GUI/GUI_App.cpp",
+    "start_line": 2907,
+    "sha256": "ee1fa40e48a5fb024bdadc4cdf1cc4d9e291bbb6d74b0f606dcf3cf75e384dcc"
+  }
+}

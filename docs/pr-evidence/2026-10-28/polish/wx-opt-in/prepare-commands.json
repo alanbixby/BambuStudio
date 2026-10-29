@@ -1,0 +1,101 @@
+[
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/bxb/.t3-nightly/projects/bambu-wx-upstream",
+      "show",
+      "3fea0af433d9630f79eaf8fbfc062364ba456be3:src/gtk/window.cpp"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "00dea423e1311a1f5f6d55594edb10bed1d612a2bbb52f39d33d1472d10a2214"
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/bxb/.t3-nightly/projects/bambu-wx-upstream",
+      "show",
+      "3fea0af433d9630f79eaf8fbfc062364ba456be3:interface/wx/window.h"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "2b5705010a86e880d174c9aaa91fc5576d446507388c9642315267cab4aa8adb"
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/bxb/.t3-nightly/projects/bambu-wx-upstream",
+      "show",
+      "3fea0af433d9630f79eaf8fbfc062364ba456be3:interface/wx/sysopt.h"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "1ffd0bb3a5ca7c4bb24226d3f0a52ebd665d22221d8983e6f7034c91941aba97"
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/bxb/.t3-nightly/projects/bambu-wx-upstream",
+      "show",
+      "3fea0af433d9630f79eaf8fbfc062364ba456be3:include/wx/window.h"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "7bcd411cbb7555237aad67e4629ef9b78813b5b85e70afa1b5ab3cfd8883f3cc"
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/bxb/.t3-nightly/projects/bambu-wx-upstream",
+      "show",
+      "3fea0af433d9630f79eaf8fbfc062364ba456be3:include/wx/sysopt.h"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "cee23602c8dc6757e49eed2e8e76b799160a9ab85051c395d0dfbca1c2949f73"
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/bxb/.t3-nightly/projects/bambu-wx-upstream",
+      "show",
+      "3fea0af433d9630f79eaf8fbfc062364ba456be3:include/wx/math.h"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "779284410ffdfc6d5f486bdd8d81ec1a88c7c74ab2d0b79a54b0686072f2e943"
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/bxb/.t3-nightly/projects/bambu-wx-upstream",
+      "show",
+      "3fea0af433d9630f79eaf8fbfc062364ba456be3:src/common/sysopt.cpp"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "ba64fac124368c9eab021147243205a73923ab3c5367433130b0eea10d01ef20"
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/bxb/.t3-nightly/projects/bambu-wx-upstream",
+      "show",
+      "3fea0af433d9630f79eaf8fbfc062364ba456be3:src/common/wincmn.cpp"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "31062039cb55b5ae153d42c521f4c09f31db77673fb44825f3f077488342e940"
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/bxb/.t3-nightly/projects/bambu-studio-upstream",
+      "show",
+      "0b34fcad456618e5d023e4f475dffb3f75ae6472:src/slic3r/GUI/GUI_App.cpp"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "0f42076fe00edee900f860acfdb11f8760daabd473470a80287a62130221e71f"
+  }
+]

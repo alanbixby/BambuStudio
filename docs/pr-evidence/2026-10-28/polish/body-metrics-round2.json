@@ -1,0 +1,82 @@
+[
+  {
+    "key": "bambu-01",
+    "prose_words": 55,
+    "image_links": 2
+  },
+  {
+    "key": "bambu-02",
+    "prose_words": 54,
+    "image_links": 2
+  },
+  {
+    "key": "bambu-03",
+    "prose_words": 75,
+    "image_links": 2
+  },
+  {
+    "key": "bambu-04",
+    "prose_words": 66,
+    "image_links": 2
+  },
+  {
+    "key": "bambu-05",
+    "prose_words": 58,
+    "image_links": 2
+  },
+  {
+    "key": "bambu-06",
+    "prose_words": 73,
+    "image_links": 3
+  },
+  {
+    "key": "bambu-07",
+    "prose_words": 75,
+    "image_links": 2
+  },
+  {
+    "key": "bambu-08",
+    "prose_words": 61,
+    "image_links": 2
+  },
+  {
+    "key": "bambu-09",
+    "prose_words": 70,
+    "image_links": 2
+  },
+  {
+    "key": "bambu-10",
+    "prose_words": 79,
+    "image_links": 2
+  },
+  {
+    "key": "bambu-project-startup",
+    "prose_words": 73,
+    "image_links": 2
+  },
+  {
+    "key": "bambu-progress",
+    "prose_words": 77,
+    "image_links": 2
+  },
+  {
+    "key": "bambu-ams-zoom",
+    "prose_words": 73,
+    "image_links": 2
+  },
+  {
+    "key": "bambu-gtk-integration",
+    "prose_words": 72,
+    "image_links": 2
+  },
+  {
+    "key": "wx-01",
+    "prose_words": 73,
+    "image_links": 2
+  },
+  {
+    "key": "wx-02",
+    "prose_words": 69,
+    "image_links": 2
+  }
+]

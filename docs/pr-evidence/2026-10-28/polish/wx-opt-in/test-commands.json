@@ -1,0 +1,411 @@
+[
+  {
+    "argv": [
+      "g++",
+      "--version"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "g++",
+      "-std=c++98",
+      "-pedantic-errors",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O0",
+      "-g",
+      "-fsanitize=undefined",
+      "-fno-sanitize-recover=all",
+      "-I/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/include",
+      "-D__WXGTK3__",
+      "-DwxUSE_SYSTEM_OPTIONS=1",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/conversion.cpp",
+      "-o",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/conversion-options-1"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/conversion-options-1"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "PASS: off identity, sentinels, signed edges; state reads=0\nPASS: enabled equals frozen baseline; DPI changes/screens/fallback/saturation\nPASS: 4582484 checks, wxUSE_SYSTEM_OPTIONS=1, C++98\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "g++",
+      "-std=c++98",
+      "-pedantic-errors",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O0",
+      "-g",
+      "-fsanitize=undefined",
+      "-fno-sanitize-recover=all",
+      "-I/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/include",
+      "-D__WXGTK3__",
+      "-DwxUSE_SYSTEM_OPTIONS=0",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/conversion.cpp",
+      "-o",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/conversion-options-0"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/conversion-options-0"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "PASS: off identity, sentinels, signed edges; state reads=0\nPASS: actual wx sysopt disabled stub returns zero; no state reads\nPASS: 271184 checks, wxUSE_SYSTEM_OPTIONS=0, C++98\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/conversion-options-1",
+      "--red-control"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "stdout": "",
+    "stderr": "FAIL: window/GDK state accessed while option was off\n"
+  },
+  {
+    "argv": [
+      "g++",
+      "-std=c++98",
+      "-pedantic-errors",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O0",
+      "-g",
+      "-fsanitize=undefined",
+      "-fno-sanitize-recover=all",
+      "-I/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/include",
+      "-D__WXGTK3__",
+      "-DwxUSE_SYSTEM_OPTIONS=1",
+      "-DEXPECT_SET_CALLS=1",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup.cpp",
+      "-o",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup-gtk3"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup-gtk3"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "PASS: startup guard EXPECT_SET_CALLS=1, setter precedes simulated inner startup\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "g++",
+      "-std=c++98",
+      "-pedantic-errors",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O0",
+      "-g",
+      "-fsanitize=undefined",
+      "-fno-sanitize-recover=all",
+      "-I/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/include",
+      "-D__WXGTK3__",
+      "-DwxUSE_SYSTEM_OPTIONS=0",
+      "-DEXPECT_SET_CALLS=0",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup.cpp",
+      "-o",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup-gtk3-no-options"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup-gtk3-no-options"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "PASS: startup guard EXPECT_SET_CALLS=0, setter precedes simulated inner startup\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "g++",
+      "-std=c++98",
+      "-pedantic-errors",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O0",
+      "-g",
+      "-fsanitize=undefined",
+      "-fno-sanitize-recover=all",
+      "-I/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/include",
+      "-D__WXGTK20__",
+      "-DwxUSE_SYSTEM_OPTIONS=1",
+      "-DEXPECT_SET_CALLS=0",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup.cpp",
+      "-o",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup-gtk2"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup-gtk2"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "PASS: startup guard EXPECT_SET_CALLS=0, setter precedes simulated inner startup\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "g++",
+      "-std=c++98",
+      "-pedantic-errors",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O0",
+      "-g",
+      "-fsanitize=undefined",
+      "-fno-sanitize-recover=all",
+      "-I/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/include",
+      "-D_WIN32",
+      "-DwxUSE_SYSTEM_OPTIONS=1",
+      "-DEXPECT_SET_CALLS=0",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup.cpp",
+      "-o",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup-windows"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup-windows"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "PASS: startup guard EXPECT_SET_CALLS=0, setter precedes simulated inner startup\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "g++",
+      "-std=c++98",
+      "-pedantic-errors",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O0",
+      "-g",
+      "-fsanitize=undefined",
+      "-fno-sanitize-recover=all",
+      "-I/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/include",
+      "-D__APPLE__",
+      "-DwxUSE_SYSTEM_OPTIONS=1",
+      "-DEXPECT_SET_CALLS=0",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup.cpp",
+      "-o",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup-macos"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/startup-macos"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "PASS: startup guard EXPECT_SET_CALLS=0, setter precedes simulated inner startup\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "g++",
+      "-std=c++98",
+      "-pedantic-errors",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O0",
+      "-g",
+      "-fsanitize=undefined",
+      "-fno-sanitize-recover=all",
+      "-I/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/include",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/non-gtk3.cpp",
+      "-o",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/non-gtk3"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/probes/non-gtk3"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/wx-opt-in.patch"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in/applied/wx",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "apply",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/wx-opt-in.patch"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in/applied/wx",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "apply",
+      "--reverse",
+      "--check",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/wx-opt-in.patch"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in/applied/wx",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "apply",
+      "--reverse",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/wx-opt-in.patch"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in/applied/wx",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/app-opt-in.patch"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in/applied/app",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "apply",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/app-opt-in.patch"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in/applied/app",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "apply",
+      "--reverse",
+      "--check",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/app-opt-in.patch"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in/applied/app",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "apply",
+      "--reverse",
+      "/tmp/bambu-polish-20261028/implementation/wx-opt-in/app-opt-in.patch"
+    ],
+    "cwd": "/tmp/bambu-polish-20261028/implementation/wx-opt-in/applied/app",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

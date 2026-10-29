@@ -1,0 +1,14 @@
+{
+  "previous_combined": "b7a379241d133f1808918aa9fc99caa1eeba3c79",
+  "combined_app": "1f58994738fc5acd48fb75288f60df0fd4e8e5a0",
+  "wx_integration": "0f2037facedf3d92660e7071b6754fe994aa744d",
+  "wx_repository": "https://github.com/alanbixby/wxWidgets",
+  "published_wx_branch": "review/font-dpi-integration",
+  "remote_sha_verified": true,
+  "changed_paths": [
+    "deps/wxWidgets/wxWidgets.cmake",
+    "src/slic3r/GUI/GUI_App.cpp"
+  ],
+  "new_integration_pr_pending": true,
+  "native_build_pending": true
+}

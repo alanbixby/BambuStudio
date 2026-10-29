@@ -1,0 +1,18 @@
+{
+  "cpp": {
+    "head": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "sha256": "c469e4c1123197f01a0ae2bb3a6baee9adb54a2a9f41bad5415f0185ea4c2e26"
+  },
+  "hpp": {
+    "head": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+    "path": "src/slic3r/GUI/StatusPanel.hpp",
+    "sha256": "1e43e84f594e21eeabc0921d1f6a018e98976f0f065059354ac9c5a8325ed3ad"
+  },
+  "function": {
+    "sha256": "921d802182694875625db7f9309a7417f73017a8c118c38a96b5e9ac0575aabd",
+    "start_line": 2043,
+    "line_count": 35,
+    "unmodified_extraction": true
+  }
+}

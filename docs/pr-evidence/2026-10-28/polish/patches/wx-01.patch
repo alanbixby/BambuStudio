@@ -1,0 +1,35 @@
+diff --git a/src/gtk/control.cpp b/src/gtk/control.cpp
+index f4a25ea14666acae7a6078010068a0debeedc49d..c02d8b41d1152d298e04fe93fb837a64b3dab958 100644
+--- a/src/gtk/control.cpp
++++ b/src/gtk/control.cpp
+@@ -351,6 +351,30 @@ wxSize wxControl::GTKGetPreferredSize(GtkWidget* widget) const
+         gtk_widget_show(widget);
+ 
+     gtk_widget_set_size_request(widget, -1, -1);
++
++#ifndef __WXGTK4__
++    if ( GTK_IS_LABEL(widget) && !gtk_label_get_line_wrap(GTK_LABEL(widget)) )
++    {
++        // GTK may defer updating the Pango font after SetFont(), so its
++        // cached requisition can still use the old font. Synchronize only
++        // when needed: unconditional invalidation would keep queuing resizes.
++        GtkStyleContext* const context = gtk_widget_get_style_context(widget);
++        PangoFontDescription* font = NULL;
++        gtk_style_context_get(context, gtk_style_context_get_state(context),
++                              "font", &font, NULL);
++        const PangoFontDescription* const currentFont =
++            pango_context_get_font_description(gtk_widget_get_pango_context(widget));
++        if ( font && currentFont && !pango_font_description_equal(font, currentFont) )
++        {
++            wxGCC_WARNING_SUPPRESS(deprecated-declarations)
++            gtk_style_context_invalidate(context);
++            wxGCC_WARNING_RESTORE()
++        }
++        if ( font )
++            pango_font_description_free(font);
++    }
++#endif // !__WXGTK4__
++
+     gtk_widget_get_preferred_size(widget, NULL, &req);
+     gtk_widget_set_size_request(widget, w, h);
+ 

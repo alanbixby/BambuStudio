@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "open_findings": [],
+  "scope": "focused implementation verification of extracted camera-only helper; no peer-review round",
+  "limits": [
+    "GTK3 native wx scrollers/sizers on private Xvfb only; neither Cocoa/MSW nor full Bambu was compiled or run.",
+    "Control content, title, playbar and progress are fixed synthetic native panels. Hidden AMS uses the original short compact Control profile; shown AMS substitutes a taller fixed 586x340 DIP panel.",
+    "Media is a disconnected wxPanel returning invalid video size, exercising the actual production 16:9 fallback; no decoding, first-frame lifecycle, fullscreen, printer or network.",
+    "AMS is a native fixed panel with a spy setter, not a browser/DOM/backend. Zero setter calls and zoom 1 are asserted, including height growth.",
+    "Finite settling observation: 300ms nominal event pumping then 200ms quiet observation per phase; does not prove absence of all idle events or behavior under arbitrary future events.",
+    "Sealed private wx headers/archives match original provenance. The archive commit identity is supplied provenance, not independently established from archive bytes. No warm deps-build headers, archives or wx-config were accessed.",
+    "Recorded non-wx GTK/system sysroot include and shared-library paths were reused read-only. System GTK libraries are outside the sealed wx archive set.",
+    "Prior 72-process proof and negative controls were not rerun or incorporated into this new run count."
+  ]
+}

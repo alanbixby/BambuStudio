@@ -1,0 +1,93 @@
+[
+  {
+    "artifact": "original/app/src/slic3r/GUI/GUI_App.cpp",
+    "base_sha": "0b34fcad456618e5d023e4f475dffb3f75ae6472",
+    "sha256": "0f42076fe00edee900f860acfdb11f8760daabd473470a80287a62130221e71f",
+    "git_blob_sha1": "c78ffde20b1a81f569a5e8ee47a5784e0ee29d2b",
+    "bytes": 343741
+  },
+  {
+    "artifact": "original/wx/include/wx/math.h",
+    "base_sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+    "sha256": "779284410ffdfc6d5f486bdd8d81ec1a88c7c74ab2d0b79a54b0686072f2e943",
+    "git_blob_sha1": "8a20d9ee5538071944ddf46a07e4708f2c25565d",
+    "bytes": 6275
+  },
+  {
+    "artifact": "original/wx/include/wx/sysopt.h",
+    "base_sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+    "sha256": "cee23602c8dc6757e49eed2e8e76b799160a9ab85051c395d0dfbca1c2949f73",
+    "git_blob_sha1": "63474c0660a80c7af72fbdbe445398026f94ed98",
+    "bytes": 2013
+  },
+  {
+    "artifact": "original/wx/include/wx/window.h",
+    "base_sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+    "sha256": "7bcd411cbb7555237aad67e4629ef9b78813b5b85e70afa1b5ab3cfd8883f3cc",
+    "git_blob_sha1": "4f033faa0c3a2384e5964de41936460d9e233699",
+    "bytes": 84740
+  },
+  {
+    "artifact": "original/wx/interface/wx/sysopt.h",
+    "base_sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+    "sha256": "1ffd0bb3a5ca7c4bb24226d3f0a52ebd665d22221d8983e6f7034c91941aba97",
+    "git_blob_sha1": "53d496544e2cfc5aad8b9900bc68aaaa0c733bf1",
+    "bytes": 7957
+  },
+  {
+    "artifact": "original/wx/interface/wx/window.h",
+    "base_sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+    "sha256": "2b5705010a86e880d174c9aaa91fc5576d446507388c9642315267cab4aa8adb",
+    "git_blob_sha1": "1767120ab60f39b3e038efe92577fd5a8434dcec",
+    "bytes": 150759
+  },
+  {
+    "artifact": "original/wx/src/common/sysopt.cpp",
+    "base_sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+    "sha256": "ba64fac124368c9eab021147243205a73923ab3c5367433130b0eea10d01ef20",
+    "git_blob_sha1": "cee43108afa5bd850d6da01ae0c96c15d8f955f5",
+    "bytes": 3123
+  },
+  {
+    "artifact": "original/wx/src/common/wincmn.cpp",
+    "base_sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+    "sha256": "31062039cb55b5ae153d42c521f4c09f31db77673fb44825f3f077488342e940",
+    "git_blob_sha1": "c43f6f813d582ebd14cb2f7b8f8bc81d75eb4e0d",
+    "bytes": 122194
+  },
+  {
+    "artifact": "original/wx/src/gtk/window.cpp",
+    "base_sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+    "sha256": "00dea423e1311a1f5f6d55594edb10bed1d612a2bbb52f39d33d1472d10a2214",
+    "git_blob_sha1": "0e7820bce390a50d804f7c2a6a64c56ecd16ed8a",
+    "bytes": 199587
+  },
+  {
+    "artifact": "candidate/app/src/slic3r/GUI/GUI_App.cpp",
+    "base_sha": "0b34fcad456618e5d023e4f475dffb3f75ae6472",
+    "sha256": "477209fd2d1c08e9b2db58190bf8fcd2e181f932832b5cc0a63f0ac33fbe1c34",
+    "git_blob_sha1": "f888e4e6f64d0f09485d5fd78290da39444dc318",
+    "bytes": 343931
+  },
+  {
+    "artifact": "candidate/wx/interface/wx/sysopt.h",
+    "base_sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+    "sha256": "329909077517d776e8fcc9d3c5fea1a5d26db9e21de40ceba1c7a581c84250c1",
+    "git_blob_sha1": "d84b814c4df0d5cbc5d67c1389d55cc59df1fbb2",
+    "bytes": 8210
+  },
+  {
+    "artifact": "candidate/wx/interface/wx/window.h",
+    "base_sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+    "sha256": "cefa6b7848ce0039ecca9469a939d2c691699ab0e9f7117aeb002ccca6f18cc5",
+    "git_blob_sha1": "935e2372b987ad993c59b1536859de110f2d21b4",
+    "bytes": 150863
+  },
+  {
+    "artifact": "candidate/wx/src/gtk/window.cpp",
+    "base_sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+    "sha256": "f8630c106454222beccc73d18dd260a22c5d2321c730f689cfab88fcc8e2f72f",
+    "git_blob_sha1": "d9890f1238cf47a4c7d0258f832e0d155c8bd895",
+    "bytes": 199759
+  }
+]

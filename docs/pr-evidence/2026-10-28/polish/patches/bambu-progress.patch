@@ -1,0 +1,70 @@
+diff --git a/src/slic3r/GUI/StatusPanel.cpp b/src/slic3r/GUI/StatusPanel.cpp
+index a42dcf38828c690f78cb62e73254bb0190e32a6b..c4e629cbd170c836bebd1ae45594fc8bfa7b77a2 100644
+--- a/src/slic3r/GUI/StatusPanel.cpp
++++ b/src/slic3r/GUI/StatusPanel.cpp
+@@ -1122,12 +1122,10 @@ void PrintingTaskPanel::create_panel(wxWindow *parent)
+ 
+     m_staticText_progress_percent = new wxStaticText(penel_text, wxID_ANY, "0", wxDefaultPosition, wxDefaultSize, 0);
+     m_staticText_progress_percent->SetFont(::Label::Head_18);
+-    m_staticText_progress_percent->SetMaxSize(wxSize(-1, FromDIP(20)));
+     m_staticText_progress_percent->SetForegroundColour(wxColour(0, 174, 66));
+ 
+     m_staticText_progress_percent_icon = new wxStaticText(penel_text, wxID_ANY, "%", wxDefaultPosition, wxDefaultSize, 0);
+     m_staticText_progress_percent_icon->SetFont(::Label::Body_11);
+-    m_staticText_progress_percent_icon->SetMaxSize(wxSize(-1, FromDIP(13)));
+     m_staticText_progress_percent_icon->SetForegroundColour(wxColour(0, 174, 66));
+ 
+     sizer_percent->Add(m_staticText_progress_percent, 0, 0, 0);
+diff --git a/src/slic3r/GUI/Widgets/ProgressDialog.cpp b/src/slic3r/GUI/Widgets/ProgressDialog.cpp
+index 956a7476feed09ceee9ba993233cd2f58862e017..2722827350de815cd13813d5fc0d29fd7caa9713 100644
+--- a/src/slic3r/GUI/Widgets/ProgressDialog.cpp
++++ b/src/slic3r/GUI/Widgets/ProgressDialog.cpp
+@@ -113,11 +113,12 @@ wxString ProgressDialog::FormatString(wxString title)
+         m_msg->Layout();
+         m_msg->Fit();
+ 
+-        m_msg_scrolledWindow->SetSize(wxSize(FromDIP(m_msg->GetSize().x + 5), FromDIP(150)));
+-        m_msg_scrolledWindow->SetMinSize(wxSize(FromDIP(m_msg->GetSize().x + 5), FromDIP(150)));
+-        m_msg_scrolledWindow->SetMaxSize(wxSize(FromDIP(m_msg->GetSize().x + 5), FromDIP(150)));
+-       // m_msg_scrolledWindow->Layout();
+-        m_msg_scrolledWindow->Fit();
++        const wxSize viewport_size = m_msg_scrolledWindow->ClientToWindowSize(
++            wxSize(m_msg->GetSize().x + FromDIP(5), FromDIP(150)));
++        m_msg_scrolledWindow->SetMinSize(viewport_size);
++        m_msg_scrolledWindow->SetMaxSize(viewport_size);
++        m_msg_scrolledWindow->SetSize(viewport_size);
++        m_msg_scrolledWindow->FitInside();
+     }
+ 
+     
+@@ -192,7 +193,7 @@ bool ProgressDialog::Create(const wxString &title, const wxString &message, int
+ 
+         m_sizer_main->Add(m_simplebook, 1, wxEXPAND | wxLEFT | wxRIGHT, FromDIP(28));
+     } else {
+-        m_msg_scrolledWindow = new wxScrolledWindow( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxVSCROLL );
++        m_msg_scrolledWindow = new wxScrolledWindow( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxVSCROLL | wxALWAYS_SHOW_SB );
+         m_msg_scrolledWindow->SetScrollRate(0,5);
+         wxBoxSizer* m_msg_sizer= new wxBoxSizer(wxVERTICAL);
+ 
+@@ -262,11 +263,11 @@ bool ProgressDialog::Create(const wxString &title, const wxString &message, int
+     wxGetApp().UpdateDlgDarkUI(this);
+ 
+     SetSizer(m_sizer_main);
++    FormatString(message);
+     Layout();
+     Fit();
+     Centre(wxCENTER_FRAME | wxBOTH);
+     DisableOtherWindows();
+-    FormatString(message);
+ 
+     Show();
+     Enable();
+@@ -817,7 +818,7 @@ void ProgressDialog::DoSetSize(int x, int y, int width, int height, int sizeFlag
+     //    m_block_right->SetPosition(wxPoint(PROGRESSDIALOG_GAUGE_SIZE.x - 2, 0));
+     //}
+ #endif
+-    wxWindow::DoSetSize(x, y, width, height, sizeFlags);
++    wxDialog::DoSetSize(x, y, width, height, sizeFlags);
+ }
+ 
+ void ProgressDialog::DisableOtherWindows()

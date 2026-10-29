@@ -1,0 +1,85 @@
+diff --git a/src/slic3r/GUI/StatusPanel.cpp b/src/slic3r/GUI/StatusPanel.cpp
+index 1267e0014700417e339b427e7dec876e48cc77fb..0af80c219dd19e48379455965fadc50126fcb935 100644
+--- a/src/slic3r/GUI/StatusPanel.cpp
++++ b/src/slic3r/GUI/StatusPanel.cpp
+@@ -1,6 +1,7 @@
+ #include "StatusPanel.hpp"
+ 
+ #include <algorithm>
++#include <cmath>
+ 
+ #include "I18N.hpp"
+ #include "Widgets/Label.hpp"
+@@ -2027,6 +2028,52 @@ StatusBasePanel::StatusBasePanel(wxWindow *parent, wxWindowID id, const wxPoint
+     bSizer_status->Add(m_panel_separotor_bottom, 0, wxEXPAND | wxALL, 0);
+     this->SetSizerAndFit(bSizer_status);
+     this->Layout();
++
++    Bind(wxEVT_SIZE, [this](wxSizeEvent &event) {
++        event.Skip();
++        CallAfter([this] { fit_camera_to_feed(); });
++    });
++    m_media_ctrl->Bind(EVT_MEDIA_CTRL_FIRST_FRAME, [this](wxCommandEvent &event) {
++        event.Skip();
++        CallAfter([this] { fit_camera_to_feed(); });
++    });
++}
++
++// Give the Control column the width a height-limited camera feed does not need.
++void StatusBasePanel::fit_camera_to_feed()
++{
++    if (is_camera_fullscreen() || !m_media_ctrl || !m_machine_ctrl_panel || !m_camera_media_sizer)
++        return;
++
++    wxSizer *control_sizer = m_machine_ctrl_panel->GetSizer();
++    wxSizer *camera_column = m_camera_media_sizer;
++    wxSizerItem *camera_item = camera_column->GetItem(m_media_ctrl);
++    if (!control_sizer || !camera_item)
++        return;
++
++    const int natural = control_sizer->CalcMin().x;
++    // Ignore the old virtual width when the window is narrowed.
++    const int row_width = std::max(camera_column->CalcMin().x + natural,
++                                   GetClientSize().x - 3 * PAGE_SPACING);
++    const int column_h = camera_column->GetSize().y;
++    const int camera_h = column_h - camera_column->CalcMin().y + camera_item->GetMinSizeWithBorder().y;
++    int target = wxDefaultCoord;
++    if (m_media_ctrl->IsShown() && camera_h > 0 && row_width > 0) {
++        wxSize video = m_media_ctrl->GetVideoSize();
++        if (video.x <= 0 || video.y <= 0)
++            video = wxSize(16, 9);
++        const double aspect = double(video.x) / video.y;
++        const int feed_width = std::max(camera_column->CalcMin().x,
++                                        std::min(int(std::ceil(camera_h * aspect)), row_width - natural));
++        if (row_width - feed_width > natural)
++            target = row_width - feed_width;
++    }
++
++    if (std::abs(m_machine_ctrl_panel->GetMinSize().x - target) <= 1)
++        return;
++    m_machine_ctrl_panel->SetMinSize(wxSize(target, wxDefaultCoord));
++    Layout();
++    FitInside();
+ }
+ 
+ StatusBasePanel::~StatusBasePanel()
+@@ -2091,6 +2138,7 @@ void StatusBasePanel::close_camera_fullscreen()
+ 
+     frame->exit_camera_view();
+     frame->Destroy();
++    CallAfter([this] { fit_camera_to_feed(); });
+ }
+ 
+ void StatusBasePanel::on_camera_fullscreen(wxMouseEvent &event)
+diff --git a/src/slic3r/GUI/StatusPanel.hpp b/src/slic3r/GUI/StatusPanel.hpp
+index 3edf0397f0b2cd77185ad6f51c2049d4212e286d..843b6f7de1968810bee22c1646bfd3fc4217a3c1 100644
+--- a/src/slic3r/GUI/StatusPanel.hpp
++++ b/src/slic3r/GUI/StatusPanel.hpp
+@@ -663,6 +663,7 @@ private:
+     void on_ams_control_web_switch(wxCommandEvent& event);
+ #endif
+     void show_camera_fullscreen();
++    void fit_camera_to_feed();
+ };
+ 
+ class StatusPanel : public StatusBasePanel

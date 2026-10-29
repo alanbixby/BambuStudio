@@ -1,0 +1,530 @@
+[
+  {
+    "name": "old-dpi96-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "96",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi96-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "96",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi96-scale1-none-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "96",
+      "none",
+      "740"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi96-scale1-none-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "96",
+      "none",
+      "740"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi96-scale1-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "96",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi96-scale1-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "96",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi96-scale1-web-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "96",
+      "web",
+      "740"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi96-scale1-web-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "96",
+      "web",
+      "740"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi120-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "120",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi120-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "120",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi120-scale1-none-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "120",
+      "none",
+      "740"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi120-scale1-none-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "120",
+      "none",
+      "740"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi120-scale1-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "120",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi120-scale1-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "120",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi120-scale1-web-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "120",
+      "web",
+      "740"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi120-scale1-web-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "120",
+      "web",
+      "740"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi144-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "144",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi144-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "144",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi144-scale1-none-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "144",
+      "none",
+      "740"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi144-scale1-none-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "144",
+      "none",
+      "740"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi144-scale1-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "144",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi144-scale1-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "144",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi144-scale1-web-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "144",
+      "web",
+      "740"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi144-scale1-web-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "144",
+      "web",
+      "740"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi96-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "96",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi96-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "96",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi96-scale2-none-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "96",
+      "none",
+      "740"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi96-scale2-none-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "96",
+      "none",
+      "740"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi96-scale2-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "96",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi96-scale2-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "96",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi96-scale2-web-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "96",
+      "web",
+      "740"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi96-scale2-web-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "96",
+      "web",
+      "740"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi120-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "120",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi120-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "120",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi120-scale2-none-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "120",
+      "none",
+      "740"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi120-scale2-none-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "120",
+      "none",
+      "740"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi120-scale2-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "120",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi120-scale2-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "120",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi120-scale2-web-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "120",
+      "web",
+      "740"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi120-scale2-web-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "120",
+      "web",
+      "740"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi144-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "144",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi144-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "144",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi144-scale2-none-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "144",
+      "none",
+      "740"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi144-scale2-none-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "144",
+      "none",
+      "740"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi144-scale2-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "144",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi144-scale2-web-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "144",
+      "web",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "old-dpi144-scale2-web-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-old",
+      "144",
+      "web",
+      "740"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  },
+  {
+    "name": "new-dpi144-scale2-web-h740",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-new",
+      "144",
+      "web",
+      "740"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":118"
+  }
+]

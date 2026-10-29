@@ -1,0 +1,59 @@
+diff --git a/src/slic3r/GUI/GLCanvas3D.cpp b/src/slic3r/GUI/GLCanvas3D.cpp
+index 420f367b4b166a4693eeee363f27aac18ed397e1..f75f55497d099338d41f3e958fd4e0eb2bb57cbd 100644
+--- a/src/slic3r/GUI/GLCanvas3D.cpp
++++ b/src/slic3r/GUI/GLCanvas3D.cpp
+@@ -10308,6 +10308,7 @@ void GLCanvas3D::_render_assembly_steps_view()
+         }
+         m_assembly_steps->set_gizmo_toolbar_rect(tb_x0, tb_y0, tb_x1, tb_y1);
+     }
++    m_assembly_steps->set_collapse_toolbar_bottom_y(get_collapse_toolbar_height());
+     m_assembly_steps->render_main(static_cast<float>(cnv_sz.get_width()), static_cast<float>(cnv_sz.get_height()));
+ }
+ 
+@@ -10337,7 +10338,7 @@ void GLCanvas3D::_render_return_toolbar()
+         const float anchor_x = m_assembly_steps->get_assembly_structure_right_x();
+         if (anchor_x > 0.f) {
+             window_pos_x = anchor_x + 8.0f * get_scale();
+-            window_pos_y = 20.f;
++            window_pos_y = m_assembly_steps->get_assembly_structure_top_y() + 3.0f * get_scale();
+         }
+     }
+     {//solve ui overlap issue
+diff --git a/src/slic3r/GUI/Overview/AssemblyStepsUtils.hpp b/src/slic3r/GUI/Overview/AssemblyStepsUtils.hpp
+index 09ecc3deca18a03767844a52e2a580f7f8636ebe..a5203941c0bedc9c1837bd48ccce1968c2d172e6 100644
+--- a/src/slic3r/GUI/Overview/AssemblyStepsUtils.hpp
++++ b/src/slic3r/GUI/Overview/AssemblyStepsUtils.hpp
+@@ -430,6 +430,9 @@ class AssemblyStepsUtils
+     static constexpr double kPlayFrameInterval = 0.02;
+     // Right-edge X (canvas coords) of the last-rendered "Assembly Structure"
+     float m_assembly_structure_right_x{0.f};
++    // Bottom edge Y (canvas px) of the sidebar collapse toggle drawn by GLCanvas3D
++    // in the canvas' top-left corner, or 0 when that toggle is not shown.
++    float m_collapse_toolbar_bottom_y{0.f};
+     // Right-side "Assembly Guide" panel
+     int m_guide_connection_selected{-1};
+     SelectionOrigin m_selection_origin{SelectionOrigin::None};
+@@ -1015,6 +1018,10 @@ public://logic
+     // Right edge X (canvas coords) of the most-recently rendered
+     // "Assembly Structure" panel, or 0 when it hasn't been drawn yet.
+     float get_assembly_structure_right_x() const { return m_assembly_structure_right_x; }
++    // Top edge Y (canvas coords) of the same panel; valid while the right edge is non-zero.
++    float get_assembly_structure_top_y() const { return m_panel_rect_structure_min.y; }
++    // The structure panel is anchored below this Y so it never covers the sidebar toggle.
++    void  set_collapse_toolbar_bottom_y(float y) { m_collapse_toolbar_bottom_y = std::max(0.f, y); }
+     void  set_gizmo_toolbar_rect(float x0, float y0, float x1, float y1);
+     // Overlay regions (rendered by GLCanvas3D) that part-number labels
+     enum class AssemblyOverlayRect { Navigator, FitCamera, AssembleControl, ReturnToolbar };
+diff --git a/src/slic3r/GUI/Overview/AssemblyStepsUtilsImgui.cpp b/src/slic3r/GUI/Overview/AssemblyStepsUtilsImgui.cpp
+index ed3b9f256fdf616bd883da1cdc813b5a060d3194..10af66650c66a2bac0363e34f1e4bf9cb5b0e3e4 100644
+--- a/src/slic3r/GUI/Overview/AssemblyStepsUtilsImgui.cpp
++++ b/src/slic3r/GUI/Overview/AssemblyStepsUtilsImgui.cpp
+@@ -3239,7 +3239,7 @@ void AssemblyStepsUtils::render_assembly_structure_panel(float canvas_w, float c
+ 
+     // Layout constants -------------------------------------------------------
+     const float panel_x        = 12.0f * sc;
+-    const float panel_y        = 17.0f * sc;
++    const float panel_y        = std::max(17.0f * sc, m_collapse_toolbar_bottom_y + 6.0f * sc);
+     const float panel_w        = 384.0f * sc;       // 1.5x of original 256*sc
+     const float panel_radius   = 4.0f * sc;
+     // Header height tracks the title line (subtitle removed):

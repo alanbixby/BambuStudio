@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "xvfb-run",
+    "-a",
+    "-e",
+    "/tmp/bambu-polish-20261028/implementation/camera-native/xvfb-ams-events.log",
+    "-s",
+    "-screen 0 6000x4000x24 -dpi 96 -nolisten tcp",
+    "python3",
+    "/tmp/bambu-polish-20261028/implementation/camera-native/run-ams-events.py",
+    "--inside"
+  ],
+  "env_overrides": {
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/tmp/bambu-polish-20261028/implementation/camera-native/runtime/no-session-bus",
+    "LD_LIBRARY_PATH": "/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/sysroot/usr/lib/x86_64-linux-gnu",
+    "XDG_CONFIG_HOME": "/tmp/bambu-polish-20261028/implementation/camera-native/config",
+    "XDG_DATA_HOME": "/tmp/bambu-polish-20261028/implementation/camera-native/data",
+    "XDG_RUNTIME_DIR": "/tmp/bambu-polish-20261028/implementation/camera-native/runtime",
+    "TMPDIR": "/tmp/bambu-polish-20261028/implementation/camera-native/tmp",
+    "XDG_CACHE_HOME": "/tmp/bambu-polish-20261028/implementation/camera-native/cache",
+    "XDG_STATE_HOME": "/tmp/bambu-polish-20261028/implementation/camera-native/state",
+    "FONTCONFIG_FILE": "/tmp/bambu-polish-20261028/implementation/camera-native/fonts.conf",
+    "GDK_BACKEND": "x11",
+    "GTK_THEME": "Adwaita",
+    "GTK_OVERLAY_SCROLLING": "0",
+    "GTK_USE_PORTAL": "0",
+    "GSETTINGS_BACKEND": "memory",
+    "CAMERA_PRIVATE_XVFB": "1"
+  }
+}

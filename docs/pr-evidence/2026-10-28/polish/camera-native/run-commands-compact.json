@@ -1,0 +1,134 @@
+[
+  {
+    "name": "compact-old-dpi96-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-compact-old",
+      "96",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":119"
+  },
+  {
+    "name": "compact-new-dpi96-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-compact-new",
+      "96",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":119"
+  },
+  {
+    "name": "compact-old-dpi120-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-compact-old",
+      "120",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":119"
+  },
+  {
+    "name": "compact-new-dpi120-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-compact-new",
+      "120",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":119"
+  },
+  {
+    "name": "compact-old-dpi144-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-compact-old",
+      "144",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":119"
+  },
+  {
+    "name": "compact-new-dpi144-scale1-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-compact-new",
+      "144",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 1,
+    "DISPLAY": ":119"
+  },
+  {
+    "name": "compact-old-dpi96-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-compact-old",
+      "96",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":119"
+  },
+  {
+    "name": "compact-new-dpi96-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-compact-new",
+      "96",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":119"
+  },
+  {
+    "name": "compact-old-dpi120-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-compact-old",
+      "120",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":119"
+  },
+  {
+    "name": "compact-new-dpi120-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-compact-new",
+      "120",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":119"
+  },
+  {
+    "name": "compact-old-dpi144-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-compact-old",
+      "144",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":119"
+  },
+  {
+    "name": "compact-new-dpi144-scale2-none-h520",
+    "argv": [
+      "/tmp/bambu-polish-20261028/implementation/camera-native/probe-compact-new",
+      "144",
+      "none",
+      "520"
+    ],
+    "GDK_SCALE": 2,
+    "DISPLAY": ":119"
+  }
+]

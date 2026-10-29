@@ -1,0 +1,63 @@
+{
+  "cpp_sha256": "28e698936addca20a13de5ab9c1209111d94235f544cabb8c87563834f857cdd",
+  "reader_sha256": "5a8d4000c78cfe973f1ef8c51563cffbaaf6d1b28c0a97bee97187844986345b",
+  "checks": [
+    {
+      "name": "resolved link survives metadata replay before DOM ready",
+      "status": "PASS"
+    },
+    {
+      "name": "DOM-ready-first update still adds the link",
+      "status": "PASS"
+    },
+    {
+      "name": "early resolved ID replaces an older cached ID",
+      "status": "PASS"
+    },
+    {
+      "name": "clear buffer is not converted into metadata",
+      "status": "PASS"
+    },
+    {
+      "name": "no buffer after readiness: ordinary targeted update works",
+      "status": "PASS"
+    },
+    {
+      "name": "missing nested metadata is ignored safely",
+      "status": "PASS"
+    },
+    {
+      "name": "failed lookup leaves the local metadata available without a link",
+      "status": "PASS"
+    },
+    {
+      "name": "new document does not inherit another document model ID",
+      "status": "PASS"
+    },
+    {
+      "name": "latest buffered metadata still wins",
+      "status": "PASS"
+    },
+    {
+      "name": "missing pending global is safe",
+      "status": "PASS"
+    },
+    {
+      "name": "non-reader document is ignored",
+      "status": "PASS"
+    },
+    {
+      "name": "handshake remains bounded",
+      "status": "PASS"
+    },
+    {
+      "name": "absent bridge receives no requests",
+      "status": "PASS"
+    },
+    {
+      "name": "late bridge during retry window is discovered",
+      "status": "PASS"
+    }
+  ],
+  "limits": "Exact JS/native string literals; DOM, scheduler and HTTP success are doubles. No native backend timing, GUI, networking or real-thread teardown claim."
+}

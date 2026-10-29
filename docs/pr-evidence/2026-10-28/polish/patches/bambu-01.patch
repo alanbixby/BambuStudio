@@ -1,0 +1,15 @@
+diff --git a/src/slic3r/GUI/GLCanvas3D.cpp b/src/slic3r/GUI/GLCanvas3D.cpp
+index 420f367b4b166a4693eeee363f27aac18ed397e1..0d758372cd8b1ed79cc03a8d7521f4fb470db5bc 100644
+--- a/src/slic3r/GUI/GLCanvas3D.cpp
++++ b/src/slic3r/GUI/GLCanvas3D.cpp
+@@ -2506,7 +2506,9 @@ void GLCanvas3D::_exit_assembly_to_3d_view()
+     const_cast<GLGizmosManager *>(&m_gizmos)->reset_all_states();
+     wxGetApp().plater()->get_view3D_canvas3D()->get_gizmos_manager().reset_all_states();
+     GLVolume::explosion_ratio  = 1.0;
+-    wxGetApp().plater()->get_view3D_canvas3D()->reload_scene(true);
++    // The posted view-switch event reloads Prepare after leave_assemble_stack().
++    // Reloading here would rebind the shared GL context to Prepare while this
++    // Assembly frame still needs to render its overlays and swap its own window.
+     {
+         GLCanvas3D *                          view_3d       = wxGetApp().plater()->get_view3D_canvas3D();
+         const auto& p_main_toolbar = view_3d->get_main_toolbar();

@@ -1,0 +1,16 @@
+{
+  "old": {
+    "head": "fab83eef842e6967fa06d0bb05410940b4787d28",
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "line": 2061,
+    "file_sha256": "7a39655a5c5461b256d0e3df1908c6b237cc00b8f57e0055ebfa9e978f17632e",
+    "function_sha256": "41a71da22f4ed091f5556a3f747b4638b4555c43f3d975a7918b7eb62f610b8d"
+  },
+  "new": {
+    "head": "010ae25289256dda9f0d09111cf24c28bdf44394",
+    "path": "src/slic3r/GUI/StatusPanel.cpp",
+    "line": 2061,
+    "file_sha256": "035cffc47db19e20697b7e374df05d7a7e82d18ff3a008bb3c1335862c91d6d7",
+    "function_sha256": "22f66caa70dd58d33b1748098eabcaa1657595252268630e5c71b47eb5b1f3f6"
+  }
+}

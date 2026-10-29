@@ -1,0 +1,30 @@
+[
+  {
+    "sha": "010ae25289256dda9f0d09111cf24c28bdf44394",
+    "path": "src/slic3r/GUI/Widgets/AmsControlWebPanel.cpp",
+    "error": "fatal: path 'src/slic3r/GUI/Widgets/AmsControlWebPanel.cpp' does not exist in '010ae25289256dda9f0d09111cf24c28bdf44394'\n"
+  },
+  {
+    "sha": "010ae25289256dda9f0d09111cf24c28bdf44394",
+    "path": "src/slic3r/GUI/DeviceWebHost.cpp",
+    "error": "fatal: path 'src/slic3r/GUI/DeviceWebHost.cpp' does not exist in '010ae25289256dda9f0d09111cf24c28bdf44394'\n"
+  },
+  {
+    "sha": "3fea0af433d9630f79eaf8fbfc062364ba456be3",
+    "path": "src/generic/scrlwing.cpp",
+    "snapshot": "wx-scrlwing.cpp",
+    "sha256": "f4e5fca0ac956a42190387fd059a5afbcb674f5b3153961f2c9f508669d770dd"
+  },
+  {
+    "sha": "010ae25289256dda9f0d09111cf24c28bdf44394",
+    "path": "src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.cpp",
+    "snapshot": "ams-panel.cpp",
+    "sha256": "1b2d8ab1881649c86dd54cf42029a2e8303ab2ba13c9ea4f155dc878fffa57f0"
+  },
+  {
+    "sha": "010ae25289256dda9f0d09111cf24c28bdf44394",
+    "path": "src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp",
+    "snapshot": "web-host.cpp",
+    "sha256": "0ce0e52d26dd7296b60200c98f15920674fa24779a820060d0b425b9e1ee380f"
+  }
+]

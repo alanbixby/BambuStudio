@@ -1,0 +1,316 @@
+{
+  "app_commit": "e9617d1a815183350bd9822fb894996aa086f47a",
+  "wx_commit": "0f2037facedf3d92660e7071b6754fe994aa744d",
+  "candidates": [
+    {
+      "key": "bambu-01",
+      "repository": "alanbixby/BambuStudio",
+      "number": 1,
+      "branch": "fix/assembly-return-context",
+      "head": "f4218e246f3041077177d2487ce8824d522addfa",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "base_branch": "master",
+      "title": "Fix crash when returning from the Assembly view",
+      "paths": [
+        "src/slic3r/GUI/GLCanvas3D.cpp"
+      ],
+      "additions": 3,
+      "deletions": 1,
+      "commits": 1,
+      "changed_lines": 4
+    },
+    {
+      "key": "bambu-02",
+      "repository": "alanbixby/BambuStudio",
+      "number": 2,
+      "branch": "fix/assembly-sidebar-clearance",
+      "head": "3ba2657c70ef031d011da175a4daafb850e3b3b1",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "base_branch": "master",
+      "title": "Keep the Assembly structure panel from covering the sidebar toggle",
+      "paths": [
+        "src/slic3r/GUI/GLCanvas3D.cpp",
+        "src/slic3r/GUI/Overview/AssemblyStepsUtils.hpp",
+        "src/slic3r/GUI/Overview/AssemblyStepsUtilsImgui.cpp"
+      ],
+      "additions": 10,
+      "deletions": 2,
+      "commits": 1,
+      "changed_lines": 12
+    },
+    {
+      "key": "bambu-03",
+      "repository": "alanbixby/BambuStudio",
+      "number": 3,
+      "branch": "fix/project-metadata",
+      "head": "ed5e975a59ee28242f67ded5e0722b19b61e0ed4",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "base_branch": "master",
+      "title": "Show Project information without waiting for the network lookup",
+      "paths": [
+        "src/libslic3r/Model.cpp",
+        "src/libslic3r/Model.hpp",
+        "src/slic3r/GUI/Project.cpp",
+        "src/slic3r/GUI/Project.hpp"
+      ],
+      "additions": 254,
+      "deletions": 161,
+      "commits": 1,
+      "changed_lines": 415
+    },
+    {
+      "key": "bambu-04",
+      "repository": "alanbixby/BambuStudio",
+      "number": 4,
+      "branch": "fix/project-reader-styles",
+      "head": "44fa2692b16919f4519595d6bcd4f571777ea1d6",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "base_branch": "master",
+      "title": "Fix dark-mode Project text colors and overlapping imported tables",
+      "paths": [
+        "resources/web/model_new/css/dark.css",
+        "resources/web/model_new/index.css"
+      ],
+      "additions": 32,
+      "deletions": 0,
+      "commits": 1,
+      "changed_lines": 32
+    },
+    {
+      "key": "bambu-05",
+      "repository": "alanbixby/BambuStudio",
+      "number": 5,
+      "branch": "fix/native-dip-geometry",
+      "head": "305b41867feec57eb3d535d59920a9f091991762",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "base_branch": "master",
+      "title": "Fix double DPI scaling of icons, fonts and measured sizes",
+      "paths": [
+        "src/slic3r/GUI/AboutDialog.cpp",
+        "src/slic3r/GUI/AmsMappingPopup.cpp",
+        "src/slic3r/GUI/BindDialog.cpp",
+        "src/slic3r/GUI/CapsuleButton.cpp",
+        "src/slic3r/GUI/CreatePresetsDialog.cpp",
+        "src/slic3r/GUI/MainFrame.cpp",
+        "src/slic3r/GUI/MediaPlayCtrl.cpp",
+        "src/slic3r/GUI/MultiMachineManagerPage.cpp",
+        "src/slic3r/GUI/MultiTaskManagerPage.cpp",
+        "src/slic3r/GUI/ObjectDataViewModel.cpp",
+        "src/slic3r/GUI/Plater.cpp",
+        "src/slic3r/GUI/SendMultiMachinePage.cpp",
+        "src/slic3r/GUI/SendToPrinter.cpp",
+        "src/slic3r/GUI/StatusPanel.cpp",
+        "src/slic3r/GUI/StepMeshDialog.cpp",
+        "src/slic3r/GUI/Widgets/AMSItem.cpp",
+        "src/slic3r/GUI/Widgets/MultiNozzleSync.cpp",
+        "src/slic3r/GUI/calib_dlg.cpp"
+      ],
+      "additions": 66,
+      "deletions": 63,
+      "commits": 1,
+      "changed_lines": 129
+    },
+    {
+      "key": "bambu-06",
+      "repository": "alanbixby/BambuStudio",
+      "number": 6,
+      "branch": "fix/print-options-reflow",
+      "head": "2604e8279cf03f0ac93b53205608a7d901aacfc4",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "base_branch": "master",
+      "title": "Wrap Print Options descriptions instead of cutting them off",
+      "paths": [
+        "src/slic3r/GUI/PrintOptionsDialog.cpp",
+        "src/slic3r/GUI/PrintOptionsDialog.hpp"
+      ],
+      "additions": 67,
+      "deletions": 71,
+      "commits": 1,
+      "changed_lines": 138
+    },
+    {
+      "key": "bambu-07",
+      "repository": "alanbixby/BambuStudio",
+      "number": 7,
+      "branch": "fix/settings-field-width",
+      "head": "9df1217e47951f34cd95c65159f5329c88083c75",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "base_branch": "master",
+      "title": "Let single-value settings fields use spare panel width",
+      "paths": [
+        "src/slic3r/GUI/OG_CustomCtrl.cpp",
+        "src/slic3r/GUI/OG_CustomCtrl.hpp",
+        "src/slic3r/GUI/OptionsGroup.cpp"
+      ],
+      "additions": 64,
+      "deletions": 1,
+      "commits": 1,
+      "changed_lines": 65
+    },
+    {
+      "key": "bambu-08",
+      "repository": "alanbixby/BambuStudio",
+      "number": 8,
+      "branch": "fix/sidebar-card-spacing",
+      "head": "5d431fccc52f0011f0613a74d224e81bc614d23f",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "base_branch": "master",
+      "title": "Even out printer and plate cards and align header buttons",
+      "paths": [
+        "src/slic3r/GUI/Plater.cpp"
+      ],
+      "additions": 21,
+      "deletions": 8,
+      "commits": 1,
+      "changed_lines": 29
+    },
+    {
+      "key": "bambu-09",
+      "repository": "alanbixby/BambuStudio",
+      "number": 9,
+      "branch": "fix/temperature-value-alignment",
+      "head": "fc074b0ad0a55945fefcf16fe0b195a48d20e398",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "base_branch": "master",
+      "title": "Close the gap between temperature values and their unit",
+      "paths": [
+        "src/slic3r/GUI/Widgets/TempInput.cpp",
+        "src/slic3r/GUI/Widgets/TempInput.hpp"
+      ],
+      "additions": 80,
+      "deletions": 21,
+      "commits": 1,
+      "changed_lines": 101
+    },
+    {
+      "key": "bambu-10",
+      "repository": "alanbixby/BambuStudio",
+      "number": 10,
+      "branch": "fix/camera-ams-balance",
+      "head": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "base_branch": "master",
+      "title": "Fit the live camera to its video aspect ratio",
+      "paths": [
+        "src/slic3r/GUI/StatusPanel.cpp",
+        "src/slic3r/GUI/StatusPanel.hpp"
+      ],
+      "additions": 49,
+      "deletions": 0,
+      "commits": 1,
+      "changed_lines": 49
+    },
+    {
+      "key": "bambu-project-startup",
+      "repository": "alanbixby/BambuStudio",
+      "number": null,
+      "branch": "fix/project-page-ready",
+      "head": "a2edccd9347f53d719984fd2997ce23155ee79a6",
+      "base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+      "base_branch": "master",
+      "title": "Retry Project details until the page is ready",
+      "paths": [
+        "resources/web/model_new/index.js"
+      ],
+      "additions": 40,
+      "deletions": 3,
+      "commits": 1,
+      "changed_lines": 43
+    },
+    {
+      "key": "bambu-progress",
+      "repository": "alanbixby/BambuStudio",
+      "number": null,
+      "branch": "fix/progress-text-layout",
+      "head": "5608a478ca983cc63083627bb6f8854f575412db",
+      "base": "305b41867feec57eb3d535d59920a9f091991762",
+      "base_branch": "fix/native-dip-geometry",
+      "title": "Keep progress text and long messages from being clipped",
+      "paths": [
+        "src/slic3r/GUI/StatusPanel.cpp",
+        "src/slic3r/GUI/Widgets/ProgressDialog.cpp"
+      ],
+      "additions": 9,
+      "deletions": 10,
+      "commits": 1,
+      "changed_lines": 19
+    },
+    {
+      "key": "bambu-ams-zoom",
+      "repository": "alanbixby/BambuStudio",
+      "number": null,
+      "branch": "fix/ams-fit-zoom",
+      "head": "54083d6fb80138c3404a58abc2c4300c0035dfd7",
+      "base": "bed9f5a1fbab2ffb73cb5aea0dfc72a6e899a9d7",
+      "base_branch": "fix/camera-ams-balance",
+      "title": "Scale AMS to use spare room beside the camera",
+      "paths": [
+        "src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.cpp",
+        "src/slic3r/GUI/DeviceTab/AmsControl/wgtAmsControlWebPanel.h",
+        "src/slic3r/GUI/DeviceWeb/DeviceWebHost.cpp",
+        "src/slic3r/GUI/DeviceWeb/DeviceWebHost.hpp",
+        "src/slic3r/GUI/StatusPanel.cpp",
+        "src/slic3r/GUI/StatusPanel.hpp"
+      ],
+      "additions": 183,
+      "deletions": 12,
+      "commits": 1,
+      "changed_lines": 195
+    },
+    {
+      "key": "bambu-gtk-integration",
+      "repository": "alanbixby/BambuStudio",
+      "number": null,
+      "branch": "fix/gtk-font-dpi-integration",
+      "head": "e77253cd2ff240df00890d2e798faa312df23e95",
+      "base": "5608a478ca983cc63083627bb6f8854f575412db",
+      "base_branch": "fix/progress-text-layout",
+      "title": "Use a pinned wx build for GTK font sizing",
+      "paths": [
+        "deps/wxWidgets/wxWidgets.cmake",
+        "src/slic3r/GUI/GUI_App.cpp"
+      ],
+      "additions": 7,
+      "deletions": 2,
+      "commits": 1,
+      "changed_lines": 9
+    },
+    {
+      "key": "wx-01",
+      "repository": "alanbixby/wxWidgets",
+      "number": 1,
+      "branch": "fix/gtk-label-font-measurement",
+      "head": "14a14a773c74ae23281417f58334b5c28ecfed12",
+      "base": "abb542694ef4534a50e65c5b877b2774d02952ae",
+      "base_branch": "master",
+      "title": "Measure GTK labels after their font changes",
+      "paths": [
+        "src/gtk/control.cpp"
+      ],
+      "commits": 1,
+      "additions": 24,
+      "deletions": 0,
+      "changed_lines": 24
+    },
+    {
+      "key": "wx-02",
+      "repository": "alanbixby/wxWidgets",
+      "number": 2,
+      "branch": "fix/gtk-font-dpi-conversion",
+      "head": "d54f3313028fc439cea91f0b6a213e5ad2245b90",
+      "base": "abb542694ef4534a50e65c5b877b2774d02952ae",
+      "base_branch": "master",
+      "title": "Allow apps to opt into GTK font-DPI sizing",
+      "paths": [
+        "include/wx/window.h",
+        "interface/wx/window.h",
+        "src/gtk/window.cpp",
+        "interface/wx/sysopt.h"
+      ],
+      "commits": 1,
+      "additions": 91,
+      "deletions": 3,
+      "changed_lines": 94
+    }
+  ]
+}

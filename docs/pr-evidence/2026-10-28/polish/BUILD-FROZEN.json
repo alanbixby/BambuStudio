@@ -1,0 +1,10 @@
+{
+  "app_commit": "e9617d1a815183350bd9822fb894996aa086f47a",
+  "app_tree": "094d67e9702508a845195e85fb17084db6da74e4",
+  "app_upstream_base": "79df7ae309be398ed30c9f397c13c9911c2edc57",
+  "wx_commit": "0f2037facedf3d92660e7071b6754fe994aa744d",
+  "wx_tree": "db3c30ee5fb3043b7798ae0029ef51312fe9fc65",
+  "wx_upstream_base": "abb542694ef4534a50e65c5b877b2774d02952ae",
+  "wx_remote": "https://github.com/alanbixby/wxWidgets",
+  "native_camera_probe_complete": true
+}

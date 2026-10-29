@@ -1,0 +1,48 @@
+diff --git a/resources/web/model_new/css/dark.css b/resources/web/model_new/css/dark.css
+index b0e742add2a5dba172cd7b050efd7def76b41a28..eefcba18d8519be2eaabb2cb15229476fa890feb 100644
+--- a/resources/web/model_new/css/dark.css
++++ b/resources/web/model_new/css/dark.css
+@@ -154,3 +154,14 @@ input {
+     color: hsl(0, 0%, 91%);
+     border-color: hsl(0, 0%, 77%);
+ }
++
++/* Reader descriptions and accessory captions set their own light-theme colors
++   in index.css, so they do not inherit the dark body foreground. */
++#projectDescription, #profileDescript,
++#bom-accessories, #assembly-accessories, #other-accessories {
++  color: var(--dark-color-base-text);
++}
++#projectDescription a,
++#profileDescript a {
++  color: #81c7ff;
++}
+diff --git a/resources/web/model_new/index.css b/resources/web/model_new/index.css
+index 156f0c0159f4b9e640b24ed42f57cdfa6f006981..6301992af450e4f5ad6dac99a293c4398d9eba87 100644
+--- a/resources/web/model_new/index.css
++++ b/resources/web/model_new/index.css
+@@ -176,3 +176,24 @@ hr {
+ #profileDescript {
+   margin-top: 8px;
+ }
++
++/* Relative heading leading prevents larger headings sharing the body 20px line box. */
++#projectDescription h1, #projectDescription h2, #projectDescription h3,
++#projectDescription h4, #projectDescription h5, #projectDescription h6,
++#profileDescript h1, #profileDescript h2, #profileDescript h3,
++#profileDescript h4, #profileDescript h5, #profileDescript h6 {
++  line-height: 1.25;
++}
++
++/* Imported fixed figure heights must not make following text overlap table rows. */
++#projectDescription figure.table,
++#profileDescript figure.table {
++  height: auto !important;
++}
++
++/* Empty accessory captions otherwise retain three separate top margins. */
++#bom-accessories:empty,
++#assembly-accessories:empty,
++#other-accessories:empty {
++  display: none;
++}

@@ -1,0 +1,53 @@
+{
+  "wx_scope": "Only the early four-line guard changes executable wx source; no scale cache, includes/API/Windows/macOS/GTK2/wx1 changes.",
+  "conversion_options_1": [
+    "PASS: off identity, sentinels, signed edges; state reads=0",
+    "PASS: enabled equals frozen baseline; DPI changes/screens/fallback/saturation",
+    "PASS: 4582484 checks, wxUSE_SYSTEM_OPTIONS=1, C++98"
+  ],
+  "conversion_options_0": [
+    "PASS: off identity, sentinels, signed edges; state reads=0",
+    "PASS: actual wx sysopt disabled stub returns zero; no state reads",
+    "PASS: 271184 checks, wxUSE_SYSTEM_OPTIONS=0, C++98"
+  ],
+  "red_control": "Frozen unguarded baseline fails the off/no-state-read requirement (exit 1), as expected.",
+  "startup_guard": [
+    "gtk3: PASS: startup guard EXPECT_SET_CALLS=1, setter precedes simulated inner startup\n",
+    "gtk3-no-options: PASS: startup guard EXPECT_SET_CALLS=0, setter precedes simulated inner startup\n",
+    "gtk2: PASS: startup guard EXPECT_SET_CALLS=0, setter precedes simulated inner startup\n",
+    "windows: PASS: startup guard EXPECT_SET_CALLS=0, setter precedes simulated inner startup\n",
+    "macos: PASS: startup guard EXPECT_SET_CALLS=0, setter precedes simulated inner startup\n"
+  ],
+  "non_gtk3_scope": "Exact guarded wx block compiles and runs with no wx/GTK declarations when __WXGTK3__ is absent.",
+  "patches": "Both patches apply exactly to scratch copies of the specified frozen source, match candidates byte-for-byte, and reverse to originals.",
+  "source_startup_lines_candidate": {
+    "bool GUI_App::OnInit()": [
+      2907
+    ],
+    "SetOption(\"gtk.window.font-dpi-scaling\", 1)": [
+      2911
+    ],
+    "return on_init_inner();": [
+      2919
+    ],
+    "bool GUI_App::on_init_inner()": [
+      3148
+    ],
+    "preset_bundle = new PresetBundle();": [
+      3413
+    ],
+    "mainframe = new MainFrame();": [
+      3624,
+      4445
+    ],
+    "scrn = new BBLSplashScreen(": [
+      3397
+    ],
+    "RichMessageDialog": [
+      3282
+    ],
+    "if (! check_old_linux_datadir(GetAppName()))": [
+      3219
+    ]
+  }
+}

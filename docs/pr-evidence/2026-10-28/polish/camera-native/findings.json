@@ -1,0 +1,64 @@
+{
+  "task": "Implementation verification of ASTRA-CAM-001 correction, not a new peer-review round",
+  "reviewed_heads": {
+    "old": "fab83eef842e6967fa06d0bb05410940b4787d28",
+    "new": "010ae25289256dda9f0d09111cf24c28bdf44394",
+    "combined": "b7a379241d133f1808918aa9fc99caa1eeba3c79"
+  },
+  "open_blocking_count": 0,
+  "new_findings": [],
+  "verified_findings": [
+    {
+      "id": "ASTRA-CAM-001",
+      "prior_severity": "blocking",
+      "severity": "non-blocking",
+      "status": "candidate_correction_verified_in_native_GTK_fixture",
+      "open": false,
+      "source": {
+        "repository": "/home/bxb/.t3-nightly/projects/bambu-studio-upstream",
+        "old_head": "fab83eef842e6967fa06d0bb05410940b4787d28",
+        "candidate_head": "010ae25289256dda9f0d09111cf24c28bdf44394",
+        "path": "src/slic3r/GUI/StatusPanel.cpp",
+        "old_line": 2123,
+        "candidate_lines": [
+          2124,
+          2125,
+          2178
+        ]
+      },
+      "trigger": "Compact synthetic Control contents, camera min 574x288 DIP, 2200->1400 client DIP at unchanged 520-DIP frame client height; no AMS; private native wxGTK scroller.",
+      "outcome_old": "At 96 DPI / GDK_SCALE=1, actual client width 1385 but virtual width remains 2185, Control minimum 1581. Same excess persists after an extra queued fit; stable, no idle fit callbacks.",
+      "outcome_candidate": "Virtual width becomes 1385, Control minimum 781. At requested width1000, actual client985 retains required virtual1218. All six compact scale/DPI pairs reproduce the old fixed point and pass correction checks.",
+      "smallest_practical_fix": "Already present in candidate: client width minus exact three spacer widths, bounded by natural minima; FitInside after changed sizing. No further source change suggested by this test.",
+      "verification_performed": {
+        "runs": 72,
+        "observations": 720,
+        "candidate_observations": 360,
+        "suite_results_file": "results.json",
+        "baseline_negative_control_file": "raw-results-compact.json",
+        "source": "probe-compact.cpp",
+        "reproduction": "COMMANDS.md"
+      },
+      "verification_still_needed": [
+        "Native Cocoa/MSW rendering and integration behavior, if those claims are needed.",
+        "Full application controls, media events/fullscreen lifecycle, WebView readiness/content-report timing are outside the disconnected fixture."
+      ],
+      "limits": [
+        "GTK3 private Xvfb native scrollers/sizers; not Cocoa/MSW rendering.",
+        "Media is a plain panel returning invalid video size, exercising production 16:9 fallback.",
+        "Other content/header/progress minima are fixed synthetic fixtures; no claim those heights were measured in the app.",
+        "AMS is synthetic native panel; fixed 340 DIP page content; no WebView, readiness, network, device or report timing test.",
+        "Geometry stability means unchanged geometry and no size/fit callbacks during 200ms quiet window after 300ms settlement; not a claim of zero idle events.",
+        "Tall and compact synthetic content profiles intentionally differ and are reported separately."
+      ]
+    }
+  ],
+  "limitations": [
+    "GTK3 private Xvfb native scrollers/sizers; not Cocoa/MSW rendering.",
+    "Media is a plain panel returning invalid video size, exercising production 16:9 fallback.",
+    "Other content/header/progress minima are fixed synthetic fixtures; no claim those heights were measured in the app.",
+    "AMS is synthetic native panel; fixed 340 DIP page content; no WebView, readiness, network, device or report timing test.",
+    "Geometry stability means unchanged geometry and no size/fit callbacks during 200ms quiet window after 300ms settlement; not a claim of zero idle events.",
+    "Tall and compact synthetic content profiles intentionally differ and are reported separately."
+  ]
+}

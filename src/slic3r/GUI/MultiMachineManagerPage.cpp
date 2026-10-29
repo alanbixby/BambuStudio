@@ -322,7 +322,7 @@ MultiMachineManagerPage::MultiMachineManagerPage(wxWindow* parent)
     m_table_head_panel->SetBackgroundColour(TABLE_HEAR_NORMAL_COLOUR);
     m_table_head_sizer = new wxBoxSizer(wxHORIZONTAL);
 
-    m_printer_name = new Button(m_table_head_panel, _L("Device Name"), "toolbar_double_directional_arrow", wxNO_BORDER, ICON_SINGLE_SIZE);
+    m_printer_name = new Button(m_table_head_panel, _L("Device Name"), "toolbar_double_directional_arrow", wxNO_BORDER, 16);
     m_printer_name->SetBackgroundColor(head_bg);
     m_printer_name->SetFont(TABLE_HEAD_FONT);
     m_printer_name->SetCornerRadius(0);
@@ -355,7 +355,7 @@ MultiMachineManagerPage::MultiMachineManagerPage(wxWindow* parent)
 
 
 
-    m_status = new Button(m_table_head_panel, _L("Device Status"), "toolbar_double_directional_arrow", wxNO_BORDER, ICON_SINGLE_SIZE);
+    m_status = new Button(m_table_head_panel, _L("Device Status"), "toolbar_double_directional_arrow", wxNO_BORDER, 16);
     m_status->SetBackgroundColor(head_bg);
     m_status->SetFont(TABLE_HEAD_FONT);
     m_status->SetCornerRadius(0);
@@ -443,7 +443,7 @@ MultiMachineManagerPage::MultiMachineManagerPage(wxWindow* parent)
 
     m_flipping_page_sizer = new wxBoxSizer(wxHORIZONTAL);
     m_page_sizer = new wxBoxSizer(wxVERTICAL);
-    btn_last_page = new Button(m_flipping_panel, "", "go_last_plate", 0, FromDIP(20));
+    btn_last_page = new Button(m_flipping_panel, "", "go_last_plate", 0, 20);
     btn_last_page->SetMinSize(wxSize(FromDIP(20), FromDIP(20)));
     btn_last_page->SetMaxSize(wxSize(FromDIP(20), FromDIP(20)));
     btn_last_page->SetBackgroundColor(head_bg);
@@ -461,7 +461,7 @@ MultiMachineManagerPage::MultiMachineManagerPage(wxWindow* parent)
         update_page_number();
     });
     st_page_number = new wxStaticText(m_flipping_panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize);
-    btn_next_page = new Button(m_flipping_panel, "", "go_next_plate", 0, FromDIP(20));
+    btn_next_page = new Button(m_flipping_panel, "", "go_next_plate", 0, 20);
     btn_next_page->SetMinSize(wxSize(FromDIP(20), FromDIP(20)));
     btn_next_page->SetMaxSize(wxSize(FromDIP(20), FromDIP(20)));
     btn_next_page->SetBackgroundColor(head_bg);

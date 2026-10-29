@@ -90,7 +90,7 @@ StepMeshDialog::StepMeshDialog(wxWindow* parent, Slic3r::Step& file, double line
     wxBoxSizer* bSizer = new wxBoxSizer(wxVERTICAL);
     bSizer->SetMinSize(wxSize(MIN_DIALOG_WIDTH, -1));
 
-    auto  image_bitmap = create_scaled_bitmap("step_mesh_info", this, FromDIP(120));
+    auto  image_bitmap = create_scaled_bitmap("step_mesh_info", this, 120);
 
     // wxPanel* overlay_panel = new wxPanel(this, wxID_ANY, wxDefaultPosition, image_bitmap.GetSize(), wxTAB_TRAVERSAL);
     // overlay_panel->SetBackgroundStyle(wxBG_STYLE_PAINT);

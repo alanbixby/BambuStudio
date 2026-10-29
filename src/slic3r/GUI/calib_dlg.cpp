@@ -79,7 +79,8 @@ PA_Calibration_Dlg::PA_Calibration_Dlg(wxWindow* parent, wxWindowID id, Plater* 
 	text_size.x = text_size.x * 1.5;
 	wxStaticBoxSizer* settings_sizer = new wxStaticBoxSizer(wxVERTICAL, this, _L("Settings"));
 
-	auto st_size = FromDIP(wxSize(text_size.x, -1));
+	// Text extents already include font scaling and are measured in pixels.
+	auto st_size = wxSize(text_size.x, -1);
 	auto ti_size = FromDIP(wxSize(90, -1));
     // start PA
     auto start_PA_sizer = new wxBoxSizer(wxHORIZONTAL);
@@ -287,7 +288,7 @@ Temp_Calibration_Dlg::Temp_Calibration_Dlg(wxWindow* parent, wxWindowID id, Plat
     text_size.x = text_size.x * 1.5;
     wxStaticBoxSizer* settings_sizer = new wxStaticBoxSizer(wxVERTICAL, this, _L("Settings"));
 
-    auto st_size = FromDIP(wxSize(text_size.x, -1));
+    auto st_size = wxSize(text_size.x, -1);
     auto ti_size = FromDIP(wxSize(90, -1));
     // start temp
     auto start_temp_sizer = new wxBoxSizer(wxHORIZONTAL);
@@ -465,7 +466,7 @@ MaxVolumetricSpeed_Test_Dlg::MaxVolumetricSpeed_Test_Dlg(wxWindow* parent, wxWin
     text_size.x = text_size.x * 1.5;
     wxStaticBoxSizer* settings_sizer = new wxStaticBoxSizer(wxVERTICAL, this, _L("Settings"));
 
-    auto st_size = FromDIP(wxSize(text_size.x, -1));
+    auto st_size = wxSize(text_size.x, -1);
     auto ti_size = FromDIP(wxSize(90, -1));
     // start vol
     auto start_vol_sizer = new wxBoxSizer(wxHORIZONTAL);
@@ -570,7 +571,7 @@ VFA_Test_Dlg::VFA_Test_Dlg(wxWindow* parent, wxWindowID id, Plater* plater)
     text_size.x = text_size.x * 1.5;
     wxStaticBoxSizer* settings_sizer = new wxStaticBoxSizer(wxVERTICAL, this, _L("Settings"));
 
-    auto st_size = FromDIP(wxSize(text_size.x, -1));
+    auto st_size = wxSize(text_size.x, -1);
     auto ti_size = FromDIP(wxSize(90, -1));
     // start vol
     auto start_vol_sizer = new wxBoxSizer(wxHORIZONTAL);
@@ -676,7 +677,7 @@ Retraction_Test_Dlg::Retraction_Test_Dlg(wxWindow* parent, wxWindowID id, Plater
     text_size.x = text_size.x * 1.5;
     wxStaticBoxSizer* settings_sizer = new wxStaticBoxSizer(wxVERTICAL, this, _L("Settings"));
 
-    auto st_size = FromDIP(wxSize(text_size.x, -1));
+    auto st_size = wxSize(text_size.x, -1);
     auto ti_size = FromDIP(wxSize(90, -1));
     // start length
     auto start_length_sizer = new wxBoxSizer(wxHORIZONTAL);

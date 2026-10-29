@@ -46,7 +46,7 @@ const int LEFT_OFFSET = 2;
  MaterialItem::MaterialItem(wxWindow *parent, wxColour mcolour, wxString mname, std::string filament_id)
     : wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize)
  {
-    m_arraw_bitmap_gray  = ScalableBitmap(this, "drop_down2", FromDIP(8));
+    m_arraw_bitmap_gray  = ScalableBitmap(this, "drop_down2", 8);
     m_arraw_bitmap_white =  ScalableBitmap(this, "topbar_dropdown", 12);
     m_transparent_mitem          = ScalableBitmap(this, "transparent_material_up", 20);
     m_filament_wheel_transparent = ScalableBitmap(this,   "filament_transparent", 25);//wxGetApp().dark_mode() ? "filament_dark_transparent"
@@ -392,7 +392,7 @@ void MaterialItem::doRender(wxDC& dc)
     dc.DrawText(m_material_name, wxPoint((size.x - material_txt_size.x) / 2, (FromDIP(20) - material_txt_size.y) / 2));
 
     dc.SetPen(wxColour(0xAC, 0xAC, 0xAC));
-    dc.DrawLine(FromDIP(1), FromDIP(20), FromDIP(size.x), FromDIP(20));
+    dc.DrawLine(FromDIP(1), FromDIP(20), size.x, FromDIP(20));
     up += FromDIP(20);
     up += FromDIP(2); // spacing
 
@@ -539,7 +539,7 @@ void MaterialItem::doRender(wxDC& dc)
         wxPen dashed_pen(WXCOLOUR_GREY400, 1, wxPENSTYLE_SHORT_DASH);
         dc.SetPen(dashed_pen);
         up += FromDIP(4); // spacing
-        dc.DrawLine(FromDIP(1), up, FromDIP(size.x), up);
+        dc.DrawLine(FromDIP(1), up, size.x, up);
 
         int bitmap_y = up + (size.y - up - m_rack_nozzle_bitmap.GetBmpHeight()) / 2;
         int bitmap_l = wheel_left + (m_ams_wheel_mitem.GetBmpWidth() - m_rack_nozzle_bitmap.GetBmpWidth()) / 2 + FromDIP(2);
@@ -709,7 +709,7 @@ void MaterialSyncItem::doRender(wxDC &dc)
     }
 
     dc.SetPen(wxColour(0xAC, 0xAC, 0xAC));
-    dc.DrawLine(FromDIP(1), FromDIP(20), FromDIP(size.x), FromDIP(20));
+    dc.DrawLine(FromDIP(1), FromDIP(20), size.x, FromDIP(20));
     // bottom rectangle in wheel bitmap, size is MATERIAL_REC_WHEEL_SIZE(22)
     auto left  = (size.x / 2 - MATERIAL_REC_WHEEL_SIZE.x) / 2 + FromDIP(3);
     auto up    = (size.y * 0.4 + (size.y * 0.6 - MATERIAL_REC_WHEEL_SIZE.y) / 2);
@@ -1305,8 +1305,8 @@ void AmsMapingPopup::update_flush_waste(MachineObject* obj)
     SetDoubleBuffered(true);
 #endif //__WINDOWS__
 
-    m_transparent_mapping_item = ScalableBitmap(this, "transparent_mapping_item", FromDIP(60));
-    mapping_item_checked = ScalableBitmap(this, "mapping_item_checked", FromDIP(20));
+    m_transparent_mapping_item = ScalableBitmap(this, "transparent_mapping_item", 60);
+    mapping_item_checked = ScalableBitmap(this, "mapping_item_checked", 20);
     SetBackgroundColour(StateColor::darkModeColorFor(*wxWHITE));
     Bind(wxEVT_PAINT, &MappingItem::paintEvent, this);
 }
@@ -1924,8 +1924,8 @@ AmsIntroducePopup::AmsIntroducePopup(wxWindow* parent)
     wxBoxSizer* bSizer5;
     bSizer5 = new wxBoxSizer(wxHORIZONTAL);
 
-    m_img_enable_ams = new wxStaticBitmap(this, wxID_ANY, create_scaled_bitmap("monitor_upgrade_ams", this, FromDIP(140)), wxDefaultPosition, wxDefaultSize, 0);
-    m_img_disable_ams = new wxStaticBitmap(this, wxID_ANY, create_scaled_bitmap("disable_ams_demo_icon", this, FromDIP(110)), wxDefaultPosition, wxDefaultSize, 0);
+    m_img_enable_ams = new wxStaticBitmap(this, wxID_ANY, create_scaled_bitmap("monitor_upgrade_ams", this, 140), wxDefaultPosition, wxDefaultSize, 0);
+    m_img_disable_ams = new wxStaticBitmap(this, wxID_ANY, create_scaled_bitmap("disable_ams_demo_icon", this, 110), wxDefaultPosition, wxDefaultSize, 0);
 
     m_img_enable_ams->SetMinSize(wxSize(FromDIP(96), FromDIP(110)));
     m_img_disable_ams->SetMinSize(wxSize(FromDIP(96), FromDIP(110)));

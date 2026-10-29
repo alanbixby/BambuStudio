@@ -2906,6 +2906,11 @@ void GUI_App::UnRegisterMacPowerCallBack()
 
 bool GUI_App::OnInit()
 {
+#if defined(__WXGTK3__) && wxUSE_SYSTEM_OPTIONS
+    // Enable font-DPI geometry before startup creates any windows.
+    wxSystemOptions::SetOption("gtk.window.font-dpi-scaling", 1);
+#endif
+
 #ifdef __APPLE__
     RegisterMacPowerCallBack();
 #endif

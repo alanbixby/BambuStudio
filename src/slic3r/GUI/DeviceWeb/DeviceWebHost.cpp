@@ -656,8 +656,8 @@ void DeviceWebHost::OnWebContentSizeChanged(int width, int height)
     // the current DPI on show.
     m_last_logical_content_size = wxSize(width, height);
 
-    // The web page reports its size in DIP/CSS pixels, so FromDIP() is the
-    // correct conversion to the physical pixels wxWindow::SetMinSize() expects.
+    // Convert reported CSS pixels to wx window coordinates; GTK applies its
+    // integer content scale when rendering.
     wxSize content_size(FromDIP(width), FromDIP(height));
     if (content_size == m_last_reported_content_size) {
         return;

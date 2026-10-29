@@ -24,8 +24,8 @@ endif ()
 # endif ()
 
 bambustudio_add_cmake_project(wxWidgets
-    GIT_REPOSITORY "https://github.com/bambulab/wxWidgets"
-    GIT_TAG master
+    GIT_REPOSITORY "https://github.com/alanbixby/wxWidgets"
+    GIT_TAG 0f2037facedf3d92660e7071b6754fe994aa744d
     DEPENDS ${PNG_PKG} ${ZLIB_PKG} ${EXPAT_PKG} ${TIFF_PKG} ${JPEG_PKG}
     CMAKE_ARGS
         -DCMAKE_POLICY_VERSION_MINIMUM=3.5

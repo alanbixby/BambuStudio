@@ -1,0 +1,118 @@
+[
+  {
+    "path": ".github/workflows/build_all.yml",
+    "review": "Windows ARM workflow/packaging/cache update; synced for source correspondence, not executed."
+  },
+  {
+    "path": ".github/workflows/build_bambu.yml",
+    "review": "Windows ARM workflow/packaging/cache update; synced for source correspondence, not executed."
+  },
+  {
+    "path": ".github/workflows/build_check_cache.yml",
+    "review": "Windows ARM workflow/packaging/cache update; synced for source correspondence, not executed."
+  },
+  {
+    "path": ".github/workflows/build_deps.yml",
+    "review": "Windows ARM workflow/packaging/cache update; synced for source correspondence, not executed."
+  },
+  {
+    "path": "CMakeLists.txt",
+    "review": "MSVC/Windows ARM architecture or flags handling; full frozen CMake synced and Linux app reconfigured."
+  },
+  {
+    "path": "cmake/modules/FindGLEW.cmake",
+    "review": "MSVC/Windows ARM architecture or flags handling; full frozen CMake synced and Linux app reconfigured."
+  },
+  {
+    "path": "deps/Boost/Boost.cmake",
+    "review": "Windows ARM/ARM64EC target or dependency handling; Linux recipe path remains usable; pinned dependencies reused. Owned job caps separately documented."
+  },
+  {
+    "path": "deps/FFMPEG/FFMPEG.cmake",
+    "review": "Windows ARM/ARM64EC target or dependency handling; Linux recipe path remains usable; pinned dependencies reused. Owned job caps separately documented."
+  },
+  {
+    "path": "deps/GMP/GMP.cmake",
+    "review": "Windows ARM/ARM64EC target or dependency handling; Linux recipe path remains usable; pinned dependencies reused. Owned job caps separately documented."
+  },
+  {
+    "path": "deps/JPEG/JPEG.cmake",
+    "review": "Windows ARM/ARM64EC target or dependency handling; Linux recipe path remains usable; pinned dependencies reused. Owned job caps separately documented."
+  },
+  {
+    "path": "deps/MPFR/MPFR.cmake",
+    "review": "Windows ARM/ARM64EC target or dependency handling; Linux recipe path remains usable; pinned dependencies reused. Owned job caps separately documented."
+  },
+  {
+    "path": "deps/OpenCV/OpenCV.cmake",
+    "review": "Windows ARM/ARM64EC target or dependency handling; Linux recipe path remains usable; pinned dependencies reused. Owned job caps separately documented."
+  },
+  {
+    "path": "deps/OpenSSL/OpenSSL.cmake",
+    "review": "Windows ARM/ARM64EC target or dependency handling; Linux recipe path remains usable; pinned dependencies reused. Owned job caps separately documented."
+  },
+  {
+    "path": "deps/TBB/TBB.cmake",
+    "review": "MSVC-only patch/strictness selection; Linux TBB recipe behavior retained; dependencies reused."
+  },
+  {
+    "path": "deps/TBB/patch_tbb.cmake",
+    "review": "MSVC-only patch/strictness selection; Linux TBB recipe behavior retained; dependencies reused."
+  },
+  {
+    "path": "deps/deps-windows.cmake",
+    "review": "Windows ARM/ARM64EC target or dependency handling; Linux recipe path remains usable; pinned dependencies reused. Owned job caps separately documented."
+  },
+  {
+    "path": "src/BaseException.cpp",
+    "review": "Windows/ARM preprocessor branch correction; full frozen bytes synced; active Linux units compiled where part of target."
+  },
+  {
+    "path": "src/StackWalker.cpp",
+    "review": "Windows/ARM preprocessor branch correction; full frozen bytes synced; active Linux units compiled where part of target."
+  },
+  {
+    "path": "src/clipper2/Clipper2Lib/src/clipper.engine.cpp",
+    "review": "Windows/ARM preprocessor branch correction; full frozen bytes synced; active Linux units compiled where part of target."
+  },
+  {
+    "path": "src/libslic3r/CMakeLists.txt",
+    "review": "MSVC/Windows ARM architecture or flags handling; full frozen CMake synced and Linux app reconfigured."
+  },
+  {
+    "path": "src/libslic3r/Int128.hpp",
+    "review": "Windows/ARM preprocessor branch correction; full frozen bytes synced; active Linux units compiled where part of target."
+  },
+  {
+    "path": "src/libslic3r/MeshDiagnostics.hpp",
+    "review": "Linux-active explicit Point.hpp include; frozen bytes synced; dependents rebuilt."
+  },
+  {
+    "path": "src/libslic3r/PresetBundle.cpp",
+    "review": "Linux-active preset collection dispatch correction (prints/filaments rather than duplicate printer cases); frozen bytes synced and translation unit rebuilt."
+  },
+  {
+    "path": "src/minimp4/minih264e.h",
+    "review": "Windows/ARM preprocessor branch correction; full frozen bytes synced; active Linux units compiled where part of target."
+  },
+  {
+    "path": "src/slic3r/GUI/ParamTooltip.cpp",
+    "review": "Hover popup and GTK shape fix; now matches complete frozen current-master baseline."
+  },
+  {
+    "path": "src/slic3r/GUI/ParamTooltip.hpp",
+    "review": "Hover card base class correction and explanation; complete frozen baseline synced."
+  },
+  {
+    "path": "src/slic3r/GUI/WipeTowerPlacement.cpp",
+    "review": "Linux-active explicit ClipperUtils.hpp include; frozen bytes synced and translation unit rebuilt."
+  },
+  {
+    "path": "src/slic3r/GUI/fila_manager/wgtFilaManagerSync.cpp",
+    "review": "Moves set include to header; frozen bytes synced."
+  },
+  {
+    "path": "src/slic3r/GUI/fila_manager/wgtFilaManagerSync.h",
+    "review": "Explicit set include in header; frozen bytes synced."
+  }
+]

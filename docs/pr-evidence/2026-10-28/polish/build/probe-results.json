@@ -1,0 +1,136 @@
+{
+  "installed_range": {
+    "processes_passed": 36,
+    "logs": {
+      "logs/polished-probes/range-option0-scale1-120.log": "9a5e4f8780ccd41717a62375569f51c67bcbee1196b52f569c9e598042e56585",
+      "logs/polished-probes/range-option0-scale1-144.log": "f534f60a4f5d0e3b9ddea46bae589a62c7228ac3f0398fae4a06aa330b0c70ca",
+      "logs/polished-probes/range-option0-scale1-192.log": "d69e9de739e40853ff5fdedb27e891d8edb52923a039fc42e24be35b7a99f7a0",
+      "logs/polished-probes/range-option0-scale1-72.log": "3eacd7e4849623d4db05eab47eb7606ed21822815172bef186805ca0f79d0452",
+      "logs/polished-probes/range-option0-scale1-96.log": "e8600cd66e6c01a27665f4555c8912d9757af6ec788c4931382c598f9ae06fbf",
+      "logs/polished-probes/range-option0-scale1-dynamic.log": "2cc80d26487ed7797daf3cf5d8e59088c26a98ee349d402b2d4a32b535c43529",
+      "logs/polished-probes/range-option0-scale2-120.log": "c5357a7f48712a48ca64228b7a2123d670534a7d0bd99a14664a346d9cc19b85",
+      "logs/polished-probes/range-option0-scale2-144.log": "f7fca26e0d9eb485902ece5f5b87a0adc6641a7569c1b8f6a71f2ccb0b1334f0",
+      "logs/polished-probes/range-option0-scale2-192.log": "b1141d653b8eb0d8287a20cb95d000b8a57923a90f9a527d43661dc064588514",
+      "logs/polished-probes/range-option0-scale2-72.log": "20275860f8576b0cae654026d497bffde54bd57a925cd3a8e109d869a752cbe3",
+      "logs/polished-probes/range-option0-scale2-96.log": "0addcda60c7469b4182686d9f4ff21359aca003651788163d89b106370ef8aee",
+      "logs/polished-probes/range-option0-scale2-dynamic.log": "a8003ab0af6d23a4a1e891a52ede8302cebee34946aa0500c5602125b3b3dbc8",
+      "logs/polished-probes/range-option1-scale1-120.log": "e677f8d64b110d1f421d5d532e6dc0182027bcf5df289758b95a9eee59df3851",
+      "logs/polished-probes/range-option1-scale1-144.log": "0bbcd33704716e667e258443bd607bd338070328209da077413ee5f9d5f02b78",
+      "logs/polished-probes/range-option1-scale1-192.log": "87df63d4804b3b83f4a21421f55b675f951e4e1d16a61513a382ad5797249e9c",
+      "logs/polished-probes/range-option1-scale1-72.log": "56ee45dc9a6c6b816dbd662248f644cb61bdadba74e1bf2e3c27984d20facba5",
+      "logs/polished-probes/range-option1-scale1-96.log": "e521ef54098001d9db726987bc8bac1a99034b7d319cc87e9c25c449f5d3b0df",
+      "logs/polished-probes/range-option1-scale1-dynamic.log": "4fcc2af00310142ed7f21f2e8bfe3af6a3a054157067808f427e6bb304153964",
+      "logs/polished-probes/range-option1-scale2-120.log": "acb8108a50ac575ecd2b3de3d8ba2526ba1e398b359ab8e46e282d3b44b69381",
+      "logs/polished-probes/range-option1-scale2-144.log": "cf80c7fc773bccaa25172cba11e1c977bce1aba7ad0436eb1a2032833f8e8617",
+      "logs/polished-probes/range-option1-scale2-192.log": "cfb7f4ea1e99e5aaa5e95a33270ab2151e4a8091907e109864099bc7c6a99bd2",
+      "logs/polished-probes/range-option1-scale2-72.log": "8c90700c649c787f3f7d45a1a71d348cdd6ac6754ca9f8b0eb5086b84e13d30f",
+      "logs/polished-probes/range-option1-scale2-96.log": "f70b6a078ad7ecc825967284dc7568c570a5d964dd35727a4325eeb4abe3b483",
+      "logs/polished-probes/range-option1-scale2-dynamic.log": "8235f4da31b3c34bbeb3f68e0919a2291b37c43f3d629079d1febe4c09afcf7f",
+      "logs/polished-probes/range-optionunset-scale1-120.log": "d8691199c3815b010a790b2a5840c814484147f0e2a836201526e0978b8430da",
+      "logs/polished-probes/range-optionunset-scale1-144.log": "75fd1d6a2fcd61bff4ac42bb166f54b116eb11b67d0fc9054e47d8a183047689",
+      "logs/polished-probes/range-optionunset-scale1-192.log": "44ed90beb60f5421674e6003e5e6052bb0e012079a07b6030f2f2f8f425bb91c",
+      "logs/polished-probes/range-optionunset-scale1-72.log": "a8f032fbea7590cbc6b0d321e36558e0605d7b6790585498b33b2b9fece56ebd",
+      "logs/polished-probes/range-optionunset-scale1-96.log": "f8416203fe375931fbd88d603a621ba2da84606c46a4d5b067a03856b0afe2aa",
+      "logs/polished-probes/range-optionunset-scale1-dynamic.log": "fce3126df34dbf1edf348893724a7fc0f439fa65c812fbdb146138f441ccd3cf",
+      "logs/polished-probes/range-optionunset-scale2-120.log": "493585caf008c4608d23199ff29c2bbde0e69218d047ec1e433d742f775ef1b4",
+      "logs/polished-probes/range-optionunset-scale2-144.log": "9cb25393342d8215647df1a93692011c486a759d6b8e4194498afbe6bea0f36c",
+      "logs/polished-probes/range-optionunset-scale2-192.log": "66ca7899887d078dd078246ce5494f94e4e9ad17c65fcb02d50403d88d58842b",
+      "logs/polished-probes/range-optionunset-scale2-72.log": "9bd207f8d5d6ac948d1980f130a8a9d2e05d9808f4de0d448740eae6d7c28ec9",
+      "logs/polished-probes/range-optionunset-scale2-96.log": "2c82ec335babab7b84251cfe7828f3b7e8a4e7e92df0993fa7661652de10fbf1",
+      "logs/polished-probes/range-optionunset-scale2-dynamic.log": "e556c17b1828f79733f99a299780aa0390e32cddbfd05d19d418a975dd450236"
+    },
+    "option_states": [
+      "unset",
+      "0",
+      "1"
+    ],
+    "gdk_scales": [
+      1,
+      2
+    ],
+    "font_dpi": [
+      72,
+      96,
+      120,
+      144,
+      192
+    ],
+    "same_process_dynamic_dpi": [
+      96,
+      120,
+      144,
+      192,
+      96
+    ],
+    "checks": [
+      "window and null static API",
+      "member wrappers",
+      "sizes, points and scalar conversions",
+      "zero/-1 sentinels",
+      "negative coordinates",
+      "int endpoints and saturation thresholds",
+      "hidden/unmapped frames"
+    ]
+  },
+  "no_frame": {
+    "processes_passed": 3,
+    "logs": {
+      "logs/polished-probes/no-frame-option0.log": "18ba061fafe2eeb075cc7ce4715e9d5c069c32058a41ff5f477d302a1155a70e",
+      "logs/polished-probes/no-frame-option1.log": "2d79f3017457734838d6b425d4e6ff4087b826a1f82f0eb2ef6dd57480d765ad",
+      "logs/polished-probes/no-frame-optionunset.log": "18ba061fafe2eeb075cc7ce4715e9d5c069c32058a41ff5f477d302a1155a70e"
+    },
+    "option_states": [
+      "unset",
+      "0",
+      "1"
+    ],
+    "font_dpi": 144
+  },
+  "label": {
+    "processes_passed": 2,
+    "logs": {
+      "logs/polished-probes/label-144.log": "72dae8de950f03d96b6cc0616ab3b0439913a6ccb530e83ae77c70a66c5847aa",
+      "logs/polished-probes/label-96.log": "c3f1250747afc88329411008628a2d8e4ddcf17e554bd24ef9584d2aebb38969"
+    },
+    "label_cases_passed": 6
+  },
+  "options_compiled_out": {
+    "processes_passed": 10,
+    "logs": {
+      "logs/polished-probes/options-disabled-scale1-120.log": "abbf5d50f9cb11ae8ea66c80ba8e4e1cc92d661b78b855d61529738b3a73371f",
+      "logs/polished-probes/options-disabled-scale1-144.log": "8dce5924cb8130ac672d6579ba5dd7d6ba1e193e91ed1d560684091eb77058fb",
+      "logs/polished-probes/options-disabled-scale1-192.log": "de8cca3d7960b21c24c88e579c71bbddc2b90a3db500c6d0906b4c7f5285c258",
+      "logs/polished-probes/options-disabled-scale1-96.log": "18f2b7354718a35105c574772c9e0ea43651aad620397641529b1b68071b7888",
+      "logs/polished-probes/options-disabled-scale1-dynamic.log": "98b79caa213909744f39fa6b4306d56c2343f448416a50c0f751a8df19ec7827",
+      "logs/polished-probes/options-disabled-scale2-120.log": "dc853be1a0bdd948a97adf93f55cfe5c1baf8914cb4a760879c3fc8e919f7eb0",
+      "logs/polished-probes/options-disabled-scale2-144.log": "db7d828e6c224dc4ccf75cce51573666947f95ce275f29e74f13342780bbd144",
+      "logs/polished-probes/options-disabled-scale2-192.log": "a7c0d12fa3c0463977e488b2f2030bfe3c6fff94ac642a1066e9361e67be4293",
+      "logs/polished-probes/options-disabled-scale2-96.log": "c5bee032bffb77433f56bd58b439fd431166f388895bdab4aa4701bb6728b9c0",
+      "logs/polished-probes/options-disabled-scale2-dynamic.log": "512ab8de0cd79a937ec576b3ca4dfdacb28d8553ae9766532b4bae7a060384b6"
+    },
+    "requested_option": 1,
+    "setter_available": false,
+    "setter_note": "The real wxUSE_SYSTEM_OPTIONS=0 header omits SetOption; the harness compiles that call out and checks the real GetOptionInt zero stub plus native archived conversions."
+  },
+  "production_archives_unchanged_by_separate_build": true,
+  "main_archive": {
+    "path": "/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/deps-build/destdir/usr/local/lib/libwx_gtk3u_core-3.1.a",
+    "sha256": "c48afa2696ecf4eaae0604d77c36be5d76cb5e5c90ace3d1e371db97ba335481",
+    "installed_matches_built": true,
+    "window_member_matches_built_object": true,
+    "window_member_sha256": "927233eb2d917b07a1bed7f083815a21fd62840a34a95ed1cb9bb3a869f2aaf6"
+  },
+  "options_off_archive": {
+    "path": "/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/wx-system-options-off-prefix/lib/libwx_gtk3u_core-3.1.a",
+    "sha256": "5d95d3344534e4c8c676f69f6384f838f65a8895c6b770295cb6d3cb8e3076a5",
+    "installed_matches_built": true,
+    "window_member_matches_built_object": true,
+    "window_member_sha256": "38060b9c194f7876687c0f79f8c32d44314254fd67196a73f63920914a67ca32"
+  },
+  "limits": [
+    "Linux GTK3 Release archives and C++11 native harnesses only.",
+    "Private Xvfb displays; frames remain hidden/unmapped; no Studio launch or event loop.",
+    "No Windows/macOS, GTK2 or C++98 native library build.",
+    "Options-disabled library is an additional complete native build in a separate owned prefix; the production app still uses the normal options-enabled archive."
+  ]
+}

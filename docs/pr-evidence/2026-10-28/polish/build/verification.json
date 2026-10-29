@@ -1,0 +1,261 @@
+{
+  "recorded_utc": "2026-10-29T00:54:43.356926+00:00",
+  "reviewed_app_commit": "e9617d1a815183350bd9822fb894996aa086f47a",
+  "reviewed_wx_commit": "0f2037facedf3d92660e7071b6754fe994aa744d",
+  "app_tree": "094d67e9702508a845195e85fb17084db6da74e4",
+  "wx_tree": "db3c30ee5fb3043b7798ae0029ef51312fe9fc65",
+  "bundle": "/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/stage/polished-native-bundle",
+  "elf_sha256": "e25ee5adf9b6af148bdf9e79265cc3ad0f1c59a73e59cfc38a84f3e764a93c3d",
+  "bundle_fingerprint": "997f53d088afec2f57bc8e69d3fb81e71edd41e67a4fd36e277f375d7857aad4",
+  "files_hashed": 6887,
+  "inventory_entries": 7180,
+  "ldd_files_checked": 28,
+  "source_tracked_blob_counts_checked": {
+    "app": 11204,
+    "wx": 6697
+  },
+  "source_byte_manifest_sha256": "bf3f7edaf43336060b365084db03e60200395a850234419ee7e19fe59988609c",
+  "owned_policy_exceptions": {
+    "deps/CMakeLists.txt": {
+      "frozen_sha256": "03e8c762681c51ef632ed5d63a1c68def67f0c0f660cfff35f85a16726dc665a",
+      "actual_sha256": "f84ff5dafa177142d843e0ea2c66b750e4a138d500745778d290a4df45b02c63"
+    },
+    "deps/GMP/GMP.cmake": {
+      "frozen_sha256": "7a13cbf889ddc75675ad34fab52e3a9fcec5df4ce08cf6cf48b42026df94a1e1",
+      "actual_sha256": "6e7c3a7d652d1eeff75d30709f23999914b5bfbe2294c5f7ab9a72bf98482f1b"
+    },
+    "deps/MPFR/MPFR.cmake": {
+      "frozen_sha256": "5d3b4a6c2a4be406cc2804056e57f5e3f24bff61180d3cc2b30bc1aef9c45c15",
+      "actual_sha256": "e4c18f827879da428b14dfa0dc6f391380b346083e8a6cf6260084af71ece6e9"
+    },
+    "deps/OpenSSL/OpenSSL.cmake": {
+      "frozen_sha256": "4e599d05614ec44c6d34f4265fb00743b4a9fa438535939661df000fd13f8ba4",
+      "actual_sha256": "0c9395bd030327807731f1ac2ceb70a568a8a937316aeca023453a78c0b04fa8"
+    },
+    "deps/wxWidgets/wxWidgets.cmake": {
+      "frozen_sha256": "d97402d13a752362a737d9e4cda6586d854be315056d5206e426ec71842f51b4",
+      "actual_sha256": "4b69696a3bd82244cf98e4f52d592fde386fc3ed72d87bb37b1203e89cad68d0"
+    },
+    "src/slic3r/GUI/DeviceWeb/CMakeLists.txt": {
+      "frozen_sha256": "4c393e52b5ca69141fc37b73decdb22edec02577aab720266125375af41f4b94",
+      "actual_sha256": "b12da1a26b50637f26c2a1e8d10906454c3db3522db73ebe59a19404f2fa8265"
+    }
+  },
+  "actual_identity_flags": {
+    "BBL_RELEASE_TO_PUBLIC": "1",
+    "BBL_INTERNAL_TESTING": "2",
+    "SLIC3R_GTK": "3",
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_BUILD_WITH_INSTALL_RPATH": "ON"
+  },
+  "runpath": "$ORIGIN",
+  "archive_sha256": "c48afa2696ecf4eaae0604d77c36be5d76cb5e5c90ace3d1e371db97ba335481",
+  "archive_gtk_member_provenance": {
+    "window": {
+      "sha256": "927233eb2d917b07a1bed7f083815a21fd62840a34a95ed1cb9bb3a869f2aaf6",
+      "source_sha256": "f8630c106454222beccc73d18dd260a22c5d2321c730f689cfab88fcc8e2f72f"
+    },
+    "control": {
+      "sha256": "e39f6a7be46e25e1cd53a26225c48b1f389e1d14874e1da56e23974ac0ecbd2a",
+      "source_sha256": "9996d975b5045be72fe21b296319edcfbf0ad858a2b230562fcc5d16ebc9455f"
+    }
+  },
+  "app_startup_compiled_opt_in_precedes_inner": true,
+  "gui_app_object_sha256": "943dfd4cfd1001051d5bada80bfba0fd66e6b3bedaca56863bd5faf4c08718ac",
+  "source_forks_status": {
+    "app": "clean",
+    "wx": "clean"
+  },
+  "protected_bundles_and_installed_5029c1_unchanged": {
+    "clean-native-bundle": {
+      "fingerprint": "5029c1cdc1758ad203f7e8e619f3b8f42e9c4018b1d107594fb3e070a87b5a74",
+      "elf_sha256": "88df689cf44ab22814a4e666f43c27b9a1218eeb837d9f6964b8f67897f9f869",
+      "documents": {
+        "bundle.json": "72fe9a92076419bf47df13f243379fe02a6335b34030dcae2144eec323fb37ed",
+        "sha256.json": "e1890353c976bc4f11cd20d6ce92fd9c1286e28508f91fd3914f3dec27bcde2e",
+        "provenance.json": "c4bb5be86d4754c5ec2094c49586bcbe4346ec704cb014fc382a9ad802b41fee",
+        "ldd.txt": "f174397ba72124e237f8c32369e9e5264731d45b01ef157073507ad134878dd5"
+      }
+    },
+    "source-bundle": {
+      "fingerprint": "503473e74f939350e91288ab1ece67e5abd7b15e442cef548712659725d062fa",
+      "elf_sha256": "1cf263af189904d43ee5373f8fa4d74a753fa1e1e3e93ddcbaee1c3afe82af59",
+      "documents": {
+        "bundle.json": "72fe9a92076419bf47df13f243379fe02a6335b34030dcae2144eec323fb37ed",
+        "sha256.json": "29106495e23cb4cad0e51960c45637f697c2c8173c6c211e755f64d7b73d47b9",
+        "provenance.json": "e8ec673d5873c25000b891497f661cdd72f92b7c1654b9f507081b7b75effc03",
+        "ldd.txt": "d6a366a2ca3b1f52f8f118219f91e691579deea5ffc587f2cf307e8d2a97bec6"
+      }
+    },
+    "dip-screening-bundle": {
+      "fingerprint": "70eaf2d6352123bc70fa7fadadacfc04d470d1d295362bb9f652dce40961fbd8",
+      "elf_sha256": "758a854f5d160141f3bb867b52dbaf6f8dadba544e8cd9b39dadb979ef384894",
+      "documents": {
+        "bundle.json": "72fe9a92076419bf47df13f243379fe02a6335b34030dcae2144eec323fb37ed",
+        "sha256.json": "44af2af0513632c0e6dc9bd1e0bca74fcdd471a5f2daf3343c2eec10d9a2c2a4",
+        "provenance.json": "8672453b8925ee6380e1ebf26e64d0e35b0a1cf991379230124996df72a5c917",
+        "ldd.txt": "3ad9f7c21a9f08b3fafe984eafa77b2fa70ccf5dac3006931ee3070608a9f3be"
+      }
+    },
+    "peer-reviewed-native-bundle": {
+      "fingerprint": "2170f1da3c1c535d3fb24b242ac61f5109c4561cd4e6eda1a6bb280c22b4edbe",
+      "elf_sha256": "24df04a3395dde25175b14ee667e60063c8118968e944ec0ce44a0d75622f008",
+      "documents": {
+        "bundle.json": "72fe9a92076419bf47df13f243379fe02a6335b34030dcae2144eec323fb37ed",
+        "sha256.json": "e9256428be8c602069b1a155f0c63953033e7434f8dd510a694f039c937aef05",
+        "provenance.json": "0725f67a9cd600c5fdfb526eda1ccfaa2741dc8a59ddf36f046367278a9a07e2",
+        "ldd.txt": "a6fc1c2476d0958558a0277adea8739579a141ae7d27489916813a3be02ad61f"
+      }
+    },
+    "installed5029c1": {
+      "fingerprint": "5029c1cdc1758ad203f7e8e619f3b8f42e9c4018b1d107594fb3e070a87b5a74",
+      "elf_sha256": "88df689cf44ab22814a4e666f43c27b9a1218eeb837d9f6964b8f67897f9f869"
+    }
+  },
+  "frontend_dist_preserved": true,
+  "app_and_wx_freshness": "no work to do",
+  "probes": {
+    "installed_range": {
+      "processes_passed": 36,
+      "logs": {
+        "logs/polished-probes/range-option0-scale1-120.log": "9a5e4f8780ccd41717a62375569f51c67bcbee1196b52f569c9e598042e56585",
+        "logs/polished-probes/range-option0-scale1-144.log": "f534f60a4f5d0e3b9ddea46bae589a62c7228ac3f0398fae4a06aa330b0c70ca",
+        "logs/polished-probes/range-option0-scale1-192.log": "d69e9de739e40853ff5fdedb27e891d8edb52923a039fc42e24be35b7a99f7a0",
+        "logs/polished-probes/range-option0-scale1-72.log": "3eacd7e4849623d4db05eab47eb7606ed21822815172bef186805ca0f79d0452",
+        "logs/polished-probes/range-option0-scale1-96.log": "e8600cd66e6c01a27665f4555c8912d9757af6ec788c4931382c598f9ae06fbf",
+        "logs/polished-probes/range-option0-scale1-dynamic.log": "2cc80d26487ed7797daf3cf5d8e59088c26a98ee349d402b2d4a32b535c43529",
+        "logs/polished-probes/range-option0-scale2-120.log": "c5357a7f48712a48ca64228b7a2123d670534a7d0bd99a14664a346d9cc19b85",
+        "logs/polished-probes/range-option0-scale2-144.log": "f7fca26e0d9eb485902ece5f5b87a0adc6641a7569c1b8f6a71f2ccb0b1334f0",
+        "logs/polished-probes/range-option0-scale2-192.log": "b1141d653b8eb0d8287a20cb95d000b8a57923a90f9a527d43661dc064588514",
+        "logs/polished-probes/range-option0-scale2-72.log": "20275860f8576b0cae654026d497bffde54bd57a925cd3a8e109d869a752cbe3",
+        "logs/polished-probes/range-option0-scale2-96.log": "0addcda60c7469b4182686d9f4ff21359aca003651788163d89b106370ef8aee",
+        "logs/polished-probes/range-option0-scale2-dynamic.log": "a8003ab0af6d23a4a1e891a52ede8302cebee34946aa0500c5602125b3b3dbc8",
+        "logs/polished-probes/range-option1-scale1-120.log": "e677f8d64b110d1f421d5d532e6dc0182027bcf5df289758b95a9eee59df3851",
+        "logs/polished-probes/range-option1-scale1-144.log": "0bbcd33704716e667e258443bd607bd338070328209da077413ee5f9d5f02b78",
+        "logs/polished-probes/range-option1-scale1-192.log": "87df63d4804b3b83f4a21421f55b675f951e4e1d16a61513a382ad5797249e9c",
+        "logs/polished-probes/range-option1-scale1-72.log": "56ee45dc9a6c6b816dbd662248f644cb61bdadba74e1bf2e3c27984d20facba5",
+        "logs/polished-probes/range-option1-scale1-96.log": "e521ef54098001d9db726987bc8bac1a99034b7d319cc87e9c25c449f5d3b0df",
+        "logs/polished-probes/range-option1-scale1-dynamic.log": "4fcc2af00310142ed7f21f2e8bfe3af6a3a054157067808f427e6bb304153964",
+        "logs/polished-probes/range-option1-scale2-120.log": "acb8108a50ac575ecd2b3de3d8ba2526ba1e398b359ab8e46e282d3b44b69381",
+        "logs/polished-probes/range-option1-scale2-144.log": "cf80c7fc773bccaa25172cba11e1c977bce1aba7ad0436eb1a2032833f8e8617",
+        "logs/polished-probes/range-option1-scale2-192.log": "cfb7f4ea1e99e5aaa5e95a33270ab2151e4a8091907e109864099bc7c6a99bd2",
+        "logs/polished-probes/range-option1-scale2-72.log": "8c90700c649c787f3f7d45a1a71d348cdd6ac6754ca9f8b0eb5086b84e13d30f",
+        "logs/polished-probes/range-option1-scale2-96.log": "f70b6a078ad7ecc825967284dc7568c570a5d964dd35727a4325eeb4abe3b483",
+        "logs/polished-probes/range-option1-scale2-dynamic.log": "8235f4da31b3c34bbeb3f68e0919a2291b37c43f3d629079d1febe4c09afcf7f",
+        "logs/polished-probes/range-optionunset-scale1-120.log": "d8691199c3815b010a790b2a5840c814484147f0e2a836201526e0978b8430da",
+        "logs/polished-probes/range-optionunset-scale1-144.log": "75fd1d6a2fcd61bff4ac42bb166f54b116eb11b67d0fc9054e47d8a183047689",
+        "logs/polished-probes/range-optionunset-scale1-192.log": "44ed90beb60f5421674e6003e5e6052bb0e012079a07b6030f2f2f8f425bb91c",
+        "logs/polished-probes/range-optionunset-scale1-72.log": "a8f032fbea7590cbc6b0d321e36558e0605d7b6790585498b33b2b9fece56ebd",
+        "logs/polished-probes/range-optionunset-scale1-96.log": "f8416203fe375931fbd88d603a621ba2da84606c46a4d5b067a03856b0afe2aa",
+        "logs/polished-probes/range-optionunset-scale1-dynamic.log": "fce3126df34dbf1edf348893724a7fc0f439fa65c812fbdb146138f441ccd3cf",
+        "logs/polished-probes/range-optionunset-scale2-120.log": "493585caf008c4608d23199ff29c2bbde0e69218d047ec1e433d742f775ef1b4",
+        "logs/polished-probes/range-optionunset-scale2-144.log": "9cb25393342d8215647df1a93692011c486a759d6b8e4194498afbe6bea0f36c",
+        "logs/polished-probes/range-optionunset-scale2-192.log": "66ca7899887d078dd078246ce5494f94e4e9ad17c65fcb02d50403d88d58842b",
+        "logs/polished-probes/range-optionunset-scale2-72.log": "9bd207f8d5d6ac948d1980f130a8a9d2e05d9808f4de0d448740eae6d7c28ec9",
+        "logs/polished-probes/range-optionunset-scale2-96.log": "2c82ec335babab7b84251cfe7828f3b7e8a4e7e92df0993fa7661652de10fbf1",
+        "logs/polished-probes/range-optionunset-scale2-dynamic.log": "e556c17b1828f79733f99a299780aa0390e32cddbfd05d19d418a975dd450236"
+      },
+      "option_states": [
+        "unset",
+        "0",
+        "1"
+      ],
+      "gdk_scales": [
+        1,
+        2
+      ],
+      "font_dpi": [
+        72,
+        96,
+        120,
+        144,
+        192
+      ],
+      "same_process_dynamic_dpi": [
+        96,
+        120,
+        144,
+        192,
+        96
+      ],
+      "checks": [
+        "window and null static API",
+        "member wrappers",
+        "sizes, points and scalar conversions",
+        "zero/-1 sentinels",
+        "negative coordinates",
+        "int endpoints and saturation thresholds",
+        "hidden/unmapped frames"
+      ]
+    },
+    "no_frame": {
+      "processes_passed": 3,
+      "logs": {
+        "logs/polished-probes/no-frame-option0.log": "18ba061fafe2eeb075cc7ce4715e9d5c069c32058a41ff5f477d302a1155a70e",
+        "logs/polished-probes/no-frame-option1.log": "2d79f3017457734838d6b425d4e6ff4087b826a1f82f0eb2ef6dd57480d765ad",
+        "logs/polished-probes/no-frame-optionunset.log": "18ba061fafe2eeb075cc7ce4715e9d5c069c32058a41ff5f477d302a1155a70e"
+      },
+      "option_states": [
+        "unset",
+        "0",
+        "1"
+      ],
+      "font_dpi": 144
+    },
+    "label": {
+      "processes_passed": 2,
+      "logs": {
+        "logs/polished-probes/label-144.log": "72dae8de950f03d96b6cc0616ab3b0439913a6ccb530e83ae77c70a66c5847aa",
+        "logs/polished-probes/label-96.log": "c3f1250747afc88329411008628a2d8e4ddcf17e554bd24ef9584d2aebb38969"
+      },
+      "label_cases_passed": 6
+    },
+    "options_compiled_out": {
+      "processes_passed": 10,
+      "logs": {
+        "logs/polished-probes/options-disabled-scale1-120.log": "abbf5d50f9cb11ae8ea66c80ba8e4e1cc92d661b78b855d61529738b3a73371f",
+        "logs/polished-probes/options-disabled-scale1-144.log": "8dce5924cb8130ac672d6579ba5dd7d6ba1e193e91ed1d560684091eb77058fb",
+        "logs/polished-probes/options-disabled-scale1-192.log": "de8cca3d7960b21c24c88e579c71bbddc2b90a3db500c6d0906b4c7f5285c258",
+        "logs/polished-probes/options-disabled-scale1-96.log": "18f2b7354718a35105c574772c9e0ea43651aad620397641529b1b68071b7888",
+        "logs/polished-probes/options-disabled-scale1-dynamic.log": "98b79caa213909744f39fa6b4306d56c2343f448416a50c0f751a8df19ec7827",
+        "logs/polished-probes/options-disabled-scale2-120.log": "dc853be1a0bdd948a97adf93f55cfe5c1baf8914cb4a760879c3fc8e919f7eb0",
+        "logs/polished-probes/options-disabled-scale2-144.log": "db7d828e6c224dc4ccf75cce51573666947f95ce275f29e74f13342780bbd144",
+        "logs/polished-probes/options-disabled-scale2-192.log": "a7c0d12fa3c0463977e488b2f2030bfe3c6fff94ac642a1066e9361e67be4293",
+        "logs/polished-probes/options-disabled-scale2-96.log": "c5bee032bffb77433f56bd58b439fd431166f388895bdab4aa4701bb6728b9c0",
+        "logs/polished-probes/options-disabled-scale2-dynamic.log": "512ab8de0cd79a937ec576b3ca4dfdacb28d8553ae9766532b4bae7a060384b6"
+      },
+      "requested_option": 1,
+      "setter_available": false,
+      "setter_note": "The real wxUSE_SYSTEM_OPTIONS=0 header omits SetOption; the harness compiles that call out and checks the real GetOptionInt zero stub plus native archived conversions."
+    },
+    "production_archives_unchanged_by_separate_build": true,
+    "main_archive": {
+      "path": "/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/deps-build/destdir/usr/local/lib/libwx_gtk3u_core-3.1.a",
+      "sha256": "c48afa2696ecf4eaae0604d77c36be5d76cb5e5c90ace3d1e371db97ba335481",
+      "installed_matches_built": true,
+      "window_member_matches_built_object": true,
+      "window_member_sha256": "927233eb2d917b07a1bed7f083815a21fd62840a34a95ed1cb9bb3a869f2aaf6"
+    },
+    "options_off_archive": {
+      "path": "/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/wx-system-options-off-prefix/lib/libwx_gtk3u_core-3.1.a",
+      "sha256": "5d95d3344534e4c8c676f69f6384f838f65a8895c6b770295cb6d3cb8e3076a5",
+      "installed_matches_built": true,
+      "window_member_matches_built_object": true,
+      "window_member_sha256": "38060b9c194f7876687c0f79f8c32d44314254fd67196a73f63920914a67ca32"
+    },
+    "limits": [
+      "Linux GTK3 Release archives and C++11 native harnesses only.",
+      "Private Xvfb displays; frames remain hidden/unmapped; no Studio launch or event loop.",
+      "No Windows/macOS, GTK2 or C++98 native library build.",
+      "Options-disabled library is an additional complete native build in a separate owned prefix; the production app still uses the normal options-enabled archive."
+    ]
+  },
+  "installed": false,
+  "gui_launched": false,
+  "open_blocking_count": 0,
+  "limitations": [
+    "Linux x86_64 Release integration only; no Windows/macOS build or run.",
+    "Warm incremental build with complete frozen source byte checks and recorded owned CMake adaptations; not a pristine checkout build.",
+    "Private Xvfb regression harnesses only; no Studio launch, user display/input, profile or printer access."
+  ]
+}

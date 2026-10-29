@@ -1,0 +1,17 @@
+{
+  "app": {
+    "paths": 74,
+    "patch_sha256": "f141cce97d09ab9a399b2ecf130873dfd04b08d211635ecc0a936d65582d3b4c",
+    "forward_bytecheck": true,
+    "reverse_bytecheck": true,
+    "repeat_reverse_check_before_apply_supported": true
+  },
+  "wx": {
+    "paths": 7,
+    "patch_sha256": "67d48638ad950d3a8c8b5ddd3d478d9a03b39b9c49868be7a8804107b6412738",
+    "forward_bytecheck": true,
+    "reverse_bytecheck": true,
+    "repeat_reverse_check_before_apply_supported": true,
+    "production_hook_idempotent": true
+  }
+}

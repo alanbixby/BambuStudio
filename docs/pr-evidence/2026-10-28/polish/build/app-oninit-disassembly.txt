@@ -1,0 +1,65 @@
+
+/home/bxb/.local/state/bambu-scaling/build-02.08.04.57/stage/polished-native-bundle/AppDir/bin/bambu-studio:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .text:
+
+0000000001fddc10 <_ZN6Slic3r3GUI7GUI_App6OnInitEv>:
+ 1fddc10:	f3 0f 1e fa          	endbr64
+ 1fddc14:	41 56                	push   %r14
+ 1fddc16:	48 8d 35 31 fe 3e 04 	lea    0x43efe31(%rip),%rsi        # 63cda4e <_IO_stdin_used+0x17a4e>
+ 1fddc1d:	41 55                	push   %r13
+ 1fddc1f:	41 54                	push   %r12
+ 1fddc21:	55                   	push   %rbp
+ 1fddc22:	53                   	push   %rbx
+ 1fddc23:	48 89 fb             	mov    %rdi,%rbx
+ 1fddc26:	48 83 ec 70          	sub    $0x70,%rsp
+ 1fddc2a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 1fddc31:	00 00 
+ 1fddc33:	48 89 44 24 68       	mov    %rax,0x68(%rsp)
+ 1fddc38:	31 c0                	xor    %eax,%eax
+ 1fddc3a:	48 8d 6c 24 30       	lea    0x30(%rsp),%rbp
+ 1fddc3f:	48 89 ef             	mov    %rbp,%rdi
+ 1fddc42:	e8 99 5d 0a ff       	call   10839e0 <_ZN8wxStringC1EPKc>
+ 1fddc47:	be 01 00 00 00       	mov    $0x1,%esi
+ 1fddc4c:	48 89 ef             	mov    %rbp,%rdi
+ 1fddc4f:	e8 7c 61 07 04       	call   6053dd0 <_ZN15wxSystemOptions9SetOptionERK8wxStringi>
+ 1fddc54:	48 8b 7c 24 50       	mov    0x50(%rsp),%rdi
+ 1fddc59:	e8 e2 2d 78 fe       	call   760a40 <free@plt>
+ 1fddc5e:	48 8b 7c 24 30       	mov    0x30(%rsp),%rdi
+ 1fddc63:	48 8d 44 24 40       	lea    0x40(%rsp),%rax
+ 1fddc68:	48 39 c7             	cmp    %rax,%rdi
+ 1fddc6b:	74 12                	je     1fddc7f <_ZN6Slic3r3GUI7GUI_App6OnInitEv+0x6f>
+ 1fddc6d:	48 8b 44 24 40       	mov    0x40(%rsp),%rax
+ 1fddc72:	48 8d 34 85 04 00 00 	lea    0x4(,%rax,4),%rsi
+ 1fddc79:	00 
+ 1fddc7a:	e8 c1 e0 77 fe       	call   75bd40 <_ZdlPvm@plt>
+ 1fddc7f:	48 89 df             	mov    %rbx,%rdi
+ 1fddc82:	e8 49 c6 ff ff       	call   1fda2d0 <_ZN6Slic3r3GUI7GUI_App13on_init_innerEv>
+ 1fddc87:	48 8b 54 24 68       	mov    0x68(%rsp),%rdx
+ 1fddc8c:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 1fddc93:	00 00 
+ 1fddc95:	75 0d                	jne    1fddca4 <_ZN6Slic3r3GUI7GUI_App6OnInitEv+0x94>
+ 1fddc97:	48 83 c4 70          	add    $0x70,%rsp
+ 1fddc9b:	5b                   	pop    %rbx
+ 1fddc9c:	5d                   	pop    %rbp
+ 1fddc9d:	41 5c                	pop    %r12
+ 1fddc9f:	41 5d                	pop    %r13
+ 1fddca1:	41 5e                	pop    %r14
+ 1fddca3:	c3                   	ret
+ 1fddca4:	e8 37 9a 77 fe       	call   7576e0 <__stack_chk_fail@plt>
+ 1fddca9:	f3 0f 1e fa          	endbr64
+ 1fddcad:	48 89 c7             	mov    %rax,%rdi
+ 1fddcb0:	48 89 d0             	mov    %rdx,%rax
+ 1fddcb3:	e9 42 8d 89 fe       	jmp    8769fa <_ZN6Slic3r3GUI7GUI_App6OnInitEv.cold>
+ 1fddcb8:	f3 0f 1e fa          	endbr64
+ 1fddcbc:	48 89 c3             	mov    %rax,%rbx
+ 1fddcbf:	e9 db 8d 89 fe       	jmp    876a9f <_ZN6Slic3r3GUI7GUI_App6OnInitEv.cold+0xa5>
+
+Disassembly of section .fini:
